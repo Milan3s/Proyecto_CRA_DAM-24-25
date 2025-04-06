@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="384.0" prefWidth="540.0" styleClass="panel-editar-alumnos" stylesheets="@../styles/editaralumnos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarAlumnoController">
+    <children>
+        <Text fill="WHITE" layoutX="175.0" layoutY="82.0" styleClass="txt_titulo_Editar" text="Editar Alumno" />
+
+        <Label layoutX="113.0" layoutY="160.0" styleClass="txt_nombre" text="Nombre:" />
+        <TextField fx:id="txtNombre" layoutX="209.0" layoutY="143.0" prefWidth="220.0" styleClass="input-editar-nombre" />
+
+        <Label layoutX="129.0" layoutY="212.0" styleClass="txt_curso" text="Curso:" />
+        <TextField fx:id="txtCurso" layoutX="210.0" layoutY="206.0" prefWidth="220.0" styleClass="input-editar-curso" />
+
+        <Label layoutX="95.0" layoutY="272.0" styleClass="txt_sede" text="Código Sede:" />
+        <ComboBox fx:id="cboxSede" layoutX="211.0" layoutY="261.0" prefWidth="220.0" promptText="Seleccione una..." styleClass="cbox_editar_select" />
+
+        <Button fx:id="btnGuardar" layoutX="110.0" layoutY="365.0" prefHeight="32.0" prefWidth="120.0" styleClass="btnEditar" text="Guardar" />
+        <Button fx:id="btnCancelar" layoutX="281.0" layoutY="365.0" onAction="#btnActionCancelar" prefHeight="32.0" prefWidth="131.0" styleClass="btnCancelar" text="Cancelar" />
+      <FontAwesomeIconView fill="WHITE" glyphName="SAVE" layoutX="122.0" layoutY="391.0" size="17" />
+      <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" layoutX="295.0" layoutY="393.0" size="17" />
+    </children>
+</AnchorPane>

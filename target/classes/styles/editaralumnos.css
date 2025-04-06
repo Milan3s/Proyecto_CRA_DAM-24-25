@@ -1,0 +1,113 @@
+/* Contenedor principal */
+.panel-editar-alumnos {
+    -fx-background-color: #0D47A1;
+    -fx-padding: 40;
+    -fx-spacing: 20;
+    -fx-pref-width: 540px;
+    -fx-pref-height: 520px;
+}
+
+/* Título */
+.txt_titulo_Editar {
+    -fx-font-size: 28px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: "Comic Sans MS";
+}
+
+/* Etiquetas */
+.txt_nombre,
+.txt_curso,
+.txt_sede {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+}
+
+/* Inputs */
+.input-editar-nombre,
+.input-editar-curso {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-border-color: white;
+    -fx-border-width: 0 0 2px 0;
+    -fx-padding: 6 4;
+    -fx-font-family: "Comic Sans MS";
+    -fx-prompt-text-fill: #cccccc;
+}
+
+/* Input focus */
+.input-editar-nombre:focused,
+.input-editar-curso:focused {
+    -fx-border-color: #64B5F6;
+}
+
+/* ComboBox */
+.cbox_editar_select {
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-width: 0 0 2px 0;
+    -fx-padding: 6 4;
+    -fx-font-size: 15px;
+    -fx-font-family: "Comic Sans MS";
+    -fx-text-fill: white;
+}
+
+/* Texto visible (prompt y seleccionado) */
+.cbox_editar_select .text {
+    -fx-fill: white;
+    -fx-font-size: 15px;
+}
+
+/* Flecha */
+.cbox_editar_select .arrow {
+    -fx-background-color: white;
+}
+
+/* Popup desplegable */
+.cbox_editar_select .combo-box-popup .list-view {
+    -fx-background-color: #0D47A1;
+}
+
+.cbox_editar_select .combo-box-popup .list-view .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+    -fx-font-family: "Comic Sans MS";
+}
+
+.cbox_editar_select .combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: #1565C0;
+    -fx-text-fill: white;
+}
+
+/* Botones */
+.button {
+    -fx-font-size: 14px;
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 4, 0.0, 0, 2);
+}
+
+.btnEditar {
+    -fx-background-color: #4CAF50;
+}
+
+.btnEditar:hover {
+    -fx-background-color: #388E3C;
+}
+
+.btnCancelar {
+    -fx-background-color: #D32F2F;
+}
+
+.btnCancelar:hover {
+    -fx-background-color: #B71C1C;
+}
