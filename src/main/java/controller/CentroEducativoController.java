@@ -65,6 +65,14 @@ public class CentroEducativoController implements Initializable {
                 tablaCentroEducativos.setItems(listaCentros);
             }
         });
+
+        tablaCentroEducativos.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2 && !tablaCentroEducativos.getSelectionModel().isEmpty()) {
+                CentroEducativo centroSeleccionado = tablaCentroEducativos.getSelectionModel().getSelectedItem();
+                abrirModalEditarCentro(centroSeleccionado);
+            }
+        });
+
     }
 
     private void configurarColumnas() {
@@ -157,4 +165,29 @@ public class CentroEducativoController implements Initializable {
     @FXML
     private void btnActionEliminarTodosCentros(ActionEvent event) {
     }
+
+    private void abrirModalEditarCentro(CentroEducativo centro) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/EditarCentroEducativo.fxml"));
+            Parent root = loader.load();
+
+            EditarCentroEducativoController controller = loader.getController();
+            controller.setCentroEducativo(centro);
+
+            Stage modalStage = new Stage();
+            modalStage.setTitle("Editar Centro Educativo");
+            modalStage.setScene(new Scene(root));
+            modalStage.initModality(Modality.APPLICATION_MODAL);
+            modalStage.setResizable(false);
+            modalStage.showAndWait();
+
+            cargarDatos(); // Refresca la tabla al cerrar el modal
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+
 }
