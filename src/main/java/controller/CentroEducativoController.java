@@ -18,48 +18,59 @@ import javafx.scene.control.TextField;
 public class CentroEducativoController implements Initializable {
 
     @FXML
-    private Button btnNuevoAlumno;
-    @FXML
-    private Button btnEliminarAlumno;
-    @FXML
-    private Button btnEliminarTodos;
-    @FXML
     private TextField txtBuscar;
-    @FXML
-    private Button btnBuscar;
     @FXML
     private TableView<?> tablaCentroEducativos;
     @FXML
-    private TableColumn<?, ?> colCodigo;
-    @FXML
     private TableColumn<?, ?> colNombre;
     @FXML
-    private TableColumn<?, ?> colCurso;
+    private Button btnNuevoCentro;
     @FXML
-    private TableColumn<?, ?> colCodigoSede;
+    private Button btnEliminarCentro;
+    @FXML
+    private Button btnEliminarTodosCentros;
+    @FXML
+    private TableColumn<?, ?> colCodigoCentro;
+    @FXML
+    private TableColumn<?, ?> colCalle;
+    @FXML
+    private TableColumn<?, ?> colLocalidad;
+    @FXML
+    private TableColumn<?, ?> colCP;
+    @FXML
+    private TableColumn<?, ?> colMunicipio;
+    @FXML
+    private TableColumn<?, ?> colProvincia;
+    @FXML
+    private TableColumn<?, ?> colTelefono;
+    @FXML
+    private TableColumn<?, ?> colEmail;
+    @FXML
+    private Button btnBuscarCentro;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        tablaCentroEducativos.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }    
 
+
     @FXML
-    private void btnActionCentroEducativo(ActionEvent event) {
+    private void btnActionEliminarCentro(ActionEvent event) {
     }
 
     @FXML
-    private void btnActionEliminarCentrosEducativos(ActionEvent event) {
+    private void btnActionEliminarTodosCentros(ActionEvent event) {
     }
 
     @FXML
-    private void btnActionEliminarTodosCentrosEducativos(ActionEvent event) {
+    private void btnBuscarCentroAction(ActionEvent event) {
     }
 
     @FXML
-    private void btnBuscarAction(ActionEvent event) {
+    private void btnActionNuevoCentro(ActionEvent event) {
     }
     
 }

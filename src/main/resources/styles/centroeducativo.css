@@ -1,7 +1,133 @@
-/*
- * Empty Stylesheet file.
- */
+/* ====================
+   TÍTULO
+   ==================== */
+.txt_centros {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Comic Sans MS";
+}
 
-.mainFxmlClass {
+/* ====================
+   TABLA CENTROS EDUCATIVOS
+   ==================== */
+.tabla_Centros {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-style: solid;
+    -fx-border-radius: 4px;
+    -fx-padding: 5px;
+    -fx-font-size: 16px;
+    -fx-font-family: "Comic Sans MS";
+    -fx-table-cell-border-color: #d0d0d0;
+}
 
+.table-view .column-header-background {
+    -fx-background-color: black;
+}
+
+.table-view .column-header,
+.table-view .column-header .label {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-border-color: #ccc;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: black;
+    -fx-background-color: white;
+    -fx-padding: 8px;
+    -fx-alignment: CENTER;
+    -fx-border-color: #ccc;
+    -fx-border-width: 0 0 1px 1px;
+}
+
+.table-view .table-row-cell .table-cell:last-child {
+    -fx-border-width: 0 1px 1px 1px;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: white;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #0000cc;
+}
+
+.table-view .table-row-cell:selected .table-cell,
+.table-cell:selected {
+    -fx-background-color: #0000cc;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: white;
+}
+
+/* ====================
+   BOTONES
+   ==================== */
+.button {
+    -fx-font-size: 14px;
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-cursor: hand;
+    -fx-padding: 8 16;
+}
+
+/* Buscar */
+.txtbuscar {
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-font-family: "Comic Sans MS";
+    -fx-text-fill: white;
+}
+
+/* Campo de texto */
+.campo_busqueda {
+    -fx-font-size: 14px;
+    -fx-font-family: "Comic Sans MS";
+    -fx-prompt-text-fill: #cccccc;
+    -fx-text-fill: black;
+    -fx-background-radius: 6;
+    -fx-background-color: white;
+    -fx-padding: 6 8;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+}
+
+/* Botón: Nuevo Centro */
+.btnNuevoCentroEducativo {
+    -fx-background-color: #388E3C;
+    -fx-text-fill: white;
+}
+.btnNuevoCentroEducativo:hover {
+    -fx-background-color: #2E7D32;
+}
+
+/* Botón: Eliminar Centro */
+.btnEliminarCentroEducativo {
+    -fx-background-color: #D32F2F;
+    -fx-text-fill: white;
+}
+.btnEliminarCentroEducativo:hover {
+    -fx-background-color: #B71C1C;
+}
+
+/* Botón: Eliminar Todos */
+.btnEliminarTodosCentroEducativo {
+    -fx-background-color: #1976D2;
+    -fx-text-fill: white;
+}
+.btnEliminarTodosCentroEducativo:hover {
+    -fx-background-color: #0D47A1;
 }
