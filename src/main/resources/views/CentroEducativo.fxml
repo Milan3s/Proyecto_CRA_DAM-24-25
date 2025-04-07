@@ -33,7 +33,7 @@
         </Button>
     </HBox>
 
-    <!-- Barra de búsqueda -->
+    <!-- Barra de búsqueda para el centro -->
     <HBox spacing="10">
         <Label contentDisplay="RIGHT" prefHeight="35.0" prefWidth="60.0" styleClass="txtbuscar" text="Buscar:" textAlignment="RIGHT" textFill="white" />
         <TextField fx:id="txtBuscar" prefHeight="35.0" prefWidth="423.0" promptText="Escribe para buscar..." styleClass="campo_busqueda" />
