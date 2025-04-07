@@ -58,6 +58,7 @@ public class AlumnosController implements Initializable {
     private TextField txtBuscar;
     @FXML
     private Button btnBuscar;
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -295,5 +296,4 @@ public class AlumnosController implements Initializable {
 
         tablaUsuarios.setItems(filtrados);
     }
-
 }
