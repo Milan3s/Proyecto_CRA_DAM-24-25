@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.AgregarCentroEducativo;
 import utils.DataBaseConection;
+import utils.LoggerUtils;
 
 public class AgregarCentroEducativoController implements Initializable {
 
@@ -29,11 +30,11 @@ public class AgregarCentroEducativoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        LoggerUtils.logSection("CENTROS EDUCATIVOS");
         btnGuardar.setOnAction(this::guardarCentro);
     }
 
     private void guardarCentro(ActionEvent event) {
-        // Crear instancia del modelo usando los campos
         AgregarCentroEducativo centro = new AgregarCentroEducativo(
                 txtCodigo.getText().trim(),
                 txtNombre.getText().trim(),
@@ -46,20 +47,24 @@ public class AgregarCentroEducativoController implements Initializable {
                 txtEmail.getText().trim()
         );
 
-        // Validar campos vacíos
         if (centro.getCodigoCentro().isEmpty() || centro.getNombre().isEmpty() || centro.getCalle().isEmpty()
                 || centro.getLocalidad().isEmpty() || centro.getCp().isEmpty() || centro.getMunicipio().isEmpty()
                 || centro.getProvincia().isEmpty() || centro.getTelefono().isEmpty() || centro.getEmail().isEmpty()) {
+
             mostrarAlerta("Campos incompletos", "Por favor, completa todos los campos.", Alert.AlertType.WARNING);
+            LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Intento de guardar centro con campos vacíos.");
             return;
         }
+
+        String insertSQL = "INSERT INTO centroeducativo (codigo_centro, nombre, calle, localidad, cp, municipio, provincia, telefono, email) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         Connection conn = null;
         try {
             conn = DataBaseConection.getConnection();
-            String insertSQL = "INSERT INTO centroeducativo (codigo_centro, nombre, calle, localidad, cp, municipio, provincia, telefono, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement stmt = conn.prepareStatement(insertSQL);
+            LoggerUtils.logQuery("CENTROS EDUCATIVOS", "Insertar nuevo centro educativo", insertSQL);
 
+            PreparedStatement stmt = conn.prepareStatement(insertSQL);
             stmt.setString(1, centro.getCodigoCentro());
             stmt.setString(2, centro.getNombre());
             stmt.setString(3, centro.getCalle());
@@ -74,14 +79,19 @@ public class AgregarCentroEducativoController implements Initializable {
 
             if (rows > 0) {
                 mostrarAlerta("Éxito", "Centro educativo agregado con éxito.", Alert.AlertType.INFORMATION);
+                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro guardado → Código: " + centro.getCodigoCentro()
+                        + ", Nombre: " + centro.getNombre()
+                        + ", Localidad: " + centro.getLocalidad()
+                        + ", Provincia: " + centro.getProvincia());
                 limpiarCampos();
             } else {
                 mostrarAlerta("Error", "No se pudo agregar el centro.", Alert.AlertType.ERROR);
+                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Error: No se insertó el centro en la base de datos.");
             }
 
         } catch (SQLException e) {
             mostrarAlerta("Error", "Error al guardar en la base de datos.", Alert.AlertType.ERROR);
-            e.printStackTrace();
+            LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al insertar centro educativo", e);
         } finally {
             DataBaseConection.closeConnection(conn);
         }

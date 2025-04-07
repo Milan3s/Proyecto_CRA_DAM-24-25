@@ -1,4 +1,3 @@
-// EditarCentroEducativoController.java
 package controller;
 
 import javafx.fxml.FXML;
@@ -6,6 +5,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.CentroEducativo;
 import utils.DataBaseConection;
+import utils.LoggerUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -31,6 +31,9 @@ public class EditarCentroEducativoController {
     public void setCentro(CentroEducativo centro, boolean disableCodigo) {
         this.centro = centro;
 
+        LoggerUtils.logSection("CENTROS EDUCATIVOS");
+        LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Editando centro → Código: " + centro.getCodigoCentro() + ", Nombre: " + centro.getNombre());
+
         txtCodigo.setText(centro.getCodigoCentro());
         txtNombre.setText(centro.getNombre());
         txtCalle.setText(centro.getCalle());
@@ -40,6 +43,8 @@ public class EditarCentroEducativoController {
         txtProvincia.setText(centro.getProvincia());
         txtTelefono.setText(centro.getTelefono());
         txtEmail.setText(centro.getEmail());
+
+        txtCodigo.setDisable(disableCodigo);
     }
 
     public void initialize() {
@@ -58,13 +63,17 @@ public class EditarCentroEducativoController {
 
         if (nombre.isEmpty() || calle.isEmpty() || localidad.isEmpty() || cp.isEmpty()
                 || municipio.isEmpty() || provincia.isEmpty() || telefono.isEmpty() || email.isEmpty()) {
+
             mostrarAlerta("Datos incompletos", "Por favor, completa todos los campos.", Alert.AlertType.WARNING);
+            LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Fallo en validación. Campos vacíos al intentar guardar centro.");
             return;
         }
 
         String sql = "UPDATE centroeducativo SET nombre=?, calle=?, localidad=?, cp=?, municipio=?, provincia=?, telefono=?, email=? WHERE codigo_centro=?";
 
         try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            LoggerUtils.logQuery("CENTROS EDUCATIVOS", "Actualizar centro educativo con código: " + centro.getCodigoCentro(), sql);
 
             stmt.setString(1, nombre);
             stmt.setString(2, calle);
@@ -80,14 +89,17 @@ public class EditarCentroEducativoController {
 
             if (filas > 0) {
                 mostrarAlerta("Éxito", "Centro actualizado correctamente.", Alert.AlertType.INFORMATION);
+                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro actualizado → Código: " + centro.getCodigoCentro() +
+                        ", Nombre: " + nombre + ", Localidad: " + localidad + ", Provincia: " + provincia);
                 cerrarVentana();
             } else {
                 mostrarAlerta("Aviso", "No se actualizó ningún registro.", Alert.AlertType.WARNING);
+                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "No se actualizó el centro con código: " + centro.getCodigoCentro());
             }
 
         } catch (SQLException e) {
             mostrarAlerta("Error", "Error al actualizar el centro en la base de datos.", Alert.AlertType.ERROR);
-            e.printStackTrace();
+            LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al ejecutar actualización de centro", e);
         }
     }
 
