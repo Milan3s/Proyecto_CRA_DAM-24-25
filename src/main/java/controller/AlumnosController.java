@@ -10,13 +10,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Alumno;
 import utils.DataBaseConection;
+import utils.LoggerUtils;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -31,34 +28,18 @@ import javafx.stage.Stage;
 
 public class AlumnosController implements Initializable {
 
-    @FXML
-    private TableView<Alumno> tablaUsuarios;
-
-    @FXML
-    private TableColumn<Alumno, Integer> colCodigo;
-
-    @FXML
-    private TableColumn<Alumno, String> colNombre;
-
-    @FXML
-    private TableColumn<Alumno, String> colCurso;
-
-    @FXML
-    private TableColumn<Alumno, String> colCodigoSede; // ahora muestra nombreSede
-
+    @FXML private TableView<Alumno> tablaUsuarios;
+    @FXML private TableColumn<Alumno, Integer> colCodigo;
+    @FXML private TableColumn<Alumno, String> colNombre;
+    @FXML private TableColumn<Alumno, String> colCurso;
+    @FXML private TableColumn<Alumno, String> colCodigoSede;
     private ObservableList<Alumno> listaAlumnos = FXCollections.observableArrayList();
 
-    @FXML
-    private Button btnNuevoAlumno;
-    @FXML
-    private Button btnEliminarAlumno;
-    @FXML
-    private Button btnEliminarTodos;
-    @FXML
-    private TextField txtBuscar;
-    @FXML
-    private Button btnBuscar;
-    
+    @FXML private Button btnNuevoAlumno;
+    @FXML private Button btnEliminarAlumno;
+    @FXML private Button btnEliminarTodos;
+    @FXML private TextField txtBuscar;
+    @FXML private Button btnBuscar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -88,15 +69,17 @@ public class AlumnosController implements Initializable {
     }
 
     private void cargarDatos() {
-        try (Connection connection = DataBaseConection.getConnection()) {
-            String query = "SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede "
-                    + "FROM alumno a "
-                    + "JOIN sede s ON a.codigo_sede = s.codigo_sede";
+        String query = "SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede "
+                     + "FROM alumno a JOIN sede s ON a.codigo_sede = s.codigo_sede";
 
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
+        try (Connection connection = DataBaseConection.getConnection();
+             Statement stmt = connection.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
 
-            listaAlumnos.clear(); // Limpia antes de cargar
+            LoggerUtils.logQuery("Consulta de alumnos", query);
+
+            listaAlumnos.clear();
+            int contador = 0;
 
             while (rs.next()) {
                 int codigo = rs.getInt("codigo_alumno");
@@ -105,13 +88,22 @@ public class AlumnosController implements Initializable {
                 int codigoSede = rs.getInt("codigo_sede");
                 String nombreSede = rs.getString("nombre_sede");
 
-                listaAlumnos.add(new Alumno(codigo, nombre, curso, nombreSede, codigoSede));
+                Alumno alumno = new Alumno(codigo, nombre, curso, nombreSede, codigoSede);
+                listaAlumnos.add(alumno);
+
+                LoggerUtils.logInfo("Alumno cargado → Código: " + codigo +
+                        ", Nombre: " + nombre +
+                        ", Curso: " + curso +
+                        ", Código Sede: " + codigoSede +
+                        ", Nombre Sede: " + nombreSede);
+                contador++;
             }
 
             tablaUsuarios.setItems(listaAlumnos);
+            LoggerUtils.logInfo("Total alumnos cargados: " + contador);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            LoggerUtils.logError("Error al cargar alumnos desde la base de datos.", e);
         }
     }
 
@@ -130,11 +122,10 @@ public class AlumnosController implements Initializable {
             modalStage.setResizable(false);
             modalStage.showAndWait();
 
-            // Recargar datos tras la edición
             cargarDatos();
 
         } catch (IOException e) {
-            e.printStackTrace();
+            LoggerUtils.logError("Error al abrir el modal de edición de alumno.", e);
         }
     }
 
@@ -154,7 +145,7 @@ public class AlumnosController implements Initializable {
             cargarDatos();
 
         } catch (IOException e) {
-            e.printStackTrace();
+            LoggerUtils.logError("Error al abrir el modal de nuevo alumno.", e);
         }
     }
 
@@ -163,17 +154,12 @@ public class AlumnosController implements Initializable {
         Alumno alumnoSeleccionado = tablaUsuarios.getSelectionModel().getSelectedItem();
 
         if (alumnoSeleccionado == null) {
-            Alert alerta = new Alert(Alert.AlertType.WARNING);
-            alerta.setTitle("Selecciona un alumno");
-            alerta.setHeaderText(null);
-            alerta.setContentText("Debes seleccionar un alumno para eliminar.");
-            alerta.showAndWait();
+            mostrarAlerta(Alert.AlertType.WARNING, "Selecciona un alumno", "Debes seleccionar un alumno para eliminar.");
             return;
         }
 
         Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
         confirmacion.setTitle("Confirmar eliminación");
-        confirmacion.setHeaderText(null);
         confirmacion.setContentText("¿Estás seguro de que deseas eliminar al alumno: " + alumnoSeleccionado.getNombre() + "?");
 
         confirmacion.showAndWait().ifPresent(respuesta -> {
@@ -187,33 +173,28 @@ public class AlumnosController implements Initializable {
         String sql = "DELETE FROM alumno WHERE codigo_alumno = ?";
 
         try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-
             stmt.setInt(1, alumno.getCodigo());
+
+            LoggerUtils.logQuery("Eliminar alumno con ID: " + alumno.getCodigo(), sql);
+
             int filas = stmt.executeUpdate();
 
             if (filas > 0) {
-                Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-                alerta.setTitle("Éxito");
-                alerta.setHeaderText(null);
-                alerta.setContentText("Alumno eliminado correctamente.");
-                alerta.showAndWait();
-
-                cargarDatos(); // Recarga la tabla
+                mostrarAlerta(Alert.AlertType.INFORMATION, "Éxito", "Alumno eliminado correctamente.");
+                LoggerUtils.logInfo("Alumno eliminado → Código: " + alumno.getCodigo() +
+                        ", Nombre: " + alumno.getNombre() +
+                        ", Curso: " + alumno.getCurso() +
+                        ", Código Sede: " + alumno.getCodigo_sede() +
+                        ", Nombre Sede: " + alumno.getNombreSede());
+                cargarDatos();
             } else {
-                Alert alerta = new Alert(Alert.AlertType.WARNING);
-                alerta.setTitle("No se eliminó");
-                alerta.setHeaderText(null);
-                alerta.setContentText("No se pudo eliminar el alumno.");
-                alerta.showAndWait();
+                mostrarAlerta(Alert.AlertType.WARNING, "No se eliminó", "No se pudo eliminar el alumno.");
+                LoggerUtils.logInfo("Fallo al eliminar alumno con código: " + alumno.getCodigo());
             }
 
         } catch (SQLException e) {
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.setTitle("Error");
-            alerta.setHeaderText(null);
-            alerta.setContentText("Error al intentar eliminar el alumno.");
-            alerta.showAndWait();
-            e.printStackTrace();
+            LoggerUtils.logError("Error al intentar eliminar un alumno.", e);
+            mostrarAlerta(Alert.AlertType.ERROR, "Error", "Error al intentar eliminar el alumno.");
         }
     }
 
@@ -222,18 +203,14 @@ public class AlumnosController implements Initializable {
         int totalAlumnos = listaAlumnos.size();
 
         if (totalAlumnos == 0) {
-            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-            alerta.setTitle("Sin registros");
-            alerta.setHeaderText(null);
-            alerta.setContentText("No hay alumnos para eliminar.");
-            alerta.showAndWait();
+            mostrarAlerta(Alert.AlertType.INFORMATION, "Sin registros", "No hay alumnos para eliminar.");
             return;
         }
 
         Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
         confirmacion.setTitle("Eliminar todos los alumnos");
         confirmacion.setHeaderText("Se eliminarán " + totalAlumnos + " alumno(s)");
-        confirmacion.setContentText("¿Estás seguro de que deseas eliminar todos los alumnos? Esta acción no se puede deshacer.");
+        confirmacion.setContentText("¿Estás seguro? Esta acción no se puede deshacer.");
 
         confirmacion.showAndWait().ifPresent(respuesta -> {
             if (respuesta == ButtonType.OK) {
@@ -247,28 +224,21 @@ public class AlumnosController implements Initializable {
 
         try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
 
+            LoggerUtils.logQuery("Eliminar todos los alumnos", sql);
+
             int filas = stmt.executeUpdate();
 
-            Alert alerta = new Alert(Alert.AlertType.INFORMATION);
-            alerta.setTitle("Eliminación completada");
-            alerta.setHeaderText(null);
+            String mensaje = (filas > 0)
+                    ? "Se eliminaron correctamente " + filas + " de " + totalEliminables + " alumno(s)."
+                    : "No se eliminó ningún alumno.";
 
-            if (filas > 0) {
-                alerta.setContentText("Se eliminaron correctamente " + filas + " de " + totalEliminables + " alumno(s).");
-            } else {
-                alerta.setContentText("No se eliminó ningún alumno.");
-            }
-
-            alerta.showAndWait();
+            mostrarAlerta(Alert.AlertType.INFORMATION, "Eliminación completada", mensaje);
+            LoggerUtils.logInfo("Eliminación masiva → Total antes: " + totalEliminables + ", Eliminados: " + filas);
             cargarDatos();
 
         } catch (SQLException e) {
-            Alert alerta = new Alert(Alert.AlertType.ERROR);
-            alerta.setTitle("Error");
-            alerta.setHeaderText(null);
-            alerta.setContentText("Ocurrió un error al eliminar los alumnos.");
-            alerta.showAndWait();
-            e.printStackTrace();
+            LoggerUtils.logError("Error al eliminar todos los alumnos.", e);
+            mostrarAlerta(Alert.AlertType.ERROR, "Error", "Ocurrió un error al eliminar los alumnos.");
         }
     }
 
@@ -277,7 +247,7 @@ public class AlumnosController implements Initializable {
         String filtro = txtBuscar.getText().trim().toLowerCase();
 
         if (filtro.isEmpty()) {
-            tablaUsuarios.setItems(listaAlumnos); // Mostrar todos si está vacío
+            tablaUsuarios.setItems(listaAlumnos);
             return;
         }
 
@@ -289,11 +259,19 @@ public class AlumnosController implements Initializable {
                     || alumno.getNombreSede().toLowerCase().contains(filtro)
                     || String.valueOf(alumno.getCodigo()).contains(filtro)
                     || String.valueOf(alumno.getCodigo_sede()).contains(filtro)) {
-
                 filtrados.add(alumno);
             }
         }
 
         tablaUsuarios.setItems(filtrados);
+        LoggerUtils.logInfo("Búsqueda ejecutada → Filtro: \"" + filtro + "\", Resultados: " + filtrados.size());
+    }
+
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
+        Alert alerta = new Alert(tipo);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
     }
 }
