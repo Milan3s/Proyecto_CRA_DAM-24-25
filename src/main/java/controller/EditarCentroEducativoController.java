@@ -1,3 +1,4 @@
+// EditarCentroEducativoController.java
 package controller;
 
 import javafx.fxml.FXML;
@@ -13,32 +14,21 @@ import javafx.event.ActionEvent;
 
 public class EditarCentroEducativoController {
 
-    @FXML
-    private TextField txtCodigo;
-    @FXML
-    private TextField txtNombre;
-    @FXML
-    private TextField txtCalle;
-    @FXML
-    private TextField txtLocalidad;
-    @FXML
-    private TextField txtCP;
-    @FXML
-    private TextField txtMunicipio;
-    @FXML
-    private TextField txtProvincia;
-    @FXML
-    private TextField txtTelefono;
-    @FXML
-    private TextField txtEmail;
-    @FXML
-    private Button btnGuardar;
-    @FXML
-    private Button btnCancelar;
+    @FXML private TextField txtCodigo;
+    @FXML private TextField txtNombre;
+    @FXML private TextField txtCalle;
+    @FXML private TextField txtLocalidad;
+    @FXML private TextField txtCP;
+    @FXML private TextField txtMunicipio;
+    @FXML private TextField txtProvincia;
+    @FXML private TextField txtTelefono;
+    @FXML private TextField txtEmail;
+    @FXML private Button btnGuardar;
+    @FXML private Button btnCancelar;
 
     private CentroEducativo centro;
 
-    public void setCentro(CentroEducativo centro) {
+    public void setCentro(CentroEducativo centro, boolean disableCodigo) {
         this.centro = centro;
 
         txtCodigo.setText(centro.getCodigoCentro());
@@ -50,24 +40,6 @@ public class EditarCentroEducativoController {
         txtProvincia.setText(centro.getProvincia());
         txtTelefono.setText(centro.getTelefono());
         txtEmail.setText(centro.getEmail());
-
-        txtCodigo.setDisable(true); // No permitir modificar el código
-    }
-
-    public void setCentroEducativo(CentroEducativo centro) {
-        this.centro = centro;
-
-        txtCodigo.setText(centro.getCodigoCentro());
-        txtNombre.setText(centro.getNombre());
-        txtCalle.setText(centro.getCalle());
-        txtLocalidad.setText(centro.getLocalidad());
-        txtCP.setText(centro.getCp());
-        txtMunicipio.setText(centro.getMunicipio());
-        txtProvincia.setText(centro.getProvincia());
-        txtTelefono.setText(centro.getTelefono());
-        txtEmail.setText(centro.getEmail());
-
-        txtCodigo.setDisable(true); // si no quieres que se modifique el código
     }
 
     public void initialize() {

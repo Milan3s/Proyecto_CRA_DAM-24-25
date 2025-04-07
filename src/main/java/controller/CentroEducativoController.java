@@ -1,3 +1,4 @@
+// CentroEducativoController.java
 package controller;
 
 import java.io.IOException;
@@ -18,41 +19,23 @@ import utils.DataBaseConection;
 
 public class CentroEducativoController implements Initializable {
 
-    @FXML
-    private TableView<CentroEducativo> tablaCentroEducativos;
+    @FXML private TableView<CentroEducativo> tablaCentroEducativos;
+    @FXML private TableColumn<CentroEducativo, String> colCodigoCentro;
+    @FXML private TableColumn<CentroEducativo, String> colNombre;
+    @FXML private TableColumn<CentroEducativo, String> colCalle;
+    @FXML private TableColumn<CentroEducativo, String> colLocalidad;
+    @FXML private TableColumn<CentroEducativo, String> colCP;
+    @FXML private TableColumn<CentroEducativo, String> colMunicipio;
+    @FXML private TableColumn<CentroEducativo, String> colProvincia;
+    @FXML private TableColumn<CentroEducativo, String> colTelefono;
+    @FXML private TableColumn<CentroEducativo, String> colEmail;
+    @FXML private TextField txtBuscar;
+    @FXML private Button btnBuscarCentro;
+    @FXML private Button btnNuevoCentro;
+    @FXML private Button btnEliminarCentro;
+    @FXML private Button btnEliminarTodosCentros;
 
-    @FXML
-    private TableColumn<CentroEducativo, String> colCodigoCentro;
-    @FXML
-    private TableColumn<CentroEducativo, String> colNombre;
-    @FXML
-    private TableColumn<CentroEducativo, String> colCalle;
-    @FXML
-    private TableColumn<CentroEducativo, String> colLocalidad;
-    @FXML
-    private TableColumn<CentroEducativo, String> colCP;
-    @FXML
-    private TableColumn<CentroEducativo, String> colMunicipio;
-    @FXML
-    private TableColumn<CentroEducativo, String> colProvincia;
-    @FXML
-    private TableColumn<CentroEducativo, String> colTelefono;
-    @FXML
-    private TableColumn<CentroEducativo, String> colEmail;
-
-    @FXML
-    private TextField txtBuscar;
-
-    @FXML
-    private Button btnBuscarCentro;
-
-    private ObservableList<CentroEducativo> listaCentros = FXCollections.observableArrayList();
-    @FXML
-    private Button btnNuevoCentro;
-    @FXML
-    private Button btnEliminarCentro;
-    @FXML
-    private Button btnEliminarTodosCentros;
+    private final ObservableList<CentroEducativo> listaCentros = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -72,7 +55,6 @@ public class CentroEducativoController implements Initializable {
                 abrirModalEditarCentro(centroSeleccionado);
             }
         });
-
     }
 
     private void configurarColumnas() {
@@ -91,19 +73,21 @@ public class CentroEducativoController implements Initializable {
         listaCentros.clear();
         String query = "SELECT * FROM centroeducativo";
 
-        try (Connection conn = DataBaseConection.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+        try (Connection conn = DataBaseConection.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(query)) {
 
             while (rs.next()) {
                 listaCentros.add(new CentroEducativo(
-                        rs.getString("codigo_centro"),
-                        rs.getString("nombre"),
-                        rs.getString("calle"),
-                        rs.getString("localidad"),
-                        rs.getString("cp"),
-                        rs.getString("municipio"),
-                        rs.getString("provincia"),
-                        rs.getString("telefono"),
-                        rs.getString("email")
+                    rs.getString("codigo_centro"),
+                    rs.getString("nombre"),
+                    rs.getString("calle"),
+                    rs.getString("localidad"),
+                    rs.getString("cp"),
+                    rs.getString("municipio"),
+                    rs.getString("provincia"),
+                    rs.getString("telefono"),
+                    rs.getString("email")
                 ));
             }
 
@@ -124,7 +108,6 @@ public class CentroEducativoController implements Initializable {
         }
 
         ObservableList<CentroEducativo> filtrados = FXCollections.observableArrayList();
-
         for (CentroEducativo c : listaCentros) {
             if (c.getNombre().toLowerCase().contains(filtro)
                     || c.getLocalidad().toLowerCase().contains(filtro)
@@ -160,10 +143,12 @@ public class CentroEducativoController implements Initializable {
 
     @FXML
     private void btnActionEliminarCentro(ActionEvent event) {
+        // Implementación futura
     }
 
     @FXML
     private void btnActionEliminarTodosCentros(ActionEvent event) {
+        // Implementación futura
     }
 
     private void abrirModalEditarCentro(CentroEducativo centro) {
@@ -172,7 +157,7 @@ public class CentroEducativoController implements Initializable {
             Parent root = loader.load();
 
             EditarCentroEducativoController controller = loader.getController();
-            controller.setCentroEducativo(centro);
+            controller.setCentro(centro, true);
 
             Stage modalStage = new Stage();
             modalStage.setTitle("Editar Centro Educativo");
@@ -181,13 +166,10 @@ public class CentroEducativoController implements Initializable {
             modalStage.setResizable(false);
             modalStage.showAndWait();
 
-            cargarDatos(); // Refresca la tabla al cerrar el modal
+            cargarDatos();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    
-    
-
 }
