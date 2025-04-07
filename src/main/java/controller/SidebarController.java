@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import java.io.IOException;
+import javafx.event.ActionEvent;
 
 public class SidebarController {
 
@@ -33,5 +34,10 @@ public class SidebarController {
         StackPane panelContenido = dashboardController.getPanelContenido();
 
         panelContenido.getChildren().setAll(nodo);
+    }
+
+    @FXML
+    private void loadCentroEducativo(ActionEvent event) throws IOException {
+        cambiarContenido("CentroEducativo.fxml");
     }
 }
