@@ -1,13 +1,18 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 import javafx.collections.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.CentroEducativo;
 import utils.DataBaseConection;
 
@@ -127,6 +132,22 @@ public class CentroEducativoController implements Initializable {
 
     @FXML
     private void btnActionNuevoCentro(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AgregarCentroEducativo.fxml"));
+            Parent root = loader.load();
+
+            Stage modalStage = new Stage();
+            modalStage.setTitle("Nuevo Centro Educativo");
+            modalStage.setScene(new Scene(root));
+            modalStage.initModality(Modality.APPLICATION_MODAL);
+            modalStage.setResizable(false);
+            modalStage.showAndWait();
+
+            cargarDatos();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

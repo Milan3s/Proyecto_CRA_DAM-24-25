@@ -1,36 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="620.0" prefWidth="535.0" styleClass="panel-agregar-alumnos" stylesheets="@../styles/agregaralumnos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgregarCentroEducativoController">
-   <children>
-      <Text fill="#fcfcfc" layoutX="150.0" layoutY="80.0" stroke="WHITE" strokeType="OUTSIDE" styleClass="txt_titulo_Agregar" text="Agregar Centro Educativo">
-         <font>
-            <Font size="28.0" />
-         </font>
-      </Text>
+<AnchorPane id="AnchorPane" prefHeight="683.0" prefWidth="680.0" styleClass="panel-agregar-alumnos" stylesheets="@../styles/agregarcentroeducativo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgregarCentroEducativoController">
+    <children>
 
-      <!-- CAMPOS -->
-      <TextField fx:id="txtCodigo" layoutX="199.0" layoutY="100.0" prefWidth="250.0" promptText="Código Centro" />
-      <TextField fx:id="txtNombre" layoutX="199.0" layoutY="150.0" prefWidth="250.0" promptText="Nombre" />
-      <TextField fx:id="txtCalle" layoutX="199.0" layoutY="200.0" prefWidth="250.0" promptText="Calle" />
-      <TextField fx:id="txtLocalidad" layoutX="199.0" layoutY="250.0" prefWidth="250.0" promptText="Localidad" />
-      <TextField fx:id="txtCP" layoutX="199.0" layoutY="300.0" prefWidth="250.0" promptText="Código Postal" />
-      <TextField fx:id="txtMunicipio" layoutX="199.0" layoutY="350.0" prefWidth="250.0" promptText="Municipio" />
-      <TextField fx:id="txtProvincia" layoutX="199.0" layoutY="400.0" prefWidth="250.0" promptText="Provincia" />
-      <TextField fx:id="txtTelefono" layoutX="199.0" layoutY="450.0" prefWidth="250.0" promptText="Teléfono" />
-      <TextField fx:id="txtEmail" layoutX="199.0" layoutY="500.0" prefWidth="250.0" promptText="Email" />
+        <!-- Título -->
+        <Text fill="WHITE" layoutX="101.0" layoutY="75.0" styleClass="txt_titulo_Agregar" text="Agregar Centro Educativo">
+            <font>
+                <Font size="28.0" />
+            </font>
+        </Text>
 
-      <!-- BOTONES -->
-      <Button fx:id="btnGuardar" layoutX="90.0" layoutY="560.0" prefHeight="45.0" prefWidth="160.0" styleClass="btnGuardar" text="Guardar" />
-      <FontAwesomeIconView fill="WHITE" glyphName="SAVE" layoutX="110.0" layoutY="589.0" size="20" styleClass="icon-guardar" />
+        <!-- Formulario -->
+        <GridPane hgap="20.0" layoutX="87.0" layoutY="93.0" prefHeight="371.0" prefWidth="377.0" vgap="12.0">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="20" />
+            </padding>
 
-      <Button fx:id="btnCancelar" layoutX="290.0" layoutY="560.0" prefHeight="45.0" prefWidth="160.0" onAction="#btnActionCancelar" styleClass="btnCancelar" text="Cancelar" />
-      <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" layoutX="300.0" layoutY="590.0" size="22.0" styleClass="icon-cancelar" />
-   </children>
+            <!-- Fila 1 -->
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="210.0" styleClass="txt_Nombre" text="Código:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtCodigo" promptText="Código centro" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <!-- Fila 2 -->
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="205.0" styleClass="txt_Nombre" text="Nombre:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtNombre" prefHeight="27.0" prefWidth="335.0" promptText="Nombre del centro" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <!-- Fila 3 -->
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="205.0" styleClass="txt_Nombre" text="Calle:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="txtCalle" promptText="Calle" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <!-- Fila 4 -->
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="207.0" styleClass="txt_Nombre" text="Localidad:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="txtLocalidad" promptText="Localidad" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <!-- Fila 5 -->
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="204.0" styleClass="txt_Nombre" text="C.P.:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="txtCP" promptText="Código Postal" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <!-- Fila 6 -->
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="203.0" styleClass="txt_Nombre" text="Municipio:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextField fx:id="txtMunicipio" promptText="Municipio" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+            <!-- Fila 7 -->
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="201.0" styleClass="txt_Nombre" text="Provincia:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <TextField fx:id="txtProvincia" promptText="Provincia" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+            <!-- Fila 8 -->
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="208.0" styleClass="txt_Nombre" text="Teléfono:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <TextField fx:id="txtTelefono" promptText="Teléfono" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+            <!-- Fila 9 -->
+            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="205.0" styleClass="txt_Nombre" text="Email:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+            <TextField fx:id="txtEmail" promptText="Email" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+         <columnConstraints>
+            <ColumnConstraints maxWidth="210.0" minWidth="83.0" prefWidth="210.0" />
+            <ColumnConstraints maxWidth="330.0" minWidth="203.0" prefWidth="203.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <!-- Botones -->
+        <Button fx:id="btnGuardar" layoutX="85.0" layoutY="562.0" prefHeight="40.0" prefWidth="150.0" styleClass="btnGuardar" text="Guardar" />
+        <Button fx:id="btnCancelar" layoutX="317.0" layoutY="561.0" onAction="#btnActionCancelar" prefHeight="40.0" prefWidth="150.0" styleClass="btnCancelar" text="Cancelar" />
+
+        <!-- Íconos -->
+        <FontAwesomeIconView fill="WHITE" glyphName="SAVE" layoutX="99.0" layoutY="588.0" size="18.0" styleClass="icon-guardar" />
+        <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" layoutX="333.0" layoutY="588.0" size="18.0" styleClass="icon-cancelar" />
+
+    </children>
 </AnchorPane>
