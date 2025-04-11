@@ -54,11 +54,11 @@ public class RegistroController {
             return;
         }
 
-        if (password.length() < 6) {
-            mostrarAlerta("Error", "La contraseña debe tener al menos 6 caracteres");
-            LoggerUtils.logInfo("REGISTRO", "Contraseña demasiado corta para el usuario: " + usuario);
-            return;
-        }
+//        if (password.length() < 6) {
+//            mostrarAlerta("Error", "La contraseña debe tener al menos 6 caracteres");
+//            LoggerUtils.logInfo("REGISTRO", "Contraseña demasiado corta para el usuario: " + usuario);
+//            return;
+//        }
 
         String hashedPassword = PasswordHasher.hashPassword(password);
         LoggerUtils.logInfo("REGISTRO", "Intentando registrar usuario: " + usuario);

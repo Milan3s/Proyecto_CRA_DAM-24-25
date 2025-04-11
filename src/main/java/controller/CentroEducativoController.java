@@ -72,7 +72,8 @@ public class CentroEducativoController implements Initializable {
 
     private void cargarDatos() {
         listaCentros.clear();
-        String query = "SELECT * FROM centroeducativo";
+        String query = "SELECT * FROM centros_edu";
+
 
         try (Connection conn = DataBaseConection.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             LoggerUtils.logQuery("CENTROS EDUCATIVOS", "Cargar todos los centros educativos", query);
@@ -165,7 +166,7 @@ public class CentroEducativoController implements Initializable {
 
         confirmacion.showAndWait().ifPresent(respuesta -> {
             if (respuesta == ButtonType.OK) {
-                String sql = "DELETE FROM centroeducativo WHERE codigo_centro = ?";
+                String sql = "DELETE FROM centros_edu WHERE codigo_centro = ?";
 
                 try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
                     LoggerUtils.logQuery("CENTROS EDUCATIVOS", "Eliminar centro con código: " + seleccionado.getCodigoCentro(), sql);
@@ -198,7 +199,8 @@ public class CentroEducativoController implements Initializable {
             return;
         }
 
-        String sql = "DELETE FROM centroeducativo";
+        String sql = "DELETE FROM centros_edu";
+
 
         Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
         confirmacion.setTitle("Eliminar todos los centros");

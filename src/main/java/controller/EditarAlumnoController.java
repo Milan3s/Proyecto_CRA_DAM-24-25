@@ -44,7 +44,7 @@ public class EditarAlumnoController {
     }
 
     private void cargarSedes() {
-        String sql = "SELECT codigo_sede, nombre FROM sede";
+        String sql = "SELECT codigo_sede, nombre FROM sedes";
 
         try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql); ResultSet rs = stmt.executeQuery()) {
 
@@ -84,7 +84,7 @@ public class EditarAlumnoController {
             return;
         }
 
-        String sql = "UPDATE alumno SET nombre = ?, curso = ?, codigo_sede = ? WHERE codigo_alumno = ?";
+        String sql = "UPDATE alumnos SET nombre = ?, curso = ?, codigo_sede = ? WHERE codigo_alumno = ?";
 
         try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
 
