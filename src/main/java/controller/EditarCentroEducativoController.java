@@ -69,7 +69,12 @@ public class EditarCentroEducativoController {
             return;
         }
 
-        String sql = "UPDATE centroeducativo SET nombre=?, calle=?, localidad=?, cp=?, municipio=?, provincia=?, telefono=?, email=? WHERE codigo_centro=?";
+        if (cp.length() > 5) {
+            mostrarAlerta("Código Postal inválido", "El código postal debe tener máximo 5 caracteres.", Alert.AlertType.WARNING);
+            return;
+        }
+
+        String sql = "UPDATE centros_edu SET nombre=?, calle=?, localidad=?, cp=?, municipio=?, provincia=?, telefono=?, email=? WHERE codigo_centro=?";
 
         try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
 
@@ -83,14 +88,14 @@ public class EditarCentroEducativoController {
             stmt.setString(6, provincia);
             stmt.setString(7, telefono);
             stmt.setString(8, email);
-            stmt.setString(9, centro.getCodigoCentro());
+            stmt.setInt(9, Integer.parseInt(centro.getCodigoCentro()));
 
             int filas = stmt.executeUpdate();
 
             if (filas > 0) {
                 mostrarAlerta("Éxito", "Centro actualizado correctamente.", Alert.AlertType.INFORMATION);
-                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro actualizado → Código: " + centro.getCodigoCentro() +
-                        ", Nombre: " + nombre + ", Localidad: " + localidad + ", Provincia: " + provincia);
+                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro actualizado → Código: " + centro.getCodigoCentro()
+                        + ", Nombre: " + nombre + ", Localidad: " + localidad + ", Provincia: " + provincia);
                 cerrarVentana();
             } else {
                 mostrarAlerta("Aviso", "No se actualizó ningún registro.", Alert.AlertType.WARNING);
@@ -98,7 +103,7 @@ public class EditarCentroEducativoController {
             }
 
         } catch (SQLException e) {
-            mostrarAlerta("Error", "Error al actualizar el centro en la base de datos.", Alert.AlertType.ERROR);
+            mostrarAlerta("Error SQL", "No se pudo actualizar el centro.\nDetalles: " + e.getMessage(), Alert.AlertType.ERROR);
             LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al ejecutar actualización de centro", e);
         }
     }

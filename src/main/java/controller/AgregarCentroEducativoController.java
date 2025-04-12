@@ -16,17 +16,28 @@ import utils.LoggerUtils;
 
 public class AgregarCentroEducativoController implements Initializable {
 
-    @FXML private TextField txtCodigo;
-    @FXML private TextField txtNombre;
-    @FXML private TextField txtCalle;
-    @FXML private TextField txtLocalidad;
-    @FXML private TextField txtCP;
-    @FXML private TextField txtMunicipio;
-    @FXML private TextField txtProvincia;
-    @FXML private TextField txtTelefono;
-    @FXML private TextField txtEmail;
-    @FXML private Button btnGuardar;
-    @FXML private Button btnCancelar;
+    @FXML
+    private TextField txtCodigo;
+    @FXML
+    private TextField txtNombre;
+    @FXML
+    private TextField txtCalle;
+    @FXML
+    private TextField txtLocalidad;
+    @FXML
+    private TextField txtCP;
+    @FXML
+    private TextField txtMunicipio;
+    @FXML
+    private TextField txtProvincia;
+    @FXML
+    private TextField txtTelefono;
+    @FXML
+    private TextField txtEmail;
+    @FXML
+    private Button btnGuardar;
+    @FXML
+    private Button btnCancelar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -56,8 +67,8 @@ public class AgregarCentroEducativoController implements Initializable {
             return;
         }
 
-        String insertSQL = "INSERT INTO centroeducativo (codigo_centro, nombre, calle, localidad, cp, municipio, provincia, telefono, email) " +
-                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertSQL = "INSERT INTO centros_edu (nombre, calle, localidad, cp, municipio, provincia, telefono, email) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         Connection conn = null;
         try {
@@ -65,15 +76,14 @@ public class AgregarCentroEducativoController implements Initializable {
             LoggerUtils.logQuery("CENTROS EDUCATIVOS", "Insertar nuevo centro educativo", insertSQL);
 
             PreparedStatement stmt = conn.prepareStatement(insertSQL);
-            stmt.setString(1, centro.getCodigoCentro());
-            stmt.setString(2, centro.getNombre());
-            stmt.setString(3, centro.getCalle());
-            stmt.setString(4, centro.getLocalidad());
-            stmt.setString(5, centro.getCp());
-            stmt.setString(6, centro.getMunicipio());
-            stmt.setString(7, centro.getProvincia());
-            stmt.setString(8, centro.getTelefono());
-            stmt.setString(9, centro.getEmail());
+            stmt.setString(1, centro.getNombre());
+            stmt.setString(2, centro.getCalle());
+            stmt.setString(3, centro.getLocalidad());
+            stmt.setString(4, centro.getCp());
+            stmt.setString(5, centro.getMunicipio());
+            stmt.setString(6, centro.getProvincia());
+            stmt.setString(7, centro.getTelefono());
+            stmt.setString(8, centro.getEmail());
 
             int rows = stmt.executeUpdate();
 

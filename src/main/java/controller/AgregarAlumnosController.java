@@ -41,7 +41,7 @@ public class AgregarAlumnosController implements Initializable {
 
     private void cargarSedes() {
         Connection conn = null;
-        String query = "SELECT codigo_sede, nombre FROM sede";
+        String query = "SELECT codigo_sede, nombre FROM sedes";
 
         try {
             conn = DataBaseConection.getConnection();
@@ -81,7 +81,7 @@ public class AgregarAlumnosController implements Initializable {
         AgregarAlumnos alumno = new AgregarAlumnos(0, nombre, curso, sedeSeleccionada.getCodigoSede());
 
         Connection conn = null;
-        String insertSQL = "INSERT INTO alumno (nombre, curso, codigo_sede) VALUES (?, ?, ?)";
+        String insertSQL = "INSERT INTO alumnos (nombre, curso, codigo_sede) VALUES (?, ?, ?)";
 
         try {
             conn = DataBaseConection.getConnection();

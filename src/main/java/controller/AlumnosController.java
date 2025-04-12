@@ -28,18 +28,28 @@ import javafx.stage.Stage;
 
 public class AlumnosController implements Initializable {
 
-    @FXML private TableView<Alumno> tablaUsuarios;
-    @FXML private TableColumn<Alumno, Integer> colCodigo;
-    @FXML private TableColumn<Alumno, String> colNombre;
-    @FXML private TableColumn<Alumno, String> colCurso;
-    @FXML private TableColumn<Alumno, String> colCodigoSede;
+    @FXML
+    private TableView<Alumno> tablaUsuarios;
+    @FXML
+    private TableColumn<Alumno, Integer> colCodigo;
+    @FXML
+    private TableColumn<Alumno, String> colNombre;
+    @FXML
+    private TableColumn<Alumno, String> colCurso;
+    @FXML
+    private TableColumn<Alumno, String> colCodigoSede;
     private ObservableList<Alumno> listaAlumnos = FXCollections.observableArrayList();
 
-    @FXML private Button btnNuevoAlumno;
-    @FXML private Button btnEliminarAlumno;
-    @FXML private Button btnEliminarTodos;
-    @FXML private TextField txtBuscar;
-    @FXML private Button btnBuscar;
+    @FXML
+    private Button btnNuevoAlumno;
+    @FXML
+    private Button btnEliminarAlumno;
+    @FXML
+    private Button btnEliminarTodos;
+    @FXML
+    private TextField txtBuscar;
+    @FXML
+    private Button btnBuscar;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -70,11 +80,9 @@ public class AlumnosController implements Initializable {
 
     private void cargarDatos() {
         String query = "SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede "
-                     + "FROM alumno a JOIN sede s ON a.codigo_sede = s.codigo_sede";
+                + "FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede";
 
-        try (Connection connection = DataBaseConection.getConnection();
-             Statement stmt = connection.createStatement();
-             ResultSet rs = stmt.executeQuery(query)) {
+        try (Connection connection = DataBaseConection.getConnection(); Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
 
             LoggerUtils.logQuery("Consulta de alumnos", query);
 
@@ -91,11 +99,11 @@ public class AlumnosController implements Initializable {
                 Alumno alumno = new Alumno(codigo, nombre, curso, nombreSede, codigoSede);
                 listaAlumnos.add(alumno);
 
-                LoggerUtils.logInfo("Alumno cargado → Código: " + codigo +
-                        ", Nombre: " + nombre +
-                        ", Curso: " + curso +
-                        ", Código Sede: " + codigoSede +
-                        ", Nombre Sede: " + nombreSede);
+                LoggerUtils.logInfo("Alumno cargado → Código: " + codigo
+                        + ", Nombre: " + nombre
+                        + ", Curso: " + curso
+                        + ", Código Sede: " + codigoSede
+                        + ", Nombre Sede: " + nombreSede);
                 contador++;
             }
 
@@ -170,7 +178,7 @@ public class AlumnosController implements Initializable {
     }
 
     private void eliminarAlumno(Alumno alumno) {
-        String sql = "DELETE FROM alumno WHERE codigo_alumno = ?";
+        String sql = "DELETE FROM alumnos WHERE codigo_alumno = ?";
 
         try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, alumno.getCodigo());
@@ -181,11 +189,11 @@ public class AlumnosController implements Initializable {
 
             if (filas > 0) {
                 mostrarAlerta(Alert.AlertType.INFORMATION, "Éxito", "Alumno eliminado correctamente.");
-                LoggerUtils.logInfo("Alumno eliminado → Código: " + alumno.getCodigo() +
-                        ", Nombre: " + alumno.getNombre() +
-                        ", Curso: " + alumno.getCurso() +
-                        ", Código Sede: " + alumno.getCodigo_sede() +
-                        ", Nombre Sede: " + alumno.getNombreSede());
+                LoggerUtils.logInfo("Alumno eliminado → Código: " + alumno.getCodigo()
+                        + ", Nombre: " + alumno.getNombre()
+                        + ", Curso: " + alumno.getCurso()
+                        + ", Código Sede: " + alumno.getCodigo_sede()
+                        + ", Nombre Sede: " + alumno.getNombreSede());
                 cargarDatos();
             } else {
                 mostrarAlerta(Alert.AlertType.WARNING, "No se eliminó", "No se pudo eliminar el alumno.");
@@ -220,7 +228,7 @@ public class AlumnosController implements Initializable {
     }
 
     private void eliminarTodosLosAlumnos(int totalEliminables) {
-        String sql = "DELETE FROM alumno";
+        String sql = "DELETE FROM alumnos";
 
         try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
 
