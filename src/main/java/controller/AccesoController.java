@@ -19,57 +19,62 @@ import java.sql.SQLException;
 import javafx.fxml.FXMLLoader;
 import utils.DataBaseConection;
 import utils.PasswordHasher;
+import utils.LoggerUtils;
 
 public class AccesoController {
 
-    @FXML
-    private TextField txtUsuario;
-
-    @FXML
-    private TextField txtPassword;
-
-    @FXML
-    private Button btnLogin;
-
-    @FXML
-    private Button btnRegistrarse;
+    @FXML private TextField txtUsuario;
+    @FXML private TextField txtPassword;
+    @FXML private Button btnLogin;
+    @FXML private Button btnRegistrarse;
 
     private boolean validateLogin(String usuario, String hashedPassword) {
         String query = "SELECT * FROM usuarios WHERE usuario = ? AND password = ?";
+
         try (Connection connection = DataBaseConection.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            LoggerUtils.logQuery("ACCESO", "Validación de login para usuario: " + usuario, query);
 
             preparedStatement.setString(1, usuario);
             preparedStatement.setString(2, hashedPassword);
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                return resultSet.next(); // Retorna true si hay un usuario con esas credenciales
+                boolean encontrado = resultSet.next();
+                LoggerUtils.logInfo("ACCESO", "Resultado de login → Usuario: " + usuario + ", Acceso: " + (encontrado ? "concedido" : "denegado"));
+                return encontrado;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LoggerUtils.logError("ACCESO", "Error al validar login", e);
             return false;
         }
     }
 
     @FXML
     private void btnActionRegistrarse(ActionEvent event) throws IOException {
+        LoggerUtils.logInfo("ACCESO", "Redirección a pantalla de registro");
         App.loadView("/views/Registro");
     }
 
     @FXML
     private void btnActionLogin(ActionEvent event) throws IOException {
-        String usuario = txtUsuario.getText();
+        LoggerUtils.logSection("ACCESO");
+
+        String usuario = txtUsuario.getText().trim();
         String password = txtPassword.getText();
 
         if (usuario.isEmpty() || password.isEmpty()) {
+            LoggerUtils.logInfo("ACCESO", "Login fallido por campos vacíos");
             showAlert("Error", "Campos vacíos", "Por favor complete todos los campos");
             return;
         }
 
         String hashedPassword = PasswordHasher.hashPassword(password);
+        LoggerUtils.logInfo("ACCESO", "Intento de login con usuario: " + usuario);
 
         if (validateLogin(usuario, hashedPassword)) {
+            LoggerUtils.logInfo("ACCESO", "Inicio de sesión exitoso para el usuario: " + usuario);
             redirectToInicio(usuario);
         } else {
+            LoggerUtils.logInfo("ACCESO", "Login fallido para el usuario: " + usuario);
             showAlert("Error de inicio de sesión", null, "Usuario o contraseña incorrectos");
         }
     }
@@ -85,6 +90,8 @@ public class AccesoController {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+        LoggerUtils.logInfo("ACCESO", "Usuario redirigido al panel principal: " + usuario);
     }
 
     private void showAlert(String title, String header, String content) {

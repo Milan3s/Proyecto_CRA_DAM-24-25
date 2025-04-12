@@ -11,4 +11,5 @@
 
     <!-- Botón para Alumnos -->
     <Button onAction="#loadUsuarios" prefHeight="52.0" prefWidth="378.0" styleClass="btnAlumnos" text="Alumnos" />
+   <Button onAction="#loadCentroEducativo" prefHeight="52.0" prefWidth="378.0" styleClass="btnCentroEducativo" text="Centro Educativo" />
 </VBox>

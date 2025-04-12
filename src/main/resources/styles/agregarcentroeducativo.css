@@ -1,0 +1,88 @@
+/* ============================
+   Estilo para agregar centro
+   ============================ */
+
+/* Contenedor principal */
+.panel-agregar-alumnos {
+    -fx-background-color: #0D47A1;
+    -fx-padding: 40;
+    -fx-spacing: 20;
+    -fx-pref-width: 540px;
+    -fx-pref-height: 520px;
+}
+
+/* Título */
+.txt_titulo_Agregar {
+    -fx-font-size: 28px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: "Comic Sans MS";
+}
+
+/* Etiquetas */
+.txt_Nombre {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+}
+
+/* ============================
+   Inputs para centro educativo
+   ============================ */
+.input-agregarcentro {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-border-color: white;
+    -fx-border-width: 0 0 2px 0;
+    -fx-padding: 6 4;
+    -fx-font-family: "Comic Sans MS";
+    -fx-prompt-text-fill: #cccccc;
+}
+
+.input-agregarcentro:focused {
+    -fx-border-color: #64B5F6;
+}
+
+/* ============================
+   Botones
+   ============================ */
+.button {
+    -fx-font-size: 14px;
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 4, 0.0, 0, 2);
+}
+
+/* Botón Guardar (verde) */
+.btnGuardar {
+    -fx-background-color: #4CAF50;
+}
+
+.btnGuardar:hover {
+    -fx-background-color: #388E3C;
+}
+
+/* Botón Cancelar (rojo) */
+.btnCancelar {
+    -fx-background-color: #D32F2F;
+}
+
+.btnCancelar:hover {
+    -fx-background-color: #B71C1C;
+}
+
+/* ============================
+   Íconos
+   ============================ */
+.icon-guardar,
+.icon-cancelar {
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+}
