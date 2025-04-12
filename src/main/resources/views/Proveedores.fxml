@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProveedoresController">
+   <children>
+      <TableView fx:id="tablaProv" prefHeight="419.0" prefWidth="830.0">
+        <columns>
+          <TableColumn fx:id="colCodigo" prefWidth="75.0" text="Código" />
+          <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="colCalle" prefWidth="75.0" text="Calle" />
+            <TableColumn fx:id="colLocalidad" prefWidth="75.0" text="Localidad" />
+            <TableColumn fx:id="colCp" prefWidth="75.0" text="CP" />
+            <TableColumn fx:id="colMunicipio" prefWidth="75.0" text="Municipio" />
+            <TableColumn fx:id="colProvincia" prefWidth="75.0" text="Provincia" />
+            <TableColumn fx:id="colTelefono" prefWidth="75.0" text="Teléfono" />
+            <TableColumn fx:id="colEmail" prefWidth="75.0" text="Email" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>
