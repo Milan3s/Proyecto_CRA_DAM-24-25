@@ -14,4 +14,11 @@
     -fx-font-family: "Comic Sans MS";
 }
 
-
+.btnCentroEducativo {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-font-size: 30px;
+    -fx-font-family: "Comic Sans MS";
+}
