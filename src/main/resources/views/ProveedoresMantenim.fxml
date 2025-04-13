@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="428.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.ProveedoresMantenimController">
+<AnchorPane id="AnchorPane" prefHeight="428.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProveedoresMantenimController">
    <children>
       <BorderPane layoutX="14.0" layoutY="19.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -69,8 +68,8 @@
          <bottom>
             <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btnGuardar" mnemonicParsing="false" text="Guardar" />
-                  <Button fx:id="btnCancelar" mnemonicParsing="false" text="Cancelar" />
+                  <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#btnGuardarAction" text="Guardar" />
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#btnCancelarAction" text="Cancelar" />
                </children>
             </HBox>
          </bottom>
