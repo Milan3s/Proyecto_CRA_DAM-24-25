@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import utils.DataBaseConection;
 
 public class App extends Application {
     private static Stage primaryStage;
@@ -18,6 +19,12 @@ public class App extends Application {
         loadView("/views/Proveedores");
         stage.setTitle("Sistema CRA");
         stage.show();
+        
+        // shutdown hook es un hilo especial que se ejecuta cuando la aplicación se está cerrando,
+        // incluso aunque sea de forma inesperada
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            DataBaseConection.closeConnection();
+        }));
     }
 
     // Cambia este método a public static

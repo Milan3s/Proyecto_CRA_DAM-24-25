@@ -63,7 +63,7 @@ public class AgregarAlumnosController implements Initializable {
             mostrarAlerta("Error", "Error cargando sedes desde la base de datos.", Alert.AlertType.ERROR);
             LoggerUtils.logError("ALUMNOS", "Error al cargar sedes", e);
         } finally {
-            DataBaseConection.closeConnection(conn);
+            //DataBaseConection.closeConnection(conn);
         }
     }
 
@@ -109,7 +109,7 @@ public class AgregarAlumnosController implements Initializable {
             mostrarAlerta("Error", "Error al guardar en la base de datos.", Alert.AlertType.ERROR);
             LoggerUtils.logError("ALUMNOS", "Error al insertar alumno en la base de datos", e);
         } finally {
-            DataBaseConection.closeConnection(conn);
+            //DataBaseConection.closeConnection(conn);
         }
     }
 

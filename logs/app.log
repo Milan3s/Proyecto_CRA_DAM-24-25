@@ -1,0 +1,5 @@
+
+[2025-04-16 00:30:11] [INFO   ] [PROVEEDORES] CONSULTA → Eliminar proveedor con código: 5
+[PROVEEDORES] SQL: DELETE FROM proveedores WHERE codigo_proveedor = ?
+
+[2025-04-16 00:30:14] [INFO   ] [PROVEEDORES] Proveedor eliminado: 5

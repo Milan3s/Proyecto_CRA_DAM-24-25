@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,7 +16,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -25,6 +28,7 @@ import javafx.stage.Stage;
 import model.Proveedor;
 import utils.DataBaseConection;
 import utils.LoggerUtils;
+import static utils.Utilidades.mostrarAlerta2;
 
 public class ProveedoresController implements Initializable {
 
@@ -52,6 +56,8 @@ public class ProveedoresController implements Initializable {
     private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
     @FXML
     private Button btnNuevo;
+    @FXML
+    private Button btnEliminar;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -91,6 +97,8 @@ public class ProveedoresController implements Initializable {
                 listaProveedores.add(proveedor);
             }
             tablaProv.setItems(listaProveedores);
+            stmt.close();
+            conn.close();
         } catch (SQLException e) {
             LoggerUtils.logError("PROVEEDORES", "Error al cargar proveedores", e);
         }
@@ -128,6 +136,50 @@ public class ProveedoresController implements Initializable {
 
         } catch (IOException e) {
             LoggerUtils.logError("PROVEEDORES", "Error al abrir ventana ProveedoresMantenim", e);
+        }
+    }
+
+    @FXML
+    private void btnEliminarAction(ActionEvent event) {
+        Proveedor provSelec = tablaProv.getSelectionModel().getSelectedItem();
+        
+        if (provSelec == null) {
+            mostrarAlerta2("Sin selección", "Por favor, seleccione un proveedor a eliminar.", Alert.AlertType.WARNING);
+            LoggerUtils.logInfo("PROVEEDORES", "Intento de eliminar sin seleccionar proveedor.");
+            return;
+        }
+        
+        Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmacion.setTitle("Confirmar eliminación");
+        confirmacion.setHeaderText("¿Seguro que desea eliminar el siguiente proveedor?");
+        confirmacion.setContentText(provSelec.getNombre());
+        confirmacion.showAndWait().ifPresent(respuesta -> {
+            if (respuesta == ButtonType.OK) {
+                eliminarProveedor(provSelec.getCodigo());
+            }
+        });
+    }
+    
+    private void eliminarProveedor(int codProv) {
+        String sql = "DELETE FROM proveedores WHERE codigo_proveedor = ?";
+        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            LoggerUtils.logQuery("PROVEEDORES", "Eliminar proveedor con código: " + codProv, sql);
+
+            stmt.setInt(1, codProv);
+            int filas = stmt.executeUpdate();
+
+            if (filas > 0) {
+                mostrarAlerta2("Eliminado", "Proveedor eliminado.", Alert.AlertType.INFORMATION);
+                LoggerUtils.logInfo("PROVEEDORES", "Proveedor eliminado: " + codProv);
+                cargarDatos();
+            } else {
+                mostrarAlerta2("Error", "No se pudo eliminar el proveedor.", Alert.AlertType.ERROR);
+                LoggerUtils.logInfo("PROVEEDORES", "No se eliminó ningún proveedor (código: " + codProv + ")");
+            }
+
+        } catch (SQLException e) {
+            mostrarAlerta2("Error de BD", "No se pudo eliminar debido a un error de base de datos.", Alert.AlertType.ERROR);
+            LoggerUtils.logError("PROVEEDORES", "Error al eliminar proveedor", e);
         }
     }
 }

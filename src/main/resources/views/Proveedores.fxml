@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProveedoresController">
    <children>
       <Label text="Proveedores">
@@ -20,15 +19,16 @@
             <Insets />
          </VBox.margin>
       </Label>
-      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="200.0" spacing="20.0">
          <children>
             <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo" />
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar" />
          </children>
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </HBox>
-      <TableView fx:id="tablaProv" onMouseClicked="#capturarClick" prefHeight="419.0" prefWidth="830.0">
+      <TableView fx:id="tablaProv" onMouseClicked="#capturarClick" prefHeight="419.0" prefWidth="830.0" tableMenuButtonVisible="true">
         <columns>
           <TableColumn fx:id="colCodigo" prefWidth="75.0" text="Código" />
           <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />

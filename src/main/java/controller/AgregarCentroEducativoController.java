@@ -103,7 +103,7 @@ public class AgregarCentroEducativoController implements Initializable {
             mostrarAlerta("Error", "Error al guardar en la base de datos.", Alert.AlertType.ERROR);
             LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al insertar centro educativo", e);
         } finally {
-            DataBaseConection.closeConnection(conn);
+            //DataBaseConection.closeConnection(conn);
         }
     }
 

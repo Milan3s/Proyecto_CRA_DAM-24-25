@@ -63,11 +63,14 @@ public class ProveedoresMantenimController implements Initializable {
 
     @FXML
     private void btnGuardarAction(ActionEvent event) {
+        /*
         if (null == this.proveedor) {
             insertarProv();
         } else {
             actualizarProv();
         }
+        */
+        guardarProv();
     }
 
     @FXML
@@ -147,7 +150,53 @@ public class ProveedoresMantenimController implements Initializable {
         } catch (SQLException e) {
             mostrarAlerta2("Error SQL", "No se pudo guardar el proveedor.\nDetalles: " + e.getMessage(), Alert.AlertType.ERROR);
             LoggerUtils.logError("PROVEEDORES", "Error al ejecutar alta de proveedor", e);
+        }    
+    }
+    
+    private void guardarProv() {
+        int codProv = 0;
+        String sql = "";
+        
+        if (null == this.proveedor) {
+            // Insertar
+            sql = "INSERT INTO proveedores (nombre, calle, localidad, cp, municipio, provincia, telefono, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"; 
+        } else {
+            // Actualizar
+            codProv = this.proveedor.getCodigo();
+            sql = "UPDATE proveedores SET nombre = ?, calle = ?, localidad = ?, cp = ?, municipio = ?, provincia = ?, telefono = ?, email = ? WHERE codigo_proveedor = ?";
         }
         
+        String nombre = txtNombre.getText();
+        String calle = txtCalle.getText();
+        String localidad = txtLocalidad.getText();
+        String cp = txtCp.getText().trim();
+        String municipio = txtMunicipio.getText();
+        String provincia = txtProvincia.getText();
+        String telefono = txtTelefono.getText();
+        String email = txtEmail.getText();
+        
+        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, nombre);
+            stmt.setString(2, calle);
+            stmt.setString(3, localidad);
+            stmt.setString(4, cp);
+            stmt.setString(5, municipio);
+            stmt.setString(6, provincia);
+            stmt.setString(7, telefono);
+            stmt.setString(8, email);
+            if (null != this.proveedor) stmt.setInt(9, codProv);
+            
+            int filas = stmt.executeUpdate();
+            
+            if (filas > 0) {
+                mostrarAlerta2("Éxito", "Proveedor guardado correctamente.", Alert.AlertType.INFORMATION);
+                cerrarVentana();
+            }
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            mostrarAlerta2("Error SQL", "No se pudo guardar el proveedor.\nDetalles: " + e.getMessage(), Alert.AlertType.ERROR);
+            LoggerUtils.logError("PROVEEDORES", "Error al ejecutar guardarProv", e);
+        }
     }
 }
