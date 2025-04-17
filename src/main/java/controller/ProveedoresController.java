@@ -21,6 +21,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
@@ -54,10 +55,15 @@ public class ProveedoresController implements Initializable {
     private TableColumn<Proveedor, String> colEmail;
 
     private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
+   
     @FXML
     private Button btnNuevo;
     @FXML
     private Button btnEliminar;
+    @FXML
+    private TextField txtBuscar;
+    @FXML
+    private Button btnBuscar;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -84,21 +90,21 @@ public class ProveedoresController implements Initializable {
             listaProveedores.clear();
             while (rs.next()) {
                 Proveedor proveedor = new Proveedor(
-                        rs.getInt("codigo_proveedor"),
-                        rs.getString("nombre"),
-                        rs.getString("calle"),
-                        rs.getString("localidad"),
-                        rs.getString("cp"),
-                        rs.getString("municipio"),
-                        rs.getString("provincia"),
-                        rs.getString("telefono"),
-                        rs.getString("email")
+                    rs.getInt("codigo_proveedor"),
+                    rs.getString("nombre"),
+                    rs.getString("calle"),
+                    rs.getString("localidad"),
+                    rs.getString("cp"),
+                    rs.getString("municipio"),
+                    rs.getString("provincia"),
+                    rs.getString("telefono"),
+                    rs.getString("email")
                 );
                 listaProveedores.add(proveedor);
             }
             tablaProv.setItems(listaProveedores);
+            rs.close();
             stmt.close();
-            conn.close();
         } catch (SQLException e) {
             LoggerUtils.logError("PROVEEDORES", "Error al cargar proveedores", e);
         }
@@ -180,6 +186,31 @@ public class ProveedoresController implements Initializable {
         } catch (SQLException e) {
             mostrarAlerta2("Error de BD", "No se pudo eliminar debido a un error de base de datos.", Alert.AlertType.ERROR);
             LoggerUtils.logError("PROVEEDORES", "Error al eliminar proveedor", e);
+        }
+    }
+
+    @FXML
+    private void btnBuscarAction(ActionEvent event) {
+        String filtro = txtBuscar.getText().toLowerCase();
+        
+        if (filtro.isEmpty()) {
+            tablaProv.setItems(listaProveedores);
+        } else {
+            ObservableList<Proveedor> filtrados = FXCollections.observableArrayList();
+            boolean coincNombre = false;
+            boolean coincLocal = false;
+            boolean coincMunic = false;
+            boolean coincProvin = false;
+            
+            for (Proveedor p : listaProveedores) {
+                coincNombre = p.getNombre() != null && p.getNombre().toLowerCase().contains(filtro);
+                coincLocal = p.getLocalidad() != null && p.getLocalidad().toLowerCase().contains(filtro);
+                coincMunic = p.getMunicipio() != null && p.getMunicipio().toLowerCase().contains(filtro);
+                coincProvin = p.getProvincia() != null && p.getProvincia().toLowerCase().contains(filtro);
+                
+               if (coincNombre || coincLocal || coincMunic || coincProvin) filtrados.add(p);
+            }
+            tablaProv.setItems(filtrados);
         }
     }
 }

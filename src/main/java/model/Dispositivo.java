@@ -11,14 +11,10 @@ public class Dispositivo {
     private String mac;
     private String imei;
     private int num_etiqueta;
-    private int codigo_categoria;
-    private int codigo_marca;
-    private int codigo_proveedor;
-    private int codigo_alumno;
-    private int codigo_programa;
-    private int codigo_espacio;
+    private Proveedor proveedor;
+    private Alumno alumno;
 
-    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, Date fecha_adquisicion, String mac, String imei, int num_etiqueta, int codigo_categoria, int codigo_marca, int codigo_proveedor, int codigo_alumno, int codigo_programa, int codigo_espacio) {
+    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, Date fecha_adquisicion, String mac, String imei, int num_etiqueta, Proveedor proveedor, Alumno alumno) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.modelo = modelo;
@@ -27,12 +23,8 @@ public class Dispositivo {
         this.mac = mac;
         this.imei = imei;
         this.num_etiqueta = num_etiqueta;
-        this.codigo_categoria = codigo_categoria;
-        this.codigo_marca = codigo_marca;
-        this.codigo_proveedor = codigo_proveedor;
-        this.codigo_alumno = codigo_alumno;
-        this.codigo_programa = codigo_programa;
-        this.codigo_espacio = codigo_espacio;
+        this.proveedor = proveedor;
+        this.alumno = alumno;
     }
 
     public int getCodigo() {
@@ -99,51 +91,19 @@ public class Dispositivo {
         this.num_etiqueta = num_etiqueta;
     }
 
-    public int getCodigo_categoria() {
-        return codigo_categoria;
+    public Proveedor getProveedor() {
+        return proveedor;
     }
 
-    public void setCodigo_categoria(int codigo_categoria) {
-        this.codigo_categoria = codigo_categoria;
+    public void setProveedor(Proveedor proveedor) {
+        this.proveedor = proveedor;
     }
 
-    public int getCodigo_marca() {
-        return codigo_marca;
+    public Alumno getAlumno() {
+        return alumno;
     }
 
-    public void setCodigo_marca(int codigo_marca) {
-        this.codigo_marca = codigo_marca;
-    }
-
-    public int getCodigo_proveedor() {
-        return codigo_proveedor;
-    }
-
-    public void setCodigo_proveedor(int codigo_proveedor) {
-        this.codigo_proveedor = codigo_proveedor;
-    }
-
-    public int getCodigo_alumno() {
-        return codigo_alumno;
-    }
-
-    public void setCodigo_alumno(int codigo_alumno) {
-        this.codigo_alumno = codigo_alumno;
-    }
-
-    public int getCodigo_programa() {
-        return codigo_programa;
-    }
-
-    public void setCodigo_programa(int codigo_programa) {
-        this.codigo_programa = codigo_programa;
-    }
-
-    public int getCodigo_espacio() {
-        return codigo_espacio;
-    }
-
-    public void setCodigo_espacio(int codigo_espacio) {
-        this.codigo_espacio = codigo_espacio;
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
     }
 }
