@@ -21,7 +21,7 @@ public class EditarCentroEducativoController {
     @FXML private TextField txtCP;
     @FXML private TextField txtMunicipio;
     @FXML private TextField txtProvincia;
-    @FXML private TextField txtTelefono;
+    private TextField txtTelefono;
     @FXML private TextField txtEmail;
     @FXML private Button btnGuardar;
     @FXML private Button btnCancelar;

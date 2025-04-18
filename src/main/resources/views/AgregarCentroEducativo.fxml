@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -8,85 +7,92 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="683.0" prefWidth="680.0" styleClass="panel-agregar-alumnos" stylesheets="@../styles/agregarcentroeducativo.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgregarCentroEducativoController">
+<AnchorPane prefHeight="440.0" prefWidth="695.0" styleClass="panel-agregar-alumnos" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditarCentroEducativoController">
+
     <children>
 
         <!-- Título -->
-        <Text fill="WHITE" layoutX="101.0" layoutY="75.0" styleClass="txt_titulo_Agregar" text="Agregar Centro Educativo">
+        <Text layoutX="196.0" layoutY="73.0" styleClass="txt_titulo_Agregar" text="Editar Centro Educativo">
             <font>
-                <Font size="28.0" />
+                <Font size="26.0" />
             </font>
         </Text>
 
-        <!-- Formulario -->
-        <GridPane hgap="20.0" layoutX="87.0" layoutY="93.0" prefHeight="371.0" prefWidth="377.0" vgap="12.0">
-            <padding>
-                <Insets bottom="10" left="10" right="10" top="20" />
-            </padding>
+        <!-- Contenedor con dos columnas -->
+        <HBox layoutX="93.0" layoutY="142.0" prefWidth="510.0" spacing="40.0">
+            <children>
 
-            <!-- Fila 1 -->
-            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="210.0" styleClass="txt_Nombre" text="Código:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <TextField fx:id="txtCodigo" promptText="Código centro" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <!-- Primera columna -->
+                <GridPane hgap="10" vgap="12">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
 
-            <!-- Fila 2 -->
-            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="205.0" styleClass="txt_Nombre" text="Nombre:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <TextField fx:id="txtNombre" prefHeight="27.0" prefWidth="335.0" promptText="Nombre del centro" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label text="Código:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtCodigo" promptText="Código centro" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-            <!-- Fila 3 -->
-            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="205.0" styleClass="txt_Nombre" text="Calle:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <TextField fx:id="txtCalle" promptText="Calle" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="txtNombre" promptText="Nombre del centro" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-            <!-- Fila 4 -->
-            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="207.0" styleClass="txt_Nombre" text="Localidad:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <TextField fx:id="txtLocalidad" promptText="Localidad" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <Label text="Calle:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="txtCalle" promptText="Calle" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-            <!-- Fila 5 -->
-            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="204.0" styleClass="txt_Nombre" text="C.P.:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-            <TextField fx:id="txtCP" promptText="Código Postal" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    <Label text="Localidad:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="txtLocalidad" promptText="Localidad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-            <!-- Fila 6 -->
-            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="203.0" styleClass="txt_Nombre" text="Municipio:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-            <TextField fx:id="txtMunicipio" promptText="Municipio" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
 
-            <!-- Fila 7 -->
-            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="201.0" styleClass="txt_Nombre" text="Provincia:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-            <TextField fx:id="txtProvincia" promptText="Provincia" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <!-- Segunda columna -->
+                <GridPane hgap="10" vgap="12">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
 
-            <!-- Fila 8 -->
-            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="208.0" styleClass="txt_Nombre" text="Teléfono:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-            <TextField fx:id="txtTelefono" promptText="Teléfono" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                    <Label text="C.P.:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtCP" promptText="Código Postal" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-            <!-- Fila 9 -->
-            <Label alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" prefHeight="17.0" prefWidth="205.0" styleClass="txt_Nombre" text="Email:" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-            <TextField fx:id="txtEmail" promptText="Email" styleClass="input-agregarcentro" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-         <columnConstraints>
-            <ColumnConstraints maxWidth="210.0" minWidth="83.0" prefWidth="210.0" />
-            <ColumnConstraints maxWidth="330.0" minWidth="203.0" prefWidth="203.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
-        </GridPane>
+                    <Label text="Municipio:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="txtMunicipio" promptText="Municipio" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Provincia:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="txtProvincia" promptText="Provincia" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="txtEmail" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                    <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+
+            </children>
+        </HBox>
 
         <!-- Botones -->
-        <Button fx:id="btnGuardar" layoutX="85.0" layoutY="562.0" prefHeight="40.0" prefWidth="150.0" styleClass="btnGuardar" text="Guardar" />
-        <Button fx:id="btnCancelar" layoutX="317.0" layoutY="561.0" onAction="#btnActionCancelar" prefHeight="40.0" prefWidth="150.0" styleClass="btnCancelar" text="Cancelar" />
-
-        <!-- Íconos -->
-        <FontAwesomeIconView fill="WHITE" glyphName="SAVE" layoutX="99.0" layoutY="588.0" size="18.0" styleClass="icon-guardar" />
-        <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" layoutX="333.0" layoutY="588.0" size="18.0" styleClass="icon-cancelar" />
+        <Button fx:id="btnGuardar" layoutX="180.0" layoutY="359.0" prefHeight="40.0" prefWidth="150.0" text="Guardar" />
+        <Button fx:id="btnCancelar" layoutX="370.0" layoutY="359.0" onAction="#btnActionCancelar" prefHeight="40.0" prefWidth="150.0" styleClass="btnCancelar" text="Cancelar" />
 
     </children>
 </AnchorPane>

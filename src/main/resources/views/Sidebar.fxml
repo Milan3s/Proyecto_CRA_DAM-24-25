@@ -4,10 +4,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="1080.0" prefWidth="400.0" spacing="10.0" style="-fx-background-color: #0D47A1; -fx-padding: 20;" stylesheets="@../styles/sidebar.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SidebarController">
+<VBox alignment="TOP_CENTER" prefHeight="1080.0" prefWidth="396.0" spacing="10.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SidebarController">
 
     <!-- Nombre del usuario -->
-    <Label fx:id="labelUsuario" alignment="CENTER" prefHeight="65.0" prefWidth="360.0" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" textFill="WHITE" />
+    <Label fx:id="labelUsuario" alignment="CENTER" prefHeight="65.0" prefWidth="382.0" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" textFill="WHITE" />
 
     <!-- Botón para Alumnos -->
     <Button onAction="#loadUsuarios" prefHeight="52.0" prefWidth="378.0" styleClass="btnAlumnos" text="Alumnos" />

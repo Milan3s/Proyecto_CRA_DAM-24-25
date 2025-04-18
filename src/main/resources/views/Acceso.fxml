@@ -15,16 +15,16 @@
    <center>
       <AnchorPane maxHeight="589.0" maxWidth="384.0" minHeight="589.0" minWidth="384.0" prefHeight="589.0" prefWidth="384.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="110.0" layoutY="120.0" text="Login" textAlignment="CENTER" wrappingWidth="138.443359375">
+            <Text layoutX="110.0" layoutY="79.0" text="Login" textAlignment="CENTER" wrappingWidth="138.443359375">
                <font>
                   <Font size="49.0" />
                </font></Text>
 
-            <FontAwesomeIconView glyphName="USER" layoutX="34.0" layoutY="263.0" size="27" />
-            <TextField fx:id="txtUsuario" layoutX="79.0" layoutY="236.0" prefHeight="30.0" prefWidth="250.0" promptText="Usuario" />
+            <FontAwesomeIconView glyphName="USER" layoutX="34.0" layoutY="198.0" size="27" />
+            <TextField fx:id="txtUsuario" layoutX="79.0" layoutY="171.0" prefHeight="30.0" prefWidth="250.0" promptText="Usuario" />
 
-            <FontAwesomeIconView glyphName="KEY" layoutX="34.0" layoutY="366.0" size="27" />
-            <PasswordField fx:id="txtPassword" layoutX="79.0" layoutY="339.0" prefHeight="30.0" prefWidth="250.0" promptText="Contraseña" />
+            <FontAwesomeIconView glyphName="KEY" layoutX="34.0" layoutY="301.0" size="27" />
+            <PasswordField fx:id="txtPassword" layoutX="79.0" layoutY="274.0" prefHeight="30.0" prefWidth="250.0" promptText="Contraseña" />
 
             <Button fx:id="btnLogin" layoutX="79.0" layoutY="431.0" onAction="#btnActionLogin" prefHeight="30.0" prefWidth="100.0" text="Acceder" />
             <Button fx:id="btnRegistrarse" layoutX="229.0" layoutY="431.0" onAction="#btnActionRegistrarse" prefHeight="30.0" prefWidth="100.0" text="Ir a Registrarse" />

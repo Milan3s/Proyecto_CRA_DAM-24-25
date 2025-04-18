@@ -30,7 +30,6 @@ public class AgregarCentroEducativoController implements Initializable {
     private TextField txtMunicipio;
     @FXML
     private TextField txtProvincia;
-    @FXML
     private TextField txtTelefono;
     @FXML
     private TextField txtEmail;
