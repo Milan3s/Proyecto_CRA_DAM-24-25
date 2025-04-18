@@ -1,12 +1,12 @@
+// CentroEducativoController.java
 package controller;
 
-import java.io.IOException;
-import java.net.URL;
-import java.sql.*;
-import java.util.ResourceBundle;
-import javafx.collections.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.*;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -17,23 +17,43 @@ import model.CentroEducativo;
 import utils.DataBaseConection;
 import utils.LoggerUtils;
 
+import java.io.IOException;
+import java.net.URL;
+import java.sql.*;
+import java.util.ResourceBundle;
+
 public class CentroEducativoController implements Initializable {
 
-    @FXML private TableView<CentroEducativo> tablaCentroEducativos;
-    @FXML private TableColumn<CentroEducativo, String> colCodigoCentro;
-    @FXML private TableColumn<CentroEducativo, String> colNombre;
-    @FXML private TableColumn<CentroEducativo, String> colCalle;
-    @FXML private TableColumn<CentroEducativo, String> colLocalidad;
-    @FXML private TableColumn<CentroEducativo, String> colCP;
-    @FXML private TableColumn<CentroEducativo, String> colMunicipio;
-    @FXML private TableColumn<CentroEducativo, String> colProvincia;
-    @FXML private TableColumn<CentroEducativo, String> colTelefono;
-    @FXML private TableColumn<CentroEducativo, String> colEmail;
-    @FXML private TextField txtBuscar;
-    @FXML private Button btnBuscarCentro;
-    @FXML private Button btnNuevoCentro;
-    @FXML private Button btnEliminarCentro;
-    @FXML private Button btnEliminarTodosCentros;
+    @FXML
+    private TableView<CentroEducativo> tablaCentroEducativos;
+    @FXML
+    private TableColumn<CentroEducativo, String> colCodigoCentro;
+    @FXML
+    private TableColumn<CentroEducativo, String> colNombre;
+    @FXML
+    private TableColumn<CentroEducativo, String> colCalle;
+    @FXML
+    private TableColumn<CentroEducativo, String> colLocalidad;
+    @FXML
+    private TableColumn<CentroEducativo, String> colCP;
+    @FXML
+    private TableColumn<CentroEducativo, String> colMunicipio;
+    @FXML
+    private TableColumn<CentroEducativo, String> colProvincia;
+    @FXML
+    private TableColumn<CentroEducativo, String> colTelefono;
+    @FXML
+    private TableColumn<CentroEducativo, String> colEmail;
+    @FXML
+    private TextField txtBuscar;
+    @FXML
+    private Button btnNuevoCentro;
+    @FXML
+    private Button btnEliminarCentro;
+    @FXML
+    private Button btnEliminarTodosCentros;
+    @FXML
+    private Button btnBuscarCentro;
 
     private final ObservableList<CentroEducativo> listaCentros = FXCollections.observableArrayList();
 
@@ -44,16 +64,15 @@ public class CentroEducativoController implements Initializable {
         configurarColumnas();
         cargarDatos();
 
-        txtBuscar.textProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal.trim().isEmpty()) {
-                tablaCentroEducativos.setItems(listaCentros);
+        tablaCentroEducativos.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2 && !tablaCentroEducativos.getSelectionModel().isEmpty()) {
+                abrirFormularioCentro(tablaCentroEducativos.getSelectionModel().getSelectedItem());
             }
         });
 
-        tablaCentroEducativos.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2 && !tablaCentroEducativos.getSelectionModel().isEmpty()) {
-                CentroEducativo centroSeleccionado = tablaCentroEducativos.getSelectionModel().getSelectedItem();
-                abrirModalEditarCentro(centroSeleccionado);
+        txtBuscar.textProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal.trim().isEmpty()) {
+                tablaCentroEducativos.setItems(listaCentros);
             }
         });
     }
@@ -74,10 +93,7 @@ public class CentroEducativoController implements Initializable {
         listaCentros.clear();
         String query = "SELECT * FROM centros_edu";
 
-
         try (Connection conn = DataBaseConection.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
-            LoggerUtils.logQuery("CENTROS EDUCATIVOS", "Cargar todos los centros educativos", query);
-
             while (rs.next()) {
                 CentroEducativo centro = new CentroEducativo(
                         rs.getString("codigo_centro"),
@@ -91,21 +107,83 @@ public class CentroEducativoController implements Initializable {
                         rs.getString("email")
                 );
                 listaCentros.add(centro);
-                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro cargado → Código: " + centro.getCodigoCentro() + ", Nombre: " + centro.getNombre());
+                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro cargado → Código: " + centro.getCodigoCentro());
             }
-
             tablaCentroEducativos.setItems(listaCentros);
             LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Total centros cargados: " + listaCentros.size());
-
         } catch (SQLException e) {
-            LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al cargar centros educativos", e);
+            LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al cargar centros", e);
         }
     }
 
     @FXML
-    private void btnBuscarCentroAction(ActionEvent event) {
-        String filtro = txtBuscar.getText().trim().toLowerCase();
+    private void btnActionNuevoCentro(ActionEvent event) {
+        abrirFormularioCentro(null);
+    }
 
+    private void abrirFormularioCentro(CentroEducativo centro) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/CentroEducativoMantenim.fxml"));
+            Parent root = loader.load();
+
+            CentroEducativoMantenimController controller = loader.getController();
+            controller.setCentro(centro);
+
+            Stage modal = new Stage();
+            modal.setScene(new Scene(root));
+            modal.setTitle(centro == null ? "Nuevo Centro Educativo" : "Editar Centro Educativo");
+            modal.initModality(Modality.APPLICATION_MODAL);
+            modal.setResizable(false);
+            modal.showAndWait();
+
+            cargarDatos();
+
+        } catch (IOException e) {
+            LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al abrir formulario de centro", e);
+        }
+    }
+
+    @FXML
+    private void btnActionEliminarCentro() {
+        CentroEducativo seleccionado = tablaCentroEducativos.getSelectionModel().getSelectedItem();
+        if (seleccionado == null) {
+            return;
+        }
+
+        String sql = "DELETE FROM centros_edu WHERE codigo_centro = ?";
+
+        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, seleccionado.getCodigoCentro());
+            int result = stmt.executeUpdate();
+            if (result > 0) {
+                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro eliminado → Código: " + seleccionado.getCodigoCentro());
+                mostrarAlerta("Centro eliminado", "Se ha eliminado correctamente el centro.", Alert.AlertType.INFORMATION);
+            }
+            cargarDatos();
+        } catch (SQLException e) {
+            LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al eliminar centro", e);
+            mostrarAlerta("Error", "No se pudo eliminar el centro.", Alert.AlertType.ERROR);
+        }
+    }
+
+    @FXML
+    private void btnActionEliminarTodosCentros() {
+        String sql = "DELETE FROM centros_edu";
+
+        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            int result = stmt.executeUpdate();
+            LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centros eliminados: " + result);
+            mostrarAlerta("Centros eliminados", "Se eliminaron " + result + " centros.", Alert.AlertType.INFORMATION);
+            cargarDatos();
+        } catch (SQLException e) {
+            LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al eliminar todos los centros", e);
+            mostrarAlerta("Error", "No se pudieron eliminar los centros.", Alert.AlertType.ERROR);
+        }
+    }
+
+    @FXML
+    private void btnBuscarCentroAction() {
+        String filtro = txtBuscar.getText().trim().toLowerCase();
         if (filtro.isEmpty()) {
             tablaCentroEducativos.setItems(listaCentros);
             return;
@@ -123,112 +201,7 @@ public class CentroEducativoController implements Initializable {
         }
 
         tablaCentroEducativos.setItems(filtrados);
-        LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Filtro aplicado: \"" + filtro + "\". Resultados encontrados: " + filtrados.size());
-    }
-
-    @FXML
-    private void btnActionNuevoCentro(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AgregarCentroEducativo.fxml"));
-            Parent root = loader.load();
-
-            Stage modalStage = new Stage();
-            modalStage.setTitle("Nuevo Centro Educativo");
-            modalStage.setScene(new Scene(root));
-            modalStage.initModality(Modality.APPLICATION_MODAL);
-            modalStage.setResizable(false);
-            modalStage.showAndWait();
-
-            cargarDatos();
-
-        } catch (IOException e) {
-            LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al abrir ventana AgregarCentroEducativo", e);
-        }
-    }
-
-    @FXML
-    private void btnActionEliminarCentro(ActionEvent event) {
-        CentroEducativo seleccionado = tablaCentroEducativos.getSelectionModel().getSelectedItem();
-
-        if (seleccionado == null) {
-            mostrarAlerta("Sin selección", "Por favor, selecciona un centro educativo a eliminar.", Alert.AlertType.WARNING);
-            LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Intento de eliminar sin seleccionar centro.");
-            return;
-        }
-
-        Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
-        confirmacion.setTitle("Confirmar eliminación");
-        confirmacion.setHeaderText("¿Seguro que deseas eliminar el siguiente centro?");
-        confirmacion.setContentText(
-                "Código: " + seleccionado.getCodigoCentro() + "\n"
-                + "Nombre: " + seleccionado.getNombre() + "\n"
-                + "Localidad: " + seleccionado.getLocalidad());
-
-        confirmacion.showAndWait().ifPresent(respuesta -> {
-            if (respuesta == ButtonType.OK) {
-                String sql = "DELETE FROM centros_edu WHERE codigo_centro = ?";
-
-                try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-                    LoggerUtils.logQuery("CENTROS EDUCATIVOS", "Eliminar centro con código: " + seleccionado.getCodigoCentro(), sql);
-
-                    stmt.setString(1, seleccionado.getCodigoCentro());
-                    int filas = stmt.executeUpdate();
-
-                    if (filas > 0) {
-                        mostrarAlerta("Eliminado", "Centro eliminado exitosamente.", Alert.AlertType.INFORMATION);
-                        LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro eliminado: " + seleccionado.getCodigoCentro());
-                        cargarDatos();
-                    } else {
-                        mostrarAlerta("Error", "No se pudo eliminar el centro.", Alert.AlertType.ERROR);
-                        LoggerUtils.logInfo("CENTROS EDUCATIVOS", "No se eliminó ningún centro (código: " + seleccionado.getCodigoCentro() + ")");
-                    }
-
-                } catch (SQLException e) {
-                    mostrarAlerta("Error de BD", "No se pudo eliminar debido a un error de base de datos.", Alert.AlertType.ERROR);
-                    LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al eliminar centro", e);
-                }
-            }
-        });
-    }
-
-    @FXML
-    private void btnActionEliminarTodosCentros(ActionEvent event) {
-        if (listaCentros.isEmpty()) {
-            mostrarAlerta("Sin datos", "No hay centros para eliminar.", Alert.AlertType.INFORMATION);
-            LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Intento de eliminar todos los centros, pero la lista está vacía.");
-            return;
-        }
-
-        String sql = "DELETE FROM centros_edu";
-
-
-        Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
-        confirmacion.setTitle("Eliminar todos los centros");
-        confirmacion.setHeaderText("¿Seguro que deseas eliminar TODOS los centros educativos?");
-        confirmacion.setContentText("Cantidad total: " + listaCentros.size());
-
-        confirmacion.showAndWait().ifPresent(respuesta -> {
-            if (respuesta == ButtonType.OK) {
-                try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-                    LoggerUtils.logQuery("CENTROS EDUCATIVOS", "Eliminar todos los centros", sql);
-
-                    int filas = stmt.executeUpdate();
-
-                    if (filas > 0) {
-                        mostrarAlerta("Eliminados", "Se eliminaron " + filas + " centros.", Alert.AlertType.INFORMATION);
-                        LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Eliminación masiva → Total eliminados: " + filas);
-                        cargarDatos();
-                    } else {
-                        mostrarAlerta("Aviso", "No se eliminó ningún centro.", Alert.AlertType.WARNING);
-                        LoggerUtils.logInfo("CENTROS EDUCATIVOS", "No se eliminó ningún centro en la eliminación masiva.");
-                    }
-
-                } catch (SQLException e) {
-                    mostrarAlerta("Error", "No se pudieron eliminar los centros.", Alert.AlertType.ERROR);
-                    LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al eliminar todos los centros", e);
-                }
-            }
-        });
+        LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Filtro aplicado: " + filtro + " → Resultados: " + filtrados.size());
     }
 
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
@@ -237,27 +210,5 @@ public class CentroEducativoController implements Initializable {
         alerta.setHeaderText(null);
         alerta.setContentText(mensaje);
         alerta.showAndWait();
-    }
-
-    private void abrirModalEditarCentro(CentroEducativo centro) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/EditarCentroEducativo.fxml"));
-            Parent root = loader.load();
-
-            EditarCentroEducativoController controller = loader.getController();
-            controller.setCentro(centro, true);
-
-            Stage modalStage = new Stage();
-            modalStage.setTitle("Editar Centro Educativo");
-            modalStage.setScene(new Scene(root));
-            modalStage.initModality(Modality.APPLICATION_MODAL);
-            modalStage.setResizable(false);
-            modalStage.showAndWait();
-
-            cargarDatos();
-
-        } catch (IOException e) {
-            LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al abrir ventana EditarCentroEducativo", e);
-        }
     }
 }

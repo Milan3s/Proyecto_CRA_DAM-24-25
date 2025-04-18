@@ -82,3 +82,305 @@
 [2025-04-18 18:32:41] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 1, Código Sede: 4, Nombre Sede: Sede Este
 [2025-04-18 18:32:41] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
 [2025-04-18 18:32:41] [INFO   ] [GENERAL] Total alumnos cargados: 5
+[2025-04-18 22:46:10] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 22:46:10] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 22:46:10] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 22:46:10] [INFO   ] [GENERAL] Alumno cargado → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 22:46:10] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 3, Nombre Sede: Sede Sur
+[2025-04-18 22:46:10] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 22:46:10] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+[2025-04-18 22:46:10] [INFO   ] [GENERAL] Total alumnos cargados: 5
+[2025-04-18 22:46:14] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 22:46:14] [INFO   ] [ALUMNOS] CONSULTA → Cargar lista de sedes
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 22:46:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 22:46:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 22:46:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 22:46:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 22:46:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 22:46:14] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 22:46:14] [INFO   ] [ALUMNOS] Editando alumno → Código: 3, Nombre: Alumno Tres
+[2025-04-18 22:46:14] [INFO   ] [ALUMNOS] Sede seleccionada por defecto → Sede Sur
+[2025-04-18 22:46:16] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 22:46:16] [INFO   ] [ALUMNOS] CONSULTA → Actualizar datos del alumno ID: 3
+[ALUMNOS] SQL: UPDATE alumnos SET nombre = ?, curso = ?, codigo_sede = ? WHERE codigo_alumno = ?
+[2025-04-18 22:46:16] [INFO   ] [ALUMNOS] Alumno actualizado → Código: 3, Nuevo nombre: Alumno Tres, Curso: 3, Sede: Sede Norte
+[2025-04-18 22:46:16] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 22:46:16] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 22:46:16] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 22:46:16] [INFO   ] [GENERAL] Alumno cargado → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 22:46:16] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 22:46:16] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 22:46:16] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+[2025-04-18 22:46:16] [INFO   ] [GENERAL] Total alumnos cargados: 5
+[2025-04-18 22:46:20] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 22:46:20] [INFO   ] [ALUMNOS] CONSULTA → Cargar lista de sedes
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 22:46:20] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 22:46:20] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 22:46:20] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 22:46:20] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 22:46:20] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 22:46:20] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 22:46:20] [INFO   ] [ALUMNOS] Editando alumno → Código: 2, Nombre: Alumno Dos
+[2025-04-18 22:46:20] [INFO   ] [ALUMNOS] Sede seleccionada por defecto → Sede Norte
+[2025-04-18 22:46:28] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 22:46:28] [INFO   ] [ALUMNOS] CONSULTA → Actualizar datos del alumno ID: 2
+[ALUMNOS] SQL: UPDATE alumnos SET nombre = ?, curso = ?, codigo_sede = ? WHERE codigo_alumno = ?
+[2025-04-18 22:46:28] [INFO   ] [ALUMNOS] Alumno actualizado → Código: 2, Nuevo nombre: Alumno Dos, Curso: 2, Sede: Sede Central
+[2025-04-18 22:46:28] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 22:46:28] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 22:46:28] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 22:46:28] [INFO   ] [GENERAL] Alumno cargado → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 22:46:28] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 22:46:28] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 22:46:28] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+[2025-04-18 22:46:28] [INFO   ] [GENERAL] Total alumnos cargados: 5
+[2025-04-18 22:49:20] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 22:49:20] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 22:49:20] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 22:49:20] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 22:49:20] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 22:49:20] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 22:49:20] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 22:49:20] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 22:49:20] [INFO   ] [ALUMNOS] Total sedes cargadas: 5
+[2025-04-18 22:49:28] [INFO   ] [ALUMNOS] Intento fallido de guardar alumno. Faltan campos.
+[2025-04-18 22:49:29] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 22:49:29] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 22:49:29] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 22:49:29] [INFO   ] [GENERAL] Alumno cargado → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 22:49:29] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 22:49:29] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 22:49:29] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+[2025-04-18 22:49:29] [INFO   ] [GENERAL] Total alumnos cargados: 5
+[2025-04-18 22:57:59] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 22:57:59] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 22:57:59] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 22:57:59] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 22:57:59] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 22:57:59] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 22:57:59] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 22:57:59] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 22:57:59] [INFO   ] [ALUMNOS] Total sedes cargadas: 5
+[2025-04-18 22:59:48] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 22:59:48] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 22:59:48] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 22:59:48] [INFO   ] [GENERAL] Alumno cargado → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 22:59:48] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 22:59:48] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 22:59:48] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+[2025-04-18 22:59:48] [INFO   ] [GENERAL] Total alumnos cargados: 5
+[2025-04-18 23:00:24] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:00:24] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 23:00:24] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 23:00:24] [INFO   ] [GENERAL] Alumno cargado → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 23:00:24] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 23:00:24] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 23:00:24] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+[2025-04-18 23:00:24] [INFO   ] [GENERAL] Total alumnos cargados: 5
+[2025-04-18 23:00:26] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 23:00:26] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:00:26] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 23:00:26] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 23:00:26] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 23:00:26] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 23:00:26] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 23:00:26] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 23:00:26] [INFO   ] [ALUMNOS] Total sedes cargadas: 5
+[2025-04-18 23:00:30] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:00:30] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 23:00:30] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 23:00:30] [INFO   ] [GENERAL] Alumno cargado → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 23:00:30] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 23:00:30] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 23:00:30] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+[2025-04-18 23:00:30] [INFO   ] [GENERAL] Total alumnos cargados: 5
+[2025-04-18 23:00:31] [WARNING] [ALUMNOS] Intento de eliminar sin seleccionar alumno.
+[2025-04-18 23:00:33] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:00:33] [INFO   ] [GENERAL] CONSULTA → Eliminar alumno con ID: 2
+[GENERAL] SQL: DELETE FROM alumnos WHERE codigo_alumno = ?
+[2025-04-18 23:00:33] [INFO   ] [GENERAL] Alumno eliminado correctamente → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 23:00:33] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:00:33] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 23:00:33] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 23:00:33] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 23:00:33] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 3, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 23:00:33] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+[2025-04-18 23:00:33] [INFO   ] [GENERAL] Total alumnos cargados: 4
+[2025-04-18 23:00:35] [WARNING] [ALUMNOS] Intento de eliminar sin seleccionar alumno.
+[2025-04-18 23:00:35] [WARNING] [ALUMNOS] Intento de eliminar sin seleccionar alumno.
+[2025-04-18 23:00:35] [WARNING] [ALUMNOS] Intento de eliminar sin seleccionar alumno.
+[2025-04-18 23:00:36] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:00:36] [INFO   ] [GENERAL] CONSULTA → Eliminar todos los alumnos
+[GENERAL] SQL: DELETE FROM alumnos
+[2025-04-18 23:00:36] [INFO   ] [ALUMNOS] Se eliminaron correctamente 4 de 4 alumno(s).
+[2025-04-18 23:00:36] [INFO   ] [GENERAL] Eliminación masiva → Total antes: 4, Eliminados: 4
+[2025-04-18 23:00:36] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:00:36] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 23:00:36] [INFO   ] [GENERAL] Total alumnos cargados: 0
+[2025-04-18 23:00:40] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 23:00:40] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:00:40] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 23:00:40] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 23:00:40] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 23:00:40] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 23:00:40] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 23:00:40] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 23:00:40] [INFO   ] [ALUMNOS] Total sedes cargadas: 5
+[2025-04-18 23:01:01] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:01:01] [INFO   ] [ALUMNOS] CONSULTA → Insertar nuevo alumno
+[ALUMNOS] SQL: INSERT INTO alumnos (nombre, curso, codigo_sede) VALUES (?, ?, ?)
+[2025-04-18 23:01:02] [INFO   ] [ALUMNOS] Alumno guardado → Nombre: Pepito, Curso: 2, Código Sede: 1
+[2025-04-18 23:01:03] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:01:03] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 23:01:03] [INFO   ] [GENERAL] Alumno cargado → Código: 6, Nombre: Pepito, Curso: 2, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 23:01:03] [INFO   ] [GENERAL] Total alumnos cargados: 1
+[2025-04-18 23:01:05] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:01:05] [INFO   ] [ALUMNOS] CONSULTA → Cargar lista de sedes
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 23:01:05] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 23:01:05] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 23:01:05] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 23:01:05] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 23:01:05] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 23:01:05] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 23:01:05] [INFO   ] [ALUMNOS] Editando alumno → Código: 6, Nombre: Pepito
+[2025-04-18 23:01:05] [INFO   ] [ALUMNOS] Sede seleccionada por defecto → Sede Central
+[2025-04-18 23:01:12] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:01:12] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 23:01:12] [INFO   ] [GENERAL] Alumno cargado → Código: 6, Nombre: Pepito, Curso: 2, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 23:01:12] [INFO   ] [GENERAL] Total alumnos cargados: 1
+[2025-04-18 23:01:40] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:01:40] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 23:01:40] [INFO   ] [GENERAL] Alumno cargado → Código: 6, Nombre: Pepito, Curso: 2, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 23:01:40] [INFO   ] [GENERAL] Total alumnos cargados: 1
+[2025-04-18 23:01:41] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 23:01:41] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:01:41] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 23:01:41] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 23:01:41] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 23:01:41] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 23:01:41] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 23:01:41] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 23:01:41] [INFO   ] [ALUMNOS] Total sedes cargadas: 5
+[2025-04-18 23:12:29] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:31] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 23:12:31] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:31] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 23:12:31] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 23:12:31] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 23:12:31] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 23:12:31] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 23:12:31] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 23:12:34] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:34] [INFO   ] [ALUMNOS] CONSULTA → Actualizar alumno
+[ALUMNOS] SQL: UPDATE alumnos SET nombre = ?, curso = ?, codigo_sede = ? WHERE codigo_alumno = ?
+[2025-04-18 23:12:36] [INFO   ] [ALUMNOS] Alumno actualizado → Código: 6
+[2025-04-18 23:12:36] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:37] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 23:12:37] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:37] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 23:12:37] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 23:12:37] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 23:12:37] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 23:12:37] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 23:12:37] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 23:12:38] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:39] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 23:12:39] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:39] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 23:12:39] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 23:12:39] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 23:12:39] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 23:12:39] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 23:12:39] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 23:12:43] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:43] [INFO   ] [ALUMNOS] CONSULTA → Insertar nuevo alumno
+[ALUMNOS] SQL: INSERT INTO alumnos (nombre, curso, codigo_sede) VALUES (?, ?, ?)
+[2025-04-18 23:12:44] [INFO   ] [ALUMNOS] Alumno insertado → Nombre: asdsa, Curso: 2, Sede: 2
+[2025-04-18 23:12:44] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:45] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 23:12:45] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:45] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 23:12:45] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 23:12:45] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 23:12:45] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 23:12:45] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 23:12:45] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 23:12:50] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:50] [INFO   ] [ALUMNOS] CONSULTA → Actualizar alumno
+[ALUMNOS] SQL: UPDATE alumnos SET nombre = ?, curso = ?, codigo_sede = ? WHERE codigo_alumno = ?
+[2025-04-18 23:12:50] [INFO   ] [ALUMNOS] Alumno actualizado → Código: 7
+[2025-04-18 23:12:50] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:52] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 23:12:52] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:12:52] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 23:12:52] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 23:12:52] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 23:12:52] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 23:12:52] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 23:12:52] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 23:12:53] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:41:08] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:41:09] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-04-18 23:41:13] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:41:13] [INFO   ] [CENTROS EDUCATIVOS] CONSULTA → Actualizar centro
+[CENTROS EDUCATIVOS] SQL: UPDATE centros_edu SET nombre=?, calle=?, localidad=?, cp=?, municipio=?, provincia=?, telefono=?, email=? WHERE codigo_centro=?
+[2025-04-18 23:41:13] [INFO   ] [CENTROS EDUCATIVOS] Centro actualizado correctamente → Código: 4
+[2025-04-18 23:41:14] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:41:17] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:41:17] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:41:23] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:41:23] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:41:25] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-04-18 23:41:27] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:46:44] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-04-18 23:46:44] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:46:44] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 0
+[2025-04-18 23:46:47] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-04-18 23:46:59] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:46:59] [INFO   ] [CENTROS EDUCATIVOS] CONSULTA → Insertar nuevo centro
+[CENTROS EDUCATIVOS] SQL: INSERT INTO centros_edu (codigo_centro, nombre, calle, localidad, cp, municipio, provincia, telefono, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2025-04-18 23:46:59] [INFO   ] [CENTROS EDUCATIVOS] Centro insertado correctamente → Código: 1
+[2025-04-18 23:47:02] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:47:02] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 1
+[2025-04-18 23:47:02] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-04-18 23:47:04] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-04-18 23:47:07] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:47:07] [INFO   ] [CENTROS EDUCATIVOS] CONSULTA → Actualizar centro
+[CENTROS EDUCATIVOS] SQL: UPDATE centros_edu SET nombre=?, calle=?, localidad=?, cp=?, municipio=?, provincia=?, telefono=?, email=? WHERE codigo_centro=?
+[2025-04-18 23:47:07] [INFO   ] [CENTROS EDUCATIVOS] Centro actualizado correctamente → Código: 1
+[2025-04-18 23:47:08] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:47:08] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 1
+[2025-04-18 23:47:08] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-04-18 23:47:10] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:47:10] [INFO   ] [CENTROS EDUCATIVOS] Centro eliminado → Código: 1
+[2025-04-18 23:47:11] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:47:11] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 0
+[2025-04-18 23:47:12] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:47:12] [INFO   ] [CENTROS EDUCATIVOS] Centros eliminados: 0
+[2025-04-18 23:47:13] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 23:47:13] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 0
