@@ -1,0 +1,84 @@
+
+[2025-04-16 00:30:11] [INFO   ] [PROVEEDORES] CONSULTA → Eliminar proveedor con código: 5
+[PROVEEDORES] SQL: DELETE FROM proveedores WHERE codigo_proveedor = ?
+
+[2025-04-16 00:30:14] [INFO   ] [PROVEEDORES] Proveedor eliminado: 5
+
+[2025-04-17 19:37:14] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
+
+[2025-04-18 18:29:35] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+
+[2025-04-18 18:29:35] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+
+[2025-04-18 18:29:35] [INFO   ] [GENERAL] Alumno cargado → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 2, Nombre Sede: Sede Norte
+
+[2025-04-18 18:29:35] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 3, Nombre Sede: Sede Sur
+
+[2025-04-18 18:29:35] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 1, Código Sede: 4, Nombre Sede: Sede Este
+
+[2025-04-18 18:29:35] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+
+[2025-04-18 18:29:35] [INFO   ] [GENERAL] Total alumnos cargados: 5
+
+[2025-04-18 18:29:37] [INFO   ] 
+=== SECCIÓN ALUMNOS ===
+
+[2025-04-18 18:29:37] [INFO   ] [ALUMNOS] Editando alumno → Código: 3, Nombre: Alumno Tres
+
+[2025-04-18 18:29:39] [SEVERE ] [ALUMNOS] ERROR → Error al cargar sedes en el ComboBox
+
+[2025-04-18 18:29:43] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+
+[2025-04-18 18:30:23] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+
+[2025-04-18 18:30:23] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+
+[2025-04-18 18:30:23] [INFO   ] [GENERAL] Alumno cargado → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 2, Nombre Sede: Sede Norte
+
+[2025-04-18 18:30:23] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 3, Nombre Sede: Sede Sur
+
+[2025-04-18 18:30:23] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 1, Código Sede: 4, Nombre Sede: Sede Este
+
+[2025-04-18 18:30:23] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+
+[2025-04-18 18:30:23] [INFO   ] [GENERAL] Total alumnos cargados: 5
+
+[2025-04-18 18:30:25] [INFO   ] 
+=== SECCIÓN ALUMNOS ===
+
+[2025-04-18 18:30:25] [INFO   ] [ALUMNOS] Editando alumno → Código: 3, Nombre: Alumno Tres
+
+[2025-04-18 18:30:29] [SEVERE ] [ALUMNOS] ERROR → Error al cargar sedes en el ComboBox
+
+[2025-04-18 18:30:35] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+[2025-04-18 18:32:37] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 18:32:37] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 18:32:37] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 18:32:37] [INFO   ] [GENERAL] Alumno cargado → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 18:32:37] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 3, Nombre Sede: Sede Sur
+[2025-04-18 18:32:37] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 1, Código Sede: 4, Nombre Sede: Sede Este
+[2025-04-18 18:32:37] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+[2025-04-18 18:32:37] [INFO   ] [GENERAL] Total alumnos cargados: 5
+[2025-04-18 18:32:39] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 18:32:39] [INFO   ] [ALUMNOS] CONSULTA → Cargar lista de sedes
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-04-18 18:32:39] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-04-18 18:32:39] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-04-18 18:32:39] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-04-18 18:32:39] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-04-18 18:32:39] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-04-18 18:32:39] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-04-18 18:32:39] [INFO   ] [ALUMNOS] Editando alumno → Código: 2, Nombre: Alumno Dos
+[2025-04-18 18:32:39] [INFO   ] [ALUMNOS] Sede seleccionada por defecto → Sede Norte
+[2025-04-18 18:32:41] [INFO   ] [GENERAL] Conexión establecida correctamente con la base de datos.
+[2025-04-18 18:32:41] [INFO   ] [GENERAL] CONSULTA → Consulta de alumnos
+[GENERAL] SQL: SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede
+[2025-04-18 18:32:41] [INFO   ] [GENERAL] Alumno cargado → Código: 1, Nombre: Alumno Uno, Curso: 1, Código Sede: 1, Nombre Sede: Sede Central
+[2025-04-18 18:32:41] [INFO   ] [GENERAL] Alumno cargado → Código: 2, Nombre: Alumno Dos, Curso: 2, Código Sede: 2, Nombre Sede: Sede Norte
+[2025-04-18 18:32:41] [INFO   ] [GENERAL] Alumno cargado → Código: 3, Nombre: Alumno Tres, Curso: 3, Código Sede: 3, Nombre Sede: Sede Sur
+[2025-04-18 18:32:41] [INFO   ] [GENERAL] Alumno cargado → Código: 4, Nombre: Alumno Cuatro, Curso: 1, Código Sede: 4, Nombre Sede: Sede Este
+[2025-04-18 18:32:41] [INFO   ] [GENERAL] Alumno cargado → Código: 5, Nombre: Alumno Cinco, Curso: 2, Código Sede: 5, Nombre Sede: Sede Oeste
+[2025-04-18 18:32:41] [INFO   ] [GENERAL] Total alumnos cargados: 5
