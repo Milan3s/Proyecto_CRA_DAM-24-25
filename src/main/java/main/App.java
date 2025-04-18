@@ -16,7 +16,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
         //loadView("/views/Acceso");
-        loadView("/views/Alumnos");
+        loadView("/views/Acceso");
         stage.setTitle("Sistema CRA");
         stage.show();   
      }
@@ -36,8 +36,8 @@ public class App extends Application {
         if (wasMaximized) {
             primaryStage.setMaximized(true);
         } else {
-            primaryStage.setWidth(Math.max(width, 1980));
-            primaryStage.setHeight(Math.max(height, 1080));
+            /*primaryStage.setWidth(Math.max(width, 1980));
+            primaryStage.setHeight(Math.max(height, 1080));*/
         }
     }
 

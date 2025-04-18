@@ -10,31 +10,30 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="700.0" maxWidth="600.0" minHeight="700.0" minWidth="600.0" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegistroController">
-    
+<BorderPane maxHeight="611.0" maxWidth="550.0" minHeight="611.0" minWidth="550.0" prefHeight="611.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegistroController">
+
     <center>
-        <AnchorPane maxHeight="600.0" maxWidth="500.0" minHeight="600.0" minWidth="500.0" prefHeight="600.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+        <AnchorPane maxHeight="589.0" maxWidth="384.0" minHeight="589.0" minWidth="384.0" prefHeight="589.0" prefWidth="384.0" BorderPane.alignment="CENTER">
             <children>
-                <Text layoutX="155.0" layoutY="84.0" text="Registro">
-               <font>
-                  <Font size="48.0" />
-               </font>
+                <Text layoutX="91.0" layoutY="94.0" text="Registro" textAlignment="CENTER" wrappingWidth="201.443359375">
+                    <font>
+                        <Font size="49.0" />
+                    </font>
                 </Text>
 
-                <FontAwesomeIconView glyphName="USER" layoutX="75.0" layoutY="185.0" size="20" />
-                <TextField fx:id="txtUsuario" layoutX="110.0" layoutY="160.0" prefHeight="30.0" prefWidth="300.0" promptText="Usuario" />
+                <FontAwesomeIconView glyphName="USER" layoutX="34.0" layoutY="210.0" size="27" />
+                <TextField fx:id="txtUsuario" layoutX="79.0" layoutY="183.0" prefHeight="30.0" prefWidth="250.0" promptText="Usuario" />
 
-                <FontAwesomeIconView glyphName="ENVELOPE" layoutX="75.0" layoutY="260.0" size="20" />
-                <TextField fx:id="txtEmail" layoutX="110.0" layoutY="235.0" prefHeight="30.0" prefWidth="300.0" promptText="Correo" />
+                <FontAwesomeIconView glyphName="ENVELOPE" layoutX="34.0" layoutY="287.0" size="27" />
+                <TextField fx:id="txtEmail" layoutX="79.0" layoutY="260.0" prefHeight="30.0" prefWidth="250.0" promptText="Correo electrónico" />
 
-                <FontAwesomeIconView glyphName="KEY" layoutX="75.0" layoutY="335.0" size="20" />
-                <PasswordField fx:id="txtPassword" layoutX="110.0" layoutY="310.0" prefHeight="30.0" prefWidth="300.0" promptText="Contraseña" />
+                <FontAwesomeIconView glyphName="KEY" layoutX="34.0" layoutY="364.0" size="27" />
+                <PasswordField fx:id="txtPassword" layoutX="79.0" layoutY="337.0" prefHeight="30.0" prefWidth="250.0" promptText="Contraseña" />
 
-                <Button fx:id="btnLogin" layoutX="110.0" layoutY="400.0" onAction="#btnActionLogin" prefHeight="30.0" prefWidth="120.0" text="Volver a Acceder" />
+                <Button fx:id="btnLogin" layoutX="79.0" layoutY="431.0" onAction="#btnActionLogin" prefHeight="30.0" prefWidth="100.0" text="Volver" />
+                <Button fx:id="btnRegistrarse" layoutX="229.0" layoutY="431.0" onAction="#btnActionRegistrarse" prefHeight="30.0" prefWidth="100.0" text="Registrarse" />
 
-                <Button fx:id="btnRegistrarse" layoutX="290.0" layoutY="400.0" onAction="#btnActionRegistrarse" prefHeight="30.0" prefWidth="120.0" text="Registrarse" />
-
-                <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="230.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="160.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" />
             </children>
         </AnchorPane>
     </center>
