@@ -12,7 +12,8 @@ public class CentroEducativo {
     private String telefono;
     private String email;
 
-    public CentroEducativo(String codigoCentro, String nombre, String calle, String localidad, String cp, String municipio, String provincia, String telefono, String email) {
+    public CentroEducativo(String codigoCentro, String nombre, String calle, String localidad, String cp,
+            String municipio, String provincia, String telefono, String email) {
         this.codigoCentro = codigoCentro;
         this.nombre = nombre;
         this.calle = calle;
@@ -60,4 +61,3 @@ public class CentroEducativo {
         return email;
     }
 }
-

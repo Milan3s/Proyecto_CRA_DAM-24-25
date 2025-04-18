@@ -8,23 +8,26 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="580.0" prefWidth="886.0" spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AlumnosController">
+<VBox alignment="TOP_CENTER" prefHeight="580.0" prefWidth="886.0" spacing="15" style="-fx-padding: 20;" 
+      xmlns="http://javafx.com/javafx/23.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="controller.AlumnosController">
 
-    <!-- Título -->
-    <Label text="Tabla de Alumnos" />
+    <!-- Título centrado -->
+    <Label style="-fx-font-size: 20;" text="Tabla de Alumnos" />
 
     <!-- Botones en línea -->
     <HBox spacing="10">
-        <Button fx:id="btnNuevoAlumno" mnemonicParsing="false" onAction="#btnActionNuevoAlumno" text="Nuevo Alumno" />
-        <Button fx:id="btnEliminarAlumno" mnemonicParsing="false" onAction="#btnActionEliminarAlumno" text="Eliminar Alumno" />
-        <Button fx:id="btnEliminarTodos" mnemonicParsing="false" onAction="#btnActionEliminarTodos" text="Eliminar Todos" />
+        <Button fx:id="btnNuevoAlumno" onAction="#btnActionNuevoAlumno" text="Nuevo Alumno" />
+        <Button fx:id="btnEliminarAlumno" onAction="#btnActionEliminarAlumno" text="Eliminar Alumno" />
+        <Button fx:id="btnEliminarTodos" onAction="#btnActionEliminarTodos" text="Eliminar Todos" />
     </HBox>
-    
+
     <!-- Barra de búsqueda -->
-    <HBox spacing="10">
-        <Label prefHeight="35.0" prefWidth="60.0" text="Buscar:" />
-        <TextField fx:id="txtBuscar" prefHeight="35.0" prefWidth="423.0" promptText="Escribe para buscar..." />
-        <Button fx:id="btnBuscar" onAction="#btnBuscarAction" prefHeight="35.0" text="Buscar" />
+    <HBox prefHeight="25.0" prefWidth="671.0" spacing="10">
+        <Label text="Buscar:" />
+        <TextField fx:id="txtBuscar" prefHeight="30.0" prefWidth="350.0" promptText="Escribe para buscar..." />
+        <Button fx:id="btnBuscar" onAction="#btnBuscarAction" prefHeight="30.0" text="Buscar" />
     </HBox>
 
     <!-- Tabla -->

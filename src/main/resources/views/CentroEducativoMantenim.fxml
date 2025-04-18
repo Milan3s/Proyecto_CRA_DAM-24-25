@@ -13,49 +13,47 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgregarCentroEducativoController">
+<BorderPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CentroEducativoMantenimController">
 
     <center>
-        <AnchorPane prefHeight="500.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="500.0" prefWidth="800.0" BorderPane.alignment="CENTER">
 
-            <!-- Título -->
-            <Text layoutX="182.0" layoutY="64.0" text="Agregar Centro Educativo">
+            <!-- Título centrado arriba -->
+            <Text layoutX="260.0" layoutY="71.0" text="Centro Educativo">
                 <font>
                     <Font size="26.0" />
                 </font>
             </Text>
 
-            <!-- Formulario organizado en dos columnas -->
-            <HBox layoutX="85.0" layoutY="133.0" spacing="40.0">
+            <!-- Formulario dividido en dos columnas -->
+            <HBox layoutX="99.0" layoutY="136.0" spacing="50.0">
                 <children>
 
                     <!-- Columna izquierda -->
-                    <GridPane hgap="10" prefHeight="235.0" prefWidth="255.0" vgap="15">
+                    <GridPane hgap="10" vgap="15">
                         <padding>
                             <Insets bottom="10" left="10" right="10" top="10" />
                         </padding>
 
                         <Label text="Código:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                        <TextField fx:id="txtCodigo" promptText="Código centro" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtCodigo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
                         <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                        <TextField fx:id="txtNombre" promptText="Nombre del centro" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
                         <Label text="Calle:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                        <TextField fx:id="txtCalle" promptText="Calle" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtCalle" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
                         <Label text="Localidad:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                        <TextField fx:id="txtLocalidad" promptText="Localidad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtLocalidad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
                         <Label text="Email:" GridPane.rowIndex="4" />
-                        <TextField fx:id="txtEmail" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <columnConstraints>
                      <ColumnConstraints />
                      <ColumnConstraints />
                   </columnConstraints>
                   <rowConstraints>
-                     <RowConstraints />
-                     <RowConstraints />
                      <RowConstraints />
                      <RowConstraints />
                      <RowConstraints />
@@ -71,16 +69,16 @@
                         </padding>
 
                         <Label text="C.P.:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                        <TextField fx:id="txtCP" promptText="Código Postal" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtCP" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
                         <Label text="Municipio:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                        <TextField fx:id="txtMunicipio" promptText="Municipio" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtMunicipio" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
                         <Label text="Provincia:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                        <TextField fx:id="txtProvincia" promptText="Provincia" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtProvincia" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
                         <Label text="Teléfono:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                        <TextField fx:id="txtTelefono" promptText="Teléfono" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtTelefono" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <columnConstraints>
                      <ColumnConstraints />
                      <ColumnConstraints />
@@ -97,11 +95,11 @@
                 </children>
             </HBox>
 
-            <!-- Botones -->
-            <HBox layoutX="200.0" layoutY="397.0" spacing="20.0">
+            <!-- Botones abajo centrados -->
+            <HBox layoutX="250.0" layoutY="420.0" spacing="20.0">
                 <children>
-                    <Button fx:id="btnGuardar" prefHeight="35.0" prefWidth="120.0" text="Guardar" />
-                    <Button fx:id="btnCancelar" onAction="#btnActionCancelar" prefHeight="35.0" prefWidth="120.0" text="Cancelar" />
+                    <Button fx:id="btnGuardar" prefHeight="35" prefWidth="120" text="Guardar" />
+                    <Button fx:id="btnCancelar" onAction="#btnActionCancelar" prefHeight="35" prefWidth="120" text="Cancelar" />
                 </children>
             </HBox>
 
