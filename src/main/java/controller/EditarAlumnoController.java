@@ -27,7 +27,6 @@ public class EditarAlumnoController {
     private Alumno alumno;
     private ObservableList<Sede> listaSedes = FXCollections.observableArrayList();
 
-    @FXML
     public void initialize() {
         cargarSedes();
         btnGuardar.setOnAction(e -> guardarCambios());

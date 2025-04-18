@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
@@ -8,34 +7,41 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="535.0" styleClass="panel-agregar-alumnos" stylesheets="@../styles/agregaralumnos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgregarAlumnosController">
+<AnchorPane prefHeight="452.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AgregarAlumnosController">
    <children>
-      <TextField fx:id="txtNombre" layoutX="199.0" layoutY="172.0" prefHeight="35.0" prefWidth="247.0" styleClass="input-nombre" stylesheets="@../styles/agregaralumnos.css" />
-      <Text fill="#fcfcfc" layoutX="151.0" layoutY="119.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt_titulo_Agregar" text="Agregar Alumnos" textAlignment="CENTER" wrappingWidth="247.48046875">
+      <TextField fx:id="txtNombre" layoutX="199.0" layoutY="136.0" prefHeight="35.0" prefWidth="247.0" />
+      
+      <Text fill="black" layoutX="144.0" layoutY="74.0" text="Agregar Alumnos" textAlignment="CENTER" wrappingWidth="247.0">
          <font>
             <Font size="31.0" />
          </font>
       </Text>
-      <TextField fx:id="txtCurso" layoutX="199.0" layoutY="232.0" prefHeight="35.0" prefWidth="247.0" styleClass="input-curso" stylesheets="@../styles/agregaralumnos.css" />
-      <Button fx:id="btnGuardar" contentDisplay="CENTER" layoutX="99.0" layoutY="386.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="160.0" styleClass="btnGuardar" text="Guardar" textAlignment="CENTER" />
-      <ComboBox fx:id="cbox_sede" layoutX="199.0" layoutY="297.0" prefHeight="56.0" prefWidth="247.0" promptText="Selecciona una..." styleClass="cbox_select" stylesheets="@../styles/agregaralumnos.css" />
-      <Text fill="#fcfcfc" layoutX="94.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt_Nombre" text="Nombre" textAlignment="RIGHT" wrappingWidth="85.0">
+
+      <TextField fx:id="txtCurso" layoutX="199.0" layoutY="196.0" prefHeight="35.0" prefWidth="247.0" />
+
+      <Button fx:id="btnGuardar" layoutX="94.0" layoutY="356.0" prefHeight="45.0" prefWidth="160.0" text="Guardar" />
+
+      <ComboBox fx:id="cbox_sede" layoutX="199.0" layoutY="261.0" prefHeight="35.0" prefWidth="247.0" promptText="Selecciona una..." style="-fx-text-fill: black;" />
+
+      <Text fill="black" layoutX="94.0" layoutY="161.0" text="Nombre" textAlignment="RIGHT" wrappingWidth="85.0">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text fill="#fcfcfc" layoutX="94.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt_curso" text="Curso" textAlignment="RIGHT" wrappingWidth="85.0">
+
+      <Text fill="black" layoutX="94.0" layoutY="221.0" text="Curso" textAlignment="RIGHT" wrappingWidth="85.0">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text fill="#fcfcfc" layoutX="27.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="txt_sede" text="Codigo Sede" textAlignment="RIGHT" wrappingWidth="160.0">
+
+      <Text fill="black" layoutX="27.0" layoutY="286.0" text="Codigo Sede" textAlignment="RIGHT" wrappingWidth="160.0">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Button fx:id="btnCancelar" layoutX="305.0" layoutY="386.0" mnemonicParsing="false" onAction="#btnActionCancelar" prefHeight="45.0" prefWidth="141.0" styleClass="btnCancelar" text="Cancelar" />
-      <FontAwesomeIconView fill="WHITE" glyphName="SAVE" layoutX="119.0" layoutY="415.0" size="20" styleClass="icon-guardar" wrappingWidth="19.428571701049805" />
-      <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" layoutX="315.0" layoutY="417.0" size="22.0" styleClass="icon-cancelar" text="" wrappingWidth="19.428571701049805" />
+
+      <Button fx:id="btnCancelar" layoutX="300.0" layoutY="356.0" onAction="#btnActionCancelar" prefHeight="45.0" prefWidth="141.0" text="Cancelar" />
+
    </children>
 </AnchorPane>

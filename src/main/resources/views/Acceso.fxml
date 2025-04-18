@@ -10,7 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="611.0" maxWidth="550.0" minHeight="611.0" minWidth="550.0" prefHeight="611.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AccesoController">
+<BorderPane maxHeight="611.0" maxWidth="550.0" minHeight="611.0" minWidth="550.0" prefHeight="611.0" prefWidth="550.0" 
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.AccesoController">
     
    <center>
       <AnchorPane maxHeight="589.0" maxWidth="384.0" minHeight="589.0" minWidth="384.0" prefHeight="589.0" prefWidth="384.0" BorderPane.alignment="CENTER">
