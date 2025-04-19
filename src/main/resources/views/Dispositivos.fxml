@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="874.0" prefWidth="1228.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DispositivosController">
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DispositivosController">
    <children>
       <Label text="Dispositivos">
          <font>
@@ -27,7 +27,7 @@
             <TextField fx:id="txtBuscar" prefHeight="25.0" prefWidth="200.0" promptText="Escribe para buscar..." />
             <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#btnBuscarAction" text="Buscar" />
          </children></HBox>
-      <TableView fx:id="tablaDisp" prefHeight="665.0" prefWidth="1228.0">
+      <TableView fx:id="tablaDisp" onMouseClicked="#capturarClick" prefHeight="665.0" prefWidth="1228.0" tableMenuButtonVisible="true">
         <columns>
           <TableColumn fx:id="colCodigo" prefWidth="75.0" text="Código" />
           <TableColumn fx:id="colNombre" prefWidth="74.0" text="Nombre" />

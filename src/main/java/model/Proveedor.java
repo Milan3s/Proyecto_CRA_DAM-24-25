@@ -23,6 +23,11 @@ public class Proveedor {
         this.email = email;
     }
 
+    public Proveedor(int codigo, String nombre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+    }
+    
     public int getCodigo() {
         return codigo;
     }

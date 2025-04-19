@@ -10,11 +10,12 @@ public class Dispositivo {
     private Date fecha_adquisicion;
     private String mac;
     private String imei;
+    private String comentario;
     private int num_etiqueta;
     private Proveedor proveedor;
     private Alumno alumno;
 
-    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, Date fecha_adquisicion, String mac, String imei, int num_etiqueta, Proveedor proveedor, Alumno alumno) {
+    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, Date fecha_adquisicion, String mac, String imei, int num_etiqueta, Proveedor proveedor, Alumno alumno, String comentario) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.modelo = modelo;
@@ -25,6 +26,7 @@ public class Dispositivo {
         this.num_etiqueta = num_etiqueta;
         this.proveedor = proveedor;
         this.alumno = alumno;
+        this.comentario = comentario;
     }
 
     public int getCodigo() {
@@ -105,5 +107,13 @@ public class Dispositivo {
 
     public void setAlumno(Alumno alumno) {
         this.alumno = alumno;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 }

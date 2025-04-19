@@ -1,5 +1,6 @@
 controller\AgregarAlumnosController.class
 utils\LoggerUtils$1.class
+controller\DispositivosMantenimController.class
 controller\CentroEducativoController.class
 model\Sede.class
 utils\Utilidades.class

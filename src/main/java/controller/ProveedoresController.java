@@ -106,7 +106,7 @@ public class ProveedoresController implements Initializable {
             rs.close();
             stmt.close();
         } catch (SQLException e) {
-            LoggerUtils.logError("PROVEEDORES", "Error al cargar proveedores", e);
+            LoggerUtils.logError("PROVEEDORES", "Error al cargar proveedores: " + e.getMessage(), e);
         }
     }
 

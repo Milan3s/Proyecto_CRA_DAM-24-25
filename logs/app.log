@@ -5,3 +5,29 @@
 [2025-04-16 00:30:14] [INFO   ] [PROVEEDORES] Proveedor eliminado: 5
 
 [2025-04-17 19:37:14] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
+
+[2025-04-19 12:26:34] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 12:33:23] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 12:49:02] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 13:04:46] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 18:46:53] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 19:19:38] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 19:24:00] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: Unknown column 'd.coment_reg' in 'field list'
+
+[2025-04-19 19:29:52] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 19:32:41] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
+
+[2025-04-19 19:33:07] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
+
+[2025-04-19 19:43:05] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 19:43:42] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 19:44:18] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.

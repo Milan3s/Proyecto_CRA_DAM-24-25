@@ -63,14 +63,12 @@ public class ProveedoresMantenimController implements Initializable {
 
     @FXML
     private void btnGuardarAction(ActionEvent event) {
-        /*
         if (null == this.proveedor) {
             insertarProv();
         } else {
             actualizarProv();
         }
-        */
-        guardarProv();
+        //guardarProv();
     }
 
     @FXML
