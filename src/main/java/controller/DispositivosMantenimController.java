@@ -1,7 +1,13 @@
 package controller;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,6 +20,8 @@ import javafx.stage.Stage;
 import model.Alumno;
 import model.Dispositivo;
 import model.Proveedor;
+import utils.DataBaseConection;
+import utils.LoggerUtils;
 
 public class DispositivosMantenimController implements Initializable {
 
@@ -51,6 +59,8 @@ public class DispositivosMantenimController implements Initializable {
     private TextField txtNetiqueta;
     @FXML
     private DatePicker txtFecha;
+    
+    private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -68,6 +78,7 @@ public class DispositivosMantenimController implements Initializable {
             txtImei.setText(disp.getImei());
             txtNetiqueta.setText(String.valueOf(disp.getNum_etiqueta()));
             //txtFecha.setText(String.valueOf(disp.getFecha_adquisicion()));
+            cargarCbProveedores();
         }
     }
 
@@ -83,5 +94,28 @@ public class DispositivosMantenimController implements Initializable {
     private void cerrarVentana() {
         Stage stage = (Stage) btnCancelar.getScene().getWindow();
         stage.close();
+    }
+    
+    private void cargarCbProveedores() {
+        String query = "SELECT codigo_proveedor, nombre FROM proveedores";
+        
+        try {
+            Connection conn = DataBaseConection.getConnection();
+            Statement stmt = conn.createStatement(); 
+            ResultSet rs = stmt.executeQuery(query);
+            listaProveedores.clear();
+            while (rs.next()) {
+                Proveedor proveedor = new Proveedor(
+                    rs.getInt("codigo_proveedor"),
+                    rs.getString("nombre")
+                );
+                listaProveedores.add(proveedor);
+            }
+            cboxProveedor.setItems(listaProveedores);
+            rs.close();
+            stmt.close();
+        } catch (SQLException e) {
+            LoggerUtils.logError("PROVEEDORES", "Error al cargar proveedores: " + e.getMessage(), e);
+        }
     }
 }

@@ -112,7 +112,10 @@ public class DispositivosController implements Initializable {
         query += " LEFT OUTER JOIN proveedores p ON d.codigo_proveedor = p.codigo_proveedor";
         query += " LEFT OUTER JOIN alumnos a ON d.codigo_alumno = a.codigo_alumno";
         
-        try (Connection conn = DataBaseConection.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {        
+        try {
+            Connection conn = DataBaseConection.getConnection(); 
+            Statement stmt = conn.createStatement(); 
+            ResultSet rs = stmt.executeQuery(query);
             listaDisposit.clear();
             while (rs.next()) {
                 
