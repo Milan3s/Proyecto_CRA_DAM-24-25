@@ -1,21 +1,15 @@
 package controller;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Proveedor;
-import utils.DataBaseConection;
-import utils.LoggerUtils;
-import static utils.Utilidades.mostrarAlerta2;
+import model.ProveedorDAO;
 
 public class ProveedoresMantenimController implements Initializable {
 
@@ -41,6 +35,7 @@ public class ProveedoresMantenimController implements Initializable {
     private TextField txtEmail;
 
     private Proveedor proveedor;
+    private ProveedorDAO provDAO = new ProveedorDAO();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -91,29 +86,10 @@ public class ProveedoresMantenimController implements Initializable {
         String telefono = txtTelefono.getText().trim();
         String email = txtEmail.getText().trim();
         
-        String sql = "UPDATE proveedores SET nombre = ?, calle = ?, localidad = ?, cp = ?, municipio = ?, provincia = ?, telefono = ?, email = ? WHERE codigo_proveedor = ?";
+        Proveedor p = new Proveedor(codProv, nombre, calle, localidad, cp, municipio, provincia, telefono, email);
+        provDAO.actualizarProveedor(p);
         
-        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, nombre);
-            stmt.setString(2, calle);
-            stmt.setString(3, localidad);
-            stmt.setString(4, cp);
-            stmt.setString(5, municipio);
-            stmt.setString(6, provincia);
-            stmt.setString(7, telefono);
-            stmt.setString(8, email);
-            stmt.setInt(9, codProv);
-            
-            int filas = stmt.executeUpdate();
-            
-            if (filas > 0) {
-                mostrarAlerta2("Éxito", "Proveedor actualizado correctamente.", Alert.AlertType.INFORMATION);
-                cerrarVentana();
-            }
-        } catch (SQLException e) {
-            mostrarAlerta2("Error SQL", "No se pudo actualizar el proveedor.\nDetalles: " + e.getMessage(), Alert.AlertType.ERROR);
-            LoggerUtils.logError("PROVEEDORES", "Error al ejecutar actualización de proveedor", e);
-        }
+        cerrarVentana();
     }
     
     private void insertarProv() {
@@ -126,27 +102,9 @@ public class ProveedoresMantenimController implements Initializable {
         String telefono = txtTelefono.getText().trim();
         String email = txtEmail.getText().trim();
         
-        String sql = "INSERT INTO proveedores (nombre, calle, localidad, cp, municipio, provincia, telefono, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        Proveedor p = new Proveedor(0, nombre, calle, localidad, cp, municipio, provincia, telefono, email);
+        provDAO.insertarProveedor(p);
         
-        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, nombre);
-            stmt.setString(2, calle);
-            stmt.setString(3, localidad);
-            stmt.setString(4, cp);
-            stmt.setString(5, municipio);
-            stmt.setString(6, provincia);
-            stmt.setString(7, telefono);
-            stmt.setString(8, email);
-            
-            int filas = stmt.executeUpdate();
-            
-            if (filas > 0) {
-                mostrarAlerta2("Éxito", "Proveedor guardado correctamente.", Alert.AlertType.INFORMATION);
-                cerrarVentana();
-            }
-        } catch (SQLException e) {
-            mostrarAlerta2("Error SQL", "No se pudo guardar el proveedor.\nDetalles: " + e.getMessage(), Alert.AlertType.ERROR);
-            LoggerUtils.logError("PROVEEDORES", "Error al ejecutar alta de proveedor", e);
-        }    
+        cerrarVentana();
     }
 }

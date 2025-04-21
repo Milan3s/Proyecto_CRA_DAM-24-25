@@ -59,3 +59,14 @@
 [2025-04-20 17:03:25] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
 
 [2025-04-20 17:03:30] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-21 19:54:09] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+
+[2025-04-21 19:59:04] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+
+[2025-04-21 20:01:14] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+
+[2025-04-21 20:56:25] [INFO   ] [PROVEEDORES] CONSULTA → Eliminar proveedor con código: 7
+[PROVEEDORES] SQL: DELETE FROM proveedores WHERE codigo_proveedor = ?
+
+[2025-04-21 20:56:26] [INFO   ] [PROVEEDORES] Proveedor eliminado: 7

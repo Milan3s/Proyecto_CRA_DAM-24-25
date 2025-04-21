@@ -2,11 +2,6 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,7 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Proveedor;
-import utils.DataBaseConection;
+import model.ProveedorDAO;
 import utils.LoggerUtils;
 import static utils.Utilidades.mostrarAlerta2;
 
@@ -65,6 +60,8 @@ public class ProveedoresController implements Initializable {
     @FXML
     private Button btnBuscar;
     
+    private ProveedorDAO provDAO = new ProveedorDAO();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         configurarColumnas();
@@ -84,30 +81,8 @@ public class ProveedoresController implements Initializable {
     }
     
     private void cargarDatos() {
-        String query = "SELECT * FROM proveedores";
-        
-        try (Connection conn = DataBaseConection.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
-            listaProveedores.clear();
-            while (rs.next()) {
-                Proveedor proveedor = new Proveedor(
-                    rs.getInt("codigo_proveedor"),
-                    rs.getString("nombre"),
-                    rs.getString("calle"),
-                    rs.getString("localidad"),
-                    rs.getString("cp"),
-                    rs.getString("municipio"),
-                    rs.getString("provincia"),
-                    rs.getString("telefono"),
-                    rs.getString("email")
-                );
-                listaProveedores.add(proveedor);
-            }
-            tablaProv.setItems(listaProveedores);
-            rs.close();
-            stmt.close();
-        } catch (SQLException e) {
-            LoggerUtils.logError("PROVEEDORES", "Error al cargar proveedores: " + e.getMessage(), e);
-        }
+        listaProveedores = provDAO.obtenerProveedores();
+        tablaProv.setItems(listaProveedores);
     }
 
     @FXML
@@ -161,34 +136,12 @@ public class ProveedoresController implements Initializable {
         confirmacion.setContentText(provSelec.getNombre());
         confirmacion.showAndWait().ifPresent(respuesta -> {
             if (respuesta == ButtonType.OK) {
-                eliminarProveedor(provSelec.getCodigo());
+                int filas = provDAO.eliminarProveedor(provSelec.getCodigo());
+                if (filas > 0) cargarDatos();
             }
         });
     }
     
-    private void eliminarProveedor(int codProv) {
-        String sql = "DELETE FROM proveedores WHERE codigo_proveedor = ?";
-        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-            LoggerUtils.logQuery("PROVEEDORES", "Eliminar proveedor con código: " + codProv, sql);
-
-            stmt.setInt(1, codProv);
-            int filas = stmt.executeUpdate();
-
-            if (filas > 0) {
-                mostrarAlerta2("Eliminado", "Proveedor eliminado.", Alert.AlertType.INFORMATION);
-                LoggerUtils.logInfo("PROVEEDORES", "Proveedor eliminado: " + codProv);
-                cargarDatos();
-            } else {
-                mostrarAlerta2("Error", "No se pudo eliminar el proveedor.", Alert.AlertType.ERROR);
-                LoggerUtils.logInfo("PROVEEDORES", "No se eliminó ningún proveedor (código: " + codProv + ")");
-            }
-
-        } catch (SQLException e) {
-            mostrarAlerta2("Error de BD", "No se pudo eliminar debido a un error de base de datos.", Alert.AlertType.ERROR);
-            LoggerUtils.logError("PROVEEDORES", "Error al eliminar proveedor", e);
-        }
-    }
-
     @FXML
     private void btnBuscarAction(ActionEvent event) {
         String filtro = txtBuscar.getText().toLowerCase();

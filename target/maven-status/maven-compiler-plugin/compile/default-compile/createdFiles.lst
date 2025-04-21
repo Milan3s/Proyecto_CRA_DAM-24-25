@@ -14,6 +14,7 @@ model\AgregarCentroEducativo.class
 controller\EditarCentroEducativoController.class
 model\CentroEducativo.class
 controller\DashboardController.class
+model\ProveedorDAO.class
 controller\SidebarController.class
 model\AgregarAlumnos.class
 module-info.class
