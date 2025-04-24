@@ -2,6 +2,7 @@ controller\AgregarAlumnosController.class
 utils\LoggerUtils$1.class
 controller\DispositivosMantenimController.class
 controller\CentroEducativoController.class
+controller\DispositivosMantenimController$1.class
 model\Sede.class
 utils\Utilidades.class
 controller\AlumnosController.class
@@ -23,7 +24,9 @@ model\Proveedor.class
 controller\ProveedoresMantenimController.class
 model\Dispositivo.class
 controller\DispositivosController.class
+model\DispositivoDAO.class
 controller\EditarAlumnoController.class
+controller\DispositivosMantenimController$2.class
 controller\AccesoController.class
 controller\ProveedoresController.class
 model\Alumno.class

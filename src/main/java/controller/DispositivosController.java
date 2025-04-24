@@ -2,11 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -27,10 +23,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.Alumno;
 import model.Dispositivo;
-import model.Proveedor;
-import utils.DataBaseConection;
+import model.DispositivoDAO;
 import utils.LoggerUtils;
 import static utils.Utilidades.mostrarAlerta2;
 
@@ -72,6 +66,8 @@ public class DispositivosController implements Initializable {
     @FXML
     private Button btnEliminar;
     
+    private DispositivoDAO dispDAO = new DispositivoDAO();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         configurarColumnas();
@@ -79,14 +75,23 @@ public class DispositivosController implements Initializable {
     }
 
     private void configurarColumnas() {
+        SimpleDateFormat formatFecha = new SimpleDateFormat("dd/MM/yyyy");
+        
         colCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colModelo.setCellValueFactory(new PropertyValueFactory<>("modelo"));
         colNumSerie.setCellValueFactory(new PropertyValueFactory<>("num_serie"));
-        colFechaAdqui.setCellValueFactory(new PropertyValueFactory<>("fecha_adquisicion"));
         colMac.setCellValueFactory(new PropertyValueFactory<>("mac"));
         colImei.setCellValueFactory(new PropertyValueFactory<>("imei"));
         colNumEti.setCellValueFactory(new PropertyValueFactory<>("num_etiqueta"));
+        colFechaAdqui.setCellValueFactory(cellData -> {
+            Dispositivo disp = cellData.getValue();
+            if (disp.getFecha_adquisicion()!= null) {
+                return new SimpleStringProperty(formatFecha.format(disp.getFecha_adquisicion()));
+            } else {
+                return new SimpleStringProperty("");
+            }
+        });
         colProveedor.setCellValueFactory(cellData -> {
             Dispositivo disp = cellData.getValue();
             if (disp.getProveedor() != null) {
@@ -106,41 +111,8 @@ public class DispositivosController implements Initializable {
     }
     
     private void cargarDatos() {
-        String query = "SELECT d.codigo_dispositivo, d.nombre, d.modelo, d.num_serie, d.fecha_adquisicion, d.mac, d.imei, d.num_etiqueta, d.coment_reg";
-        query += " , p.codigo_proveedor, p.nombre AS nombre_prov, a.codigo_alumno, a.nombre AS nombre_alu";
-        query += " FROM dispositivos d";
-        query += " LEFT OUTER JOIN proveedores p ON d.codigo_proveedor = p.codigo_proveedor";
-        query += " LEFT OUTER JOIN alumnos a ON d.codigo_alumno = a.codigo_alumno";
-        
-        try {
-            Connection conn = DataBaseConection.getConnection(); 
-            Statement stmt = conn.createStatement(); 
-            ResultSet rs = stmt.executeQuery(query);
-            listaDisposit.clear();
-            while (rs.next()) {
-                
-                Proveedor prov = new Proveedor(rs.getInt("codigo_proveedor"), rs.getString("nombre_prov"));
-                Alumno alu = null;
-                Dispositivo disp = new Dispositivo(
-                    rs.getInt("codigo_dispositivo"),
-                    rs.getString("nombre"),
-                    rs.getString("modelo"),     
-                    rs.getString("num_serie"),
-                    rs.getDate("fecha_adquisicion"),
-                    rs.getString("mac"),
-                    rs.getString("imei"),
-                    rs.getInt("num_etiqueta"),
-                    prov, alu, 
-                    rs.getString("coment_reg"));
-                listaDisposit.add(disp);
-                
-            }
-            tablaDisp.setItems(listaDisposit);
-            rs.close();
-            stmt.close();
-        } catch (Exception e) {
-            LoggerUtils.logError("DISPOSITIVOS", "Error al cargar dispositivos: " + e.getMessage(), e);
-        }
+        listaDisposit = dispDAO.obtenerDispositivos();
+        tablaDisp.setItems(listaDisposit);
     }
 
     @FXML
@@ -152,6 +124,14 @@ public class DispositivosController implements Initializable {
         abrirMantenimiento(null);
     }
 
+    @FXML
+    private void capturarClick(MouseEvent event) {
+        if (event.getClickCount() == 2 && !tablaDisp.getSelectionModel().isEmpty()) {
+            Dispositivo disp = tablaDisp.getSelectionModel().getSelectedItem();
+            abrirMantenimiento(disp);
+        }
+    }
+    
     private void abrirMantenimiento(Dispositivo disp) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/DispositivosMantenim.fxml"));
@@ -190,39 +170,9 @@ public class DispositivosController implements Initializable {
         confirmacion.setContentText(dispSelec.getNombre());
         confirmacion.showAndWait().ifPresent(respuesta -> {
             if (respuesta == ButtonType.OK) {
-                eliminarDispositivo(dispSelec.getCodigo());
+                int filas = dispDAO.eliminarDispositivo(dispSelec.getCodigo());
+                if (filas > 0) cargarDatos();
             }
         });
-    }
-    
-    private void eliminarDispositivo(int codDisp) {
-        String sql = "DELETE FROM dispositivos WHERE codigo_dispositivo = ?";
-        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-            LoggerUtils.logQuery("DISPOSITIVOS", "Eliminar dispositivo con código: " + codDisp, sql);
-
-            stmt.setInt(1, codDisp);
-            int filas = stmt.executeUpdate();
-
-            if (filas > 0) {
-                mostrarAlerta2("Eliminado", "Dispositivo eliminado.", Alert.AlertType.INFORMATION);
-                LoggerUtils.logInfo("DISPOSITIVOS", "dispositivo eliminado: " + codDisp);
-                cargarDatos();
-            } else {
-                mostrarAlerta2("Error", "No se pudo eliminar el dispositivo.", Alert.AlertType.ERROR);
-                LoggerUtils.logInfo("DISPOSITIVOS", "No se eliminó ningún dispositivo (código: " + codDisp + ")");
-            }
-
-        } catch (SQLException e) {
-            mostrarAlerta2("Error de BD", "No se pudo eliminar debido a un error de base de datos.", Alert.AlertType.ERROR);
-            LoggerUtils.logError("DISPOSITIVOS", "Error al eliminar dispositivo", e);
-        }
-    }
-
-    @FXML
-    private void capturarClick(MouseEvent event) {
-        if (event.getClickCount() == 2 && !tablaDisp.getSelectionModel().isEmpty()) {
-            Dispositivo disp = tablaDisp.getSelectionModel().getSelectedItem();
-            abrirMantenimiento(disp);
-        }
     }
 }

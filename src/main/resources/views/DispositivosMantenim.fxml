@@ -62,8 +62,8 @@
                   <Label text="Nº serie:" GridPane.rowIndex="2" />
                   <Label text="Categoría:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                   <TextField fx:id="txtNserie" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <ComboBox fx:id="cboxMarca" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ComboBox fx:id="cboxCategoria" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="cboxMarca" prefHeight="25.0" prefWidth="241.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="cboxCategoria" prefHeight="25.0" prefWidth="253.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
                   <Label text="Fecha adquisición:" GridPane.rowIndex="3" />
                   <Label text="Proveedor:" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                   <Label text="Sede:" GridPane.rowIndex="4" />
@@ -74,16 +74,16 @@
                   <Label text="Alumno:" GridPane.columnIndex="3" GridPane.rowIndex="6" />
                   <Label text="Programa:" GridPane.rowIndex="7" />
                   <Label text="Comentario registro:" GridPane.rowIndex="8" />
-                  <ComboBox fx:id="cboxProveedor" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                  <ComboBox fx:id="cboxSede" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <ComboBox prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                  <ComboBox fx:id="cboxAlumno" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                  <ComboBox fx:id="cboxPrograma" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <ComboBox fx:id="cboxProveedor" prefHeight="25.0" prefWidth="258.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="cboxSede" prefHeight="25.0" prefWidth="237.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ComboBox prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="cboxAlumno" prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                  <ComboBox fx:id="cboxPrograma" prefHeight="25.0" prefWidth="236.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                   <TextArea fx:id="txtComent" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="8" GridPane.rowSpan="2" />
                   <TextField fx:id="txtMac" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <TextField fx:id="txtImei" GridPane.columnIndex="4" GridPane.rowIndex="5" />
                   <TextField fx:id="txtNetiqueta" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <DatePicker fx:id="txtFecha" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <DatePicker fx:id="dtpFecha" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
                <opaqueInsets>
                   <Insets />

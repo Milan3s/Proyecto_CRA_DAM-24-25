@@ -100,9 +100,10 @@ public class Proveedor {
         this.email = email;
     }
 
+    /*
     @Override
     public String toString() {
         return nombre;
     }
-    
+    */
 }

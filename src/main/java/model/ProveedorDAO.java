@@ -68,7 +68,6 @@ public class ProveedorDAO {
             
             if (filas > 0) {
                 mostrarAlerta2("Éxito", "Proveedor guardado correctamente.", Alert.AlertType.INFORMATION);
-                //cerrarVentana();
             }
         } catch (SQLException e) {
             mostrarAlerta2("Error SQL", "No se pudo guardar el proveedor.\nDetalles: " + e.getMessage(), Alert.AlertType.ERROR);
@@ -106,8 +105,8 @@ public class ProveedorDAO {
         int filas = 0;
         String sql = "DELETE FROM proveedores WHERE codigo_proveedor = ?";
         
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            LoggerUtils.logQuery("PROVEEDORES", "Eliminar proveedor con código: " + codProv, sql);
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
 
             stmt.setInt(1, codProv);
             filas = stmt.executeUpdate();

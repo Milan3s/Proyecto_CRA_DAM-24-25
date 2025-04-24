@@ -77,14 +77,14 @@ public class ProveedoresMantenimController implements Initializable {
     
     private void actualizarProv() {
         int codProv = this.proveedor.getCodigo();
-        String nombre = txtNombre.getText().trim();
-        String calle = txtCalle.getText().trim();
-        String localidad = txtLocalidad.getText().trim();
-        String cp = txtCp.getText().trim();
-        String municipio = txtMunicipio.getText().trim();
-        String provincia = txtProvincia.getText().trim();
-        String telefono = txtTelefono.getText().trim();
-        String email = txtEmail.getText().trim();
+        String nombre = txtNombre.getText();
+        String calle = txtCalle.getText();
+        String localidad = txtLocalidad.getText();
+        String cp = txtCp.getText();
+        String municipio = txtMunicipio.getText();
+        String provincia = txtProvincia.getText();
+        String telefono = txtTelefono.getText();
+        String email = txtEmail.getText();
         
         Proveedor p = new Proveedor(codProv, nombre, calle, localidad, cp, municipio, provincia, telefono, email);
         provDAO.actualizarProveedor(p);
@@ -93,14 +93,14 @@ public class ProveedoresMantenimController implements Initializable {
     }
     
     private void insertarProv() {
-        String nombre = txtNombre.getText().trim();
-        String calle = txtCalle.getText().trim();
-        String localidad = txtLocalidad.getText().trim();
-        String cp = txtCp.getText().trim();
-        String municipio = txtMunicipio.getText().trim();
-        String provincia = txtProvincia.getText().trim();
-        String telefono = txtTelefono.getText().trim();
-        String email = txtEmail.getText().trim();
+        String nombre = txtNombre.getText();
+        String calle = txtCalle.getText();
+        String localidad = txtLocalidad.getText();
+        String cp = txtCp.getText();
+        String municipio = txtMunicipio.getText();
+        String provincia = txtProvincia.getText();
+        String telefono = txtTelefono.getText();
+        String email = txtEmail.getText();
         
         Proveedor p = new Proveedor(0, nombre, calle, localidad, cp, municipio, provincia, telefono, email);
         provDAO.insertarProveedor(p);

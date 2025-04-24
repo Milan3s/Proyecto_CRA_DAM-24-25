@@ -70,3 +70,8 @@
 [PROVEEDORES] SQL: DELETE FROM proveedores WHERE codigo_proveedor = ?
 
 [2025-04-21 20:56:26] [INFO   ] [PROVEEDORES] Proveedor eliminado: 7
+
+[2025-04-23 23:26:24] [INFO   ] [DISPOSITIVOS] CONSULTA → Eliminar dispositivo con código: 3
+[DISPOSITIVOS] SQL: DELETE FROM dispositivos WHERE codigo_dispositivo = ?
+
+[2025-04-23 23:26:26] [INFO   ] [DISPOSITIVOS] dispositivo eliminado: 3

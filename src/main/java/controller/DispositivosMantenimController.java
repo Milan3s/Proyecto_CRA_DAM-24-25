@@ -1,10 +1,9 @@
 package controller;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,10 +16,12 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 import model.Alumno;
 import model.Dispositivo;
+import model.DispositivoDAO;
 import model.Proveedor;
-import utils.DataBaseConection;
+import model.ProveedorDAO;
 import utils.LoggerUtils;
 
 public class DispositivosMantenimController implements Initializable {
@@ -29,8 +30,6 @@ public class DispositivosMantenimController implements Initializable {
     private Button btnGuardar;
     @FXML
     private Button btnCancelar;
-    
-    private Dispositivo dispositivo;
     @FXML
     private TextField txtNombre;
     @FXML
@@ -58,9 +57,12 @@ public class DispositivosMantenimController implements Initializable {
     @FXML
     private TextField txtNetiqueta;
     @FXML
-    private DatePicker txtFecha;
+    private DatePicker dtpFecha;
     
+    private Dispositivo dispositivo;
     private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
+    private ProveedorDAO provDAO = new ProveedorDAO();
+    private DispositivoDAO dispDAO = new DispositivoDAO();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -68,6 +70,9 @@ public class DispositivosMantenimController implements Initializable {
     }
 
     public void setDispositivo(Dispositivo disp) {
+        formatearFecha();
+        cargarCbProveedores();
+        
         if (null != disp) {
             this.dispositivo = disp;
             txtNombre.setText(disp.getNombre());
@@ -77,13 +82,18 @@ public class DispositivosMantenimController implements Initializable {
             txtMac.setText(disp.getMac());
             txtImei.setText(disp.getImei());
             txtNetiqueta.setText(String.valueOf(disp.getNum_etiqueta()));
-            //txtFecha.setText(String.valueOf(disp.getFecha_adquisicion()));
-            cargarCbProveedores();
+            if (null != disp.getFecha_adquisicion()) dtpFecha.setValue(disp.getFecha_adquisicion().toLocalDate());
+            cboxProveedor.setValue(disp.getProveedor());
         }
     }
 
     @FXML
     private void btnGuardarAction(ActionEvent event) {
+        if (null == this.dispositivo) {
+            insertarDisp();
+        } else {
+            actualizarDisp();
+        }
     }
 
     @FXML
@@ -96,26 +106,77 @@ public class DispositivosMantenimController implements Initializable {
         stage.close();
     }
     
-    private void cargarCbProveedores() {
-        String query = "SELECT codigo_proveedor, nombre FROM proveedores";
+    private void formatearFecha() {
+        // Formatea cómo se muestra la fecha en el DatePicker
+        DateTimeFormatter formatFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         
-        try {
-            Connection conn = DataBaseConection.getConnection();
-            Statement stmt = conn.createStatement(); 
-            ResultSet rs = stmt.executeQuery(query);
-            listaProveedores.clear();
-            while (rs.next()) {
-                Proveedor proveedor = new Proveedor(
-                    rs.getInt("codigo_proveedor"),
-                    rs.getString("nombre")
-                );
-                listaProveedores.add(proveedor);
+        dtpFecha.setConverter(new StringConverter<LocalDate>() {
+            @Override
+            public String toString(LocalDate date) {
+                return (date != null) ? formatFecha.format(date) : "";
             }
+
+            @Override
+            public LocalDate fromString(String string) {
+                return (string != null && !string.isEmpty()) ? LocalDate.parse(string, formatFecha) : null;
+            }
+        });
+    }
+    
+    private void cargarCbProveedores() {      
+        try {
+            listaProveedores = provDAO.obtenerProveedores();
             cboxProveedor.setItems(listaProveedores);
-            rs.close();
-            stmt.close();
-        } catch (SQLException e) {
-            LoggerUtils.logError("PROVEEDORES", "Error al cargar proveedores: " + e.getMessage(), e);
+            
+            // Mostrar solamente el nombre del proveedor
+            cboxProveedor.setConverter(new StringConverter<Proveedor>() {
+                @Override
+                public String toString(Proveedor proveedor) {
+                    return proveedor != null ? proveedor.getNombre() : "";
+                }
+
+                @Override
+                public Proveedor fromString(String string) {
+                    return null;
+                }
+            });
+        } catch (Exception e) {
+            LoggerUtils.logError("PROVEEDORES", "Error al cargar comboBox Proveedor: " + e.getMessage(), e);
         }
+    }
+    
+    private void actualizarDisp() {
+        int codDisp = this.dispositivo.getCodigo();
+        String nombre = txtNombre.getText();
+        String modelo = txtModelo.getText();
+        String nSerie = txtNserie.getText();
+        Date fecha_adq = Date.valueOf(dtpFecha.getValue());
+        String mac = txtMac.getText();
+        String imei = txtImei.getText();
+        int numEtiq = 0;
+        Proveedor proveedor = cboxProveedor.getValue();
+        Alumno alumno = null;
+        String comentario = txtComent.getText();
+        Dispositivo disp = new Dispositivo(codDisp, nombre, modelo, nSerie, fecha_adq, mac, imei, numEtiq, proveedor, alumno, comentario);
+        dispDAO.actualizarDispositivo(disp);
+        
+        cerrarVentana();
+    }
+    
+    private void insertarDisp() {
+        String nombre = txtNombre.getText();
+        String modelo = txtModelo.getText();
+        String nSerie = txtNserie.getText();
+        Date fecha_adq = Date.valueOf(dtpFecha.getValue());
+        String mac = txtMac.getText();
+        String imei = txtImei.getText();
+        int numEtiq = 0;
+        Proveedor proveedor = cboxProveedor.getValue();
+        Alumno alumno = null;
+        String comentario = txtComent.getText();
+        Dispositivo disp = new Dispositivo(0, nombre, modelo, nSerie, fecha_adq, mac, imei, numEtiq, proveedor, alumno, comentario);
+        dispDAO.insertarDispositivo(disp);
+        
+        cerrarVentana();
     }
 }
