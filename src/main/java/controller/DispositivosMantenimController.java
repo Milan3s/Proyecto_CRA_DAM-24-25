@@ -22,7 +22,9 @@ import model.Dispositivo;
 import model.DispositivoDAO;
 import model.Proveedor;
 import model.ProveedorDAO;
+import model.Sede;
 import utils.LoggerUtils;
+import utils.Utilidades;
 
 public class DispositivosMantenimController implements Initializable {
 
@@ -43,7 +45,7 @@ public class DispositivosMantenimController implements Initializable {
     @FXML
     private ComboBox<Proveedor> cboxProveedor;
     @FXML
-    private ComboBox<?> cboxSede;
+    private ComboBox<Sede> cboxSede;
     @FXML
     private ComboBox<Alumno> cboxAlumno;
     @FXML
@@ -63,7 +65,27 @@ public class DispositivosMantenimController implements Initializable {
     private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
     private ProveedorDAO provDAO = new ProveedorDAO();
     private DispositivoDAO dispDAO = new DispositivoDAO();
-
+    
+    /*
+    private ObservableList<Categoria> listaCategorias = FXCollections.observableArrayList();
+    private CategoriaDAO catDAO = new CategoriaDAO();
+    
+    private ObservableList<Marca> listaMarcas = FXCollections.observableArrayList();
+    private MarcaDAO marcaDAO = new MarcaDAO();
+    
+    private ObservableList<Sede> listaSedes = FXCollections.observableArrayList();
+    private SedeDAO sedeDAO = new SedeDAO();
+    
+    private ObservableList<Espacio> listaEspacios = FXCollections.observableArrayList();
+    private EspacioDAO espacioDAO = new EspacioDAO();
+    
+    private ObservableList<Programa> listaProgramas = FXCollections.observableArrayList();
+    private ProgramaDAO programaDAO = new ProgramaDAO();
+    
+    private ObservableList<Alumno> listaAlumnos = FXCollections.observableArrayList();
+    private AlumnoDAO alumnoDAO = new AlumnoDAO();
+    */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -71,7 +93,7 @@ public class DispositivosMantenimController implements Initializable {
 
     public void setDispositivo(Dispositivo disp) {
         formatearFecha();
-        cargarCbProveedores();
+        cargarCombos();
         
         if (null != disp) {
             this.dispositivo = disp;
@@ -84,6 +106,7 @@ public class DispositivosMantenimController implements Initializable {
             txtNetiqueta.setText(String.valueOf(disp.getNum_etiqueta()));
             if (null != disp.getFecha_adquisicion()) dtpFecha.setValue(disp.getFecha_adquisicion().toLocalDate());
             cboxProveedor.setValue(disp.getProveedor());
+            cboxAlumno.setValue(disp.getAlumno());
         }
     }
 
@@ -123,25 +146,57 @@ public class DispositivosMantenimController implements Initializable {
         });
     }
     
-    private void cargarCbProveedores() {      
+    private void cargarCombos() {
         try {
+            // Categorías
+            /*
+            listaCategorías = catDAO.obtenerCategorias();
+            cboxCategoria.setItems(listaCategorias);
+            Utilidades.cargarComboBox(cboxCategoria, listaCategorias, Categoria::getNombre);
+            */
+            
+            // Marcas
+            /*
+            listaMarcas = marcaDAO.obtenerMarcas();
+            cboxMarca.setItems(listaMarcas);
+            Utilidades.cargarComboBox(cboxMarca, listaMarcas, Marca::getNombre);
+            */
+            
+            // Sedes
+            /*
+            listaSedes = sedeDAO.obtenerSedes();
+            cboxSede.setItems(listaSedes);
+            Utilidades.cargarComboBox(cboxSede, listaSedes, Sede::getNombre);
+            */
+            
+            // Programas
+            /*
+            listaProgramas = programaDAO.obtenerProgramas();
+            cboxPrograma.setItems(listaProgramas);
+            Utilidades.cargarComboBox(cboxPrograma, listaProgramas, Programa::getNombre);
+            */
+            
+            // Espacios
+            /*
+            listaEspacios = espacioDAO.obtenerEspacios();
+            cboxEspacio.setItems(listaEspacios);
+            Utilidades.cargarComboBox(cboxEspacio, listaEspacios, Espacio::getNombre);
+            */
+            
+            // Alumnos
+            /*
+            listaAlumnos = alumnoDAO.obtenerAlumnos();
+            cboxAlumno.setItems(listaAlumnos);
+            Utilidades.cargarComboBox(cboxAlumno, listaAlumnos, Alumno::getNombre);
+            */
+            
+            // Proveedores
             listaProveedores = provDAO.obtenerProveedores();
             cboxProveedor.setItems(listaProveedores);
+            Utilidades.cargarComboBox(cboxProveedor, listaProveedores, Proveedor::getNombre);
             
-            // Mostrar solamente el nombre del proveedor
-            cboxProveedor.setConverter(new StringConverter<Proveedor>() {
-                @Override
-                public String toString(Proveedor proveedor) {
-                    return proveedor != null ? proveedor.getNombre() : "";
-                }
-
-                @Override
-                public Proveedor fromString(String string) {
-                    return null;
-                }
-            });
         } catch (Exception e) {
-            LoggerUtils.logError("PROVEEDORES", "Error al cargar comboBox Proveedor: " + e.getMessage(), e);
+            LoggerUtils.logError("DISPOSITIVOS", "Error al cargar comboBox: " + e.getMessage(), e);
         }
     }
     
@@ -153,7 +208,7 @@ public class DispositivosMantenimController implements Initializable {
         Date fecha_adq = Date.valueOf(dtpFecha.getValue());
         String mac = txtMac.getText();
         String imei = txtImei.getText();
-        int numEtiq = 0;
+        int numEtiq = Integer.parseInt(txtNetiqueta.getText());
         Proveedor proveedor = cboxProveedor.getValue();
         Alumno alumno = null;
         String comentario = txtComent.getText();
@@ -170,7 +225,7 @@ public class DispositivosMantenimController implements Initializable {
         Date fecha_adq = Date.valueOf(dtpFecha.getValue());
         String mac = txtMac.getText();
         String imei = txtImei.getText();
-        int numEtiq = 0;
+        int numEtiq = Integer.parseInt(txtNetiqueta.getText());
         Proveedor proveedor = cboxProveedor.getValue();
         Alumno alumno = null;
         String comentario = txtComent.getText();
