@@ -1,6 +1,7 @@
 package model;
 
 public class Alumno {
+
     private int codigo;
     private String nombre;
     private String curso;
@@ -33,5 +34,21 @@ public class Alumno {
 
     public int getCodigo_sede() {
         return codigo_sede;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    public void setCodigo_sede(int codigo_sede) {
+        this.codigo_sede = codigo_sede;
+    }
+
+    public void setNombreSede(String nombreSede) {
+        this.nombreSede = nombreSede;
     }
 }

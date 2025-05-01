@@ -22,7 +22,7 @@ public class LoggerUtils {
                 @Override
                 public String format(LogRecord record) {
                     return String.format(
-                            "\n[%1$tF %1$tT] [%2$-7s] %3$s%n",
+                            "[%1$tF %1$tT] [%2$-7s] %3$s%n",
                             new java.util.Date(record.getMillis()),
                             record.getLevel().getName(),
                             record.getMessage()
@@ -41,11 +41,15 @@ public class LoggerUtils {
 
     // === MÉTODOS CON SECCIÓN ===
     public static void logSection(String section) {
-        logger.info("\n=== SECCIÓN " + section.toUpperCase() + " ===");
+        logger.info("=== SECCIÓN: " + section.toUpperCase() + " ===");
     }
 
     public static void logInfo(String section, String message) {
         logger.info("[" + section.toUpperCase() + "] " + message);
+    }
+
+    public static void logWarning(String section, String message) {
+        logger.warning("[" + section.toUpperCase() + "] " + message);
     }
 
     public static void logQuery(String section, String descripcion, String sql) {
@@ -59,6 +63,10 @@ public class LoggerUtils {
     // === Compatibilidad con llamadas sin sección ===
     public static void logInfo(String message) {
         logInfo("GENERAL", message);
+    }
+
+    public static void logWarning(String message) {
+        logWarning("GENERAL", message);
     }
 
     public static void logQuery(String descripcion, String sql) {

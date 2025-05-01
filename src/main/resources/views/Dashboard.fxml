@@ -4,7 +4,10 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<BorderPane fx:id="rootPane" prefHeight="1080.0" prefWidth="1360.0" style="-fx-background-color: #1565C0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+<BorderPane fx:id="rootPane" prefHeight="1080.0" prefWidth="1360.0" 
+            xmlns="http://javafx.com/javafx/23.0.1" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="controller.DashboardController">
 
     <!-- Sidebar reutilizable -->
     <left>
@@ -13,7 +16,7 @@
 
     <!-- Panel dinámico para cargar contenido -->
     <center>
-        <StackPane fx:id="panelContenido" style="-fx-background-color: transparent; -fx-padding: 20;">
+        <StackPane fx:id="panelContenido">
             <children>
                 <Label fx:id="userNameLabel" style="-fx-text-fill: white; -fx-font-size: 20px;" />
             </children>
