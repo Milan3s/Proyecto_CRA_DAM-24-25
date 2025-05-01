@@ -4,10 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author Milanes
- */
 public class DataBaseConection {
 
     // Datos de conexión a la base de datos
@@ -43,16 +39,4 @@ public class DataBaseConection {
             e.printStackTrace();
         }
     }
-    
-    
-    // Ejemplo de uso
-    /*
-    public static void main(String[] args) {
-        Connection connection = getConnection();
-        if (connection != null) {
-            // Aquí puedes ejecutar consultas o realizar operaciones con la base de datos
-            closeConnection(connection);
-        }
-    }
-    */
 }
