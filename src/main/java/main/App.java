@@ -16,7 +16,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
         //loadView("/views/Acceso");
-        loadView("/views/Dispositivos");
+        loadView("/views/Proveedores");
         stage.setTitle("Sistema CRA");
         stage.show();
         

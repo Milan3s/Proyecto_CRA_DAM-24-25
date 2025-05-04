@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -24,6 +25,16 @@
          <children>
             <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo" />
             <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar" />
+            <Button fx:id="btnImportar" mnemonicParsing="false" onAction="#btnImportarAction" text="Importar">
+               <tooltip>
+                  <Tooltip text="Desde un archivo .csv" />
+               </tooltip>
+            </Button>
+            <Button fx:id="btnExportar" mnemonicParsing="false" onAction="#btnExportarAction" text="Exportar">
+               <tooltip>
+                  <Tooltip text="A un archivo .csv" />
+               </tooltip>
+            </Button>
          </children>
          <VBox.margin>
             <Insets />

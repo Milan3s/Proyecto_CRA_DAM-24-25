@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DataBaseConection {
 
     // Datos de conexión a la base de datos
-    private static final String URL = "jdbc:mysql://localhost:3306/cra_dispositivos"; // Cambiar el nombre de la base de datos y la ip del servidor y el puerto
+    private static final String URL = "jdbc:mysql://localhost:3306/cra_dispositivos";
     private static final String USER = "root"; // Usuario de la base de datos
     private static final String PASSWORD = ""; // Contraseña de la base de datos
     private static Connection connection = null;

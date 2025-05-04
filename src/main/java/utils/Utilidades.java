@@ -1,9 +1,11 @@
 package utils;
 
+import java.io.File;
 import java.util.function.Function;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
 
 public class Utilidades {
@@ -30,5 +32,20 @@ public class Utilidades {
                 return null; // No se usa en este caso
             }
         });
+    }
+    
+    // Para seleccionar un fichero mediante el selector de archivos del sistema
+    public static File seleccFichero(String descriFiltro, String filtro, String tipo) {
+        FileChooser f = new FileChooser();
+        FileChooser.ExtensionFilter filtcsv = new FileChooser.ExtensionFilter(descriFiltro, filtro);
+        f.getExtensionFilters().add(filtcsv);        
+        File fichero = null;
+        
+        if (tipo.equals("w")) {
+            fichero = f.showSaveDialog(null);
+        } else {
+            fichero = f.showOpenDialog(null);
+        }
+        return fichero;
     }
 }

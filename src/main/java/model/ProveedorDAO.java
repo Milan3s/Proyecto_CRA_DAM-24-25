@@ -65,10 +65,7 @@ public class ProveedorDAO {
             stmt.setString(8, p.getEmail());
             
             int filas = stmt.executeUpdate();
-            
-            if (filas > 0) {
-                mostrarAlerta2("Éxito", "Proveedor guardado correctamente.", Alert.AlertType.INFORMATION);
-            }
+
         } catch (SQLException e) {
             mostrarAlerta2("Error SQL", "No se pudo guardar el proveedor.\nDetalles: " + e.getMessage(), Alert.AlertType.ERROR);
             LoggerUtils.logError("PROVEEDORES", "Error al ejecutar alta de proveedor", e);
@@ -91,10 +88,7 @@ public class ProveedorDAO {
             stmt.setInt(9, p.getCodigo());
             
             int filas = stmt.executeUpdate();
-            
-            if (filas > 0) {
-                mostrarAlerta2("Éxito", "Proveedor actualizado correctamente.", Alert.AlertType.INFORMATION);
-            }
+
         } catch (SQLException e) {
             mostrarAlerta2("Error SQL", "No se pudo actualizar el proveedor.\nDetalles: " + e.getMessage(), Alert.AlertType.ERROR);
             LoggerUtils.logError("PROVEEDORES", "Error al ejecutar actualización de proveedor", e);

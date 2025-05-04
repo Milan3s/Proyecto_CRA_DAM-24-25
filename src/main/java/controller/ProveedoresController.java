@@ -1,8 +1,21 @@
 package controller;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,11 +32,13 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Proveedor;
 import model.ProveedorDAO;
 import utils.LoggerUtils;
+import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
 
 public class ProveedoresController implements Initializable {
@@ -59,8 +74,13 @@ public class ProveedoresController implements Initializable {
     private TextField txtBuscar;
     @FXML
     private Button btnBuscar;
+    @FXML
+    private Button btnImportar;
+    @FXML
+    private Button btnExportar;
     
     private ProveedorDAO provDAO = new ProveedorDAO();
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -164,6 +184,85 @@ public class ProveedoresController implements Initializable {
                if (coincNombre || coincLocal || coincMunic || coincProvin) filtrados.add(p);
             }
             tablaProv.setItems(filtrados);
+        }
+    }
+
+    @FXML
+    private void btnImportarAction(ActionEvent event) {
+        // Para seleccionar un fichero .csv
+        File fichero = Utilidades.seleccFichero("Archivos CSV", "*.csv", "r");
+        
+        if (fichero != null) {
+            String[] items;
+            String nombre;
+            String calle;
+            String localidad;
+            String cp;
+            String municipio;
+            String provincia;
+            String telefono;
+            String email;
+
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fichero)))) {
+                String linea = "";
+
+                while ((linea = br.readLine()) != null) {
+                    // Vamos leyendo cada línea del fichero
+                    items = linea.split(";");
+                    nombre = items[0];
+                    calle = items[1];
+                    localidad = items[2];
+                    cp = items[3];
+                    municipio = items[4];
+                    provincia = items[5];
+                    telefono = items[6];
+                    email = items[7];
+
+                    // Creamos un objeto Proveedor y lo insertamos en la BD
+                    Proveedor p = new Proveedor(0, nombre, calle, localidad, cp, municipio, provincia, telefono, email);
+                    provDAO.insertarProveedor(p);
+                }
+                cargarDatos();
+                mostrarAlerta2("Éxito", "Importación realizada.", Alert.AlertType.INFORMATION);
+                
+            } catch (FileNotFoundException e) {
+                LoggerUtils.logError("IMPORTACION", "Error al acceder al fichero : " + "\n" + fichero + e.getMessage(), e);
+            } catch (IOException e) {
+                LoggerUtils.logError("IMPORTACION", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
+            }
+        }
+    }
+
+    @FXML
+    private void btnExportarAction(ActionEvent event) {
+        // Seleccionar fichero destino
+        File fichero = Utilidades.seleccFichero("Archivos CSV", "*.csv", "w");
+        
+        if (fichero != null) {
+            // Hay que guardarlo con codificación ISO-8859-1 para que los acentos se muestren correctamente al abrirlo con Excel
+            try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fichero), "ISO-8859-1"))) {
+                // Línea de cabecera
+                bw.write("Nombre;Calle;Localidad;CP;Municipio;Provincia;Teléfono;Email\n");
+                
+                String linea = "";
+                
+                // Se recorren los elementos del ObservableList y se van grabando las líneas en el fichero destino
+                for (Proveedor p : listaProveedores) {
+                    linea = p.getNombre() != null ? p.getNombre() + ";" : ";";
+                    linea += p.getCalle() != null ? p.getCalle() + ";" : ";";
+                    linea += p.getLocalidad() != null ? p.getLocalidad() + ";" : ";";
+                    linea += p.getCp() != null ? p.getCp() + ";" : ";";
+                    linea += p.getMunicipio() != null ? p.getMunicipio() + ";" : ";";
+                    linea += p.getProvincia() != null ? p.getProvincia() + ";" : ";";
+                    linea += p.getTelefono() != null ? p.getTelefono() + ";" : ";";
+                    linea += p.getEmail() != null ? p.getEmail() + ";" : ";";
+                    bw.write(linea + "\n");
+                }
+                mostrarAlerta2("Éxito", "Exportación realizada.", Alert.AlertType.INFORMATION);
+                
+            } catch (IOException e) {
+                LoggerUtils.logError("IMPORTACION", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
+            }
         }
     }
 }
