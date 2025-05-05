@@ -24,6 +24,8 @@
          <children>
             <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo" />
             <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar" />
+            <Button fx:id="btnImportar" mnemonicParsing="false" onAction="#btnImportarAction" text="Importar" />
+            <Button fx:id="btnExportar" mnemonicParsing="false" onAction="#btnExportarAction" text="Exportar" />
          </children></HBox>
       <GridPane>
         <columnConstraints>

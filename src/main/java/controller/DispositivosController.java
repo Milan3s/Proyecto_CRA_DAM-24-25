@@ -1,7 +1,16 @@
 package controller;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.URL;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
@@ -26,6 +35,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
+import model.Alumno;
 import model.Dispositivo;
 import model.DispositivoDAO;
 import model.Proveedor;
@@ -71,6 +81,10 @@ public class DispositivosController implements Initializable {
     private Button btnBuscar;
     @FXML
     private Button btnLimpiar;
+    @FXML
+    private Button btnImportar;
+    @FXML
+    private Button btnExportar;
     
     @FXML
     private TextField txtNombre;
@@ -303,5 +317,91 @@ public class DispositivosController implements Initializable {
         cboxProveedor.setValue(null);
         
         tablaDisp.setItems(listaDisposit);
+    }
+
+    @FXML
+    private void btnImportarAction(ActionEvent event) {
+        // Para seleccionar un fichero .csv
+        File fichero = Utilidades.seleccFichero("Archivos CSV", "*.csv", "r");
+        
+        if (fichero != null) {
+            String[] items;
+            String nombre;
+            String modelo;
+            String nSerie;
+            Date fecha_adq;
+            String mac;
+            String imei;
+            int numEtiq;
+            //proveedor;
+            //alumno
+            String comentario;
+            
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fichero)))) {
+                String linea = "";
+
+                while ((linea = br.readLine()) != null) {
+                    // Vamos leyendo cada línea del fichero
+                    items = linea.split(";");
+                    nombre = items[0];
+                    modelo = items[1];
+                    nSerie = items[2];
+                    fecha_adq = Date.valueOf(items[3]);
+                    mac = items[4];
+                    imei = items[5];
+                    numEtiq = Integer.parseInt(items[6]);
+                    //proveedor = items[7];
+                    //alumno = items[8];
+                    comentario = items[9];
+                    
+                    //Dispositivo disp = new Dispositivo(0, nombre, modelo, nSerie, fecha_adq, mac, imei, numEtiq, proveedor, alumno, comentario);
+                    //dispDAO.insertarDispositivo(disp);
+                }
+                cargarDatos();
+                mostrarAlerta2("Éxito", "Importación realizada.", Alert.AlertType.INFORMATION);
+                
+            } catch (FileNotFoundException e) {
+                LoggerUtils.logError("IMPORTACION", "Error al acceder al fichero : " + "\n" + fichero + e.getMessage(), e);
+            } catch (IOException e) {
+                LoggerUtils.logError("IMPORTACION", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
+            }
+        }
+    }
+
+    @FXML
+    private void btnExportarAction(ActionEvent event) {
+        // Seleccionar fichero destino
+        File fichero = Utilidades.seleccFichero("Archivos CSV", "*.csv", "w");
+        
+        if (fichero != null) {
+            // Hay que guardarlo con codificación ISO-8859-1 para que los acentos se muestren correctamente al abrirlo con Excel
+            try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fichero), "ISO-8859-1"))) {
+                // Línea de cabecera
+                bw.write("Nombre;Modelo;NumSerie;Fecha_adquisicion;Mac;Imei;Num_etiqueta;Proveedor;Alumno;Comentario\n");
+                
+                String linea = "";
+                String numEtiq = "";
+                
+                // Se recorren los elementos del ObservableList y se van grabando las líneas en el fichero destino
+                for (Dispositivo disp : listaDisposit) {
+                    //numEtiq = String.valueOf(disp.getNum_etiqueta());
+                    linea = disp.getNombre() != null ? disp.getNombre() + ";" : ";";
+                    linea += disp.getModelo() != null ? disp.getModelo() + ";" : ";";
+                    linea += disp.getNum_serie() != null ? disp.getNum_serie() + ";" : ";";
+                    linea += disp.getFecha_adquisicion() != null ? disp.getFecha_adquisicion() + ";" : ";";
+                    linea += disp.getMac() != null ? disp.getMac() + ";" : ";";
+                    linea += disp.getImei() != null ? disp.getImei() + ";" : ";";
+                    linea += String.valueOf(disp.getNum_etiqueta()) + ";";
+                    linea += disp.getProveedor() != null ? disp.getProveedor().getNombre() + ";" : ";";
+                    linea += disp.getAlumno() != null ? disp.getAlumno().getNombre() + ";" : ";";
+                    linea += disp.getComentario() != null ? disp.getComentario() + ";" : ";";
+                    bw.write(linea + "\n");
+                }
+                mostrarAlerta2("Éxito", "Exportación realizada.", Alert.AlertType.INFORMATION);
+                
+            } catch (IOException e) {
+                LoggerUtils.logError("IMPORTACION", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
+            }
+        }
     }
 }
