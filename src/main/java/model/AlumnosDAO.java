@@ -1,0 +1,154 @@
+package model;
+
+import utils.DataBaseConection;
+import utils.LoggerUtils;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class AlumnosDAO {
+
+    // Método para cargar todas las sedes
+    public List<Sede> obtenerSedes() {
+        List<Sede> listaSedes = new ArrayList<>();
+        String query = "SELECT codigo_sede, nombre FROM sedes";
+
+        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(query); ResultSet rs = stmt.executeQuery()) {
+
+            LoggerUtils.logQuery("ALUMNOS", "Cargar sedes para el ComboBox", query);
+
+            while (rs.next()) {
+                Sede sede = new Sede(rs.getInt("codigo_sede"), rs.getString("nombre"));
+                listaSedes.add(sede);
+                LoggerUtils.logInfo("ALUMNOS", "Sede cargada → Código: " + sede.getCodigoSede() + ", Nombre: " + sede.getNombre());
+            }
+        } catch (SQLException e) {
+            LoggerUtils.logError("ALUMNOS", "Error al cargar sedes", e);
+        }
+        return listaSedes;
+    }
+
+    // Método para cargar todos los alumnos
+    public List<Alumno> obtenerAlumnos() {
+        List<Alumno> listaAlumnos = new ArrayList<>();
+        String query = "SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede "
+                + "FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede";
+
+        try (Connection conn = DataBaseConection.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next()) {
+                Alumno alumno = new Alumno(
+                        rs.getInt("codigo_alumno"),
+                        rs.getString("nombre"),
+                        rs.getString("curso"),
+                        rs.getString("nombre_sede"),
+                        rs.getInt("codigo_sede")
+                );
+                listaAlumnos.add(alumno);
+            }
+        } catch (SQLException e) {
+            LoggerUtils.logError("Error al cargar alumnos", e);
+        }
+        return listaAlumnos;
+    }
+
+    // Método para insertar un nuevo alumno
+    public boolean insertarAlumno(String nombre, String curso, int codigoSede) {
+        String insertSQL = "INSERT INTO alumnos (nombre, curso, codigo_sede) VALUES (?, ?, ?)";
+
+        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(insertSQL)) {
+            stmt.setString(1, nombre);
+            stmt.setString(2, curso);
+            stmt.setInt(3, codigoSede);
+
+            int rows = stmt.executeUpdate();
+            if (rows > 0) {
+                LoggerUtils.logInfo("ALUMNOS", "Alumno insertado → Nombre: " + nombre + ", Curso: " + curso + ", Sede: " + codigoSede);
+                return true;
+            }
+        } catch (SQLException e) {
+            LoggerUtils.logError("ALUMNOS", "Error al insertar alumno", e);
+        }
+        return false;
+    }
+
+    // Método para actualizar un alumno
+    public boolean actualizarAlumno(int codigoAlumno, String nombre, String curso, int codigoSede) {
+        String updateSQL = "UPDATE alumnos SET nombre = ?, curso = ?, codigo_sede = ? WHERE codigo_alumno = ?";
+
+        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(updateSQL)) {
+            stmt.setString(1, nombre);
+            stmt.setString(2, curso);
+            stmt.setInt(3, codigoSede);
+            stmt.setInt(4, codigoAlumno);
+
+            int filas = stmt.executeUpdate();
+            if (filas > 0) {
+                LoggerUtils.logInfo("ALUMNOS", "Alumno actualizado → Código: " + codigoAlumno);
+                return true;
+            }
+        } catch (SQLException e) {
+            LoggerUtils.logError("ALUMNOS", "Error al actualizar alumno", e);
+        }
+        return false;
+    }
+
+    // Método para eliminar un alumno por código
+    public boolean eliminarAlumno(int codigoAlumno) {
+        String sql = "DELETE FROM alumnos WHERE codigo_alumno = ?";
+
+        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, codigoAlumno);
+            int filas = stmt.executeUpdate();
+            if (filas > 0) {
+                LoggerUtils.logInfo("ALUMNOS", "Alumno eliminado correctamente: " + codigoAlumno);
+                return true;
+            }
+        } catch (SQLException e) {
+            LoggerUtils.logError("ALUMNOS", "Error al eliminar alumno", e);
+        }
+        return false;
+    }
+
+    // Método para eliminar todos los alumnos
+    public int eliminarTodosAlumnos() {
+        String sql = "DELETE FROM alumnos";
+        int filasEliminadas = 0;
+
+        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            filasEliminadas = stmt.executeUpdate();  // Elimina todos los registros
+            LoggerUtils.logInfo("ALUMNOS", "Total de alumnos eliminados: " + filasEliminadas);
+        } catch (SQLException e) {
+            LoggerUtils.logError("ALUMNOS", "Error al eliminar todos los alumnos", e);
+        }
+        return filasEliminadas;  // Retorna el número de filas eliminadas
+    }
+
+    // Método para buscar alumnos por filtro
+    public List<Alumno> buscarAlumnos(String filtro) {
+        List<Alumno> listaFiltrada = new ArrayList<>();
+        String query = "SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede "
+                + "FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede WHERE a.nombre LIKE ? OR a.curso LIKE ?";
+
+        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(query)) {
+            String filtroBusqueda = "%" + filtro + "%";
+            stmt.setString(1, filtroBusqueda);
+            stmt.setString(2, filtroBusqueda);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Alumno alumno = new Alumno(
+                            rs.getInt("codigo_alumno"),
+                            rs.getString("nombre"),
+                            rs.getString("curso"),
+                            rs.getString("nombre_sede"),
+                            rs.getInt("codigo_sede")
+                    );
+                    listaFiltrada.add(alumno);
+                }
+            }
+        } catch (SQLException e) {
+            LoggerUtils.logError("ALUMNOS", "Error al buscar alumnos", e);
+        }
+        return listaFiltrada;  // Retorna los alumnos que coinciden con el filtro
+    }
+}

@@ -15,8 +15,8 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        //loadView("/views/Acceso");
-        loadView("/views/Proveedores");
+        loadView("/views/Dashboard");
+        //loadView("/views/Proveedores");
         stage.setTitle("Sistema CRA");
         stage.show();
         
