@@ -229,3 +229,48 @@
 [2025-05-06 00:20:23] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
 [2025-05-06 00:20:23] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
 [2025-05-06 00:20:26] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-07 23:44:41] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-07 23:44:44] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-07 23:45:01] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-07 23:45:01] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-07 23:45:06] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-07 23:45:07] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-07 23:46:51] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-07 23:46:51] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
+[2025-05-07 23:46:54] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+[2025-05-07 23:46:54] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:46:57] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:46:59] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+[2025-05-07 23:46:59] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:47:01] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-07 23:47:05] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-07 23:47:05] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
+[2025-05-07 23:47:07] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+[2025-05-07 23:47:07] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:47:10] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-07 23:47:10] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
+[2025-05-07 23:47:13] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:47:15] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-07 23:47:17] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:47:22] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+[2025-05-07 23:47:22] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:47:48] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-07 23:47:53] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+[2025-05-07 23:47:53] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:47:58] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-07 23:48:00] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-07 23:48:00] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
+[2025-05-07 23:48:02] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+[2025-05-07 23:48:02] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:48:45] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:48:48] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+[2025-05-07 23:48:48] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:48:50] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:48:52] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+[2025-05-07 23:48:52] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:48:54] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:49:04] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-07 23:49:04] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
+[2025-05-07 23:49:08] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-07 23:55:31] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+[2025-05-07 23:55:31] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.

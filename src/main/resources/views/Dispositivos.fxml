@@ -27,16 +27,16 @@
             <Button fx:id="btnImportar" mnemonicParsing="false" onAction="#btnImportarAction" text="Importar" />
             <Button fx:id="btnExportar" mnemonicParsing="false" onAction="#btnExportarAction" text="Exportar" />
          </children></HBox>
-      <GridPane>
+      <GridPane VBox.vgrow="NEVER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="40.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="10.0" prefWidth="56.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="284.0" />
             <ColumnConstraints hgrow="SOMETIMES" prefWidth="25.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="10.0" prefWidth="45.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="10.0" prefWidth="67.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="278.0" />
             <ColumnConstraints hgrow="SOMETIMES" prefWidth="25.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="548.0" minWidth="10.0" prefWidth="45.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="548.0" minWidth="10.0" prefWidth="66.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="279.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -62,10 +62,10 @@
             <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#btnBuscarAction" text="Buscar" />
             <Button fx:id="btnLimpiar" mnemonicParsing="false" onAction="#btnLimpiarAction" text="Limpiar filtros" />
          </children></HBox>
-      <TableView fx:id="tablaDisp" onMouseClicked="#capturarClick" prefHeight="665.0" prefWidth="1228.0" tableMenuButtonVisible="true">
+      <TableView fx:id="tablaDisp" onMouseClicked="#capturarClick" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn fx:id="colCodigo" prefWidth="75.0" text="Código" />
-          <TableColumn fx:id="colNombre" prefWidth="74.0" text="Nombre" />
+          <TableColumn fx:id="colCodigo" prefWidth="75.0" text="Código" visible="false" />
+          <TableColumn fx:id="colNombre" prefWidth="100.0" text="Nombre" />
             <TableColumn fx:id="colModelo" minWidth="0.0" prefWidth="76.0" text="Modelo" />
             <TableColumn fx:id="colNumSerie" prefWidth="75.0" text="Num_serie" />
             <TableColumn fx:id="colNumEti" prefWidth="75.0" text="Num_etiq" />
