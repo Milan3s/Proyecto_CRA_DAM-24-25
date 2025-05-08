@@ -9,12 +9,21 @@ import java.util.List;
 
 public class AlumnosDAO {
 
-    // Método para cargar todas las sedes
+    private Connection conn;
+
+    public AlumnosDAO() {
+        conn = DataBaseConection.getConnection();
+    }
+
     public List<Sede> obtenerSedes() {
         List<Sede> listaSedes = new ArrayList<>();
         String query = "SELECT codigo_sede, nombre FROM sedes";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
 
-        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(query); ResultSet rs = stmt.executeQuery()) {
+        try {
+            stmt = conn.prepareStatement(query);
+            rs = stmt.executeQuery();
 
             LoggerUtils.logQuery("ALUMNOS", "Cargar sedes para el ComboBox", query);
 
@@ -25,17 +34,24 @@ public class AlumnosDAO {
             }
         } catch (SQLException e) {
             LoggerUtils.logError("ALUMNOS", "Error al cargar sedes", e);
+        } finally {
+            try { if (rs != null) rs.close(); if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
         }
+
         return listaSedes;
     }
 
-    // Método para cargar todos los alumnos
     public List<Alumno> obtenerAlumnos() {
         List<Alumno> listaAlumnos = new ArrayList<>();
         String query = "SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede "
-                + "FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede";
+                     + "FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede";
+        Statement stmt = null;
+        ResultSet rs = null;
 
-        try (Connection conn = DataBaseConection.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(query);
+
             while (rs.next()) {
                 Alumno alumno = new Alumno(
                         rs.getInt("codigo_alumno"),
@@ -47,16 +63,20 @@ public class AlumnosDAO {
                 listaAlumnos.add(alumno);
             }
         } catch (SQLException e) {
-            LoggerUtils.logError("Error al cargar alumnos", e);
+            LoggerUtils.logError("ALUMNOS", "Error al cargar alumnos", e);
+        } finally {
+            try { if (rs != null) rs.close(); if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
         }
+
         return listaAlumnos;
     }
 
-    // Método para insertar un nuevo alumno
     public boolean insertarAlumno(String nombre, String curso, int codigoSede) {
         String insertSQL = "INSERT INTO alumnos (nombre, curso, codigo_sede) VALUES (?, ?, ?)";
+        PreparedStatement stmt = null;
 
-        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(insertSQL)) {
+        try {
+            stmt = conn.prepareStatement(insertSQL);
             stmt.setString(1, nombre);
             stmt.setString(2, curso);
             stmt.setInt(3, codigoSede);
@@ -68,15 +88,19 @@ public class AlumnosDAO {
             }
         } catch (SQLException e) {
             LoggerUtils.logError("ALUMNOS", "Error al insertar alumno", e);
+        } finally {
+            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
         }
+
         return false;
     }
 
-    // Método para actualizar un alumno
     public boolean actualizarAlumno(int codigoAlumno, String nombre, String curso, int codigoSede) {
         String updateSQL = "UPDATE alumnos SET nombre = ?, curso = ?, codigo_sede = ? WHERE codigo_alumno = ?";
+        PreparedStatement stmt = null;
 
-        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(updateSQL)) {
+        try {
+            stmt = conn.prepareStatement(updateSQL);
             stmt.setString(1, nombre);
             stmt.setString(2, curso);
             stmt.setInt(3, codigoSede);
@@ -89,16 +113,21 @@ public class AlumnosDAO {
             }
         } catch (SQLException e) {
             LoggerUtils.logError("ALUMNOS", "Error al actualizar alumno", e);
+        } finally {
+            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
         }
+
         return false;
     }
 
-    // Método para eliminar un alumno por código
     public boolean eliminarAlumno(int codigoAlumno) {
         String sql = "DELETE FROM alumnos WHERE codigo_alumno = ?";
+        PreparedStatement stmt = null;
 
-        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try {
+            stmt = conn.prepareStatement(sql);
             stmt.setInt(1, codigoAlumno);
+
             int filas = stmt.executeUpdate();
             if (filas > 0) {
                 LoggerUtils.logInfo("ALUMNOS", "Alumno eliminado correctamente: " + codigoAlumno);
@@ -106,49 +135,63 @@ public class AlumnosDAO {
             }
         } catch (SQLException e) {
             LoggerUtils.logError("ALUMNOS", "Error al eliminar alumno", e);
+        } finally {
+            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
         }
+
         return false;
     }
 
-    // Método para eliminar todos los alumnos
     public int eliminarTodosAlumnos() {
         String sql = "DELETE FROM alumnos";
         int filasEliminadas = 0;
+        PreparedStatement stmt = null;
 
-        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
-            filasEliminadas = stmt.executeUpdate();  // Elimina todos los registros
+        try {
+            stmt = conn.prepareStatement(sql);
+            filasEliminadas = stmt.executeUpdate();
             LoggerUtils.logInfo("ALUMNOS", "Total de alumnos eliminados: " + filasEliminadas);
         } catch (SQLException e) {
             LoggerUtils.logError("ALUMNOS", "Error al eliminar todos los alumnos", e);
+        } finally {
+            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
         }
-        return filasEliminadas;  // Retorna el número de filas eliminadas
+
+        return filasEliminadas;
     }
 
-    // Método para buscar alumnos por filtro
     public List<Alumno> buscarAlumnos(String filtro) {
         List<Alumno> listaFiltrada = new ArrayList<>();
         String query = "SELECT a.codigo_alumno, a.nombre, a.curso, a.codigo_sede, s.nombre AS nombre_sede "
-                + "FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede WHERE a.nombre LIKE ? OR a.curso LIKE ?";
+                     + "FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede "
+                     + "WHERE a.nombre LIKE ? OR a.curso LIKE ?";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
 
-        try (Connection conn = DataBaseConection.getConnection(); PreparedStatement stmt = conn.prepareStatement(query)) {
+        try {
+            stmt = conn.prepareStatement(query);
             String filtroBusqueda = "%" + filtro + "%";
             stmt.setString(1, filtroBusqueda);
             stmt.setString(2, filtroBusqueda);
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    Alumno alumno = new Alumno(
-                            rs.getInt("codigo_alumno"),
-                            rs.getString("nombre"),
-                            rs.getString("curso"),
-                            rs.getString("nombre_sede"),
-                            rs.getInt("codigo_sede")
-                    );
-                    listaFiltrada.add(alumno);
-                }
+
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Alumno alumno = new Alumno(
+                        rs.getInt("codigo_alumno"),
+                        rs.getString("nombre"),
+                        rs.getString("curso"),
+                        rs.getString("nombre_sede"),
+                        rs.getInt("codigo_sede")
+                );
+                listaFiltrada.add(alumno);
             }
         } catch (SQLException e) {
             LoggerUtils.logError("ALUMNOS", "Error al buscar alumnos", e);
+        } finally {
+            try { if (rs != null) rs.close(); if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
         }
-        return listaFiltrada;  // Retorna los alumnos que coinciden con el filtro
+
+        return listaFiltrada;
     }
 }
