@@ -12,10 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import main.App;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import utils.DataBaseConection;
+import model.AccesoRegistroDAO;
 import utils.PasswordHasher;
 import utils.LoggerUtils;
 
@@ -26,6 +23,8 @@ public class RegistroController {
     @FXML private PasswordField txtPassword;
     @FXML private Button btnRegistrarse;
     @FXML private Button btnLogin;
+
+    private final AccesoRegistroDAO accesoRegistroDAO = new AccesoRegistroDAO();
 
     @FXML
     private void btnActionLogin(ActionEvent event) throws IOException {
@@ -54,41 +53,16 @@ public class RegistroController {
             return;
         }
 
-//        if (password.length() < 6) {
-//            mostrarAlerta("Error", "La contraseña debe tener al menos 6 caracteres");
-//            LoggerUtils.logInfo("REGISTRO", "Contraseña demasiado corta para el usuario: " + usuario);
-//            return;
-//        }
-
         String hashedPassword = PasswordHasher.hashPassword(password);
         LoggerUtils.logInfo("REGISTRO", "Intentando registrar usuario: " + usuario);
 
-        if (registrarUsuario(usuario, email, hashedPassword)) {
+        if (accesoRegistroDAO.registrarUsuario(usuario, email, hashedPassword)) {
             mostrarAlerta("Éxito", "Usuario registrado correctamente");
             LoggerUtils.logInfo("REGISTRO", "Usuario registrado correctamente: " + usuario + ", Email: " + email);
             limpiarCampos();
         } else {
             mostrarAlerta("Error", "No se pudo registrar el usuario");
             LoggerUtils.logInfo("REGISTRO", "Fallo al registrar usuario: " + usuario);
-        }
-    }
-
-    private boolean registrarUsuario(String usuario, String email, String hashedPassword) {
-        String query = "INSERT INTO usuarios (usuario, email, password) VALUES (?, ?, ?)";
-
-        try (Connection connection = DataBaseConection.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-
-            LoggerUtils.logQuery("REGISTRO", "Registrar nuevo usuario", query);
-
-            preparedStatement.setString(1, usuario);
-            preparedStatement.setString(2, email);
-            preparedStatement.setString(3, hashedPassword);
-
-            return preparedStatement.executeUpdate() > 0;
-
-        } catch (SQLException e) {
-            LoggerUtils.logError("REGISTRO", "Error al registrar usuario en base de datos", e);
-            return false;
         }
     }
 

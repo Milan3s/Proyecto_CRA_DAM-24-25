@@ -25,6 +25,7 @@ public class CentroEducativo {
         this.email = email;
     }
 
+    // Getters
     public String getCodigoCentro() {
         return codigoCentro;
     }
@@ -59,5 +60,42 @@ public class CentroEducativo {
 
     public String getEmail() {
         return email;
+    }
+
+    // Setters
+    public void setCodigoCentro(String codigoCentro) {
+        this.codigoCentro = codigoCentro;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
+    }
+
+    public void setCp(String cp) {
+        this.cp = cp;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
