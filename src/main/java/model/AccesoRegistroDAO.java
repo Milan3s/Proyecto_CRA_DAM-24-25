@@ -34,7 +34,12 @@ public class AccesoRegistroDAO {
             return false;
 
         } finally {
-            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ignored) {
+            }
         }
     }
 
@@ -62,7 +67,15 @@ public class AccesoRegistroDAO {
             return false;
 
         } finally {
-            try { if (rs != null) rs.close(); if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ignored) {
+            }
         }
     }
 }
