@@ -274,3 +274,12 @@
 [2025-05-07 23:49:08] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
 [2025-05-07 23:55:31] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
 [2025-05-07 23:55:31] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+[2025-05-09 17:11:46] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-09 17:11:46] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-09 17:11:46] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-09 17:12:04] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-09 17:12:04] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-09 17:12:04] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-09 18:16:13] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-09 18:16:13] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-09 18:16:13] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
