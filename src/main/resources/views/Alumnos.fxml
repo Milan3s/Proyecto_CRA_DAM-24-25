@@ -5,13 +5,11 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" prefHeight="580.0" prefWidth="886.0" spacing="15" style="-fx-padding: 20;" 
-      xmlns="http://javafx.com/javafx/23.0.1" 
-      xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="controller.AlumnosController">
+<VBox alignment="TOP_CENTER" prefHeight="580.0" prefWidth="886.0" spacing="15" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AlumnosController">
 
     <!-- Título centrado -->
     <Label style="-fx-font-size: 20;" text="Tabla de Alumnos" />
@@ -20,7 +18,16 @@
     <HBox spacing="10">
         <Button fx:id="btnNuevoAlumno" onAction="#btnActionNuevoAlumno" text="Nuevo Alumno" />
         <Button fx:id="btnEliminarAlumno" onAction="#btnActionEliminarAlumno" text="Eliminar Alumno" />
-        <Button fx:id="btnEliminarTodos" onAction="#btnActionEliminarTodos" text="Eliminar Todos" />
+        <Button fx:id="btnImportar" onAction="#btnImportarAction" text="Importar">
+            <tooltip>
+                <Tooltip text="Desde un archivo .csv" />
+            </tooltip>
+        </Button>
+        <Button fx:id="btnExportar" onAction="#btnExportarAction" text="Exportar">
+            <tooltip>
+                <Tooltip text="A un archivo .csv" />
+            </tooltip>
+        </Button>
     </HBox>
 
     <!-- Barra de búsqueda -->
