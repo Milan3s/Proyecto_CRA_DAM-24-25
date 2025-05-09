@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * DAO (Data Access Object) para manejar operaciones CRUD 
- * sobre la tabla centros_edu en la base de datos.
+ * DAO (Data Access Object) para manejar operaciones CRUD sobre la tabla
+ * centros_edu en la base de datos.
  */
 public class CentroEducativoDAO {
 
@@ -23,6 +23,7 @@ public class CentroEducativoDAO {
 
     /**
      * Obtiene todos los centros educativos de la base de datos.
+     *
      * @return Lista de objetos CentroEducativo
      */
     public List<CentroEducativo> obtenerCentros() {
@@ -38,15 +39,15 @@ public class CentroEducativoDAO {
             // Recorrer resultados y construir objetos CentroEducativo
             while (rs.next()) {
                 CentroEducativo centro = new CentroEducativo(
-                    rs.getString("codigo_centro"),
-                    rs.getString("nombre"),
-                    rs.getString("calle"),
-                    rs.getString("localidad"),
-                    rs.getString("cp"),
-                    rs.getString("municipio"),
-                    rs.getString("provincia"),
-                    rs.getString("telefono"),
-                    rs.getString("email")
+                        rs.getString("codigo_centro"),
+                        rs.getString("nombre"),
+                        rs.getString("calle"),
+                        rs.getString("localidad"),
+                        rs.getString("cp"),
+                        rs.getString("municipio"),
+                        rs.getString("provincia"),
+                        rs.getString("telefono"),
+                        rs.getString("email")
                 );
                 listaCentros.add(centro);
                 LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro cargado → Código: " + centro.getCodigoCentro());
@@ -54,7 +55,15 @@ public class CentroEducativoDAO {
         } catch (SQLException e) {
             LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al cargar centros", e);
         } finally {
-            try { if (rs != null) rs.close(); if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ignored) {
+            }
         }
 
         return listaCentros;
@@ -62,6 +71,7 @@ public class CentroEducativoDAO {
 
     /**
      * Inserta un nuevo centro educativo en la base de datos.
+     *
      * @param centro Objeto CentroEducativo con los datos a insertar
      * @return true si se insertó correctamente, false en caso contrario
      */
@@ -89,7 +99,12 @@ public class CentroEducativoDAO {
         } catch (SQLException e) {
             LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al insertar centro", e);
         } finally {
-            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ignored) {
+            }
         }
 
         return false;
@@ -97,6 +112,7 @@ public class CentroEducativoDAO {
 
     /**
      * Actualiza un centro educativo existente.
+     *
      * @param centro Objeto CentroEducativo con los nuevos datos
      * @return true si la actualización fue exitosa
      */
@@ -124,7 +140,12 @@ public class CentroEducativoDAO {
         } catch (SQLException e) {
             LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al actualizar centro", e);
         } finally {
-            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ignored) {
+            }
         }
 
         return false;
@@ -132,6 +153,7 @@ public class CentroEducativoDAO {
 
     /**
      * Elimina un centro educativo según su código.
+     *
      * @param codigoCentro Código del centro a eliminar
      * @return true si se eliminó correctamente
      */
@@ -151,7 +173,12 @@ public class CentroEducativoDAO {
         } catch (SQLException e) {
             LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al eliminar centro", e);
         } finally {
-            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ignored) {
+            }
         }
 
         return false;
@@ -159,6 +186,7 @@ public class CentroEducativoDAO {
 
     /**
      * Elimina todos los centros educativos de la base de datos.
+     *
      * @return número de filas eliminadas
      */
     public int eliminarTodosCentros() {
@@ -173,14 +201,21 @@ public class CentroEducativoDAO {
         } catch (SQLException e) {
             LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al eliminar todos los centros", e);
         } finally {
-            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ignored) {
+            }
         }
 
         return filas;
     }
 
     /**
-     * Busca centros educativos por nombre, localidad, municipio, provincia o código.
+     * Busca centros educativos por nombre, localidad, municipio, provincia o
+     * código.
+     *
      * @param filtro Texto de búsqueda
      * @return Lista filtrada de centros educativos
      */
@@ -221,7 +256,15 @@ public class CentroEducativoDAO {
         } catch (SQLException e) {
             LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al buscar centros", e);
         } finally {
-            try { if (rs != null) rs.close(); if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ignored) {
+            }
         }
 
         return listaCentros;
