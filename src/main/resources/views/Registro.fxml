@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="700.0" maxWidth="600.0" minHeight="700.0" minWidth="600.0" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RegistroController">    
+    <center>
+        <AnchorPane maxHeight="600.0" maxWidth="500.0" minHeight="600.0" minWidth="500.0" prefHeight="600.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text layoutX="155.0" layoutY="84.0" text="Registro">
+               <font>
+                  <Font size="48.0" />
+               </font>
+                </Text>
+
+                <FontAwesomeIconView glyphName="USER" layoutX="75.0" layoutY="185.0" size="20" />
+                <TextField fx:id="txtUsuario" layoutX="110.0" layoutY="160.0" prefHeight="30.0" prefWidth="300.0" promptText="Usuario" />
+
+                <FontAwesomeIconView glyphName="ENVELOPE" layoutX="75.0" layoutY="260.0" size="20" />
+                <TextField fx:id="txtEmail" layoutX="110.0" layoutY="235.0" prefHeight="30.0" prefWidth="300.0" promptText="Correo" />
+
+                <FontAwesomeIconView glyphName="KEY" layoutX="75.0" layoutY="335.0" size="20" />
+                <PasswordField fx:id="txtPassword" layoutX="110.0" layoutY="310.0" prefHeight="30.0" prefWidth="300.0" promptText="Contraseña" />
+
+                <Button fx:id="btnLogin" layoutX="110.0" layoutY="400.0" onAction="#btnActionLogin" prefHeight="30.0" prefWidth="120.0" text="Volver a Acceder" />
+
+                <Button fx:id="btnRegistrarse" layoutX="290.0" layoutY="400.0" onAction="#btnActionRegistrarse" prefHeight="30.0" prefWidth="120.0" text="Registrarse" />
+
+                <ImageView fitHeight="42.0" fitWidth="42.0" layoutX="230.0" layoutY="470.0" pickOnBounds="true" preserveRatio="true" />
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
