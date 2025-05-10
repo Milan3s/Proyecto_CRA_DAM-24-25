@@ -13,6 +13,8 @@ public class Dispositivo {
     private String comentario;
     private int num_etiqueta;
     private Proveedor proveedor;
+    
+    // Alumno actual que tiene el dispositivo prestado (solo para mostrar en el TableView)
     private Alumno alumno;
 
     public Dispositivo(int codigo, String nombre, String modelo, String num_serie, Date fecha_adquisicion, String mac, String imei, int num_etiqueta, Proveedor proveedor, Alumno alumno, String comentario) {
