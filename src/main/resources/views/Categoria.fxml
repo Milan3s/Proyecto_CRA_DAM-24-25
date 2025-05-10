@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="580.0" prefWidth="886.0" spacing="10" style="-fx-padding: 20;" stylesheets="@../styles/tabla_alumnos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CategoriaController">
+
+    <!-- Título -->
+    <Label styleClass="txt_alulmnos" text="Tabla de Categorias" textFill="WHITE" />
+
+    <!-- Botones en línea -->
+    <HBox spacing="10">
+        <Button fx:id="btnNuevaAlumno" mnemonicParsing="false" onAction="#btnActionNuevoAlumno" styleClass="btnNuevoAlumno" text="Nueva Categoria" textFill="WHITE">
+            <graphic>
+                <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
+            </graphic>
+        </Button>
+        <Button fx:id="btnEliminarAlumno" mnemonicParsing="false" onAction="#btnActionEliminarAlumno" styleClass="btnEliminarAlumnoSeleccionado" text="Eliminar Categoria">
+            <graphic>
+                <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
+            </graphic>
+        </Button>
+        <Button fx:id="btnEliminarTodos" mnemonicParsing="false" onAction="#btnActionEliminarTodos" styleClass="btnEliminarTodosLosAlumnos" text="Eliminar todas">
+            <graphic>
+                <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
+            </graphic>
+        </Button>
+    </HBox>
+    
+    <!-- Barra de búsqueda -->
+ 
+    <HBox spacing="10">
+        <Label contentDisplay="RIGHT" prefHeight="35.0" prefWidth="60.0" styleClass="txtbuscar" text="Buscar:" textAlignment="RIGHT" textFill="white" />
+        <TextField fx:id="txtBuscar" prefHeight="35.0" prefWidth="423.0" promptText="Escribe para buscar..." styleClass="campo_busqueda" />
+        <Button fx:id="btnBuscar" onAction="#btnBuscarAction" prefHeight="35.0" text="Buscar" />
+    </HBox>
+
+    <!-- Tabla -->
+    <TableView fx:id="tablaUsuarios" prefHeight="500.0" styleClass="tabla_Alumnos" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colCodigo" prefWidth="420.7999687194824" styleClass="Columna-Codigo" text="Código Categoria" />
+            <TableColumn fx:id="colNombre" prefWidth="413.6000061035156" styleClass="Columna-nombre" text="Nombre" />
+        </columns>
+    </TableView>
+</VBox>

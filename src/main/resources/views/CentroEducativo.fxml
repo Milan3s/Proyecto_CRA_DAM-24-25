@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="580.0" prefWidth="886.0" spacing="10" style="-fx-padding: 20;"
+      xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.CentroEducativoController">
+
+    <!-- Título -->
+    <Label text="Tabla de Centros Educativos" />
+
+    <!-- Botones -->
+    <HBox spacing="10">
+        <Button fx:id="btnNuevoCentro" mnemonicParsing="false" onAction="#btnActionNuevoCentro" text="Nuevo Centro" />
+        <Button fx:id="btnEliminarCentro" mnemonicParsing="false" onAction="#btnActionEliminarCentro" text="Eliminar Centro" />
+        <Button fx:id="btnEliminarTodosCentros" mnemonicParsing="false" onAction="#btnActionEliminarTodosCentros" text="Eliminar Todos" />
+    </HBox>
+
+    <!-- Barra de búsqueda -->
+    <HBox spacing="10">
+        <Label prefHeight="35.0" prefWidth="60.0" text="Buscar:" />
+        <TextField fx:id="txtBuscar" prefHeight="35.0" prefWidth="423.0" promptText="Escribe para buscar..." />
+        <Button fx:id="btnBuscarCentro" onAction="#btnBuscarCentroAction" prefHeight="35.0" text="Buscar" />
+    </HBox>
+
+    <!-- Tabla de centros educativos -->
+    <TableView fx:id="tablaCentroEducativos" prefHeight="500.0" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colCodigoCentro" prefWidth="100.0" text="Código Centro" />
+            <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
+            <TableColumn fx:id="colCalle" prefWidth="150.0" text="Calle" />
+            <TableColumn fx:id="colLocalidad" prefWidth="100.0" text="Localidad" />
+            <TableColumn fx:id="colCP" prefWidth="80.0" text="C.P." />
+            <TableColumn fx:id="colMunicipio" prefWidth="120.0" text="Municipio" />
+            <TableColumn fx:id="colProvincia" prefWidth="120.0" text="Provincia" />
+            <TableColumn fx:id="colTelefono" prefWidth="120.0" text="Teléfono" />
+            <TableColumn fx:id="colEmail" prefWidth="180.0" text="Email" />
+        </columns>
+    </TableView>
+
+</VBox>

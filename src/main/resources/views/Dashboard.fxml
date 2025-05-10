@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane fx:id="rootPane" prefHeight="1080.0" prefWidth="1360.0" 
+            xmlns="http://javafx.com/javafx/23.0.1" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="controller.DashboardController">
+
+    <!-- Sidebar reutilizable -->
+    <left>
+        <fx:include source="Sidebar.fxml" />
+    </left>
+
+    <!-- Panel dinámico para cargar contenido -->
+    <center>
+        <StackPane fx:id="panelContenido">
+            <children>
+                <Label fx:id="userNameLabel" style="-fx-text-fill: white; -fx-font-size: 20px;" />
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>

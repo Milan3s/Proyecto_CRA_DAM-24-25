@@ -1,0 +1,333 @@
+
+[2025-04-16 00:30:11] [INFO   ] [PROVEEDORES] CONSULTA → Eliminar proveedor con código: 5
+[PROVEEDORES] SQL: DELETE FROM proveedores WHERE codigo_proveedor = ?
+
+[2025-04-16 00:30:14] [INFO   ] [PROVEEDORES] Proveedor eliminado: 5
+
+[2025-04-17 19:37:14] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
+
+<<<<<<< HEAD
+[2025-04-28 11:00:10] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
+
+[2025-05-06 16:23:19] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+
+[2025-05-06 16:23:29] [INFO   ] 
+=== SECCIÓN ALUMNOS ===
+
+[2025-05-06 16:23:29] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+
+[2025-05-06 16:23:34] [SEVERE ] [ALUMNOS] ERROR → Error al cargar sedes
+
+[2025-05-06 16:23:36] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+
+[2025-05-06 16:23:41] [INFO   ] 
+=== SECCIÓN ALUMNOS ===
+
+[2025-05-06 16:23:41] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+
+[2025-05-06 16:23:43] [SEVERE ] [ALUMNOS] ERROR → Error al cargar sedes
+
+[2025-05-06 16:23:55] [INFO   ] [ALUMNOS] Intento fallido de guardar alumno. Faltan campos.
+
+[2025-05-06 16:24:02] [INFO   ] [ALUMNOS] Intento fallido de guardar alumno. Faltan campos.
+
+[2025-05-06 16:24:04] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+
+[2025-05-09 17:09:08] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+
+[2025-05-09 17:09:48] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+
+[2025-05-09 17:09:49] [INFO   ] 
+=== SECCIÓN CENTROS EDUCATIVOS ===
+
+[2025-05-09 17:09:49] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros educativos
+
+[2025-05-09 17:09:50] [INFO   ] 
+=== SECCIÓN CENTROS EDUCATIVOS ===
+
+[2025-05-09 17:09:50] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros educativos
+
+[2025-05-09 17:09:51] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+
+[2025-05-09 17:09:52] [INFO   ] 
+=== SECCIÓN CENTROS EDUCATIVOS ===
+
+[2025-05-09 17:09:52] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros educativos
+
+[2025-05-09 17:09:55] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+
+[2025-05-09 17:09:56] [INFO   ] 
+=== SECCIÓN CENTROS EDUCATIVOS ===
+
+[2025-05-09 17:09:56] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros educativos
+
+[2025-05-09 17:11:14] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+
+[2025-05-09 17:11:37] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+
+[2025-05-09 17:12:54] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
+
+[2025-05-09 17:13:08] [INFO   ] [GENERAL] Búsqueda ejecutada → Filtro: "dd", Resultados: 0
+
+[2025-05-09 17:13:54] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
+
+[2025-05-09 17:14:01] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
+
+[2025-05-09 17:14:22] [SEVERE ] [PROVEEDORES] ERROR → Error al ejecutar guardarProv
+
+[2025-05-09 17:14:34] [SEVERE ] [PROVEEDORES] ERROR → Error al ejecutar guardarProv
+
+[2025-05-09 17:14:36] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
+=======
+[2025-04-19 12:26:34] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 12:33:23] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 12:49:02] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 13:04:46] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 18:46:53] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 19:19:38] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
+
+[2025-04-19 19:24:00] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: Unknown column 'd.coment_reg' in 'field list'
+
+[2025-04-19 19:29:52] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 19:32:41] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
+
+[2025-04-19 19:33:07] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
+
+[2025-04-19 19:43:05] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 19:43:42] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 19:44:18] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 20:19:30] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 20:19:36] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 20:19:41] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 20:23:49] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 20:24:08] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-19 20:28:58] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+
+[2025-04-19 20:29:18] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+
+[2025-04-19 20:29:38] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+
+[2025-04-19 20:35:36] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-20 17:02:48] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+
+[2025-04-20 17:03:03] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-20 17:03:06] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+
+[2025-04-20 17:03:25] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-20 17:03:30] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: No operations allowed after connection closed.
+
+[2025-04-21 19:54:09] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+
+[2025-04-21 19:59:04] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+
+[2025-04-21 20:01:14] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores: No operations allowed after connection closed.
+
+[2025-04-21 20:56:25] [INFO   ] [PROVEEDORES] CONSULTA → Eliminar proveedor con código: 7
+[PROVEEDORES] SQL: DELETE FROM proveedores WHERE codigo_proveedor = ?
+
+[2025-04-21 20:56:26] [INFO   ] [PROVEEDORES] Proveedor eliminado: 7
+
+[2025-04-23 23:26:24] [INFO   ] [DISPOSITIVOS] CONSULTA → Eliminar dispositivo con código: 3
+[DISPOSITIVOS] SQL: DELETE FROM dispositivos WHERE codigo_dispositivo = ?
+
+[2025-04-23 23:26:26] [INFO   ] [DISPOSITIVOS] dispositivo eliminado: 3
+[2025-05-01 16:47:36] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-01 16:47:36] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-01 16:47:37] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-01 16:47:37] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: denegado
+[2025-05-01 16:47:37] [INFO   ] [ACCESO] Login fallido para el usuario: antonio
+[2025-05-01 16:47:41] [INFO   ] [ACCESO] Redirección a pantalla de registro
+[2025-05-01 16:48:02] [INFO   ] === SECCIÓN: REGISTRO ===
+[2025-05-01 16:48:02] [INFO   ] [REGISTRO] Intentando registrar usuario: antonio
+[2025-05-01 16:48:02] [SEVERE ] [REGISTRO] ERROR → Error al registrar usuario en base de datos
+[2025-05-01 16:48:05] [INFO   ] [REGISTRO] Fallo al registrar usuario: antonio
+[2025-05-01 16:48:07] [INFO   ] === SECCIÓN: REGISTRO ===
+[2025-05-01 16:48:07] [INFO   ] [REGISTRO] Intentando registrar usuario: antonio
+[2025-05-01 16:48:07] [SEVERE ] [REGISTRO] ERROR → Error al registrar usuario en base de datos
+[2025-05-01 16:48:09] [INFO   ] [REGISTRO] Fallo al registrar usuario: antonio
+[2025-05-01 16:48:10] [INFO   ] [REGISTRO] Redirección a pantalla de login
+[2025-05-01 16:48:18] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-01 16:48:18] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-01 16:48:18] [SEVERE ] [ACCESO] ERROR → Error al validar login
+[2025-05-01 16:48:18] [INFO   ] [ACCESO] Login fallido para el usuario: antonio
+[2025-05-01 16:48:22] [INFO   ] [ACCESO] Redirección a pantalla de registro
+[2025-05-01 16:48:55] [INFO   ] === SECCIÓN: REGISTRO ===
+[2025-05-01 16:48:55] [INFO   ] [REGISTRO] Intentando registrar usuario: antonio
+[2025-05-01 16:48:55] [SEVERE ] [REGISTRO] ERROR → Error al registrar usuario en base de datos
+[2025-05-01 16:48:57] [INFO   ] [REGISTRO] Fallo al registrar usuario: antonio
+[2025-05-01 16:51:45] [INFO   ] [ACCESO] Redirección a pantalla de registro
+[2025-05-01 16:52:00] [INFO   ] === SECCIÓN: REGISTRO ===
+[2025-05-01 16:52:02] [INFO   ] [REGISTRO] Email inválido → asdf
+[2025-05-01 16:52:18] [INFO   ] === SECCIÓN: REGISTRO ===
+[2025-05-01 16:52:18] [INFO   ] [REGISTRO] Intentando registrar usuario: antonio
+[2025-05-01 16:52:18] [INFO   ] [REGISTRO] CONSULTA → Registrar nuevo usuario
+[REGISTRO] SQL: INSERT INTO usuarios (usuario, email, password) VALUES (?, ?, ?)
+[2025-05-01 16:52:24] [INFO   ] [REGISTRO] Usuario registrado correctamente: antonio, Email: aortizortiz75@gmail.com
+[2025-05-01 16:52:26] [INFO   ] [REGISTRO] Redirección a pantalla de login
+[2025-05-01 16:52:34] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-01 16:52:34] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-01 16:52:34] [SEVERE ] [ACCESO] ERROR → Error al validar login
+[2025-05-01 16:52:34] [INFO   ] [ACCESO] Login fallido para el usuario: antonio
+[2025-05-01 16:53:41] [INFO   ] [ACCESO] Redirección a pantalla de registro
+[2025-05-01 16:53:58] [INFO   ] === SECCIÓN: REGISTRO ===
+[2025-05-01 16:53:58] [INFO   ] [REGISTRO] Intentando registrar usuario: antonio
+[2025-05-01 16:53:58] [SEVERE ] [REGISTRO] ERROR → Error al registrar usuario en base de datos: No operations allowed after connection closed.
+[2025-05-01 16:54:00] [INFO   ] [REGISTRO] Fallo al registrar usuario: antonio
+[2025-05-01 16:57:51] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-01 16:57:52] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-01 16:57:52] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-01 16:57:55] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-01 16:58:02] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-01 16:58:02] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
+[2025-05-01 16:58:04] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-01 16:58:06] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-01 16:58:06] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
+[2025-05-01 16:58:11] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-01 16:58:16] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-01 16:58:16] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
+[2025-05-01 16:58:40] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-01 16:58:50] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-01 16:58:50] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
+[2025-05-01 16:58:54] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-01 16:58:56] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-01 16:58:56] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
+[2025-05-01 16:59:00] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-03 08:15:49] [INFO   ] [PROVEEDORES] Proveedor eliminado: 29
+[2025-05-03 08:15:58] [INFO   ] [PROVEEDORES] Proveedor eliminado: 28
+[2025-05-03 08:16:04] [INFO   ] [PROVEEDORES] Proveedor eliminado: 27
+[2025-05-03 08:16:11] [INFO   ] [PROVEEDORES] Proveedor eliminado: 26
+[2025-05-03 08:16:18] [INFO   ] [PROVEEDORES] Proveedor eliminado: 25
+[2025-05-03 08:16:25] [INFO   ] [PROVEEDORES] Proveedor eliminado: 24
+[2025-05-03 08:16:34] [INFO   ] [PROVEEDORES] Proveedor eliminado: 23
+[2025-05-03 08:16:39] [INFO   ] [PROVEEDORES] Proveedor eliminado: 22
+[2025-05-03 08:16:44] [INFO   ] [PROVEEDORES] Proveedor eliminado: 21
+[2025-05-03 08:16:48] [INFO   ] [PROVEEDORES] Proveedor eliminado: 20
+[2025-05-03 08:16:53] [INFO   ] [PROVEEDORES] Proveedor eliminado: 19
+[2025-05-03 08:16:58] [INFO   ] [PROVEEDORES] Proveedor eliminado: 18
+[2025-05-03 08:17:03] [INFO   ] [PROVEEDORES] Proveedor eliminado: 17
+[2025-05-03 08:17:09] [INFO   ] [PROVEEDORES] Proveedor eliminado: 16
+[2025-05-03 08:17:13] [INFO   ] [PROVEEDORES] Proveedor eliminado: 15
+[2025-05-03 08:17:16] [INFO   ] [PROVEEDORES] Proveedor eliminado: 14
+[2025-05-03 08:17:20] [INFO   ] [PROVEEDORES] Proveedor eliminado: 13
+[2025-05-03 08:17:27] [INFO   ] [PROVEEDORES] Proveedor eliminado: 12
+[2025-05-03 08:17:30] [INFO   ] [PROVEEDORES] Proveedor eliminado: 11
+[2025-05-03 08:17:49] [INFO   ] [PROVEEDORES] Proveedor eliminado: 10
+[2025-05-03 08:17:53] [INFO   ] [PROVEEDORES] Proveedor eliminado: 9
+[2025-05-03 08:18:36] [INFO   ] [PROVEEDORES] Proveedor eliminado: 36
+[2025-05-03 08:18:40] [INFO   ] [PROVEEDORES] Proveedor eliminado: 35
+[2025-05-03 08:18:44] [INFO   ] [PROVEEDORES] Proveedor eliminado: 34
+[2025-05-03 08:18:47] [INFO   ] [PROVEEDORES] Proveedor eliminado: 33
+[2025-05-03 08:18:51] [INFO   ] [PROVEEDORES] Proveedor eliminado: 32
+[2025-05-03 08:18:54] [INFO   ] [PROVEEDORES] Proveedor eliminado: 31
+[2025-05-03 08:18:58] [INFO   ] [PROVEEDORES] Proveedor eliminado: 30
+[2025-05-03 08:27:09] [INFO   ] [PROVEEDORES] Proveedor eliminado: 43
+[2025-05-03 08:27:14] [INFO   ] [PROVEEDORES] Proveedor eliminado: 42
+[2025-05-03 08:27:18] [INFO   ] [PROVEEDORES] Proveedor eliminado: 41
+[2025-05-03 08:27:21] [INFO   ] [PROVEEDORES] Proveedor eliminado: 40
+[2025-05-03 08:27:25] [INFO   ] [PROVEEDORES] Proveedor eliminado: 39
+[2025-05-03 08:27:28] [INFO   ] [PROVEEDORES] Proveedor eliminado: 38
+[2025-05-03 08:27:32] [INFO   ] [PROVEEDORES] Proveedor eliminado: 37
+[2025-05-03 09:01:03] [INFO   ] [PROVEEDORES] Proveedor eliminado: 50
+[2025-05-03 09:01:07] [INFO   ] [PROVEEDORES] Proveedor eliminado: 49
+[2025-05-03 09:01:10] [INFO   ] [PROVEEDORES] Proveedor eliminado: 48
+[2025-05-03 09:01:13] [INFO   ] [PROVEEDORES] Proveedor eliminado: 47
+[2025-05-03 09:01:16] [INFO   ] [PROVEEDORES] Proveedor eliminado: 46
+[2025-05-03 09:01:20] [INFO   ] [PROVEEDORES] Proveedor eliminado: 45
+[2025-05-03 09:01:24] [INFO   ] [PROVEEDORES] Proveedor eliminado: 44
+[2025-05-03 09:03:55] [INFO   ] [PROVEEDORES] Proveedor eliminado: 57
+[2025-05-03 09:03:59] [INFO   ] [PROVEEDORES] Proveedor eliminado: 56
+[2025-05-03 09:04:02] [INFO   ] [PROVEEDORES] Proveedor eliminado: 55
+[2025-05-03 09:04:05] [INFO   ] [PROVEEDORES] Proveedor eliminado: 54
+[2025-05-03 09:04:09] [INFO   ] [PROVEEDORES] Proveedor eliminado: 53
+[2025-05-03 09:04:11] [INFO   ] [PROVEEDORES] Proveedor eliminado: 52
+[2025-05-03 09:04:14] [INFO   ] [PROVEEDORES] Proveedor eliminado: 51
+[2025-05-03 09:38:36] [INFO   ] [PROVEEDORES] Proveedor eliminado: 64
+[2025-05-03 09:38:39] [INFO   ] [PROVEEDORES] Proveedor eliminado: 63
+[2025-05-03 09:38:43] [INFO   ] [PROVEEDORES] Proveedor eliminado: 62
+[2025-05-03 09:38:46] [INFO   ] [PROVEEDORES] Proveedor eliminado: 61
+[2025-05-03 09:38:49] [INFO   ] [PROVEEDORES] Proveedor eliminado: 60
+[2025-05-03 09:38:53] [INFO   ] [PROVEEDORES] Proveedor eliminado: 59
+[2025-05-03 09:38:55] [INFO   ] [PROVEEDORES] Proveedor eliminado: 58
+[2025-05-03 09:39:03] [INFO   ] [PROVEEDORES] Proveedor eliminado: 8
+[2025-05-03 09:39:08] [INFO   ] [PROVEEDORES] Proveedor eliminado: 6
+[2025-05-03 09:39:11] [INFO   ] [PROVEEDORES] Proveedor eliminado: 4
+[2025-05-03 09:39:13] [INFO   ] [PROVEEDORES] Proveedor eliminado: 3
+[2025-05-03 09:39:16] [INFO   ] [PROVEEDORES] Proveedor eliminado: 2
+[2025-05-03 09:39:18] [INFO   ] [PROVEEDORES] Proveedor eliminado: 1
+[2025-05-03 09:40:27] [INFO   ] [PROVEEDORES] Proveedor eliminado: 71
+[2025-05-03 09:40:31] [INFO   ] [PROVEEDORES] Proveedor eliminado: 70
+[2025-05-03 09:40:34] [INFO   ] [PROVEEDORES] Proveedor eliminado: 69
+[2025-05-03 09:40:37] [INFO   ] [PROVEEDORES] Proveedor eliminado: 68
+[2025-05-03 09:41:01] [INFO   ] [PROVEEDORES] Proveedor eliminado: 67
+[2025-05-03 09:41:04] [INFO   ] [PROVEEDORES] Proveedor eliminado: 66
+[2025-05-03 09:41:07] [INFO   ] [PROVEEDORES] Proveedor eliminado: 65
+[2025-05-03 16:21:04] [INFO   ] [PROVEEDORES] Proveedor eliminado: 85
+[2025-05-03 16:21:08] [INFO   ] [PROVEEDORES] Proveedor eliminado: 84
+[2025-05-03 16:21:11] [INFO   ] [PROVEEDORES] Proveedor eliminado: 83
+[2025-05-03 16:21:14] [INFO   ] [PROVEEDORES] Proveedor eliminado: 82
+[2025-05-03 16:21:17] [INFO   ] [PROVEEDORES] Proveedor eliminado: 81
+[2025-05-03 16:21:20] [INFO   ] [PROVEEDORES] Proveedor eliminado: 80
+[2025-05-03 16:21:23] [INFO   ] [PROVEEDORES] Proveedor eliminado: 79
+[2025-05-03 16:25:02] [INFO   ] [PROVEEDORES] Proveedor eliminado: 92
+[2025-05-03 16:25:05] [INFO   ] [PROVEEDORES] Proveedor eliminado: 91
+[2025-05-03 16:25:08] [INFO   ] [PROVEEDORES] Proveedor eliminado: 90
+[2025-05-03 16:25:11] [INFO   ] [PROVEEDORES] Proveedor eliminado: 89
+[2025-05-03 16:25:14] [INFO   ] [PROVEEDORES] Proveedor eliminado: 88
+[2025-05-03 16:25:17] [INFO   ] [PROVEEDORES] Proveedor eliminado: 87
+[2025-05-03 16:25:21] [INFO   ] [PROVEEDORES] Proveedor eliminado: 86
+[2025-05-05 18:19:59] [INFO   ] [ACCESO] Redirección a pantalla de registro
+[2025-05-05 18:20:08] [INFO   ] === SECCIÓN: REGISTRO ===
+[2025-05-05 18:20:08] [INFO   ] [REGISTRO] Intentando registrar usuario: david
+[2025-05-05 18:20:08] [INFO   ] [REGISTRO] CONSULTA → Registrar nuevo usuario
+[REGISTRO] SQL: INSERT INTO usuarios (usuario, email, password) VALUES (?, ?, ?)
+[2025-05-05 18:20:09] [INFO   ] [REGISTRO] Usuario registrado correctamente: david, Email: d@gmail.com
+[2025-05-05 18:20:09] [INFO   ] [REGISTRO] Redirección a pantalla de login
+[2025-05-05 18:20:13] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-05 18:20:13] [INFO   ] [ACCESO] Intento de login con usuario: david
+[2025-05-05 18:20:13] [SEVERE ] [ACCESO] ERROR → Error al validar login
+[2025-05-05 18:20:13] [INFO   ] [ACCESO] Login fallido para el usuario: david
+[2025-05-05 18:20:39] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-05 18:20:39] [INFO   ] [ACCESO] Intento de login con usuario: david
+[2025-05-05 18:20:39] [SEVERE ] [ACCESO] ERROR → Error al validar login
+[2025-05-05 18:20:39] [INFO   ] [ACCESO] Login fallido para el usuario: david
+[2025-05-05 18:20:41] [INFO   ] [ACCESO] Redirección a pantalla de registro
+[2025-05-05 18:20:48] [INFO   ] === SECCIÓN: REGISTRO ===
+[2025-05-05 18:20:48] [INFO   ] [REGISTRO] Intentando registrar usuario: t1
+[2025-05-05 18:20:48] [SEVERE ] [REGISTRO] ERROR → Error al registrar usuario en base de datos
+[2025-05-05 18:20:49] [INFO   ] [REGISTRO] Fallo al registrar usuario: t1
+[2025-05-05 18:20:52] [INFO   ] === SECCIÓN: REGISTRO ===
+[2025-05-05 18:20:52] [INFO   ] [REGISTRO] Intentando registrar usuario: t1
+[2025-05-05 18:20:52] [SEVERE ] [REGISTRO] ERROR → Error al registrar usuario en base de datos
+[2025-05-05 18:20:54] [INFO   ] [REGISTRO] Fallo al registrar usuario: t1
+[2025-05-05 18:20:54] [INFO   ] [REGISTRO] Redirección a pantalla de login
+[2025-05-05 18:20:57] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-05 18:20:57] [INFO   ] [ACCESO] Intento de login con usuario: t1
+[2025-05-05 18:20:57] [SEVERE ] [ACCESO] ERROR → Error al validar login
+[2025-05-05 18:20:57] [INFO   ] [ACCESO] Login fallido para el usuario: t1
+[2025-05-07 00:49:57] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-07 00:49:57] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 0
+[2025-05-07 00:49:59] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
+[2025-05-07 00:50:00] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-07 00:50:00] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
+[2025-05-07 00:50:00] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 0
+>>>>>>> 15867dbde797424209838b67d1916bf0e4d1970c
