@@ -9,8 +9,8 @@ public class Proveedor {
     private String municipio;
     private String provincia;
     private String telefono;
-   // private String email;
-//
+    private String email;
+
     public Proveedor(int codigo, String nombre, String calle, String localidad, String cp, String municipio, String provincia, String telefono, String email) {
         this.codigo = codigo;
         this.nombre = nombre;
