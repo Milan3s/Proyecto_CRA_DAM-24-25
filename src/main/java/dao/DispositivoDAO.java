@@ -1,4 +1,4 @@
-package model;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +8,9 @@ import java.sql.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
+import model.Alumno;
+import model.Dispositivo;
+import model.Proveedor;
 import utils.DataBaseConection;
 import utils.LoggerUtils;
 import static utils.Utilidades.mostrarAlerta2;
@@ -26,7 +29,8 @@ public class DispositivoDAO {
         query += " , p.codigo_proveedor, p.nombre AS nombre_prov, a.codigo_alumno, a.nombre AS nombre_alu";
         query += " FROM dispositivos d";
         query += " LEFT OUTER JOIN proveedores p ON d.codigo_proveedor = p.codigo_proveedor";
-        query += " LEFT OUTER JOIN alumnos a ON d.codigo_alumno = a.codigo_alumno";
+        query += " LEFT OUTER JOIN prestamos prest ON d.codigo_dispositivo = prest.codigo_dispositivo AND prest.fecha_fin IS NULL";
+        query += " LEFT OUTER JOIN alumnos a ON prest.codigo_alumno = a.codigo_alumno";
         
         try {
             Statement stmt = conn.createStatement(); 
@@ -59,9 +63,9 @@ public class DispositivoDAO {
     
     public void insertarDispositivo(Dispositivo disp) {
         //String sql = "INSERT INTO dispositivos (nombre, codigo_categoria, codigo_marca, modelo, num_serie, fecha_adquisicion, mac, imei, num_etiqueta"
-        //    + ", coment_reg, codigo_proveedor, codigo_programa, codigo_espacio, codigo_alumno) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        //    + ", coment_reg, codigo_proveedor, codigo_programa, codigo_espacio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         String sql = "INSERT INTO dispositivos (nombre, modelo, num_serie, fecha_adquisicion, mac, imei, num_etiqueta"
-            + ", coment_reg, codigo_proveedor, codigo_alumno) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            + ", coment_reg, codigo_proveedor) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -79,7 +83,6 @@ public class DispositivoDAO {
             setIntOrNull(stmt, 9, (disp.getProveedor() != null) ? disp.getProveedor().getCodigo() : null);
             // codigo programa
             // codigo espacio
-            setIntOrNull(stmt, 10, (disp.getAlumno() != null) ? disp.getAlumno().getCodigo() : null);
             
             int filas = stmt.executeUpdate();
             
@@ -96,11 +99,11 @@ public class DispositivoDAO {
         /*
         String sql = "UPDATE dispositivos SET nombre = ?, codigo_categoria = ?, codigo_marca = ?, modelo = ?, num_serie = ?, fecha_adquisicion = ?" 
                 + ", mac = ?, imei = ?, num_etiqueta= ?, coment_reg = ?, codigo_proveedor = ?, codigo_programa = ?, codigo_espacio = ?"
-                + ", codigo_alumno = ? WHERE codigo_dispositivo = ?";
+                + " WHERE codigo_dispositivo = ?";
         */
         String sql = "UPDATE dispositivos SET nombre = ?, modelo = ?, num_serie = ?, fecha_adquisicion = ?" 
                 + ", mac = ?, imei = ?, num_etiqueta= ?, coment_reg = ?, codigo_proveedor = ?"
-                + ", codigo_alumno = ? WHERE codigo_dispositivo = ?";
+                + " WHERE codigo_dispositivo = ?";
         
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -118,8 +121,7 @@ public class DispositivoDAO {
             setIntOrNull(stmt, 9, (disp.getProveedor() != null) ? disp.getProveedor().getCodigo() : null);
             // codigo programa
             // codigo espacio
-            setIntOrNull(stmt, 10, (disp.getAlumno() != null) ? disp.getAlumno().getCodigo() : null);
-            stmt.setInt(11, disp.getCodigo());
+            stmt.setInt(10, disp.getCodigo());
             
             int filas = stmt.executeUpdate();
             
@@ -137,8 +139,6 @@ public class DispositivoDAO {
         String sql = "DELETE FROM dispositivos WHERE codigo_dispositivo = ?";
         
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            LoggerUtils.logQuery("DISPOSITIVOS", "Eliminar dispositivo con código: " + codDisp, sql);
-
             stmt.setInt(1, codDisp);
             filas = stmt.executeUpdate();
 

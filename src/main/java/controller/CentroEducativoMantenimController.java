@@ -5,7 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.CentroEducativo;
-import model.CentroEducativoDAO;
+import dao.CentroEducativoDAO;
 import utils.LoggerUtils;
 
 import java.net.URL;

@@ -283,3 +283,15 @@
 [2025-05-09 18:16:13] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
 [2025-05-09 18:16:13] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
 [2025-05-09 18:16:13] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-10 13:29:46] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-10 13:29:46] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-10 13:29:46] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-11 17:08:03] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-11 17:08:03] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-11 17:08:03] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-11 17:08:12] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: Unknown column 'd.codigo_alumno' in 'on clause'
+[2025-05-11 17:08:21] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: Unknown column 'd.codigo_alumno' in 'on clause'
+[2025-05-11 17:09:25] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos: Unknown column 'd.codigo_alumno' in 'on clause'
+[2025-05-11 17:17:16] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-11 17:17:16] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-11 17:17:16] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1

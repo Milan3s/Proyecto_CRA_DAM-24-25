@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import main.App;
-import model.AccesoRegistroDAO;
+import dao.AccesoRegistroDAO;
 import utils.PasswordHasher;
 import utils.LoggerUtils;
 

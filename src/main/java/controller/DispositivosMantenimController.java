@@ -19,9 +19,14 @@ import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import model.Alumno;
 import model.Dispositivo;
-import model.DispositivoDAO;
+import dao.DispositivoDAO;
 import model.Proveedor;
-import model.ProveedorDAO;
+import dao.ProveedorDAO;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Modality;
 import model.Sede;
 import utils.LoggerUtils;
 import utils.Utilidades;
@@ -32,6 +37,8 @@ public class DispositivosMantenimController implements Initializable {
     private Button btnGuardar;
     @FXML
     private Button btnCancelar;
+    @FXML
+    private Button btnPrestar;
     @FXML
     private TextField txtNombre;
     @FXML
@@ -46,8 +53,7 @@ public class DispositivosMantenimController implements Initializable {
     private ComboBox<Proveedor> cboxProveedor;
     @FXML
     private ComboBox<Sede> cboxSede;
-    @FXML
-    private ComboBox<Alumno> cboxAlumno;
+    //private ComboBox<Alumno> cboxAlumno;
     @FXML
     private ComboBox<?> cboxPrograma;
     @FXML
@@ -106,7 +112,7 @@ public class DispositivosMantenimController implements Initializable {
             txtNetiqueta.setText(String.valueOf(disp.getNum_etiqueta()));
             if (null != disp.getFecha_adquisicion()) dtpFecha.setValue(disp.getFecha_adquisicion().toLocalDate());
             cboxProveedor.setValue(disp.getProveedor());
-            cboxAlumno.setValue(disp.getAlumno());
+            //cboxAlumno.setValue(disp.getAlumno());
         }
     }
 
@@ -233,5 +239,22 @@ public class DispositivosMantenimController implements Initializable {
         dispDAO.insertarDispositivo(disp);
         
         cerrarVentana();
+    }
+
+    @FXML
+    private void btnPrestarAction(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/PrestamosMantenim.fxml"));
+            Parent root = loader.load();
+            
+            Stage modalStage = new Stage();
+            modalStage.setTitle("Mantenimiento de préstamos");
+            modalStage.setScene(new Scene(root));
+            modalStage.initModality(Modality.APPLICATION_MODAL);
+            modalStage.setResizable(false);
+            modalStage.showAndWait();
+        } catch (IOException e) {
+            LoggerUtils.logError("DISPOSITIVOS", "Error al abrir ventana PrestamosMantenim", e);
+        }
     }
 }

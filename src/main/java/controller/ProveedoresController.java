@@ -30,7 +30,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Proveedor;
-import model.ProveedorDAO;
+import dao.ProveedorDAO;
 import utils.LoggerUtils;
 import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;

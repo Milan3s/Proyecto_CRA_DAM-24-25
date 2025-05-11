@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Proveedor;
-import model.ProveedorDAO;
+import dao.ProveedorDAO;
 
 public class ProveedoresMantenimController implements Initializable {
 

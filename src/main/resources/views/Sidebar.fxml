@@ -19,4 +19,5 @@
    <Button fx:id="btnCategorias" onAction="#loadCategorias" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Categorías" />
    <Button fx:id="btnMarcas" onAction="#loadMarcas" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Marcas" />
    <Button fx:id="btnProgramas" onAction="#loadProgramas" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Programas educativos" />
+   <Button fx:id="btnPrestamos" onAction="#loadPrestamos" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Pŕestamos" />
 </VBox>

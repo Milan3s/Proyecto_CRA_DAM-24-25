@@ -1,4 +1,4 @@
-package model;
+package dao;
 
 import utils.DataBaseConection;
 import utils.LoggerUtils;
@@ -6,6 +6,8 @@ import utils.LoggerUtils;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import model.Alumno;
+import model.Sede;
 
 public class AlumnosDAO {
 

@@ -27,6 +27,8 @@ public class SidebarController {
     private Button btnMarcas;
     @FXML
     private Button btnProgramas;
+    @FXML
+    private Button btnPrestamos;
 
     // Método para establecer el nombre de usuario en la interfaz
     public void setNombreUsuario(String nombre) {
@@ -97,5 +99,10 @@ public class SidebarController {
 
     @FXML
     private void loadProgramas(ActionEvent event) {
+    }
+
+    @FXML
+    private void loadPrestamos(ActionEvent event) throws IOException {
+        cambiarContenido("Prestamos.fxml");
     }
 }

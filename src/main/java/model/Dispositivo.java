@@ -30,6 +30,11 @@ public class Dispositivo {
         this.alumno = alumno;
         this.comentario = comentario;
     }
+    
+    public Dispositivo(int codigo, String nombre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+    }
 
     public int getCodigo() {
         return codigo;

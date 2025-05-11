@@ -8,7 +8,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.Alumno;
 import model.Sede;
-import model.AlumnosDAO;
+import dao.AlumnosDAO;
 import utils.LoggerUtils;
 
 import java.net.URL;

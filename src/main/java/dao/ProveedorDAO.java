@@ -1,4 +1,4 @@
-package model;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +8,7 @@ import java.sql.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
+import model.Proveedor;
 import utils.DataBaseConection;
 import utils.LoggerUtils;
 import static utils.Utilidades.mostrarAlerta2;

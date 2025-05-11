@@ -12,7 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Alumno;
-import model.AlumnosDAO;
+import dao.AlumnosDAO;
 import utils.LoggerUtils;
 import utils.Utilidades;
 
