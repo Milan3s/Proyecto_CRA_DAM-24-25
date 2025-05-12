@@ -255,3 +255,42 @@
 [2025-05-07 00:50:00] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
 [2025-05-07 00:50:00] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
 [2025-05-07 00:50:00] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 0
+[2025-05-12 12:25:45] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 12:25:51] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 12:25:53] [INFO   ] [ESPACIOS] Espacio eliminado → Código: 1
+[2025-05-12 12:25:53] [INFO   ] [ESPACIOS] Espacio eliminado correctamente → ID 1
+[2025-05-12 12:27:57] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 12:28:13] [SEVERE ] [ESPACIOS] ERROR → Error al insertar espacio
+[2025-05-12 12:28:25] [SEVERE ] [ESPACIOS] ERROR → Error al insertar espacio
+[2025-05-12 12:29:59] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 12:30:05] [SEVERE ] [ESPACIOS] ERROR → Error al insertar espacio
+[2025-05-12 12:36:12] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 12:38:47] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 12:38:54] [SEVERE ] [ESPACIOS] ERROR → Error al insertar espacio
+[2025-05-12 12:48:21] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 12:49:48] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 12:50:02] [SEVERE ] [ESPACIOS] ERROR → Error al insertar espacio
+[2025-05-12 12:57:43] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 12:57:53] [SEVERE ] [ESPACIOS] ERROR → Error al insertar espacio
+[2025-05-12 13:00:04] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 13:00:16] [SEVERE ] [ESPACIOS] ERROR → Error al insertar espacio
+[2025-05-12 13:00:50] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 13:00:57] [INFO   ] [ESPACIOS] CONSULTA → Intentando insertar espacio
+[ESPACIOS] SQL: QUERY: INSERT INTO espacios (nombre, pabellon, planta, codigo_sede) VALUES (?, ?, ?, ?) | VALUES: nombre=a, pabellon=n, planta=3, codigo_sede=3
+[2025-05-12 13:00:57] [SEVERE ] [ESPACIOS] ERROR → Error al insertar espacio
+[2025-05-12 13:02:42] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-12 13:02:48] [INFO   ] [ESPACIOS] CONSULTA → Intentando insertar espacio
+[ESPACIOS] SQL: QUERY: INSERT INTO espacios (nombre, pabellon, planta, codigo_sede) VALUES (?, ?, ?, ?) | VALUES: nombre=a, pabellon=n, planta=2, codigo_sede=3
+[2025-05-12 13:02:48] [INFO   ] [ESPACIOS] Espacio insertado correctamente → a

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.EspacioController">
+    
+    <VBox spacing="10" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="10.0">
+        
+        <!-- Título -->
+        <Label text="Gestión de Espacios Educativos" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+        <!-- Botones principales -->
+        <HBox spacing="10">
+            <Button fx:id="btnNuevoEspacio" text="Nuevo Espacio" onAction="#btnActionNuevoEspacio" />
+            <Button fx:id="btnEliminarEspacio" text="Eliminar Espacio" onAction="#btnActionEliminarEspacio" />
+        </HBox>
+
+        <!-- Búsqueda -->
+        <HBox spacing="10">
+            <Label text="Buscar:" />
+            <TextField fx:id="txtBuscarEspacio" promptText="Nombre, pabellón, planta..." />
+            <Button fx:id="btnBuscarEspacio" text="Buscar" onAction="#btnActionBuscarEspacio" />
+        </HBox>
+
+        <!-- Tabla de espacios -->
+        <TableView fx:id="tablaEspacios" VBox.vgrow="ALWAYS" prefHeight="500">
+            <columns>
+                <TableColumn fx:id="colCodigoEspacio" text="Código" prefWidth="100.0" />
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="150.0" />
+                <TableColumn fx:id="colPabellon" text="Pabellón" prefWidth="150.0" />
+                <TableColumn fx:id="colPlanta" text="Planta" prefWidth="100.0" />
+                <TableColumn fx:id="colNombreSede" text="Sede (Código - Nombre)" prefWidth="200.0" />
+
+            </columns>
+        </TableView>
+
+    </VBox>
+
+</AnchorPane>
