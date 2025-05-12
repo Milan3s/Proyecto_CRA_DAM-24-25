@@ -39,7 +39,6 @@ public class EspacioDAO {
                 + "FROM espacios e JOIN sedes s ON e.codigo_sede = s.codigo_sede";
 
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
-
             while (rs.next()) {
                 Espacio espacio = new Espacio(
                         rs.getInt("codigo_espacio"),
@@ -63,8 +62,7 @@ public class EspacioDAO {
         String sql = "INSERT INTO espacios (nombre, pabellon, planta, codigo_sede) VALUES (?, ?, ?, ?)";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            // Registrar valores antes de insertar
-            LoggerUtils.logQuery("ESPACIOS", "Intentando insertar espacio",
+            LoggerUtils.logQuery("ESPACIOS", "Insertando espacio",
                     String.format("QUERY: %s | VALUES: nombre=%s, pabellon=%s, planta=%d, codigo_sede=%d",
                             sql, nombre, pabellon, planta, codigoSede));
 

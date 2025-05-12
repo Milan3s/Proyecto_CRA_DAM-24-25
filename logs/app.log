@@ -294,3 +294,7 @@
 [2025-05-12 13:02:48] [INFO   ] [ESPACIOS] CONSULTA → Intentando insertar espacio
 [ESPACIOS] SQL: QUERY: INSERT INTO espacios (nombre, pabellon, planta, codigo_sede) VALUES (?, ?, ?, ?) | VALUES: nombre=a, pabellon=n, planta=2, codigo_sede=3
 [2025-05-12 13:02:48] [INFO   ] [ESPACIOS] Espacio insertado correctamente → a
+[2025-05-12 18:32:16] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-12 18:32:16] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-12 18:32:24] [INFO   ] [ESPACIOS] Exportando espacios a archivo: C:\Users\Milanes\Desktop\x.csv
+[2025-05-12 18:32:24] [INFO   ] [ESPACIOS] Exportación finalizada con éxito.
