@@ -9,7 +9,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="580.0" prefWidth="886.0" spacing="10" style="-fx-padding: 20;" stylesheets="@../styles/tabla_alumnos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MarcasController">
+<VBox prefHeight="580.0" prefWidth="886.0" spacing="10" style="-fx-padding: 20;" 
+      stylesheets="@../styles/tabla_alumnos.css" xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MarcaController">
 
     <!-- Título -->
     <Label styleClass="txt_alulmnos" text="Tabla de Marcas" textFill="WHITE" />
@@ -21,7 +23,7 @@
                 <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
             </graphic>
         </Button>
-        <Button fx:id="btnEliminarAlumno" mnemonicParsing="false" onAction="#btnActionEliminarAlumno" styleClass="btnEliminarMarcaSeleccionado" text="Eliminar Marca">
+        <Button fx:id="btnEliminarAlumno" mnemonicParsing="false" onAction="#btnActionEliminarMarca" styleClass="btnEliminarMarcaSeleccionado" text="Eliminar Marca">
             <graphic>
                 <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
             </graphic>

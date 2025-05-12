@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="TOP_LEFT" xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.SedeMantenimController"
+      style="-fx-padding: 20;" prefWidth="450.0" prefHeight="500.0">
+
+    <Label text="Mantenimiento de Sede" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+        <Label text="Calle:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtCalle" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+        <Label text="Localidad:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtLocalidad" GridPane.rowIndex="2" GridPane.columnIndex="1" />
+
+        <Label text="C.P.:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtCP" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+        <Label text="Municipio:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtMunicipio" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+        <Label text="Provincia:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtProvincia" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+
+        <Label text="Teléfono:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtTelefono" GridPane.rowIndex="6" GridPane.columnIndex="1" />
+
+        <Label text="Código Centro:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="comboCodigoCentro" prefWidth="200" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="btnGuardar" text="Guardar" />
+        <Button fx:id="btnCancelar" text="Cancelar" onAction="#btnActionCancelar" />
+    </HBox>
+
+</VBox>

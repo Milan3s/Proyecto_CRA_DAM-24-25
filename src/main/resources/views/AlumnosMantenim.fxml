@@ -6,45 +6,53 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="452.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.AlumnosMantenimController">
+<AnchorPane prefHeight="452.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AlumnosMantenimController">
 
     <children>
         <!-- Título centrado -->
-        <Text layoutX="160.0" layoutY="50.0" text="Agregar Alumno" fill="black">
+        <Text fill="black" layoutX="160.0" layoutY="50.0" text="Agregar Alumno">
             <font>
                 <Font size="26.0" />
             </font>
         </Text>
 
         <!-- Formulario organizado -->
-        <GridPane layoutX="60.0" layoutY="80.0" hgap="10" vgap="20">
+        <GridPane hgap="10" layoutX="60.0" layoutY="80.0" vgap="20">
             <padding>
-                <Insets top="10" right="10" bottom="10" left="10"/>
+                <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
 
             <!-- Nombre -->
-            <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-            <TextField fx:id="txtNombre" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtNombre" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
             <!-- Curso -->
-            <Label text="Curso:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-            <TextField fx:id="txtCurso" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Curso:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtCurso" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
             <!-- Sede -->
-            <Label text="Código Sede:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-            <ComboBox fx:id="cbox_sede" promptText="Selecciona una..." prefWidth="250.0"
-                      GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Label text="Código Sede:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cbox_sede" prefWidth="250.0" promptText="Selecciona una..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
         </GridPane>
 
         <!-- Botones -->
-        <Button fx:id="btnGuardar" layoutX="100.0" layoutY="360.0" prefWidth="140.0" text="Guardar"/>
-        <Button fx:id="btnCancelar" layoutX="280.0" layoutY="360.0" prefWidth="140.0"
-                onAction="#btnActionCancelar" text="Cancelar"/>
+        <Button fx:id="btnGuardar" layoutX="100.0" layoutY="360.0" prefWidth="140.0" text="Guardar" />
+        <Button fx:id="btnCancelar" layoutX="280.0" layoutY="360.0" onAction="#btnActionCancelar" prefWidth="140.0" text="Cancelar" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
     </children>
 </AnchorPane>

@@ -1,11 +1,11 @@
 package model;
 
-public class ProgramasEdu {
+public class Marca {
 
     private int codigo;
     private String nombre;
 
-    public ProgramasEdu(int codigo, String nombre) {
+    public Marca(int codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
     }

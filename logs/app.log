@@ -331,3 +331,9 @@
 [2025-05-07 00:50:00] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
 [2025-05-07 00:50:00] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 0
 >>>>>>> 15867dbde797424209838b67d1916bf0e4d1970c
+[2025-05-12 10:31:12] [SEVERE ] [ALUMNOS] ERROR → Error al cargar alumnos
+[2025-05-12 10:31:21] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-12 10:31:21] [SEVERE ] [ALUMNOS] ERROR → Error al cargar sedes
+[2025-05-12 10:31:41] [WARNING] [ALUMNOS] Faltan campos en el formulario.
+[2025-05-12 10:31:43] [SEVERE ] [ALUMNOS] ERROR → Error al cargar alumnos
+[2025-05-12 12:11:52] [SEVERE ] [SEDES] ERROR → Error al obtener sedes
