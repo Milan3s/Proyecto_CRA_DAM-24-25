@@ -6,81 +6,6 @@
 
 [2025-04-17 19:37:14] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
 
-<<<<<<< HEAD
-[2025-04-28 11:00:10] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
-
-[2025-05-06 16:23:19] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
-
-[2025-05-06 16:23:29] [INFO   ] 
-=== SECCIÓN ALUMNOS ===
-
-[2025-05-06 16:23:29] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
-[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
-
-[2025-05-06 16:23:34] [SEVERE ] [ALUMNOS] ERROR → Error al cargar sedes
-
-[2025-05-06 16:23:36] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
-
-[2025-05-06 16:23:41] [INFO   ] 
-=== SECCIÓN ALUMNOS ===
-
-[2025-05-06 16:23:41] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
-[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
-
-[2025-05-06 16:23:43] [SEVERE ] [ALUMNOS] ERROR → Error al cargar sedes
-
-[2025-05-06 16:23:55] [INFO   ] [ALUMNOS] Intento fallido de guardar alumno. Faltan campos.
-
-[2025-05-06 16:24:02] [INFO   ] [ALUMNOS] Intento fallido de guardar alumno. Faltan campos.
-
-[2025-05-06 16:24:04] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
-
-[2025-05-09 17:09:08] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
-
-[2025-05-09 17:09:48] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
-
-[2025-05-09 17:09:49] [INFO   ] 
-=== SECCIÓN CENTROS EDUCATIVOS ===
-
-[2025-05-09 17:09:49] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros educativos
-
-[2025-05-09 17:09:50] [INFO   ] 
-=== SECCIÓN CENTROS EDUCATIVOS ===
-
-[2025-05-09 17:09:50] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros educativos
-
-[2025-05-09 17:09:51] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
-
-[2025-05-09 17:09:52] [INFO   ] 
-=== SECCIÓN CENTROS EDUCATIVOS ===
-
-[2025-05-09 17:09:52] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros educativos
-
-[2025-05-09 17:09:55] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
-
-[2025-05-09 17:09:56] [INFO   ] 
-=== SECCIÓN CENTROS EDUCATIVOS ===
-
-[2025-05-09 17:09:56] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros educativos
-
-[2025-05-09 17:11:14] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
-
-[2025-05-09 17:11:37] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
-
-[2025-05-09 17:12:54] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos desde la base de datos.
-
-[2025-05-09 17:13:08] [INFO   ] [GENERAL] Búsqueda ejecutada → Filtro: "dd", Resultados: 0
-
-[2025-05-09 17:13:54] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
-
-[2025-05-09 17:14:01] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
-
-[2025-05-09 17:14:22] [SEVERE ] [PROVEEDORES] ERROR → Error al ejecutar guardarProv
-
-[2025-05-09 17:14:34] [SEVERE ] [PROVEEDORES] ERROR → Error al ejecutar guardarProv
-
-[2025-05-09 17:14:36] [SEVERE ] [PROVEEDORES] ERROR → Error al cargar proveedores
-=======
 [2025-04-19 12:26:34] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
 
 [2025-04-19 12:33:23] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar dispositivos
@@ -330,4 +255,9 @@
 [2025-05-07 00:50:00] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
 [2025-05-07 00:50:00] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
 [2025-05-07 00:50:00] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 0
->>>>>>> 15867dbde797424209838b67d1916bf0e4d1970c
+[2025-05-12 10:31:12] [SEVERE ] [ALUMNOS] ERROR → Error al cargar alumnos
+[2025-05-12 10:31:21] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-12 10:31:21] [SEVERE ] [ALUMNOS] ERROR → Error al cargar sedes
+[2025-05-12 10:31:41] [WARNING] [ALUMNOS] Faltan campos en el formulario.
+[2025-05-12 10:31:43] [SEVERE ] [ALUMNOS] ERROR → Error al cargar alumnos
+[2025-05-12 12:11:52] [SEVERE ] [SEDES] ERROR → Error al obtener sedes
