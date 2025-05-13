@@ -247,6 +247,9 @@ public class DispositivosMantenimController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/PrestamosMantenim.fxml"));
             Parent root = loader.load();
             
+            PrestamosMantenimController controller = loader.getController();
+            controller.setPrestamo(null, dispositivo);
+            
             Stage modalStage = new Stage();
             modalStage.setTitle("Mantenimiento de préstamos");
             modalStage.setScene(new Scene(root));

@@ -61,20 +61,20 @@
                   <Label text="NRE:" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                   <Label text="Sede:" GridPane.rowIndex="6" />
                   <Label text="Curso:" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                  <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <DatePicker GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                  <DatePicker fx:id="dtpFechaIni" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <DatePicker fx:id="dtpFechaFin" GridPane.columnIndex="4" GridPane.rowIndex="8" />
                   <Label text="Fecha de inicio:" GridPane.rowIndex="8" />
                   <Label text="Fecha de fin:" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-                  <TextField GridPane.columnIndex="1" />
-                  <TextField GridPane.columnIndex="4" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                  <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <TextField GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                  <TextField fx:id="txtNombreDisp" editable="false" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtNetiqueta" editable="false" GridPane.columnIndex="4" />
+                  <TextField fx:id="txtMarca" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtModelo" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtNserie" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtImei" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtNombreAlu" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="txtNRE" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                  <TextField fx:id="txtSede" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <TextField fx:id="txtCurso" editable="false" GridPane.columnIndex="4" GridPane.rowIndex="6" />
                   <Button mnemonicParsing="false" text="Seleccionar alumno" GridPane.columnSpan="2" GridPane.rowIndex="4" />
                </children>
                <padding>
