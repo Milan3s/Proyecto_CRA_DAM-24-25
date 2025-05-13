@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.EspacioMantenimController">
+
+
+    <VBox spacing="15" alignment="TOP_LEFT"
+          AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0"
+          AnchorPane.rightAnchor="20.0" AnchorPane.bottomAnchor="20.0">
+
+        <!-- Título -->
+        <Label text="Formulario de Espacio Educativo"
+               style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+        <!-- Formulario -->
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints minWidth="100" />
+                <ColumnConstraints minWidth="300" />
+            </columnConstraints>
+
+            <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtNombre" promptText="Ej. Aula 101"
+                       GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Pabellón:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtPabellon" promptText="Ej. Norte"
+                       GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Planta:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Spinner fx:id="spinnerPlanta"
+                     GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Sede:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <ComboBox fx:id="comboSede" promptText="Selecciona una sede"
+                      prefWidth="300.0"
+                      GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        </GridPane>
+
+        <!-- Botones -->
+        <HBox spacing="15" alignment="CENTER_RIGHT">
+            <Button fx:id="btnGuardar" text="Guardar" onAction="#btnGuardarAction" />
+            <Button fx:id="btnCancelar" text="Cancelar" onAction="#btnCancelarAction" />
+        </HBox>
+    </VBox>
+</AnchorPane>

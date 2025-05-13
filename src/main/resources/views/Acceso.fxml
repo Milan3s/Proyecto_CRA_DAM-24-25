@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="1080.0" minWidth="1980.0" stylesheets="@../styles/Acceso.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AccesoController">
+   <left>
+      <AnchorPane  style="-fx-background-color: blue;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#f2f2f2" layoutX="310.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sistema CRA" textAlignment="CENTER" underline="true" wrappingWidth="379.51171875">
+               <font>
+                  <Font name="Bell MT Bold" size="46.0" />
+               </font>
+            </Text>
+            <Text fill="#f2f2f2" layoutX="277.0" layoutY="625.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recopila la información de los datos" textAlignment="CENTER" wrappingWidth="446.1669921875">
+               <font>
+                  <Font name="Bell MT Bold" size="41.0" />
+               </font>
+            </Text>
+            <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="468.0" layoutY="348.0" size="70" />
+         </children>
+      </AnchorPane>
+   </left>
+=======
+<BorderPane maxHeight="611.0" maxWidth="550.0" minHeight="611.0" minWidth="550.0" prefHeight="611.0" prefWidth="550.0" 
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.AccesoController">
+    
 <!-- Importación de clases necesarias para los nodos UI -->
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?> 
 <?import javafx.scene.control.Button?>                        
