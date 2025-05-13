@@ -1,13 +1,32 @@
 package model;
 
+/**
+ * Modelo que representa a un alumno en el sistema. Contiene datos como nombre,
+ * curso y la sede a la que pertenece.
+ */
 public class Alumno {
 
-    private int codigo;
-    private String nombre;
-    private String curso;
-    private String nombreSede;
-    private int codigo_sede;
+    // ===================
+    // Atributos privados
+    // ===================
+    private int codigo;            // Identificador único del alumno (clave primaria)
+    private String nombre;         // Nombre completo del alumno
+    private String curso;          // Curso actual del alumno
+    private String nombreSede;     // Nombre de la sede (usado para mostrar en tabla)
+    private int codigo_sede;       // Código de la sede (clave foránea)
 
+    // ===================
+    // Constructor
+    // ===================
+    /**
+     * Constructor principal para crear un alumno con todos los datos.
+     *
+     * @param codigo Código único del alumno
+     * @param nombre Nombre del alumno
+     * @param curso Curso actual
+     * @param nombreSede Nombre de la sede (texto visible)
+     * @param codigo_sede Código numérico de la sede (FK)
+     */
     public Alumno(int codigo, String nombre, String curso, String nombreSede, int codigo_sede) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -16,6 +35,9 @@ public class Alumno {
         this.codigo_sede = codigo_sede;
     }
 
+    // ===================
+    // Getters: obtienen los valores de los atributos
+    // ===================
     public int getCodigo() {
         return codigo;
     }
@@ -36,6 +58,9 @@ public class Alumno {
         return codigo_sede;
     }
 
+    // ===================
+    // Setters: modifican los valores de los atributos
+    // ===================
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
