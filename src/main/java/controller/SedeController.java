@@ -64,7 +64,7 @@ public class SedeController {
     }
 
     private void cargarDatos() {
-        List<Sede> sedes = sedeDAO.obtenerSedes();
+        List<Sede> sedes = sedeDAO.obtenerSede();
         listaSedes.setAll(sedes);
         tablaSedes.setItems(listaSedes);
     }

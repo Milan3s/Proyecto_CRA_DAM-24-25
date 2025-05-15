@@ -211,8 +211,4 @@ public class SedeDAO {
 
         return lista;
     }
-
-    public List<Sede> obtenerSedes() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

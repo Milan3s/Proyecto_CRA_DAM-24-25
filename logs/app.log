@@ -295,3 +295,73 @@
 [2025-05-11 17:17:16] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
 [2025-05-11 17:17:16] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
 [2025-05-11 17:17:16] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-14 19:31:11] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-14 19:47:27] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-14 19:47:27] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-14 19:47:27] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-14 19:54:57] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-14 19:54:57] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-14 19:54:57] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-14 19:58:54] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-14 19:58:54] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-14 19:58:54] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-14 19:58:54] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-14 19:58:54] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-14 20:05:17] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-14 20:05:17] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-14 20:05:17] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 01:10:13] [INFO   ] [ACCESO] Redirección a pantalla de registro
+[2025-05-15 01:10:38] [INFO   ] === SECCIÓN: REGISTRO ===
+[2025-05-15 01:10:38] [INFO   ] [REGISTRO] Intentando registrar usuario: antonio
+[2025-05-15 01:10:38] [INFO   ] [REGISTRO] CONSULTA → Registrar nuevo usuario
+[REGISTRO] SQL: INSERT INTO usuarios (usuario, email, password) VALUES (?, ?, ?)
+[2025-05-15 01:10:40] [INFO   ] [REGISTRO] Usuario registrado correctamente: antonio, Email: antonio@gmail.com
+[2025-05-15 01:10:43] [INFO   ] [REGISTRO] Redirección a pantalla de login
+[2025-05-15 01:11:02] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-15 01:11:02] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-15 01:11:02] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-15 01:11:02] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-15 01:11:02] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-15 01:11:02] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-15 01:11:22] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 01:11:22] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 01:11:22] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 19:44:52] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 19:45:19] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 19:45:39] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 19:45:39] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 19:45:39] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 19:45:46] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 19:52:38] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 23:09:05] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 23:09:06] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 23:09:06] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 23:10:35] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 23:10:35] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 23:10:35] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 23:10:44] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:10:44] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-15 23:11:09] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:11:09] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-15 23:14:17] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 23:14:44] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 23:14:44] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 23:14:44] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 23:15:39] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 23:15:47] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 23:15:47] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 23:15:47] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 23:16:13] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 23:16:57] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 23:23:11] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:23:11] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-15 23:23:17] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:23:17] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-15 23:25:14] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:25:14] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-15 23:25:29] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:25:29] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-16 00:08:24] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-16 00:08:24] [INFO   ] [ESPACIOS] Cargando lista de espacios...

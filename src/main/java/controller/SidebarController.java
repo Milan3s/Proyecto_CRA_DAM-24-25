@@ -82,23 +82,28 @@ public class SidebarController {
     }
 
     @FXML
-    private void loadSedes(ActionEvent event) {
+    private void loadSedes(ActionEvent event) throws IOException {
+        cambiarContenido("Sede.fxml");
     }
 
     @FXML
-    private void loadEspacios(ActionEvent event) {
+    private void loadEspacios(ActionEvent event) throws IOException {
+        cambiarContenido("Espacio.fxml");
     }
 
     @FXML
-    private void loadCategorias(ActionEvent event) {
+    private void loadCategorias(ActionEvent event) throws IOException {
+        cambiarContenido("Categoria.fxml");
     }
 
     @FXML
-    private void loadMarcas(ActionEvent event) {
+    private void loadMarcas(ActionEvent event) throws IOException {
+        cambiarContenido("Marca.fxml");
     }
 
     @FXML
-    private void loadProgramas(ActionEvent event) {
+    private void loadProgramas(ActionEvent event) throws IOException {
+        cambiarContenido("ProgramasEdu.fxml");
     }
 
     @FXML

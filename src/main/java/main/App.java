@@ -16,6 +16,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        // Establecer centro activo
+        //Session.getInstance().setCentroActivo(30011995);
+        
         primaryStage = stage;
         //loadView("/views/Acceso");
         loadView("/views/Dashboard");
@@ -29,26 +32,12 @@ public class App extends Application {
         }));
     }
 
-    // Cambia este método a public static
     public static void loadView(String fxml) throws IOException {
         FXMLLoader loader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         Parent root = loader.load();
         
-        //boolean wasMaximized = primaryStage.isMaximized();
-        //double width = primaryStage.getWidth();
-        //double height = primaryStage.getHeight();
-        
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        
-        /*
-        if (wasMaximized) {
-            primaryStage.setMaximized(true);
-        } else {
-            primaryStage.setWidth(Math.max(width, 1980));
-            primaryStage.setHeight(Math.max(height, 1080));
-        }
-        */
         
         // Se obtiene la resolución de pantalla
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();

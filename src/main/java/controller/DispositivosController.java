@@ -1,5 +1,6 @@
 package controller;
 
+import dao.CategoriaDAO;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -37,10 +38,16 @@ import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import model.Alumno;
 import model.Dispositivo;
-import dao.DispositivoDAO;
 import model.Proveedor;
-import dao.ProveedorDAO;
+import model.Categoria;
+import model.Marca;
+import model.ProgramasEdu;
 import model.Sede;
+import dao.DispositivoDAO;
+import dao.MarcaDAO;
+import dao.ProgramasEduDAO;
+import dao.ProveedorDAO;
+import dao.SedeDAO;
 import utils.LoggerUtils;
 import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
@@ -89,19 +96,29 @@ public class DispositivosController implements Initializable {
     @FXML
     private TextField txtNombre;
     @FXML
-    private ComboBox<?> cboxCategoria;
+    private ComboBox<Categoria> cboxCategoria;
     @FXML
-    private ComboBox<?> cboxMarca;
+    private ComboBox<Marca> cboxMarca;
     @FXML
     private ComboBox<Sede> cboxSede;
     @FXML
-    private ComboBox<?> cboxPrograma;
+    private ComboBox<ProgramasEdu> cboxPrograma;
     @FXML
     private ComboBox<Proveedor> cboxProveedor;
     
     private DispositivoDAO dispDAO = new DispositivoDAO();
-    private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
     private ProveedorDAO provDAO = new ProveedorDAO();
+    private SedeDAO sedeDAO = new SedeDAO();
+    private CategoriaDAO catDAO = new CategoriaDAO();
+    private MarcaDAO marcaDAO = new MarcaDAO();
+    private ProgramasEduDAO programaDAO = new ProgramasEduDAO();
+    
+    private ObservableList<Categoria> listaCategorias = FXCollections.observableArrayList();
+    private ObservableList<Marca> listaMarcas = FXCollections.observableArrayList();
+    private ObservableList<ProgramasEdu> listaProgramas = FXCollections.observableArrayList();
+    private ObservableList<Sede> listaSedes = FXCollections.observableArrayList();
+    private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -274,29 +291,25 @@ public class DispositivosController implements Initializable {
     private void cargarCombos() {
         try {
             // Categorías
-            /*
-            listaCategorías = catDAO.obtenerCategorias();
+            listaCategorias = FXCollections.observableArrayList(catDAO.obtenerCategorias());
             cboxCategoria.setItems(listaCategorias);
             Utilidades.cargarComboBox(cboxCategoria, listaCategorias, Categoria::getNombre);
-            */
+            
             // Marcas
-            /*
-            listaMarcas = marcaDAO.obtenerMarcas();
+            listaMarcas = FXCollections.observableArrayList(marcaDAO.obtenerMarcas());
             cboxMarca.setItems(listaMarcas);
             Utilidades.cargarComboBox(cboxMarca, listaMarcas, Marca::getNombre);
-            */
+            
             // Sedes
-            /*
-            listaSedes = sedeDAO.obtenerSedes();
+            listaSedes = FXCollections.observableArrayList(sedeDAO.obtenerSede());
             cboxSede.setItems(listaSedes);
             Utilidades.cargarComboBox(cboxSede, listaSedes, Sede::getNombre);
-            */
+            
             // Programas
-            /*
-            listaProgramas = programaDAO.obtenerProgramas();
+            listaProgramas = FXCollections.observableArrayList(programaDAO.obtenerProgramas());
             cboxPrograma.setItems(listaProgramas);
-            Utilidades.cargarComboBox(cboxPrograma, listaProgramas, Programa::getNombre);
-            */
+            Utilidades.cargarComboBox(cboxPrograma, listaProgramas, ProgramasEdu::getNombre);
+            
             // Proveedores
             listaProveedores = provDAO.obtenerProveedores();
             cboxProveedor.setItems(listaProveedores);
