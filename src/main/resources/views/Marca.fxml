@@ -42,7 +42,7 @@
  
     <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="830.0" spacing="10">
         <Label contentDisplay="RIGHT" prefHeight="35.0" prefWidth="60.0" styleClass="txtbuscar" text="Buscar:" textAlignment="RIGHT" />
-        <TextField fx:id="txtBuscar" prefHeight="35.0" prefWidth="423.0" promptText="Escribe para buscar..." styleClass="campo_busqueda" />
+        <TextField fx:id="txtBuscar" prefWidth="350.0" promptText="Escribe para buscar..." styleClass="campo_busqueda" />
         <Button fx:id="btnBuscar" onAction="#btnBuscarAction" prefHeight="35.0" text="Buscar" />
     </HBox>
 

@@ -103,7 +103,7 @@ public class SidebarController {
 
     @FXML
     private void loadProgramas(ActionEvent event) throws IOException {
-        cambiarContenido("ProgramasEdu.fxml");
+        cambiarContenido("ProgramasE.fxml");
     }
 
     @FXML

@@ -393,3 +393,40 @@
 [2025-05-17 13:36:16] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
 [2025-05-17 13:36:16] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
 [2025-05-17 13:36:16] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-17 16:44:23] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-17 16:44:23] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-17 16:57:24] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-05-17 16:57:34] [WARNING] [PROGRAMAS EDUCATIVOS] Campo nombre vacío en el formulario.
+[2025-05-17 16:57:45] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-05-17 16:59:31] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-17 16:59:31] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-17 16:59:31] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-17 16:59:31] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-17 16:59:31] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-17 16:59:45] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-17 16:59:45] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-17 16:59:50] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-17 16:59:50] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-17 17:00:07] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-17 17:00:19] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-17 17:00:19] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-17 17:00:19] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-17 17:00:19] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-17 17:00:19] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-17 17:00:23] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-17 17:00:23] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-17 17:00:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-17 17:00:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-17 17:00:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-17 17:01:02] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-17 17:01:02] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-17 17:01:02] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-17 17:01:06] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-17 17:01:14] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-17 17:01:14] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-17 17:01:47] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-17 17:01:47] [INFO   ] [ESPACIOS] Cargando lista de espacios...
