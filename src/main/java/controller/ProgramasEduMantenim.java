@@ -1,15 +1,14 @@
 package controller;
 
+import dao.ProgramasEduDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import model.Marca;
-import dao.MarcaDAO;
 import utils.LoggerUtils;
-
 import java.net.URL;
 import java.util.ResourceBundle;
+import model.ProgramasEdu;
 
 public class ProgramasEduMantenim implements Initializable {
 
@@ -20,8 +19,8 @@ public class ProgramasEduMantenim implements Initializable {
     @FXML
     private Button btnCancelar;
 
-    private Marca marca;  // null = nuevo, distinto de null = edición
-    private final MarcaDAO marcaDAO = new MarcaDAO();
+    private ProgramasEdu programa;  // null = nuevo, distinto de null = edición
+    private final ProgramasEduDAO programaDAO = new ProgramasEduDAO();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -29,10 +28,10 @@ public class ProgramasEduMantenim implements Initializable {
         btnGuardar.setOnAction(e -> guardarPrograma());
     }
 
-    public void setMarca(Marca marca) {
-        this.marca = marca;
-        if (marca != null) {
-            txtNombre.setText(marca.getNombre());
+    public void setPrograma(ProgramasEdu programa) {
+        this.programa = programa;
+        if (programa != null) {
+            txtNombre.setText(programa.getNombre());
         }
     }
 
@@ -45,16 +44,16 @@ public class ProgramasEduMantenim implements Initializable {
             return;
         }
 
-        if (marca == null) {
+        if (programa == null) {
             // Insertar nuevo programa
-            boolean insertado = marcaDAO.insertarMarca(nombre);
+            boolean insertado = programaDAO.insertarPrograma(nombre);
             if (insertado) {
                 mostrarAlerta("Éxito", "Programa educativo agregado con éxito.", Alert.AlertType.INFORMATION);
                 cerrarVentana();
             }
         } else {
             // Actualizar programa existente
-            boolean actualizado = marcaDAO.actualizarMarca(marca.getCodigo(), nombre);
+            boolean actualizado = programaDAO.actualizarPrograma(programa.getCodigo(), nombre);
             if (actualizado) {
                 mostrarAlerta("Éxito", "Programa educativo actualizado correctamente.", Alert.AlertType.INFORMATION);
                 cerrarVentana();

@@ -6,8 +6,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import model.Sede;
 import dao.SedeDAO;
-
+import java.io.IOException;
 import java.util.List;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import utils.LoggerUtils;
 
 public class SedeController {
 
@@ -46,8 +53,15 @@ public class SedeController {
 
     private final SedeDAO sedeDAO = new SedeDAO();
     private final ObservableList<Sede> listaSedes = FXCollections.observableArrayList();
-
     @FXML
+    private Button btnNuevaSede;
+    @FXML
+    private Button btnEliminarSede;
+    @FXML
+    private Button btnEliminarTodasSedes;
+    @FXML
+    private Button btnBuscarSede;
+
     public void initialize() {
         // Configurar columnas
         colCodigoSede.setCellValueFactory(data -> new javafx.beans.property.SimpleIntegerProperty(data.getValue().getCodigoSede()).asObject());
@@ -71,8 +85,7 @@ public class SedeController {
 
     @FXML
     private void btnNuevaSedeAction() {
-        // Lógica para agregar nueva sede
-        System.out.println("Nueva sede (por implementar)");
+        abrirMantenimiento(null);
     }
 
     @FXML
@@ -101,6 +114,36 @@ public class SedeController {
         } else {
             List<Sede> resultado = sedeDAO.buscarSedes(filtro);
             listaSedes.setAll(resultado);
+        }
+    }
+
+    @FXML
+    private void capturarClick(MouseEvent event) {
+        if (event.getClickCount() == 2 && !tablaSedes.getSelectionModel().isEmpty()) {
+            Sede sede = tablaSedes.getSelectionModel().getSelectedItem();
+            abrirMantenimiento(sede);
+        }
+    }
+    
+    private void abrirMantenimiento(Sede sede) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/SedeMantenim.fxml"));
+            Parent root = loader.load();
+            
+            SedeMantenimController controller = loader.getController();
+            controller.setSede(sede);
+
+            Stage modalStage = new Stage();
+            modalStage.setTitle("Mantenimiento de sedes");
+            modalStage.setScene(new Scene(root));
+            modalStage.initModality(Modality.APPLICATION_MODAL);
+            modalStage.setResizable(false);
+            modalStage.showAndWait();
+
+            cargarDatos();
+
+        } catch (IOException e) {
+            LoggerUtils.logError("SEDES", "Error al abrir ventana SedeMantenim", e);
         }
     }
 }

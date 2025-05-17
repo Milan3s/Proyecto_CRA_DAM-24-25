@@ -13,7 +13,7 @@
 
 <AnchorPane prefHeight="300.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/23.0.1"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.ProgramaEduMantenimController">
+            fx:controller="controller.ProgramasEduMantenim">
 
     <children>
         <!-- Título -->

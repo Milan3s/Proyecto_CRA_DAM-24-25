@@ -1,15 +1,14 @@
 package controller;
 
+import dao.CategoriaDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-import model.Marca;
-import dao.MarcaDAO;
 import utils.LoggerUtils;
-
 import java.net.URL;
 import java.util.ResourceBundle;
+import model.Categoria;
 
 public class CategoriaMantenimController implements Initializable {
 
@@ -20,23 +19,22 @@ public class CategoriaMantenimController implements Initializable {
     @FXML
     private Button btnCancelar;
 
-    private Marca marca;  // null = nuevo, distinto de null = edición
-    private final MarcaDAO marcaDAO = new MarcaDAO();
+    private Categoria categoria;  // null = nuevo, distinto de null = edición
+    private final CategoriaDAO categoriaDAO = new CategoriaDAO();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        LoggerUtils.logSection("CATEGORIAS");
-        btnGuardar.setOnAction(e -> guardarMarca());
+        btnGuardar.setOnAction(e -> guardarCategoria());
     }
 
-    public void setMarca(Marca marca) {
-        this.marca = marca;
-        if (marca != null) {
-            txtNombre.setText(marca.getNombre());
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+        if (categoria != null) {
+            txtNombre.setText(categoria.getNombre());
         }
     }
 
-    private void guardarMarca() {
+    private void guardarCategoria() {
         String nombre = txtNombre.getText().trim();
 
         if (nombre.isEmpty()) {
@@ -45,16 +43,16 @@ public class CategoriaMantenimController implements Initializable {
             return;
         }
 
-        if (marca == null) {
+        if (categoria == null) {
             // Insertar nueva categoría
-            boolean insertado = marcaDAO.insertarMarca(nombre);
+            boolean insertado = categoriaDAO.insertarCategoria(nombre);
             if (insertado) {
                 mostrarAlerta("Éxito", "Categoría agregada con éxito.", Alert.AlertType.INFORMATION);
                 cerrarVentana();
             }
         } else {
             // Actualizar categoría existente
-            boolean actualizado = marcaDAO.actualizarMarca(marca.getCodigo(), nombre);
+            boolean actualizado = categoriaDAO.actualizarCategoria(categoria.getCodigo(), nombre);
             if (actualizado) {
                 mostrarAlerta("Éxito", "Categoría actualizada correctamente.", Alert.AlertType.INFORMATION);
                 cerrarVentana();

@@ -365,3 +365,31 @@
 [2025-05-15 23:25:29] [INFO   ] [ESPACIOS] Cargando lista de espacios...
 [2025-05-16 00:08:24] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
 [2025-05-16 00:08:24] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-16 17:04:22] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-16 17:04:22] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-16 17:05:08] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-16 17:05:08] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-17 08:48:23] [INFO   ] === SECCIÓN: CATEGORIAS ===
+[2025-05-17 08:48:30] [INFO   ] === SECCIÓN: CATEGORIAS ===
+[2025-05-17 08:51:13] [INFO   ] === SECCIÓN: CATEGORIAS ===
+[2025-05-17 08:56:31] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-17 08:56:42] [WARNING] [MARCAS] Campo nombre vacío en el formulario.
+[2025-05-17 08:57:00] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-17 08:57:21] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-17 11:51:04] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:51:36] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:51:47] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:53:05] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:53:12] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:56:26] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:58:06] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoríaError resolving onAction='#btnActionNuevaCategoria', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/Antonio/Documents/NetBeansProjects/proyecto_javafx_23/target/classes/views/CategoriaMantenim.fxml:25
+
+[2025-05-17 12:09:55] [WARNING] [CATEGORIAS] Campo nombre vacío en el formulario.
+[2025-05-17 13:35:57] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-17 13:35:57] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-17 13:36:13] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-17 13:36:13] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-17 13:36:16] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-17 13:36:16] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-17 13:36:16] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1

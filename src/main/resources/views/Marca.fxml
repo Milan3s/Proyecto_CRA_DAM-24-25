@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -8,46 +9,51 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="580.0" prefWidth="886.0" spacing="10" style="-fx-padding: 20;" 
-      stylesheets="@../styles/tabla_alumnos.css" xmlns="http://javafx.com/javafx/23.0.1"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MarcaController">
+<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MarcaController">
 
     <!-- Título -->
-    <Label styleClass="txt_alulmnos" text="Tabla de Marcas" textFill="WHITE" />
+    <Label styleClass="txt_alulmnos" text="Marcas">
+      <font>
+         <Font size="24.0" />
+      </font></Label>
 
     <!-- Botones en línea -->
-    <HBox spacing="10">
-        <Button fx:id="btnNuevoMarca" mnemonicParsing="false" onAction="#btnActionNuevoMarca" styleClass="btnNuevoMarca" text="Nueva Marca" textFill="WHITE">
+    <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="830.0" spacing="20.0">
+        <Button fx:id="btnNuevoMarca" mnemonicParsing="false" onAction="#btnActionNuevoMarca" styleClass="btnNuevoMarca" text="Nueva Marca">
             <graphic>
-                <FontAwesomeIconView fill="WHITE" glyphName="PLUS" />
+                <FontAwesomeIconView glyphName="PLUS" selectionFill="BLACK" />
             </graphic>
         </Button>
-        <Button fx:id="btnEliminarAlumno" mnemonicParsing="false" onAction="#btnActionEliminarMarca" styleClass="btnEliminarMarcaSeleccionado" text="Eliminar Marca">
+        <Button fx:id="btnEliminarMarca" mnemonicParsing="false" onAction="#btnActionEliminarMarca" styleClass="btnEliminarMarcaSeleccionado" text="Eliminar Marca">
             <graphic>
-                <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
+                <FontAwesomeIconView glyphName="TRASH" />
             </graphic>
         </Button>
-        <Button fx:id="btnEliminarTodos" mnemonicParsing="false" onAction="#btnActionEliminarTodos" styleClass="btnEliminarTodosLasMarcas" text="Eliminar Todos">
+        <Button fx:id="btnEliminarTodos" disable="true" mnemonicParsing="false" onAction="#btnActionEliminarTodos" text="Eliminar Todos">
             <graphic>
-                <FontAwesomeIconView fill="WHITE" glyphName="TRASH" />
+                <FontAwesomeIconView glyphName="TRASH" />
             </graphic>
         </Button>
     </HBox>
     
     <!-- Barra de búsqueda -->
  
-    <HBox spacing="10">
-        <Label contentDisplay="RIGHT" prefHeight="35.0" prefWidth="60.0" styleClass="txtbuscar" text="Buscar:" textAlignment="RIGHT" textFill="white" />
+    <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="830.0" spacing="10">
+        <Label contentDisplay="RIGHT" prefHeight="35.0" prefWidth="60.0" styleClass="txtbuscar" text="Buscar:" textAlignment="RIGHT" />
         <TextField fx:id="txtBuscar" prefHeight="35.0" prefWidth="423.0" promptText="Escribe para buscar..." styleClass="campo_busqueda" />
         <Button fx:id="btnBuscar" onAction="#btnBuscarAction" prefHeight="35.0" text="Buscar" />
     </HBox>
 
     <!-- Tabla -->
-    <TableView fx:id="tablaUsuarios" prefHeight="500.0" styleClass="tabla_Alumnos" VBox.vgrow="ALWAYS">
+    <TableView fx:id="tablaMarcas" styleClass="tabla_Alumnos" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="colCodigo" prefWidth="399.20002365112305" styleClass="Columna-Codigo" text="Código Marca" />
-            <TableColumn fx:id="colNombre" prefWidth="438.4000244140625" styleClass="Columna-nombre" text="Nombre" />
+            <TableColumn fx:id="colCodigo" prefWidth="150.0" styleClass="Columna-Codigo" text="Código Marca" />
+            <TableColumn fx:id="colNombre" prefWidth="673.0" styleClass="Columna-nombre" text="Nombre" />
         </columns>
     </TableView>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
 </VBox>

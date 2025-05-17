@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 import model.Marca;
 import dao.MarcaDAO;
 import utils.LoggerUtils;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -23,7 +22,7 @@ import java.util.ResourceBundle;
 public class MarcaController implements Initializable {
 
     @FXML
-    private TableView<Marca> tablaUsuarios;
+    private TableView<Marca> tablaMarcas;
     @FXML
     private TableColumn<Marca, Integer> colCodigo;
     @FXML
@@ -47,16 +46,16 @@ public class MarcaController implements Initializable {
         configurarColumnas();
         cargarDatos();
 
-        tablaUsuarios.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2 && !tablaUsuarios.getSelectionModel().isEmpty()) {
-                Marca marcaSeleccionada = tablaUsuarios.getSelectionModel().getSelectedItem();
+        tablaMarcas.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2 && !tablaMarcas.getSelectionModel().isEmpty()) {
+                Marca marcaSeleccionada = tablaMarcas.getSelectionModel().getSelectedItem();
                 abrirFormularioMarca(marcaSeleccionada);
             }
         });
 
         txtBuscar.textProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal.trim().isEmpty()) {
-                tablaUsuarios.setItems(listaMarcas);
+                tablaMarcas.setItems(listaMarcas);
             }
         });
     }
@@ -69,7 +68,7 @@ public class MarcaController implements Initializable {
     private void cargarDatos() {
         List<Marca> marcas = marcaDAO.obtenerMarcas();
         listaMarcas.setAll(marcas);
-        tablaUsuarios.setItems(listaMarcas);
+        tablaMarcas.setItems(listaMarcas);
     }
 
     @FXML
@@ -79,7 +78,7 @@ public class MarcaController implements Initializable {
 
     private void abrirFormularioMarca(Marca marca) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/MarcasMantenim.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/MarcaMantenim.fxml"));
             Parent root = loader.load();
 
             MarcaMantenimController controller = loader.getController();
@@ -100,7 +99,7 @@ public class MarcaController implements Initializable {
 
     @FXML
     private void btnActionEliminarMarca() {
-        Marca marca = tablaUsuarios.getSelectionModel().getSelectedItem();
+        Marca marca = tablaMarcas.getSelectionModel().getSelectedItem();
         if (marca != null && marcaDAO.eliminarMarca(marca.getCodigo())) {
             cargarDatos();
         }
@@ -121,7 +120,7 @@ public class MarcaController implements Initializable {
         } else {
             List<Marca> filtradas = marcaDAO.buscarMarcas(filtro);
             listaMarcas.setAll(filtradas);
-            tablaUsuarios.setItems(listaMarcas);
+            tablaMarcas.setItems(listaMarcas);
         }
     }
 }

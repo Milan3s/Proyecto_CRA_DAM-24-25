@@ -7,20 +7,21 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="580.0" prefWidth="900.0" spacing="10" style="-fx-padding: 20;"
-      xmlns="http://javafx.com/javafx/23.0.1"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.SedeController">
+<VBox spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SedeController">
 
     <!-- Título -->
-    <Label text="Tabla de Sedes" />
+    <Label text="Sedes">
+      <font>
+         <Font size="24.0" />
+      </font></Label>
 
     <!-- Botones -->
     <HBox spacing="10">
         <Button fx:id="btnNuevaSede" mnemonicParsing="false" onAction="#btnNuevaSedeAction" text="Nueva Sede" />
         <Button fx:id="btnEliminarSede" mnemonicParsing="false" onAction="#btnEliminarSedeAction" text="Eliminar Sede" />
-        <Button fx:id="btnEliminarTodasSedes" mnemonicParsing="false" onAction="#btnEliminarTodasSedesAction" text="Eliminar Todas" />
+        <Button fx:id="btnEliminarTodasSedes" disable="true" mnemonicParsing="false" onAction="#btnEliminarTodasSedesAction" text="Eliminar Todas" />
     </HBox>
 
     <!-- Barra de búsqueda -->
@@ -31,7 +32,7 @@
     </HBox>
 
     <!-- Tabla de sedes -->
-    <TableView fx:id="tablaSedes" prefHeight="500.0" VBox.vgrow="ALWAYS">
+    <TableView fx:id="tablaSedes" onMouseClicked="#capturarClick" prefHeight="500.0" VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="colCodigoSede" prefWidth="100.0" text="Código Sede" />
             <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
