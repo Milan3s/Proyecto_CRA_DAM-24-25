@@ -71,10 +71,17 @@
             <TableColumn fx:id="colNumEti" prefWidth="75.0" text="Num_etiq" />
             <TableColumn fx:id="colMac" prefWidth="75.0" text="Mac" />
             <TableColumn fx:id="colImei" prefWidth="75.0" text="Imei" />
+            <TableColumn fx:id="colPrestado" prefWidth="75.0" text="Prestado" />
             <TableColumn fx:id="colAlumno" prefWidth="75.0" text="Alumno" />
             <TableColumn fx:id="colCurso" prefWidth="75.0" text="Curso" />
             <TableColumn fx:id="colFechaAdqui" prefWidth="116.0" text="Fecha_adquisición" />
             <TableColumn fx:id="colProveedor" prefWidth="94.0" text="Proveedor" />
+            <TableColumn fx:id="colCategoria" prefWidth="75.0" text="Categoría" />
+            <TableColumn fx:id="colMarca" prefWidth="75.0" text="Marca" />
+            <TableColumn fx:id="colSede" prefWidth="75.0" text="Sede" />
+            <TableColumn fx:id="colEspacio" prefWidth="75.0" text="Espacio" />
+            <TableColumn fx:id="colAbaco" prefWidth="75.0" text="Id_ábaco" />
+            <TableColumn fx:id="colPrograma" prefWidth="75.0" text="ProgramaE" />
         </columns>
       </TableView>
    </children>

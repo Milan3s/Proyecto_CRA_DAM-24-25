@@ -9,10 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="580.0" prefWidth="886.0" spacing="10" style="-fx-padding: 20;"
-      xmlns="http://javafx.com/javafx/23.0.1"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="controller.CentroEducativoController">
+<VBox prefHeight="580.0" prefWidth="886.0" spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CentroEducativoController">
 
     <!-- Título -->
     <Label text="Tabla de Centros Educativos" />
@@ -31,6 +28,7 @@
                 <Tooltip text="A un archivo .csv" />
             </tooltip>
         </Button>
+      <Button fx:id="btnEstablecer" mnemonicParsing="false" onAction="#btnEstablecerAction" text="Establecer centro activo" />
     </HBox>
 
     <!-- Barra de búsqueda -->

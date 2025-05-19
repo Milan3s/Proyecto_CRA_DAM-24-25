@@ -13,11 +13,20 @@ public class Dispositivo {
     private String comentario;
     private int num_etiqueta;
     private Proveedor proveedor;
+    private Categoria categoria;
+    private Marca marca;
+    private Espacio espacio;
+    private ProgramasEdu programae;
+    private boolean prestado;
     
     // Alumno actual que tiene el dispositivo prestado (solo para mostrar en el TableView)
     private Alumno alumno;
+    
+    // Sede, solo para mostrar en el tableView
+    private Sede sede;
 
-    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, Date fecha_adquisicion, String mac, String imei, int num_etiqueta, Proveedor proveedor, Alumno alumno, String comentario) {
+    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, Date fecha_adquisicion, String mac, String imei, int num_etiqueta
+        , Proveedor proveedor, Alumno alumno, String comentario, Categoria categoria, Marca marca, Espacio espacio, ProgramasEdu programae, Sede sede, boolean prestado) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.modelo = modelo;
@@ -29,6 +38,12 @@ public class Dispositivo {
         this.proveedor = proveedor;
         this.alumno = alumno;
         this.comentario = comentario;
+        this.categoria = categoria;
+        this.marca = marca;
+        this.espacio = espacio;
+        this.programae = programae;
+        this.sede = sede;
+        this.prestado = prestado;
     }
     
     public Dispositivo(int codigo, String nombre) {
@@ -122,5 +137,53 @@ public class Dispositivo {
 
     public void setComentario(String comentario) {
         this.comentario = comentario;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
+    }
+
+    public Espacio getEspacio() {
+        return espacio;
+    }
+
+    public void setEspacio(Espacio espacio) {
+        this.espacio = espacio;
+    }
+
+    public ProgramasEdu getProgramae() {
+        return programae;
+    }
+
+    public void setProgramae(ProgramasEdu programae) {
+        this.programae = programae;
+    }
+
+    public Sede getSede() {
+        return sede;
+    }
+
+    public void setSede(Sede sede) {
+        this.sede = sede;
+    }
+
+    public boolean isPrestado() {
+        return prestado;
+    }
+
+    public void setPrestado(boolean prestado) {
+        this.prestado = prestado;
     }
 }

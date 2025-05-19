@@ -8,14 +8,21 @@ public class Espacio {
     private int planta; // ✅ Cambiado a int
     private int codigoSede;
     private String nombreSede;
+    private String numAbaco;
 
-    public Espacio(int codigoEspacio, String nombre, String pabellon, int planta, int codigoSede, String nombreSede) {
+    public Espacio(int codigoEspacio, String nombre, String pabellon, int planta, int codigoSede, String nombreSede, String numAbaco) {
         this.codigoEspacio = codigoEspacio;
         this.nombre = nombre;
         this.pabellon = pabellon;
         this.planta = planta;
         this.codigoSede = codigoSede;
         this.nombreSede = nombreSede;
+        this.numAbaco = numAbaco;
+    }
+    
+    public Espacio(int codigoEspacio, String nombre) {
+        this.codigoEspacio = codigoEspacio;
+        this.nombre = nombre;
     }
 
     public int getCodigoEspacio() {
@@ -64,6 +71,14 @@ public class Espacio {
 
     public void setNombreSede(String nombreSede) {
         this.nombreSede = nombreSede;
+    }
+
+    public String getNumAbaco() {
+        return numAbaco;
+    }
+
+    public void setNumAbaco(String numAbaco) {
+        this.numAbaco = numAbaco;
     }
 
     @Override

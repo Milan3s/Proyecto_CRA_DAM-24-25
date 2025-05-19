@@ -37,7 +37,7 @@ public class EspacioDAO {
     // Lista todos los espacios (incluyendo nombre de sede)
     public List<Espacio> obtenerEspacios() {
         List<Espacio> listaEspacios = new ArrayList<>();
-        String query = "SELECT e.codigo_espacio, e.nombre, e.pabellon, e.planta, e.codigo_sede, s.nombre AS nombre_sede "
+        String query = "SELECT e.codigo_espacio, e.nombre, e.pabellon, e.planta, e.codigo_sede, s.nombre AS nombre_sede, num_abaco "
                 + "FROM espacios e JOIN sedes s ON e.codigo_sede = s.codigo_sede";
 
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
@@ -48,7 +48,8 @@ public class EspacioDAO {
                         rs.getString("pabellon"),
                         rs.getInt("planta"),
                         rs.getInt("codigo_sede"),
-                        rs.getString("nombre_sede")
+                        rs.getString("nombre_sede"),
+                        rs.getString("num_abaco")
                 );
                 listaEspacios.add(espacio);
             }
@@ -125,7 +126,7 @@ public class EspacioDAO {
     // Busca espacios por nombre, pabellón o planta (incluye nombre de sede)
     public List<Espacio> buscarEspacios(String filtro) {
         List<Espacio> listaFiltrada = new ArrayList<>();
-        String sql = "SELECT e.codigo_espacio, e.nombre, e.pabellon, e.planta, e.codigo_sede, s.nombre AS nombre_sede "
+        String sql = "SELECT e.codigo_espacio, e.nombre, e.pabellon, e.planta, e.codigo_sede, s.nombre AS nombre_sede, e.num_abaco "
                 + "FROM espacios e JOIN sedes s ON e.codigo_sede = s.codigo_sede "
                 + "WHERE e.nombre LIKE ? OR e.pabellon LIKE ? OR e.planta LIKE ?";
 
@@ -143,7 +144,8 @@ public class EspacioDAO {
                         rs.getString("pabellon"),
                         rs.getInt("planta"),
                         rs.getInt("codigo_sede"),
-                        rs.getString("nombre_sede")
+                        rs.getString("nombre_sede"),
+                        rs.getString("num_abaco")
                 );
                 listaFiltrada.add(espacio);
             }

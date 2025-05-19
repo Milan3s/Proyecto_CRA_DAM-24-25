@@ -21,6 +21,8 @@ import java.io.*;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import main.Session;
+import static utils.Utilidades.mostrarAlerta2;
 
 public class CentroEducativoController implements Initializable {
 
@@ -57,6 +59,8 @@ public class CentroEducativoController implements Initializable {
     private Button btnImportar;
     @FXML
     private Button btnExportar;
+    @FXML
+    private Button btnEstablecer;
 
     // Lista observable para tabla
     private final ObservableList<CentroEducativo> listaCentros = FXCollections.observableArrayList();
@@ -247,6 +251,18 @@ public class CentroEducativoController implements Initializable {
                 LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al exportar centros: " + fichero, e);
                 mostrarAlerta("Error", "No se pudo exportar el archivo.", Alert.AlertType.ERROR);
             }
+        }
+    }
+
+    @FXML
+    private void btnEstablecerAction(ActionEvent event) {
+        CentroEducativo seleccionado = tablaCentroEducativos.getSelectionModel().getSelectedItem();
+        if (seleccionado != null) {
+            // Establecer centro activo
+            Session.getInstance().setCentroActivo(seleccionado);
+          
+        } else {
+            mostrarAlerta2("Sin selección", "Por favor, seleccione un centro.", Alert.AlertType.WARNING);
         }
     }
 }

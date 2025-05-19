@@ -7,21 +7,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import javafx.geometry.Rectangle2D;
-import javafx.stage.Screen;
+//import javafx.geometry.Rectangle2D;
+//import javafx.stage.Screen;
 import utils.DataBaseConection;
 
 public class App extends Application {
     private static Stage primaryStage;
 
     @Override
-    public void start(Stage stage) throws IOException {
-        // Establecer centro activo
-        //Session.getInstance().setCentroActivo(30011995);
-        
+    public void start(Stage stage) throws IOException {    
         primaryStage = stage;
-        //loadView("/views/Acceso");
-        loadView("/views/Dashboard");
+        loadView("/views/Acceso");
+        //loadView("/views/Dashboard");
         stage.setTitle("Sistema CRA");
         stage.show();
         
@@ -39,6 +36,7 @@ public class App extends Application {
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         
+        /*
         // Se obtiene la resolución de pantalla
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
         
@@ -50,6 +48,7 @@ public class App extends Application {
         
         // No permitir cambiar tamaño
         primaryStage.setResizable(false);
+        */
     }
 
     // Añade este método si necesitas cargar FXML directamente

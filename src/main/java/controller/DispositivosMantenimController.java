@@ -1,5 +1,7 @@
 package controller;
 
+import dao.AlumnosDAO;
+import dao.CategoriaDAO;
 import java.net.URL;
 import java.sql.Date;
 import java.time.LocalDate;
@@ -20,13 +22,21 @@ import javafx.util.StringConverter;
 import model.Alumno;
 import model.Dispositivo;
 import dao.DispositivoDAO;
+import dao.EspacioDAO;
+import dao.MarcaDAO;
+import dao.ProgramasEduDAO;
 import model.Proveedor;
 import dao.ProveedorDAO;
+import dao.SedeDAO;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
+import model.Categoria;
+import model.Espacio;
+import model.Marca;
+import model.ProgramasEdu;
 import model.Sede;
 import utils.LoggerUtils;
 import utils.Utilidades;
@@ -46,16 +56,19 @@ public class DispositivosMantenimController implements Initializable {
     @FXML
     private TextField txtNserie;
     @FXML
-    private ComboBox<?> cboxMarca;
+    private ComboBox<Marca> cboxMarca;
     @FXML
-    private ComboBox<?> cboxCategoria;
+    private ComboBox<Categoria> cboxCategoria;
     @FXML
     private ComboBox<Proveedor> cboxProveedor;
     @FXML
     private ComboBox<Sede> cboxSede;
+    //@FXML
     //private ComboBox<Alumno> cboxAlumno;
     @FXML
-    private ComboBox<?> cboxPrograma;
+    private ComboBox<ProgramasEdu> cboxPrograma;
+    @FXML
+    private ComboBox<Espacio> cboxEspacio;
     @FXML
     private TextArea txtComent;
     @FXML
@@ -68,11 +81,11 @@ public class DispositivosMantenimController implements Initializable {
     private DatePicker dtpFecha;
     
     private Dispositivo dispositivo;
-    private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
-    private ProveedorDAO provDAO = new ProveedorDAO();
     private DispositivoDAO dispDAO = new DispositivoDAO();
     
-    /*
+    private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
+    private ProveedorDAO provDAO = new ProveedorDAO();
+    
     private ObservableList<Categoria> listaCategorias = FXCollections.observableArrayList();
     private CategoriaDAO catDAO = new CategoriaDAO();
     
@@ -85,12 +98,12 @@ public class DispositivosMantenimController implements Initializable {
     private ObservableList<Espacio> listaEspacios = FXCollections.observableArrayList();
     private EspacioDAO espacioDAO = new EspacioDAO();
     
-    private ObservableList<Programa> listaProgramas = FXCollections.observableArrayList();
-    private ProgramaDAO programaDAO = new ProgramaDAO();
+    private ObservableList<ProgramasEdu> listaProgramas = FXCollections.observableArrayList();
+    private ProgramasEduDAO programaDAO = new ProgramasEduDAO();
     
     private ObservableList<Alumno> listaAlumnos = FXCollections.observableArrayList();
-    private AlumnoDAO alumnoDAO = new AlumnoDAO();
-    */
+    private AlumnosDAO alumnoDAO = new AlumnosDAO();
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -118,11 +131,8 @@ public class DispositivosMantenimController implements Initializable {
 
     @FXML
     private void btnGuardarAction(ActionEvent event) {
-        if (null == this.dispositivo) {
-            insertarDisp();
-        } else {
-            actualizarDisp();
-        }
+        guardarDispositivo();
+        cerrarVentana();
     }
 
     @FXML
@@ -154,40 +164,30 @@ public class DispositivosMantenimController implements Initializable {
     
     private void cargarCombos() {
         try {
-            // Categorías
-            /*
-            listaCategorías = catDAO.obtenerCategorias();
+            // Categorías 
+            listaCategorias = FXCollections.observableArrayList(catDAO.obtenerCategorias());
             cboxCategoria.setItems(listaCategorias);
             Utilidades.cargarComboBox(cboxCategoria, listaCategorias, Categoria::getNombre);
-            */
             
             // Marcas
-            /*
-            listaMarcas = marcaDAO.obtenerMarcas();
+            listaMarcas = FXCollections.observableArrayList(marcaDAO.obtenerMarcas());
             cboxMarca.setItems(listaMarcas);
             Utilidades.cargarComboBox(cboxMarca, listaMarcas, Marca::getNombre);
-            */
             
             // Sedes
-            /*
-            listaSedes = sedeDAO.obtenerSedes();
+            listaSedes = FXCollections.observableArrayList(sedeDAO.obtenerSede());
             cboxSede.setItems(listaSedes);
             Utilidades.cargarComboBox(cboxSede, listaSedes, Sede::getNombre);
-            */
             
             // Programas
-            /*
-            listaProgramas = programaDAO.obtenerProgramas();
+            listaProgramas = FXCollections.observableArrayList(programaDAO.obtenerProgramas());
             cboxPrograma.setItems(listaProgramas);
-            Utilidades.cargarComboBox(cboxPrograma, listaProgramas, Programa::getNombre);
-            */
+            Utilidades.cargarComboBox(cboxPrograma, listaProgramas, ProgramasEdu::getNombre);
             
             // Espacios
-            /*
-            listaEspacios = espacioDAO.obtenerEspacios();
+            listaEspacios = FXCollections.observableArrayList(espacioDAO.obtenerEspacios());
             cboxEspacio.setItems(listaEspacios);
             Utilidades.cargarComboBox(cboxEspacio, listaEspacios, Espacio::getNombre);
-            */
             
             // Alumnos
             /*
@@ -206,8 +206,18 @@ public class DispositivosMantenimController implements Initializable {
         }
     }
     
-    private void actualizarDisp() {
-        int codDisp = this.dispositivo.getCodigo();
+    private void guardarDispositivo() {
+        int codDisp;
+        boolean prestado;
+        
+        if (null == this.dispositivo) {
+            codDisp = 0;
+            prestado = false;
+        } else {
+            codDisp = this.dispositivo.getCodigo();
+            prestado = this.dispositivo.isPrestado();
+        }
+        
         String nombre = txtNombre.getText();
         String modelo = txtModelo.getText();
         String nSerie = txtNserie.getText();
@@ -218,27 +228,21 @@ public class DispositivosMantenimController implements Initializable {
         Proveedor proveedor = cboxProveedor.getValue();
         Alumno alumno = null;
         String comentario = txtComent.getText();
-        Dispositivo disp = new Dispositivo(codDisp, nombre, modelo, nSerie, fecha_adq, mac, imei, numEtiq, proveedor, alumno, comentario);
-        dispDAO.actualizarDispositivo(disp);
         
-        cerrarVentana();
-    }
-    
-    private void insertarDisp() {
-        String nombre = txtNombre.getText();
-        String modelo = txtModelo.getText();
-        String nSerie = txtNserie.getText();
-        Date fecha_adq = Date.valueOf(dtpFecha.getValue());
-        String mac = txtMac.getText();
-        String imei = txtImei.getText();
-        int numEtiq = Integer.parseInt(txtNetiqueta.getText());
-        Proveedor proveedor = cboxProveedor.getValue();
-        Alumno alumno = null;
-        String comentario = txtComent.getText();
-        Dispositivo disp = new Dispositivo(0, nombre, modelo, nSerie, fecha_adq, mac, imei, numEtiq, proveedor, alumno, comentario);
-        dispDAO.insertarDispositivo(disp);
+        Categoria categoria = cboxCategoria.getValue();
+        Marca marca = cboxMarca.getValue();
+        Espacio espacio = cboxEspacio.getValue();
+        ProgramasEdu programae = cboxPrograma.getValue();
+        Sede sede = cboxSede.getValue();
         
-        cerrarVentana();
+        Dispositivo disp = new Dispositivo(codDisp, nombre, modelo, nSerie, fecha_adq, mac, imei, numEtiq, proveedor, alumno, comentario, 
+            categoria, marca, espacio, programae, sede, prestado);
+        
+        if (null == this.dispositivo) {
+            dispDAO.insertarDispositivo(disp);
+        } else {
+            dispDAO.actualizarDispositivo(disp);
+        }
     }
 
     @FXML

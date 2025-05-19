@@ -14,6 +14,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import main.App;
 import dao.AccesoRegistroDAO;
+import javafx.geometry.Rectangle2D;
+import javafx.stage.Screen;
 import utils.PasswordHasher;
 import utils.LoggerUtils;
 
@@ -86,6 +88,19 @@ public class AccesoController {
         Stage stage = (Stage) btnLogin.getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        
+        // Se obtiene la resolución de pantalla
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        
+        // Se pone a pantalla completa
+        stage.setX(screenBounds.getMinX());
+        stage.setY(screenBounds.getMinY());
+        stage.setWidth(screenBounds.getWidth());
+        stage.setHeight(screenBounds.getHeight());
+        
+        // No permitir cambiar tamaño
+        stage.setResizable(false);
+        
         stage.show();
 
         LoggerUtils.logInfo("ACCESO", "Usuario redirigido al panel principal: " + usuario);

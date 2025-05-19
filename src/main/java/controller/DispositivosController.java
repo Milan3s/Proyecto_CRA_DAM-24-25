@@ -81,6 +81,21 @@ public class DispositivosController implements Initializable {
     @FXML
     private TableColumn<Dispositivo, String> colProveedor;
     @FXML
+    private TableColumn<Dispositivo, String> colCategoria;
+    @FXML
+    private TableColumn<Dispositivo, String> colMarca;
+    @FXML
+    private TableColumn<Dispositivo, String> colSede;
+    @FXML
+    private TableColumn<Dispositivo, String> colEspacio;
+    @FXML
+    private TableColumn<Dispositivo, String> colAbaco;
+    @FXML
+    private TableColumn<Dispositivo, String> colPrograma;
+    @FXML
+    private TableColumn<Dispositivo, String> colPrestado;
+    
+    @FXML
     private Button btnNuevo;
     @FXML
     private Button btnEliminar;
@@ -119,7 +134,6 @@ public class DispositivosController implements Initializable {
     private ObservableList<Sede> listaSedes = FXCollections.observableArrayList();
     private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
     
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         configurarColumnas();
@@ -137,6 +151,7 @@ public class DispositivosController implements Initializable {
         colMac.setCellValueFactory(new PropertyValueFactory<>("mac"));
         colImei.setCellValueFactory(new PropertyValueFactory<>("imei"));
         colNumEti.setCellValueFactory(new PropertyValueFactory<>("num_etiqueta"));
+        //colPrestado.setCellValueFactory(new PropertyValueFactory<>("prestado"));
         colFechaAdqui.setCellValueFactory(cellData -> {
             Dispositivo disp = cellData.getValue();
             if (disp.getFecha_adquisicion()!= null) {
@@ -161,6 +176,62 @@ public class DispositivosController implements Initializable {
                 return new SimpleStringProperty("");
             }
         });
+        colCategoria.setCellValueFactory(cellData -> {
+            Dispositivo disp = cellData.getValue();
+            if (disp.getCategoria() != null) {
+                return new SimpleStringProperty(disp.getCategoria().getNombre());
+            } else {
+                return new SimpleStringProperty("");
+            }
+        });
+        colMarca.setCellValueFactory(cellData -> {
+            Dispositivo disp = cellData.getValue();
+            if (disp.getMarca() != null) {
+                return new SimpleStringProperty(disp.getMarca().getNombre());
+            } else {
+                return new SimpleStringProperty("");
+            }
+        });
+        colSede.setCellValueFactory(cellData -> {
+            Dispositivo disp = cellData.getValue();
+            if (disp.getSede() != null) {
+                return new SimpleStringProperty(disp.getSede().getNombre());
+            } else {
+                return new SimpleStringProperty("");
+            }
+        });
+        colEspacio.setCellValueFactory(cellData -> {
+            Dispositivo disp = cellData.getValue();
+            if (disp.getEspacio() != null) {
+                return new SimpleStringProperty(disp.getEspacio().getNombre());
+            } else {
+                return new SimpleStringProperty("");
+            }
+        });
+        colAbaco.setCellValueFactory(cellData -> {
+            Dispositivo disp = cellData.getValue();
+            if (disp.getEspacio() != null) {
+                return new SimpleStringProperty(disp.getEspacio().getNumAbaco());
+            } else {
+                return new SimpleStringProperty("");
+            }
+        });
+        colPrograma.setCellValueFactory(cellData -> {
+            Dispositivo disp = cellData.getValue();
+            if (disp.getProgramae() != null) {
+                return new SimpleStringProperty(disp.getProgramae().getNombre());
+            } else {
+                return new SimpleStringProperty("");
+            }
+        });
+        colPrestado.setCellValueFactory(cellData -> {
+            Dispositivo disp = cellData.getValue();
+            if (disp.isPrestado()) {
+                return new SimpleStringProperty("Sí");
+            } else {
+                return new SimpleStringProperty("No");
+            }
+        });
     }
     
     private void cargarDatos() {
@@ -171,10 +242,10 @@ public class DispositivosController implements Initializable {
     @FXML
     private void btnBuscarAction(ActionEvent event) {
         String nombreFilt = txtNombre.getText();
-        //Categoria categFilt = cboxCategoria.getValue();
-        //Marca marcaFilt = cboxMarca.getValue();
+        Categoria categFilt = cboxCategoria.getValue();
+        Marca marcaFilt = cboxMarca.getValue();
         Sede sedeFilt = cboxSede.getValue();
-        //Programa programaFilt = cboxPrograma.getValue();
+        ProgramasEdu programaFilt = cboxPrograma.getValue();
         Proveedor provFilt = cboxProveedor.getValue();
         
         FilteredList<Dispositivo> filteredList = new FilteredList<>(listaDisposit, p -> true);
@@ -193,32 +264,25 @@ public class DispositivosController implements Initializable {
             }
             
             // Filtro por categoría
-            /*
+            
             if (categFilt != null) {
                 coincCateg = dispositivo.getCategoria() != null && dispositivo.getCategoria().getCodigo() == categFilt.getCodigo();
             }
-            */
             
             // Filtro por Marca
-            /*
             if (marcaFilt != null) {
                 coincMarca = dispositivo.getMarca() != null && dispositivo.getMarca().getCodigo() == marcaFilt.getCodigo();
             }
-            */
             
             // Filtro por sede
-            /*
             if (sedeFilt != null) {
-                coincSede = dispositivo.getEspacio() != null && dispositivo.getEspacio().getSede().getCodigoSede() == sedeFilt.getCodigoSede();
+                coincSede = dispositivo.getEspacio() != null && dispositivo.getEspacio().getCodigoSede() == sedeFilt.getCodigoSede();
             }
-            */
             
             // Filtro por Programa
-            /*
             if (programaFilt != null) {
-                coincProg = dispositivo.getPrograma() != null && dispositivo.getPrograma().getCodigo() == programaFilt.getCodigo();
+                coincProg = dispositivo.getProgramae() != null && dispositivo.getProgramae().getCodigo() == programaFilt.getCodigo();
             }
-            */
             
             // Filtro por proveedor
             if (provFilt != null) {
