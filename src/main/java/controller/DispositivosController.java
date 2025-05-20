@@ -263,8 +263,7 @@ public class DispositivosController implements Initializable {
                 coincNombre = dispositivo.getNombre() != null && dispositivo.getNombre().toLowerCase().contains(nombreFilt.toLowerCase());
             }
             
-            // Filtro por categoría
-            
+            // Filtro por categoría            
             if (categFilt != null) {
                 coincCateg = dispositivo.getCategoria() != null && dispositivo.getCategoria().getCodigo() == categFilt.getCodigo();
             }

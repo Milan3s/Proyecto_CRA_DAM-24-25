@@ -14,6 +14,7 @@ public class Alumno {
     private String curso;          // Curso actual del alumno
     private String nombreSede;     // Nombre de la sede (usado para mostrar en tabla)
     private int codigo_sede;       // Código de la sede (clave foránea)
+    private String nre;            // nre del alumno
 
     // ===================
     // Constructor
@@ -57,6 +58,10 @@ public class Alumno {
     public int getCodigo_sede() {
         return codigo_sede;
     }
+    
+    public String getNre() {
+        return nre;
+    }
 
     // ===================
     // Setters: modifican los valores de los atributos
@@ -75,5 +80,9 @@ public class Alumno {
 
     public void setNombreSede(String nombreSede) {
         this.nombreSede = nombreSede;
+    }
+    
+    public void setNre(String nre) {
+        this.nre = nre;
     }
 }

@@ -63,8 +63,6 @@ public class DispositivosMantenimController implements Initializable {
     private ComboBox<Proveedor> cboxProveedor;
     @FXML
     private ComboBox<Sede> cboxSede;
-    //@FXML
-    //private ComboBox<Alumno> cboxAlumno;
     @FXML
     private ComboBox<ProgramasEdu> cboxPrograma;
     @FXML
@@ -79,6 +77,8 @@ public class DispositivosMantenimController implements Initializable {
     private TextField txtNetiqueta;
     @FXML
     private DatePicker dtpFecha;
+    @FXML
+    private TextField txtAlumno;
     
     private Dispositivo dispositivo;
     private DispositivoDAO dispDAO = new DispositivoDAO();
@@ -104,7 +104,6 @@ public class DispositivosMantenimController implements Initializable {
     private ObservableList<Alumno> listaAlumnos = FXCollections.observableArrayList();
     private AlumnosDAO alumnoDAO = new AlumnosDAO();
     
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -117,15 +116,20 @@ public class DispositivosMantenimController implements Initializable {
         if (null != disp) {
             this.dispositivo = disp;
             txtNombre.setText(disp.getNombre());
+            cboxMarca.setValue(disp.getMarca());
             txtModelo.setText(disp.getModelo());
             txtNserie.setText(disp.getNum_serie());
-            txtComent.setText(disp.getComentario());
+            cboxCategoria.setValue(disp.getCategoria());
+            if (null != disp.getFecha_adquisicion()) dtpFecha.setValue(disp.getFecha_adquisicion().toLocalDate());
+            cboxProveedor.setValue(disp.getProveedor());
+            cboxSede.setValue(disp.getSede());
+            cboxEspacio.setValue(disp.getEspacio());
             txtMac.setText(disp.getMac());
             txtImei.setText(disp.getImei());
             txtNetiqueta.setText(String.valueOf(disp.getNum_etiqueta()));
-            if (null != disp.getFecha_adquisicion()) dtpFecha.setValue(disp.getFecha_adquisicion().toLocalDate());
-            cboxProveedor.setValue(disp.getProveedor());
-            //cboxAlumno.setValue(disp.getAlumno());
+            cboxPrograma.setValue(disp.getProgramae());
+            if (null != disp.getAlumno()) txtAlumno.setText(disp.getAlumno().getNombre());
+            txtComent.setText(disp.getComentario());
         }
     }
 
@@ -188,13 +192,6 @@ public class DispositivosMantenimController implements Initializable {
             listaEspacios = FXCollections.observableArrayList(espacioDAO.obtenerEspacios());
             cboxEspacio.setItems(listaEspacios);
             Utilidades.cargarComboBox(cboxEspacio, listaEspacios, Espacio::getNombre);
-            
-            // Alumnos
-            /*
-            listaAlumnos = alumnoDAO.obtenerAlumnos();
-            cboxAlumno.setItems(listaAlumnos);
-            Utilidades.cargarComboBox(cboxAlumno, listaAlumnos, Alumno::getNombre);
-            */
             
             // Proveedores
             listaProveedores = provDAO.obtenerProveedores();

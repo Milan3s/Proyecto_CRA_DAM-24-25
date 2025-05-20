@@ -187,6 +187,23 @@ public class DispositivoDAO {
         }
     }
     
+    public void actualizarPrestado(int codigoDisp, boolean prestado) {
+        String sql = "UPDATE dispositivos SET prestado = ? WHERE codigo_dispositivo = ?";
+        
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            
+            stmt.setBoolean(1, prestado);
+            stmt.setInt(2, codigoDisp);
+            
+            stmt.executeUpdate();
+            
+        } catch (SQLException e) {
+            mostrarAlerta2("Error SQL", "No se pudo actualizar el dispositivo.\nDetalles: " + e.getMessage(), Alert.AlertType.ERROR);
+            LoggerUtils.logError("DISPOSITIVOS", "Error al ejecutar el campo prestado.", e);
+        }
+    }
+    
     private void setIntOrNull(PreparedStatement stmt, int index, Integer value) throws SQLException {
         // Método para evitar un error al asignar valor a un parámetro del PreparedStatement correspondiente
         // al identificador de un objeto si dicho objeto es null

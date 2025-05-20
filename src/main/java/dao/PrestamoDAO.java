@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -60,6 +61,24 @@ public class PrestamoDAO {
             stmt.setInt(1, prestamo.getDispositivo().getCodigo());
             stmt.setInt(2, prestamo.getAlumno().getCodigo());
             stmt.setDate(3, prestamo.getFecha_inicio());
+            
+            int filas = stmt.executeUpdate();
+        } catch (SQLException e) {
+            mostrarAlerta2("Error SQL", "No se pudo guardar el prestamo.\nDetalles: " + e.getMessage(), Alert.AlertType.ERROR);
+            LoggerUtils.logError("PRESTAMOS", "Error al ejecutar alta de préstamo", e);
+        }
+    }
+    
+    public void insertarPrestamo(int codigoDisp, int codigoAlu, Date fechaini) {
+        String sql = "INSERT INTO prestamos (codigo_dispositivo, codigo_alumno, fecha_inicio)"
+                + " VALUES (?, ?, ?)";
+        
+        try {
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            
+            stmt.setInt(1, codigoDisp);
+            stmt.setInt(2, codigoAlu);
+            stmt.setDate(3, fechaini);
             
             int filas = stmt.executeUpdate();
         } catch (SQLException e) {
