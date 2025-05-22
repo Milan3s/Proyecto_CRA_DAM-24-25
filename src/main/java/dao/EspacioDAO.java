@@ -52,7 +52,7 @@ public class EspacioDAO {
                 listaEspacios.add(espacio);
             }
         } catch (SQLException e) {
-            LoggerUtils.logError("ESPACIOS", "Error al obtener espacios", e);
+            LoggerUtils.logError("ESPACIOS", "Error al obtener espacios: " + e.getMessage(), e);
         }
 
         return listaEspacios;
@@ -78,7 +78,7 @@ public class EspacioDAO {
                 return true;
             }
         } catch (SQLException e) {
-            LoggerUtils.logError("ESPACIOS", "Error al insertar espacio", e);
+            LoggerUtils.logError("ESPACIOS", "Error al insertar espacio: " + e.getMessage(), e);
         }
         return false;
     }
@@ -99,7 +99,7 @@ public class EspacioDAO {
                 return true;
             }
         } catch (SQLException e) {
-            LoggerUtils.logError("ESPACIOS", "Error al actualizar espacio", e);
+            LoggerUtils.logError("ESPACIOS", "Error al actualizar espacio: " + e.getMessage(), e);
         }
         return false;
     }
@@ -115,7 +115,7 @@ public class EspacioDAO {
                 return true;
             }
         } catch (SQLException e) {
-            LoggerUtils.logError("ESPACIOS", "Error al eliminar espacio", e);
+            LoggerUtils.logError("ESPACIOS", "Error al eliminar espacio: " + e.getMessage(), e);
         }
         return false;
     }
@@ -147,7 +147,7 @@ public class EspacioDAO {
                 }
             }
         } catch (SQLException e) {
-            LoggerUtils.logError("ESPACIOS", "Error al buscar espacios", e);
+            LoggerUtils.logError("ESPACIOS", "Error al buscar espacios: " + e.getMessage(), e);
         }
 
         return listaFiltrada;

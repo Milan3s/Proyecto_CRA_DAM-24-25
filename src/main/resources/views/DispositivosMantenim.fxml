@@ -51,6 +51,8 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label text="Nombre:" />
@@ -75,7 +77,7 @@
                   <Label text="Comentario registro:" GridPane.rowIndex="8" />
                   <ComboBox fx:id="cboxProveedor" prefHeight="25.0" prefWidth="258.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
                   <ComboBox fx:id="cboxSede" prefHeight="25.0" prefWidth="237.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <ComboBox fx:id="cboxEspacio" prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <ComboBox prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                   <ComboBox fx:id="cboxPrograma" prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
                   <TextArea fx:id="txtComent" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="8" GridPane.rowSpan="2" />
                   <TextField fx:id="txtMac" GridPane.columnIndex="1" GridPane.rowIndex="5" />
@@ -84,6 +86,8 @@
                   <DatePicker fx:id="dtpFecha" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="txtAlumno" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                   <Button fx:id="btnPrestar" mnemonicParsing="false" onAction="#btnPrestarAction" text="Préstamo" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                  <Label text="Observaciones" GridPane.rowIndex="10" />
+                  <TextArea fx:id="txtObservaciones" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="10" GridPane.rowSpan="2" />
                </children>
                <opaqueInsets>
                   <Insets />

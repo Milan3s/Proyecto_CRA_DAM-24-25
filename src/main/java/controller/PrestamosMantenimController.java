@@ -55,9 +55,7 @@ public class PrestamosMantenimController implements Initializable {
     private TextField txtNRE;
     @FXML
     private TextField txtCurso;
-    @FXML
     private ComboBox<Sede> cboxSede;
-    @FXML
     private ComboBox<Alumno> cboxAlumno;
     
     private Prestamo prestamo;
@@ -72,6 +70,10 @@ public class PrestamosMantenimController implements Initializable {
     private ObservableList<Alumno> listaAlumnos = FXCollections.observableArrayList();
     FilteredList<Alumno> listaAluFilt;
     private AlumnosDAO alumnoDAO = new AlumnosDAO();
+    @FXML
+    private TextField txtNombreAlu;
+    @FXML
+    private TextField txtSede;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

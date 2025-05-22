@@ -65,7 +65,6 @@ public class DispositivosMantenimController implements Initializable {
     private ComboBox<Sede> cboxSede;
     @FXML
     private ComboBox<ProgramasEdu> cboxPrograma;
-    @FXML
     private ComboBox<Espacio> cboxEspacio;
     @FXML
     private TextArea txtComent;
@@ -79,6 +78,8 @@ public class DispositivosMantenimController implements Initializable {
     private DatePicker dtpFecha;
     @FXML
     private TextField txtAlumno;
+    @FXML
+    private TextArea txtObservaciones;
     
     private Dispositivo dispositivo;
     private DispositivoDAO dispDAO = new DispositivoDAO();
@@ -225,6 +226,7 @@ public class DispositivosMantenimController implements Initializable {
         Proveedor proveedor = cboxProveedor.getValue();
         Alumno alumno = null;
         String comentario = txtComent.getText();
+        String observaciones = txtObservaciones.getText();
         
         Categoria categoria = cboxCategoria.getValue();
         Marca marca = cboxMarca.getValue();
@@ -233,7 +235,7 @@ public class DispositivosMantenimController implements Initializable {
         Sede sede = cboxSede.getValue();
         
         Dispositivo disp = new Dispositivo(codDisp, nombre, modelo, nSerie, fecha_adq, mac, imei, numEtiq, proveedor, alumno, comentario, 
-            categoria, marca, espacio, programae, sede, prestado);
+            categoria, marca, espacio, programae, sede, prestado, observaciones);
         
         if (null == this.dispositivo) {
             dispDAO.insertarDispositivo(disp);

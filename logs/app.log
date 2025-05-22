@@ -766,3 +766,67 @@
 [ESPACIOS] SQL: QUERY: INSERT INTO espacios (nombre, pabellon, planta, codigo_sede, numero_abaco) VALUES (?, ?, ?, ?, ?) | VALUES: nombre=x, pabellon=sur, planta=2, codigo_sede=2, numero_abaco=23425
 [2025-05-22 13:05:35] [INFO   ] [ESPACIOS] Espacio insertado correctamente → x
 [2025-05-22 13:05:35] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:54:25] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 18:54:26] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:54:26] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
+[2025-05-22 18:55:36] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-22 18:55:36] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-22 18:55:36] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-22 18:55:36] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-22 18:55:36] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-22 18:55:37] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-22 18:55:41] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 18:55:41] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:55:41] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
+[2025-05-22 18:55:51] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-22 18:55:51] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 18:56:01] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:56:01] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
+[2025-05-22 18:56:42] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-22 18:56:55] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-22 18:57:10] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 18:57:10] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:57:10] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
+[2025-05-22 18:57:45] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 18:57:45] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:57:45] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
+[2025-05-22 19:00:37] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-22 19:00:37] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-22 19:00:37] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-22 19:00:37] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-22 19:00:37] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-22 19:00:37] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-22 19:00:41] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 19:00:41] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 19:00:41] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios: Unknown column 'e.numero_abaco' in 'field list'
+[2025-05-22 19:40:01] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-22 19:40:01] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-22 19:40:01] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-22 19:40:01] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-22 19:40:01] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-22 19:40:01] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-22 19:40:04] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 19:40:04] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 19:40:09] [INFO   ] [ESPACIOS] Doble clic sobre espacio: INFANTIL
+[2025-05-22 19:40:09] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 19:40:22] [SEVERE ] [ESPACIOS] ERROR → Error al actualizar espacio: Data truncation: Incorrect integer value: 'asdfa' for column `cra_dispositivos`.`espacios`.`numero_abaco` at row 1
+[2025-05-22 19:40:31] [INFO   ] [ESPACIOS] Cargando lista de espacios...

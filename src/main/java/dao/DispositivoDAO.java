@@ -36,7 +36,7 @@ public class DispositivoDAO {
         
         String query = "SELECT DISTINCT d.codigo_dispositivo, d.nombre, d.modelo, d.num_serie, d.fecha_adquisicion, d.mac, d.imei, d.num_etiqueta, d.coment_reg";
         query += " , p.codigo_proveedor, p.nombre AS nombre_prov, a.codigo_alumno, a.nombre AS nombre_alu";
-        query += " , d.codigo_categoria, d.codigo_marca, d.codigo_espacio, d.codigo_espacio, d.codigo_programa, d.prestado";
+        query += " , d.codigo_categoria, d.codigo_marca, d.codigo_espacio, d.codigo_espacio, d.codigo_programa, d.prestado, d.observaciones";
         query += " , c.nombre AS nombre_cat, m.nombre AS nombre_marca, e.nombre AS nombre_esp, prog.nombre AS nombre_prog";
         query += " , COALESCE(s1.codigo_sede, s2.codigo_sede) AS codigo_sede , COALESCE(s1.nombre, s2.nombre) AS nombre_sede";
         query += " FROM dispositivos d";
@@ -80,10 +80,11 @@ public class DispositivoDAO {
                     rs.getString("mac"),
                     rs.getString("imei"),
                     rs.getInt("num_etiqueta"),
-                    prov, alu, 
+                    prov, alu,
                     rs.getString("coment_reg"),
                     categoria, marca, espacio, programae, sede,
-                    rs.getBoolean("prestado")
+                    rs.getBoolean("prestado"),
+                    rs.getString("observaciones")
                 );
                 listaDispositivos.add(disp);    
             }
@@ -97,7 +98,7 @@ public class DispositivoDAO {
     
     public void insertarDispositivo(Dispositivo disp) {
         String sql = "INSERT INTO dispositivos (nombre, codigo_categoria, codigo_marca, modelo, num_serie, fecha_adquisicion, mac, imei, num_etiqueta"
-            + ", coment_reg, codigo_proveedor, codigo_programa, codigo_espacio, prestado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            + ", coment_reg, codigo_proveedor, codigo_programa, codigo_espacio, prestado, observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
       
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -116,6 +117,7 @@ public class DispositivoDAO {
             setIntOrNull(stmt, 12, (disp.getProgramae() != null) ? disp.getProgramae().getCodigo() : null);
             setIntOrNull(stmt, 13, (disp.getEspacio() != null) ? disp.getEspacio().getCodigoEspacio() : null);
             stmt.setBoolean(14, disp.isPrestado());
+            stmt.setString(15, disp.getObservaciones());
             
             int filas = stmt.executeUpdate();
             
@@ -131,6 +133,7 @@ public class DispositivoDAO {
     public void actualizarDispositivo(Dispositivo disp) {
         String sql = "UPDATE dispositivos SET nombre = ?, codigo_categoria = ?, codigo_marca = ?, modelo = ?, num_serie = ?, fecha_adquisicion = ?" 
                 + ", mac = ?, imei = ?, num_etiqueta= ?, coment_reg = ?, codigo_proveedor = ?, codigo_programa = ?, codigo_espacio = ?, prestado = ?"
+                + ", observaciones = ?"
                 + " WHERE codigo_dispositivo = ?";
         
         try {
@@ -150,7 +153,8 @@ public class DispositivoDAO {
             setIntOrNull(stmt, 12, (disp.getProgramae() != null) ? disp.getProgramae().getCodigo() : null);
             setIntOrNull(stmt, 13, (disp.getEspacio() != null) ? disp.getEspacio().getCodigoEspacio() : null);
             stmt.setBoolean(14, disp.isPrestado());
-            stmt.setInt(15, disp.getCodigo());
+            stmt.setString(15, disp.getObservaciones());
+            stmt.setInt(16, disp.getCodigo());
             
             int filas = stmt.executeUpdate();
             
