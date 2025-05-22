@@ -40,6 +40,11 @@
             <ComboBox fx:id="comboSede" promptText="Selecciona una sede"
                       prefWidth="300.0"
                       GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            
+            <Label text="Nº Ábaco:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="txtNumAbaco" promptText="Ej. A1234"
+                       GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
         </GridPane>
 
         <!-- Botones -->

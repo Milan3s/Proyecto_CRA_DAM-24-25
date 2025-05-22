@@ -40,10 +40,13 @@
     <!-- Tabla -->
     <TableView fx:id="tablaUsuarios" prefHeight="500.0" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="colCodigo" prefWidth="143.0" text="Código Alumno" />
-            <TableColumn fx:id="colNombre" prefWidth="221.0" text="Nombre" />
-            <TableColumn fx:id="colCurso" prefWidth="236.0" text="Curso" />
-            <TableColumn fx:id="colCodigoSede" prefWidth="245.0" text="Código Sede" />
+            <TableColumn fx:id="colCodigo" prefWidth="120.0" text="Código Alumno" />
+            <TableColumn fx:id="colNombre" prefWidth="160.0" text="Nombre" />
+            <TableColumn fx:id="colCurso" prefWidth="120.0" text="Curso" />
+            <TableColumn fx:id="colNRE" prefWidth="100.0" text="NRE" />
+            <TableColumn fx:id="colTELTUTOR1" prefWidth="120.0" text="Telf Tutor 1" />
+            <TableColumn fx:id="colTELTUTOR2" prefWidth="120.0" text="Telf Tutor 2" />
+            <TableColumn fx:id="colCodigoSede" prefWidth="120.0" text="Código Sede" />
         </columns>
     </TableView>
 

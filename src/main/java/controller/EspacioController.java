@@ -25,21 +25,37 @@ import utils.LoggerUtils;
 
 public class EspacioController implements Initializable {
 
-    @FXML private Button btnNuevoEspacio;
-    @FXML private Button btnEliminarEspacio;
-    @FXML private TextField txtBuscarEspacio;
-    @FXML private Button btnBuscarEspacio;
-    @FXML private TableView<Espacio> tablaEspacios;
-    @FXML private TableColumn<Espacio, Integer> colCodigoEspacio;
-    @FXML private TableColumn<Espacio, String> colNombre;
-    @FXML private TableColumn<Espacio, String> colPabellon;
-    @FXML private TableColumn<Espacio, Integer> colPlanta;
-    @FXML private TableColumn<Espacio, String> colNombreSede;
-    @FXML private Button btnImportar;
-    @FXML private Button btnExportar;
+    @FXML
+    private Button btnNuevoEspacio;
+    @FXML
+    private Button btnEliminarEspacio;
+    @FXML
+    private TextField txtBuscarEspacio;
+    @FXML
+    private Button btnBuscarEspacio;
+    @FXML
+    private TableView<Espacio> tablaEspacios;
+    @FXML
+    private TableColumn<Espacio, Integer> colCodigoEspacio;
+    @FXML
+    private TableColumn<Espacio, String> colNombre;
+    @FXML
+    private TableColumn<Espacio, String> colPabellon;
+    @FXML
+    private TableColumn<Espacio, Integer> colPlanta;
+    @FXML
+    private TableColumn<Espacio, String> colNombreSede;
+    @FXML
+    private Button btnImportar;
+    @FXML
+    private Button btnExportar;
 
     private EspacioDAO espacioDAO;
+
     private ObservableList<Espacio> listaEspacios;
+
+    @FXML
+    private TableColumn<Espacio, String> colNumAbaco;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -59,6 +75,7 @@ public class EspacioController implements Initializable {
             Espacio e = data.getValue();
             return new SimpleStringProperty(e.getCodigoSede() + " - " + e.getNombreSede());
         });
+        colNumAbaco.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getNumAbaco())); // ✅ Añadido
     }
 
     private void configurarDobleClick() {
@@ -166,22 +183,25 @@ public class EspacioController implements Initializable {
                 String linea;
                 while ((linea = br.readLine()) != null) {
                     String[] items = linea.split(";");
-                    if (items.length >= 5) {
+                    if (items.length >= 6) {
                         try {
                             String nombre = items[0].trim();
                             String pabellon = items[1].trim();
                             int planta = Integer.parseInt(items[2].trim());
-                            String nombreSede = items[3].trim(); // sólo para mostrar
+                            String nombreSede = items[3].trim(); // solo informativo
                             int codigoSede = Integer.parseInt(items[4].trim());
+                            String numAbaco = items[5].trim();
 
                             if (!nombre.isEmpty() && !pabellon.isEmpty()) {
-                                if (espacioDAO.insertarEspacio(nombre, pabellon, planta, codigoSede)) {
+                                if (espacioDAO.insertarEspacio(nombre, pabellon, planta, codigoSede, numAbaco)) {
                                     importados++;
                                 }
                             }
                         } catch (NumberFormatException ex) {
                             LoggerUtils.logWarning("ESPACIOS", "Línea inválida en importación: " + linea);
                         }
+                    } else {
+                        LoggerUtils.logWarning("ESPACIOS", "Línea incompleta en archivo CSV: " + linea);
                     }
                 }
                 cargarEspacios();
@@ -201,7 +221,8 @@ public class EspacioController implements Initializable {
         if (fichero != null) {
             LoggerUtils.logInfo("ESPACIOS", "Exportando espacios a archivo: " + fichero.getAbsolutePath());
             try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fichero), "ISO-8859-1"))) {
-                bw.write("Nombre;Pabellón;Planta;Nombre Sede;Código Sede\n");
+                // Cabecera CSV con num_abaco
+                bw.write("Nombre;Pabellón;Planta;Nombre Sede;Código Sede;Nº Ábaco\n");
 
                 for (Espacio e : listaEspacios) {
                     String linea = String.join(";",
@@ -209,7 +230,8 @@ public class EspacioController implements Initializable {
                             e.getPabellon() != null ? e.getPabellon() : "",
                             String.valueOf(e.getPlanta()),
                             e.getNombreSede() != null ? e.getNombreSede() : "",
-                            String.valueOf(e.getCodigoSede())
+                            String.valueOf(e.getCodigoSede()),
+                            e.getNumAbaco() != null ? e.getNumAbaco() : ""
                     );
                     bw.write(linea + "\n");
                 }
@@ -223,4 +245,5 @@ public class EspacioController implements Initializable {
             }
         }
     }
+
 }

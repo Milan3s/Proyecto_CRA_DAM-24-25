@@ -2,7 +2,7 @@ package model;
 
 /**
  * Modelo que representa a un alumno en el sistema. Contiene datos como nombre,
- * curso y la sede a la que pertenece.
+ * curso, NRE, teléfonos de tutores y la sede a la que pertenece.
  */
 public class Alumno {
 
@@ -14,13 +14,15 @@ public class Alumno {
     private String curso;          // Curso actual del alumno
     private String nombreSede;     // Nombre de la sede (usado para mostrar en tabla)
     private int codigo_sede;       // Código de la sede (clave foránea)
-    private String nre;            // nre del alumno
+    private String nre;            // NRE del alumno
+    private String telTutor1;      // Teléfono del tutor 1
+    private String telTutor2;      // Teléfono del tutor 2
 
     // ===================
     // Constructor
     // ===================
     /**
-     * Constructor principal para crear un alumno con todos los datos.
+     * Constructor principal para crear un alumno con todos los datos excepto tutores.
      *
      * @param codigo Código único del alumno
      * @param nombre Nombre del alumno
@@ -37,7 +39,7 @@ public class Alumno {
     }
 
     // ===================
-    // Getters: obtienen los valores de los atributos
+    // Getters
     // ===================
     public int getCodigo() {
         return codigo;
@@ -58,13 +60,21 @@ public class Alumno {
     public int getCodigo_sede() {
         return codigo_sede;
     }
-    
+
     public String getNre() {
         return nre;
     }
 
+    public String getTelTutor1() {
+        return telTutor1;
+    }
+
+    public String getTelTutor2() {
+        return telTutor2;
+    }
+
     // ===================
-    // Setters: modifican los valores de los atributos
+    // Setters
     // ===================
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -81,8 +91,16 @@ public class Alumno {
     public void setNombreSede(String nombreSede) {
         this.nombreSede = nombreSede;
     }
-    
+
     public void setNre(String nre) {
         this.nre = nre;
+    }
+
+    public void setTelTutor1(String telTutor1) {
+        this.telTutor1 = telTutor1;
+    }
+
+    public void setTelTutor2(String telTutor2) {
+        this.telTutor2 = telTutor2;
     }
 }

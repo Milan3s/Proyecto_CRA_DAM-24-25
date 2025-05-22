@@ -711,3 +711,58 @@
 [2025-05-21 00:56:32] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
 [2025-05-21 00:56:44] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
 [2025-05-21 00:56:44] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-22 12:39:49] [SEVERE ] [ALUMNOS] ERROR → Error al cargar alumnos
+[2025-05-22 12:41:13] [SEVERE ] [ALUMNOS] ERROR → Error al cargar alumnos
+[2025-05-22 12:43:35] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-05-22 12:44:51] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-05-22 12:45:10] [INFO   ] [ALUMNOS] Alumno actualizado: Código 1
+[2025-05-22 12:45:14] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-05-22 12:45:25] [INFO   ] [ALUMNOS] Alumno insertado: x, NRE: 546545
+[2025-05-22 13:03:40] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 13:03:40] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:03:43] [INFO   ] [ESPACIOS] Doble clic sobre espacio: a
+[2025-05-22 13:03:43] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 13:03:49] [INFO   ] [ESPACIOS] Espacio actualizado correctamente → Código: 1
+[2025-05-22 13:03:49] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:03:54] [INFO   ] [ESPACIOS] Doble clic sobre espacio: a
+[2025-05-22 13:03:54] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 13:04:00] [INFO   ] [ESPACIOS] Espacio actualizado correctamente → Código: 1
+[2025-05-22 13:04:00] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:04:22] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 13:04:22] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:05:17] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 13:05:17] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:05:19] [INFO   ] [ESPACIOS] Doble clic sobre espacio: a
+[2025-05-22 13:05:20] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 13:05:21] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:05:22] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-22 13:05:22] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 13:05:35] [INFO   ] [ESPACIOS] CONSULTA → Insertando espacio
+[ESPACIOS] SQL: QUERY: INSERT INTO espacios (nombre, pabellon, planta, codigo_sede, numero_abaco) VALUES (?, ?, ?, ?, ?) | VALUES: nombre=x, pabellon=sur, planta=2, codigo_sede=2, numero_abaco=23425
+[2025-05-22 13:05:35] [INFO   ] [ESPACIOS] Espacio insertado correctamente → x
+[2025-05-22 13:05:35] [INFO   ] [ESPACIOS] Cargando lista de espacios...

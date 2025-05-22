@@ -37,6 +37,12 @@ public class AlumnosMantenimController implements Initializable {
 
     // DAO para operaciones con la base de datos
     private final AlumnosDAO alumnosDAO = new AlumnosDAO();
+    @FXML
+    private TextField txtNre;
+    @FXML
+    private TextField txtTelTutor1;
+    @FXML
+    private TextField txtTelTutor2;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -53,10 +59,12 @@ public class AlumnosMantenimController implements Initializable {
     public void setAlumno(Alumno alumno) {
         this.alumno = alumno;
 
-        // Si se recibe un alumno (modo edición), se rellenan los campos
         if (alumno != null) {
             txtNombre.setText(alumno.getNombre());
             txtCurso.setText(alumno.getCurso());
+            txtNre.setText(alumno.getNre());
+            txtTelTutor1.setText(alumno.getTelTutor1());
+            txtTelTutor2.setText(alumno.getTelTutor2());
             seleccionarSedePorCodigo(alumno.getCodigo_sede());
         }
     }
@@ -81,26 +89,29 @@ public class AlumnosMantenimController implements Initializable {
     private void guardarAlumno() {
         String nombre = txtNombre.getText().trim();
         String curso = txtCurso.getText().trim();
+        String nre = txtNre.getText().trim();
+        String telTutor1 = txtTelTutor1.getText().trim();
+        String telTutor2 = txtTelTutor2.getText().trim();
         Sede sedeSeleccionada = cbox_sede.getValue();
 
-        // Validación de campos obligatorios
+        // Validación básica
         if (nombre.isEmpty() || curso.isEmpty() || sedeSeleccionada == null) {
-            mostrarAlerta("Campos incompletos", "Por favor, completa todos los campos.", Alert.AlertType.WARNING);
-            LoggerUtils.logWarning("ALUMNOS", "Faltan campos en el formulario.");
+            mostrarAlerta("Campos incompletos", "Por favor, completa todos los campos obligatorios.", Alert.AlertType.WARNING);
+            LoggerUtils.logWarning("ALUMNOS", "Faltan campos obligatorios en el formulario.");
             return;
         }
 
         if (alumno == null) {
-            // Crear nuevo alumno
-            boolean inserted = alumnosDAO.insertarAlumno(nombre, curso, sedeSeleccionada.getCodigoSede());
+            // Inserción
+            boolean inserted = alumnosDAO.insertarAlumno(nombre, curso, sedeSeleccionada.getCodigoSede(), nre, telTutor1, telTutor2);
             if (inserted) {
                 mostrarAlerta("Éxito", "Alumno agregado con éxito.", Alert.AlertType.INFORMATION);
                 cerrarVentana();
             }
         } else {
-            // Actualizar alumno existente
+            // Actualización
             boolean updated = alumnosDAO.actualizarAlumno(
-                    alumno.getCodigo(), nombre, curso, sedeSeleccionada.getCodigoSede()
+                    alumno.getCodigo(), nombre, curso, sedeSeleccionada.getCodigoSede(), nre, telTutor1, telTutor2
             );
             if (updated) {
                 mostrarAlerta("Éxito", "Alumno actualizado correctamente.", Alert.AlertType.INFORMATION);

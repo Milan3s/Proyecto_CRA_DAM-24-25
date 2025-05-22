@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="452.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/23.0.1"
+<AnchorPane prefHeight="500.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/23.0.1"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="controller.AlumnosMantenimController">
 
@@ -36,15 +36,27 @@
             <Label text="Curso:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
             <TextField fx:id="txtCurso" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-            <!-- Sede -->
+            <!-- Código Sede -->
             <Label text="Código Sede:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
             <ComboBox fx:id="cbox_sede" promptText="Selecciona una..." prefWidth="250.0"
                       GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+            <!-- NRE -->
+            <Label text="NRE:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <TextField fx:id="txtNre" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+            <!-- Teléfono Tutor 1 -->
+            <Label text="Tel. Tutor 1:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <TextField fx:id="txtTelTutor1" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+            <!-- Teléfono Tutor 2 -->
+            <Label text="Tel. Tutor 2:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+            <TextField fx:id="txtTelTutor2" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
         </GridPane>
 
         <!-- Botones -->
-        <Button fx:id="btnGuardar" layoutX="100.0" layoutY="360.0" prefWidth="140.0" text="Guardar"/>
-        <Button fx:id="btnCancelar" layoutX="280.0" layoutY="360.0" prefWidth="140.0"
+        <Button fx:id="btnGuardar" layoutX="100.0" layoutY="420.0" prefWidth="140.0" text="Guardar"/>
+        <Button fx:id="btnCancelar" layoutX="280.0" layoutY="420.0" prefWidth="140.0"
                 onAction="#btnActionCancelar" text="Cancelar"/>
     </children>
 </AnchorPane>

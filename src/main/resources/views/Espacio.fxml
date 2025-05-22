@@ -20,8 +20,8 @@
         <HBox spacing="10">
             <Button fx:id="btnNuevoEspacio" onAction="#btnActionNuevoEspacio" text="Nuevo Espacio" />
             <Button fx:id="btnEliminarEspacio" onAction="#btnActionEliminarEspacio" text="Eliminar Espacio" />
-         <Button fx:id="btnImportar" onAction="#btnActionImportar" text="Importar" />
-         <Button fx:id="btnExportar" onAction="#btnActionExportar" text="Exportar" />
+            <Button fx:id="btnImportar" onAction="#btnActionImportar" text="Importar" />
+            <Button fx:id="btnExportar" onAction="#btnActionExportar" text="Exportar" />
         </HBox>
 
         <!-- Búsqueda -->
@@ -39,7 +39,7 @@
                 <TableColumn fx:id="colPabellon" prefWidth="150.0" text="Pabellón" />
                 <TableColumn fx:id="colPlanta" prefWidth="100.0" text="Planta" />
                 <TableColumn fx:id="colNombreSede" prefWidth="200.0" text="Sede (Código - Nombre)" />
-
+                <TableColumn fx:id="colNumAbaco" prefWidth="150.0" text="Nº Ábaco" />
             </columns>
         </TableView>
 

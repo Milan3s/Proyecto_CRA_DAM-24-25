@@ -36,6 +36,8 @@ public class EspacioMantenimController implements Initializable {
 
     private EspacioDAO espacioDAO;
     private Espacio espacioEditado;
+    @FXML
+    private TextField txtNumAbaco;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -60,6 +62,7 @@ public class EspacioMantenimController implements Initializable {
         txtNombre.setText(espacio.getNombre());
         txtPabellon.setText(espacio.getPabellon());
         spinnerPlanta.getValueFactory().setValue(espacio.getPlanta());
+        txtNumAbaco.setText(espacio.getNumAbaco());
 
         for (Sede sede : comboSede.getItems()) {
             if (sede.getCodigoSede() == espacio.getCodigoSede()) {
@@ -75,20 +78,22 @@ public class EspacioMantenimController implements Initializable {
         String pabellon = txtPabellon.getText().trim();
         Integer planta = spinnerPlanta.getValue();
         Sede sedeSeleccionada = comboSede.getSelectionModel().getSelectedItem();
+        String numAbaco = txtNumAbaco.getText().trim();
 
-        if (nombre.isEmpty() || pabellon.isEmpty() || planta == null || sedeSeleccionada == null) {
+        if (nombre.isEmpty() || pabellon.isEmpty() || planta == null || sedeSeleccionada == null || numAbaco.isEmpty()) {
             mostrarAlerta("Por favor completa todos los campos.");
             return;
         }
 
         boolean exito;
         if (espacioEditado == null) {
-            exito = espacioDAO.insertarEspacio(nombre, pabellon, planta, sedeSeleccionada.getCodigoSede());
+            exito = espacioDAO.insertarEspacio(nombre, pabellon, planta, sedeSeleccionada.getCodigoSede(), numAbaco);
         } else {
             exito = espacioDAO.actualizarEspacio(
                     espacioEditado.getCodigoEspacio(),
                     nombre, pabellon, planta,
-                    sedeSeleccionada.getCodigoSede()
+                    sedeSeleccionada.getCodigoSede(),
+                    numAbaco
             );
         }
 

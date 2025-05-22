@@ -54,6 +54,13 @@ public class AlumnosController implements Initializable {
     // Acceso a base de datos (DAO)
     private final AlumnosDAO alumnosDAO = new AlumnosDAO();
 
+    @FXML
+    private TableColumn<Alumno, String> colNRE;
+    @FXML
+    private TableColumn<Alumno, String> colTELTUTOR1;
+    @FXML
+    private TableColumn<Alumno, String> colTELTUTOR2;
+
     // Inicialización del controlador
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -82,6 +89,9 @@ public class AlumnosController implements Initializable {
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colCurso.setCellValueFactory(new PropertyValueFactory<>("curso"));
         colCodigoSede.setCellValueFactory(new PropertyValueFactory<>("nombreSede"));
+        colNRE.setCellValueFactory(new PropertyValueFactory<>("nre"));
+        colTELTUTOR1.setCellValueFactory(new PropertyValueFactory<>("telTutor1"));
+        colTELTUTOR2.setCellValueFactory(new PropertyValueFactory<>("telTutor2"));
     }
 
     // Carga todos los alumnos desde la base de datos
@@ -164,14 +174,21 @@ public class AlumnosController implements Initializable {
                 while ((linea = br.readLine()) != null) {
                     String[] items = linea.split(";");
 
-                    if (items.length >= 4) {
+                    if (items.length >= 7) {
                         String nombre = items[0];
                         String curso = items[1];
                         String nombreSede = items[2];
                         int codigoSede = Integer.parseInt(items[3]);
+                        String nre = items[4];
+                        String telTutor1 = items[5];
+                        String telTutor2 = items[6];
 
                         Alumno nuevoAlumno = new Alumno(0, nombre, curso, nombreSede, codigoSede);
-                        alumnosDAO.insertarAlumno(nombre, curso, codigoSede);
+                        nuevoAlumno.setNre(nre);
+                        nuevoAlumno.setTelTutor1(telTutor1);
+                        nuevoAlumno.setTelTutor2(telTutor2);
+
+                        alumnosDAO.insertarAlumno(nombre, curso, codigoSede, nre, telTutor1, telTutor2);
                     }
                 }
 
@@ -193,14 +210,17 @@ public class AlumnosController implements Initializable {
         if (fichero != null) {
             try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fichero), "ISO-8859-1"))) {
                 // Cabecera CSV
-                bw.write("Nombre;Curso;Nombre Sede;Código Sede\n");
+                bw.write("Nombre;Curso;Nombre Sede;Código Sede;NRE;Tel Tutor 1;Tel Tutor 2\n");
 
                 for (Alumno a : listaAlumnos) {
                     String linea = String.join(";",
                             a.getNombre() != null ? a.getNombre() : "",
                             a.getCurso() != null ? a.getCurso() : "",
                             a.getNombreSede() != null ? a.getNombreSede() : "",
-                            String.valueOf(a.getCodigo_sede())
+                            String.valueOf(a.getCodigo_sede()),
+                            a.getNre() != null ? a.getNre() : "",
+                            a.getTelTutor1() != null ? a.getTelTutor1() : "",
+                            a.getTelTutor2() != null ? a.getTelTutor2() : ""
                     );
                     bw.write(linea + "\n");
                 }
@@ -213,4 +233,5 @@ public class AlumnosController implements Initializable {
             }
         }
     }
+
 }
