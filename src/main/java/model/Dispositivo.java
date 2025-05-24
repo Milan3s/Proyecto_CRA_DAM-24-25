@@ -48,6 +48,17 @@ public class Dispositivo {
         this.prestado = prestado;
     }
     
+    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, String imei, int num_etiqueta, Categoria categoria, Marca marca) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.modelo = modelo;
+        this.num_serie = num_serie;
+        this.imei = imei;
+        this.num_etiqueta = num_etiqueta;
+        this.categoria = categoria;
+        this.marca = marca;
+    }
+    
     public Dispositivo(int codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;

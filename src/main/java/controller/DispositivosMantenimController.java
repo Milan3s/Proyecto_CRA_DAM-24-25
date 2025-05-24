@@ -24,6 +24,7 @@ import model.Dispositivo;
 import dao.DispositivoDAO;
 import dao.EspacioDAO;
 import dao.MarcaDAO;
+import dao.PrestamoDAO;
 import dao.ProgramasEduDAO;
 import model.Proveedor;
 import dao.ProveedorDAO;
@@ -36,6 +37,7 @@ import javafx.stage.Modality;
 import model.Categoria;
 import model.Espacio;
 import model.Marca;
+import model.Prestamo;
 import model.ProgramasEdu;
 import model.Sede;
 import utils.LoggerUtils;
@@ -65,6 +67,7 @@ public class DispositivosMantenimController implements Initializable {
     private ComboBox<Sede> cboxSede;
     @FXML
     private ComboBox<ProgramasEdu> cboxPrograma;
+    @FXML
     private ComboBox<Espacio> cboxEspacio;
     @FXML
     private TextArea txtComent;
@@ -247,11 +250,19 @@ public class DispositivosMantenimController implements Initializable {
     @FXML
     private void btnPrestarAction(ActionEvent event) {
         try {
+            // Comprobar si el dispositivo está prestado y en ese caso obtener el objeto Prestamo correspondiente
+            Prestamo prestamo = null;
+ 
+            if (dispositivo.isPrestado()) {
+                PrestamoDAO prestamoDAO = new PrestamoDAO();
+                prestamo = prestamoDAO.buscarPrestamoActivo(dispositivo, dispositivo.getAlumno());
+            }
+            
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/PrestamosMantenim.fxml"));
             Parent root = loader.load();
             
             PrestamosMantenimController controller = loader.getController();
-            controller.setPrestamo(null, dispositivo);
+            controller.setPrestamo(prestamo, dispositivo);
             
             Stage modalStage = new Stage();
             modalStage.setTitle("Mantenimiento de préstamos");
@@ -260,7 +271,7 @@ public class DispositivosMantenimController implements Initializable {
             modalStage.setResizable(false);
             modalStage.showAndWait();
         } catch (IOException e) {
-            LoggerUtils.logError("DISPOSITIVOS", "Error al abrir ventana PrestamosMantenim", e);
+            LoggerUtils.logError("DISPOSITIVOS", "Error al abrir ventana PrestamosMantenim: " + e.getMessage(), e);
         }
     }
 }

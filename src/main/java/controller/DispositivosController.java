@@ -130,8 +130,8 @@ public class DispositivosController implements Initializable {
     
     private ObservableList<Categoria> listaCategorias = FXCollections.observableArrayList();
     private ObservableList<Marca> listaMarcas = FXCollections.observableArrayList();
-    private ObservableList<ProgramasEdu> listaProgramas = FXCollections.observableArrayList();
     private ObservableList<Sede> listaSedes = FXCollections.observableArrayList();
+    private ObservableList<ProgramasEdu> listaProgramas = FXCollections.observableArrayList();
     private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
     
     @Override
@@ -151,7 +151,6 @@ public class DispositivosController implements Initializable {
         colMac.setCellValueFactory(new PropertyValueFactory<>("mac"));
         colImei.setCellValueFactory(new PropertyValueFactory<>("imei"));
         colNumEti.setCellValueFactory(new PropertyValueFactory<>("num_etiqueta"));
-        //colPrestado.setCellValueFactory(new PropertyValueFactory<>("prestado"));
         colFechaAdqui.setCellValueFactory(cellData -> {
             Dispositivo disp = cellData.getValue();
             if (disp.getFecha_adquisicion()!= null) {

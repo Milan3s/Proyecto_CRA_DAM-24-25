@@ -55,7 +55,9 @@ public class PrestamosMantenimController implements Initializable {
     private TextField txtNRE;
     @FXML
     private TextField txtCurso;
+    @FXML
     private ComboBox<Sede> cboxSede;
+    @FXML
     private ComboBox<Alumno> cboxAlumno;
     
     private Prestamo prestamo;
@@ -70,10 +72,6 @@ public class PrestamosMantenimController implements Initializable {
     private ObservableList<Alumno> listaAlumnos = FXCollections.observableArrayList();
     FilteredList<Alumno> listaAluFilt;
     private AlumnosDAO alumnoDAO = new AlumnosDAO();
-    @FXML
-    private TextField txtNombreAlu;
-    @FXML
-    private TextField txtSede;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -91,7 +89,16 @@ public class PrestamosMantenimController implements Initializable {
 
     public void setPrestamo(Prestamo prest, Dispositivo disp) {
         if (null != prest) {
+            this.dispositivo = disp;
+            txtNombreDisp.setText(disp.getNombre());
+            txtNetiqueta.setText(String.valueOf(disp.getNum_etiqueta()));
+            txtMarca.setText(disp.getMarca().getNombre());
+            txtModelo.setText(disp.getModelo());
+            txtNserie.setText(disp.getNum_serie());
+            txtImei.setText(disp.getImei());
             this.prestamo = prest;
+            cboxAlumno.setValue(prest.getAlumno());
+            dtpFechaIni.setValue(prest.getFecha_inicio().toLocalDate());
         } else if (null != disp) {
             this.dispositivo = disp;
             txtNombreDisp.setText(disp.getNombre());

@@ -830,3 +830,150 @@
 [ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
 [2025-05-22 19:40:22] [SEVERE ] [ESPACIOS] ERROR → Error al actualizar espacio: Data truncation: Incorrect integer value: 'asdfa' for column `cra_dispositivos`.`espacios`.`numero_abaco` at row 1
 [2025-05-22 19:40:31] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-23 00:14:14] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 00:14:14] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 00:14:14] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 00:14:14] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 00:14:14] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 00:14:14] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 00:14:37] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:14:49] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:15:00] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:15:32] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:20:43] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 00:20:43] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 00:20:43] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 00:20:43] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 00:20:43] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 00:20:43] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 00:20:54] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:21:50] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:25:47] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 00:25:47] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 00:25:47] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 00:25:47] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 00:25:47] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 00:25:48] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 00:26:10] [SEVERE ] [DISPOSITIVOS] ERROR → Error al abrir ventana PrestamosMantenim
+[2025-05-23 00:26:36] [SEVERE ] [DISPOSITIVOS] ERROR → Error al abrir ventana PrestamosMantenim
+[2025-05-23 00:28:58] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 00:28:58] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 00:28:58] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 00:28:58] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 00:28:58] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 00:28:58] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 00:29:07] [SEVERE ] [DISPOSITIVOS] ERROR → Error al abrir ventana PrestamosMantenim: 
+/C:/Users/Antonio/Documents/NetBeansProjects/proyecto_javafx_23/target/classes/views/PrestamosMantenim.fxml
+
+[2025-05-23 19:36:06] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 19:36:06] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 19:36:06] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 19:36:06] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 19:36:06] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 19:36:06] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 20:34:20] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 20:34:20] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 20:34:20] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 20:34:20] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 20:34:20] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 20:34:21] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 20:36:25] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 11:52:37] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 11:52:37] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 11:52:37] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 11:52:37] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 11:52:37] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 11:52:38] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 11:53:57] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 11:58:26] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 11:58:26] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 11:58:26] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 11:58:26] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 11:58:26] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 11:58:26] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 11:58:30] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 11:58:49] [INFO   ] [ALUMNOS] Alumno actualizado: Código 1
+[2025-05-24 11:58:53] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 11:59:24] [INFO   ] [ALUMNOS] Alumno actualizado: Código 2
+[2025-05-24 11:59:51] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 12:00:16] [INFO   ] [ALUMNOS] Alumno insertado: PEDRO ORTIZ MARMOL, NRE: 54321
+[2025-05-24 12:00:32] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 12:01:08] [INFO   ] [ALUMNOS] Alumno insertado: ANA MENDEZ BERBEN, NRE: 232575
+[2025-05-24 13:47:19] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 13:47:19] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 13:47:19] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 13:47:19] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 13:47:19] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 13:47:20] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 13:50:11] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 13:50:11] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 13:50:11] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 13:50:11] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 13:50:11] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 13:50:11] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 16:06:35] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 16:06:35] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 16:06:35] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 16:06:35] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 16:06:35] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 16:06:35] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 16:31:16] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 16:31:16] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 16:31:16] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 16:31:16] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 16:31:16] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 16:31:16] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio

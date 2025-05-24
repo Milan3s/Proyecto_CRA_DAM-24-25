@@ -34,37 +34,37 @@ public class DispositivoDAO {
         CentroEducativo centro = Session.getInstance().getCentroActivo();
         String codigoCentro;
         
-        String query = "SELECT DISTINCT d.codigo_dispositivo, d.nombre, d.modelo, d.num_serie, d.fecha_adquisicion, d.mac, d.imei, d.num_etiqueta, d.coment_reg";
-        query += " , p.codigo_proveedor, p.nombre AS nombre_prov, a.codigo_alumno, a.nombre AS nombre_alu";
-        query += " , d.codigo_categoria, d.codigo_marca, d.codigo_espacio, d.codigo_espacio, d.codigo_programa, d.prestado, d.observaciones";
-        query += " , c.nombre AS nombre_cat, m.nombre AS nombre_marca, e.nombre AS nombre_esp, prog.nombre AS nombre_prog";
-        query += " , COALESCE(s1.codigo_sede, s2.codigo_sede) AS codigo_sede , COALESCE(s1.nombre, s2.nombre) AS nombre_sede";
-        query += " FROM dispositivos d";
-        query += " LEFT OUTER JOIN proveedores p ON d.codigo_proveedor = p.codigo_proveedor";
-        query += " LEFT OUTER JOIN prestamos prest ON d.codigo_dispositivo = prest.codigo_dispositivo AND prest.fecha_fin IS NULL";
-        query += " LEFT OUTER JOIN alumnos a ON prest.codigo_alumno = a.codigo_alumno";
-        query += " LEFT OUTER JOIN categorias c ON d.codigo_categoria = c.codigo_categoria";
-        query += " LEFT OUTER JOIN marcas m ON d.codigo_marca = m.codigo_marca";
-        query += " LEFT OUTER JOIN espacios e ON d.codigo_espacio = e.codigo_espacio";
-        query += " LEFT OUTER JOIN programas_edu prog ON d.codigo_programa = prog.codigo_programa";
-        query += " LEFT OUTER JOIN sedes s1 ON e.codigo_sede = s1.codigo_sede";
-        query += " LEFT OUTER JOIN sedes s2 ON a.codigo_sede = s2.codigo_sede";
+        String sql = "SELECT DISTINCT d.codigo_dispositivo, d.nombre, d.modelo, d.num_serie, d.fecha_adquisicion, d.mac, d.imei, d.num_etiqueta, d.coment_reg"
+         + " , p.codigo_proveedor, p.nombre AS nombre_prov, a.codigo_alumno, a.nombre AS nombre_alu"
+         + " , d.codigo_categoria, d.codigo_marca, d.codigo_espacio, d.codigo_espacio, d.codigo_programa, d.prestado, d.observaciones"
+         + " , c.nombre AS nombre_cat, m.nombre AS nombre_marca, e.nombre AS nombre_esp, prog.nombre AS nombre_prog"
+         + " , COALESCE(s1.codigo_sede, s2.codigo_sede) AS codigo_sede , COALESCE(s1.nombre, s2.nombre) AS nombre_sede"
+         + " FROM dispositivos d"
+         + " LEFT OUTER JOIN proveedores p ON d.codigo_proveedor = p.codigo_proveedor"
+         + " LEFT OUTER JOIN prestamos prest ON d.codigo_dispositivo = prest.codigo_dispositivo AND prest.fecha_fin IS NULL"
+         + " LEFT OUTER JOIN alumnos a ON prest.codigo_alumno = a.codigo_alumno"
+         + " LEFT OUTER JOIN categorias c ON d.codigo_categoria = c.codigo_categoria"
+         + " LEFT OUTER JOIN marcas m ON d.codigo_marca = m.codigo_marca"
+         + " LEFT OUTER JOIN espacios e ON d.codigo_espacio = e.codigo_espacio"
+         + " LEFT OUTER JOIN programas_edu prog ON d.codigo_programa = prog.codigo_programa"
+         + " LEFT OUTER JOIN sedes s1 ON e.codigo_sede = s1.codigo_sede"
+         + " LEFT OUTER JOIN sedes s2 ON a.codigo_sede = s2.codigo_sede";
         
         if (centro != null) {
             // Si se ha establecido un centro activo, se muestran los dispositivos asociados a dicho centro
             // (por Espacio o por Alumno) y también aquellos que aún no se hayan asociado a ninguno.
             codigoCentro = centro.getCodigoCentro();
-            query += " WHERE s1.codigo_centro = '" + codigoCentro + "' OR s2.codigo_centro = '" + codigoCentro + "'";
-            query += " OR (e.codigo_espacio IS NULL AND a.codigo_alumno IS NULL)";
+            sql += " WHERE s1.codigo_centro = '" + codigoCentro + "' OR s2.codigo_centro = '" + codigoCentro + "'";
+            sql += " OR (e.codigo_espacio IS NULL AND a.codigo_alumno IS NULL)";
         }
         
         try {
             Statement stmt = conn.createStatement(); 
-            ResultSet rs = stmt.executeQuery(query);
+            ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {               
                 Proveedor prov = new Proveedor(rs.getInt("codigo_proveedor"), rs.getString("nombre_prov"));
-                Alumno alu = null;
+                Alumno alu = new Alumno(rs.getInt("codigo_alumno"), rs.getString("nombre_alu"));
                 Categoria categoria = new Categoria(rs.getInt("codigo_categoria"), rs.getString("nombre_cat"));
                 Marca marca = new Marca(rs.getInt("codigo_marca"), rs.getString("nombre_marca"));
                 Espacio espacio = new Espacio(rs.getInt("codigo_espacio"), rs.getString("nombre_esp"));

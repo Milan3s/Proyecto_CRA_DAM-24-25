@@ -30,12 +30,32 @@ public class Alumno {
      * @param nombreSede Nombre de la sede (texto visible)
      * @param codigo_sede Código numérico de la sede (FK)
      */
+    public Alumno(int codigo, String nombre, String curso, String nombreSede, int codigo_sede, String nre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.curso = curso;
+        this.nombreSede = nombreSede;
+        this.codigo_sede = codigo_sede;
+        this.nre = nre;
+    }
+    
     public Alumno(int codigo, String nombre, String curso, String nombreSede, int codigo_sede) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.curso = curso;
         this.nombreSede = nombreSede;
         this.codigo_sede = codigo_sede;
+    }
+    
+    /**
+     * Constructor solo con código y nombre
+     * 
+     * @param codigo
+     * @param nombre 
+     */
+    public Alumno(int codigo, String nombre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
     }
 
     // ===================
