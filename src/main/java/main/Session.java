@@ -1,10 +1,12 @@
 package main;
 
+import controller.DashboardController;
 import model.CentroEducativo;
 
 public class Session {
     private static Session instance;
     private CentroEducativo centroActivo;
+    private DashboardController dashboardController;
     
     private Session() {}
     
@@ -21,5 +23,15 @@ public class Session {
 
     public void setCentroActivo(CentroEducativo centroActivo) {
         this.centroActivo = centroActivo;
+    }
+    
+    public void setDashboardController(DashboardController controller) {
+        dashboardController = controller;
+    }
+
+    public void notificarCentro(CentroEducativo centro) {
+        if (dashboardController != null) {
+            dashboardController.mostrarCentroActivo(centro);
+        }
     }
 }

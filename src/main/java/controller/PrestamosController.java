@@ -1,9 +1,11 @@
 package controller;
 
 import dao.CategoriaDAO;
+import dao.DispositivoDAO;
 import dao.MarcaDAO;
 import dao.PrestamoDAO;
 import dao.SedeDAO;
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
@@ -13,14 +15,21 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.Categoria;
 import model.Dispositivo;
 import model.Marca;
@@ -28,6 +37,7 @@ import model.Prestamo;
 import model.Sede;
 import utils.LoggerUtils;
 import utils.Utilidades;
+import static utils.Utilidades.mostrarAlerta2;
 
 public class PrestamosController implements Initializable {
 
@@ -81,6 +91,7 @@ public class PrestamosController implements Initializable {
     private SedeDAO sedeDAO = new SedeDAO();
     private CategoriaDAO catDAO = new CategoriaDAO();
     private MarcaDAO marcaDAO = new MarcaDAO();
+    private DispositivoDAO dispositivoDAO = new DispositivoDAO();
     
     private ObservableList<Prestamo> listaPrest = FXCollections.observableArrayList();
     private ObservableList<Categoria> listaCategorias = FXCollections.observableArrayList();
@@ -217,7 +228,7 @@ public class PrestamosController implements Initializable {
     }
     
     private void cargarDatos() {
-        listaPrest = prestDAO.obtenerPrestamos();
+        listaPrest = prestDAO.obtenerPrestamos(null, null);
         tablaPrest.setItems(listaPrest);
     }
     
@@ -249,10 +260,35 @@ public class PrestamosController implements Initializable {
 
     @FXML
     private void btnEliminarAction(ActionEvent event) {
+        Prestamo prestamoSelec = tablaPrest.getSelectionModel().getSelectedItem();
+        
+        if (prestamoSelec == null) {
+            mostrarAlerta2("Sin selección", "Por favor, seleccione un préstamo a eliminar.", Alert.AlertType.WARNING);
+            LoggerUtils.logInfo("PRESTAMOS", "Intento de eliminar sin seleccionar préstamo.");
+            return;
+        }
+        
+        Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmacion.setTitle("Confirmar eliminación");
+        confirmacion.setHeaderText("¿Seguro que desea eliminar el siguiente préstamo?");
+        confirmacion.setContentText(prestamoSelec.getDispositivo().getNombre());
+        confirmacion.showAndWait().ifPresent(respuesta -> {
+            if (respuesta == ButtonType.OK) {
+                int filas = prestDAO.eliminarPrestamo(prestamoSelec);
+                if (filas > 0) {
+                    cargarDatos();
+                    dispositivoDAO.actualizarPrestado(prestamoSelec.getDispositivo().getCodigo(), false);
+                }
+            }
+        });
     }
 
     @FXML
     private void capturarClick(MouseEvent event) {
+        if (event.getClickCount() == 2 && !tablaPrest.getSelectionModel().isEmpty()) {
+            Prestamo prestamo = tablaPrest.getSelectionModel().getSelectedItem();
+            abrirMantenimiento(prestamo, prestamo.getDispositivo());
+        }
     }
 
     @FXML
@@ -304,4 +340,25 @@ public class PrestamosController implements Initializable {
         cboxSede.setValue(null);
     }
     
+    private void abrirMantenimiento(Prestamo prestamo, Dispositivo dispositivo) {
+        try {
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/PrestamosMantenim.fxml"));
+            Parent root = loader.load();
+            
+            PrestamosMantenimController controller = loader.getController();
+            controller.setPrestamo(prestamo, dispositivo);
+            
+            Stage modalStage = new Stage();
+            modalStage.setTitle("Mantenimiento de préstamos");
+            modalStage.setScene(new Scene(root));
+            modalStage.initModality(Modality.APPLICATION_MODAL);
+            modalStage.setResizable(false);
+            modalStage.showAndWait();
+            
+            cargarDatos();
+        } catch (IOException e) {
+            LoggerUtils.logError("PRESTAMOS", "Error al abrir ventana PrestamosMantenim: " + e.getMessage(), e);
+        }
+    }
 }

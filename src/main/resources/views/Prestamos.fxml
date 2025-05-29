@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -26,8 +27,14 @@
       </Label>
       <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="830.0" spacing="20.0">
          <children>
-            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo" />
-            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar" />
+            <Button fx:id="btnNuevo" disable="true" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo">
+               <graphic>
+                  <FontAwesomeIconView glyphName="PLUS" />
+               </graphic></Button>
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar">
+               <graphic>
+                  <FontAwesomeIconView glyphName="TRASH" />
+               </graphic></Button>
          </children>
       </HBox>
       <GridPane maxWidth="800.0">
@@ -55,7 +62,10 @@
       </GridPane>
       <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="200.0" spacing="10.0">
          <children>
-            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#btnBuscarAction" text="Buscar" />
+            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#btnBuscarAction" text="Buscar">
+               <graphic>
+                  <FontAwesomeIconView glyphName="BINOCULARS" />
+               </graphic></Button>
             <Button fx:id="btnLimpiar" mnemonicParsing="false" onAction="#btnLimpiarAction" text="Limpiar filtros" />
          </children></HBox>
       <TableView fx:id="tablaPrest" onMouseClicked="#capturarClick" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">

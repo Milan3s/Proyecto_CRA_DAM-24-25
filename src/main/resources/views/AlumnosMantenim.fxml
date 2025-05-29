@@ -1,62 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="500.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/23.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.AlumnosMantenimController">
+<AnchorPane prefHeight="500.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AlumnosMantenimController">
 
     <children>
         <!-- Título centrado -->
-        <Text layoutX="160.0" layoutY="50.0" text="Agregar Alumno" fill="black">
+        <Text fill="black" layoutX="100.0" layoutY="50.0" text="Mantenimiento de Alumnos">
             <font>
                 <Font size="26.0" />
             </font>
         </Text>
 
         <!-- Formulario organizado -->
-        <GridPane layoutX="60.0" layoutY="80.0" hgap="10" vgap="20">
+        <GridPane hgap="10" layoutX="60.0" layoutY="80.0" vgap="20">
             <padding>
-                <Insets top="10" right="10" bottom="10" left="10"/>
+                <Insets bottom="10" left="10" right="10" top="10" />
             </padding>
 
             <!-- Nombre -->
-            <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-            <TextField fx:id="txtNombre" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtNombre" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
             <!-- Curso -->
-            <Label text="Curso:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-            <TextField fx:id="txtCurso" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Curso:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtCurso" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
             <!-- Código Sede -->
-            <Label text="Código Sede:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-            <ComboBox fx:id="cbox_sede" promptText="Selecciona una..." prefWidth="250.0"
-                      GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Label text="Código Sede:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cbox_sede" prefWidth="250.0" promptText="Selecciona una..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
             <!-- NRE -->
-            <Label text="NRE:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-            <TextField fx:id="txtNre" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+            <Label text="NRE:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="txtNre" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
             <!-- Teléfono Tutor 1 -->
-            <Label text="Tel. Tutor 1:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-            <TextField fx:id="txtTelTutor1" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            <Label text="Tel. Tutor 1:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="txtTelTutor1" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
             <!-- Teléfono Tutor 2 -->
-            <Label text="Tel. Tutor 2:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-            <TextField fx:id="txtTelTutor2" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+            <Label text="Tel. Tutor 2:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextField fx:id="txtTelTutor2" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
         </GridPane>
 
         <!-- Botones -->
-        <Button fx:id="btnGuardar" layoutX="100.0" layoutY="420.0" prefWidth="140.0" text="Guardar"/>
-        <Button fx:id="btnCancelar" layoutX="280.0" layoutY="420.0" prefWidth="140.0"
-                onAction="#btnActionCancelar" text="Cancelar"/>
+        <Button fx:id="btnGuardar" layoutX="100.0" layoutY="420.0" prefWidth="140.0" text="Guardar">
+         <graphic>
+            <FontAwesomeIconView glyphName="SAVE" />
+         </graphic></Button>
+        <Button fx:id="btnCancelar" layoutX="280.0" layoutY="420.0" onAction="#btnActionCancelar" prefWidth="140.0" text="Cancelar">
+         <graphic>
+            <FontAwesomeIconView glyphName="UNDO" />
+         </graphic></Button>
     </children>
 </AnchorPane>

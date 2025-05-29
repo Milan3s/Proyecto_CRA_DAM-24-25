@@ -24,21 +24,21 @@ import static utils.Utilidades.mostrarAlerta2;
 
 public class DispositivoDAO {
     private Connection conn;
+    private CentroEducativo centro;
     
     public DispositivoDAO() {
         conn = DataBaseConection.getConnection();
+        centro = Session.getInstance().getCentroActivo();
     }
     
     public ObservableList<Dispositivo> obtenerDispositivos() {
         ObservableList<Dispositivo> listaDispositivos = FXCollections.observableArrayList();
-        CentroEducativo centro = Session.getInstance().getCentroActivo();
-        String codigoCentro;
         
         String sql = "SELECT DISTINCT d.codigo_dispositivo, d.nombre, d.modelo, d.num_serie, d.fecha_adquisicion, d.mac, d.imei, d.num_etiqueta, d.coment_reg"
-         + " , p.codigo_proveedor, p.nombre AS nombre_prov, a.codigo_alumno, a.nombre AS nombre_alu"
+         + " , p.codigo_proveedor, p.nombre AS nombre_prov, a.codigo_alumno, a.nombre AS nombre_alu, a.curso"
          + " , d.codigo_categoria, d.codigo_marca, d.codigo_espacio, d.codigo_espacio, d.codigo_programa, d.prestado, d.observaciones"
          + " , c.nombre AS nombre_cat, m.nombre AS nombre_marca, e.nombre AS nombre_esp, prog.nombre AS nombre_prog"
-         + " , COALESCE(s1.codigo_sede, s2.codigo_sede) AS codigo_sede , COALESCE(s1.nombre, s2.nombre) AS nombre_sede"
+         + " , COALESCE(s1.codigo_sede, s2.codigo_sede) AS codigo_sede, COALESCE(s1.nombre, s2.nombre) AS nombre_sede"
          + " FROM dispositivos d"
          + " LEFT OUTER JOIN proveedores p ON d.codigo_proveedor = p.codigo_proveedor"
          + " LEFT OUTER JOIN prestamos prest ON d.codigo_dispositivo = prest.codigo_dispositivo AND prest.fecha_fin IS NULL"
@@ -53,7 +53,7 @@ public class DispositivoDAO {
         if (centro != null) {
             // Si se ha establecido un centro activo, se muestran los dispositivos asociados a dicho centro
             // (por Espacio o por Alumno) y también aquellos que aún no se hayan asociado a ninguno.
-            codigoCentro = centro.getCodigoCentro();
+            String codigoCentro = centro.getCodigoCentro();
             sql += " WHERE s1.codigo_centro = '" + codigoCentro + "' OR s2.codigo_centro = '" + codigoCentro + "'";
             sql += " OR (e.codigo_espacio IS NULL AND a.codigo_alumno IS NULL)";
         }
@@ -62,14 +62,24 @@ public class DispositivoDAO {
             Statement stmt = conn.createStatement(); 
             ResultSet rs = stmt.executeQuery(sql);
 
-            while (rs.next()) {               
-                Proveedor prov = new Proveedor(rs.getInt("codigo_proveedor"), rs.getString("nombre_prov"));
-                Alumno alu = new Alumno(rs.getInt("codigo_alumno"), rs.getString("nombre_alu"));
-                Categoria categoria = new Categoria(rs.getInt("codigo_categoria"), rs.getString("nombre_cat"));
-                Marca marca = new Marca(rs.getInt("codigo_marca"), rs.getString("nombre_marca"));
-                Espacio espacio = new Espacio(rs.getInt("codigo_espacio"), rs.getString("nombre_esp"));
-                ProgramasEdu programae = new ProgramasEdu(rs.getInt("codigo_programa"), rs.getString("nombre_prog"));
+            while (rs.next()) {
+                Proveedor prov = null;
+                Alumno alu = null;
+                Categoria categoria = null;
+                Marca marca = null;
+                Espacio espacio = null;
+                ProgramasEdu programae = null;
                 Sede sede = null;
+                
+                // Si el código en la base de datos es NULL, entonces rs.getInt() devuelve 0 (cero)
+                // Se comprueba esto para no crear objetos con código 0 que realmente no existen en la base de datos
+                if (rs.getInt("codigo_proveedor") != 0) prov = new Proveedor(rs.getInt("codigo_proveedor"), rs.getString("nombre_prov"));
+                if (rs.getInt("codigo_alumno") != 0) alu = new Alumno(rs.getInt("codigo_alumno"), rs.getString("nombre_alu"), rs.getString("curso"));
+                if (rs.getInt("codigo_categoria") != 0) categoria = new Categoria(rs.getInt("codigo_categoria"), rs.getString("nombre_cat"));
+                if (rs.getInt("codigo_marca") != 0) marca = new Marca(rs.getInt("codigo_marca"), rs.getString("nombre_marca"));
+                if (rs.getInt("codigo_espacio") != 0) espacio = new Espacio(rs.getInt("codigo_espacio"), rs.getString("nombre_esp"));
+                if (rs.getInt("codigo_programa") != 0) programae = new ProgramasEdu(rs.getInt("codigo_programa"), rs.getString("nombre_prog"));
+                if (rs.getInt("codigo_sede") != 0) sede = new Sede(rs.getInt("codigo_sede"), rs.getString("nombre_sede"));
                 
                 Dispositivo disp = new Dispositivo(
                     rs.getInt("codigo_dispositivo"),
@@ -120,10 +130,7 @@ public class DispositivoDAO {
             stmt.setString(15, disp.getObservaciones());
             
             int filas = stmt.executeUpdate();
-            
-            if (filas > 0) {
-                mostrarAlerta2("Éxito", "Dispostivo guardado correctamente.", Alert.AlertType.INFORMATION);
-            }
+
         } catch (SQLException e) {
             mostrarAlerta2("Error SQL", "No se pudo guardar el dispositivo.\nDetalles: " + e.getMessage(), Alert.AlertType.ERROR);
             LoggerUtils.logError("DISPOSITIVOS", "Error al ejecutar alta de dispositivo", e);

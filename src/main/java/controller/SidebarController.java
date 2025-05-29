@@ -8,6 +8,7 @@ import javafx.scene.layout.StackPane;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 
 public class SidebarController {
 
@@ -29,14 +30,19 @@ public class SidebarController {
     private Button btnProgramas;
     @FXML
     private Button btnPrestamos;
+    @FXML
+    private VBox sidebar;
 
     // Método para establecer el nombre de usuario en la interfaz
     public void setNombreUsuario(String nombre) {
+        /*
         if (labelUsuario != null) {
             labelUsuario.setText("Usuario: " + nombre);
         } else {
             System.out.println("labelUsuario es null");
         }
+        */
+        labelUsuario.setText("");
     }
 
     // Método genérico para cargar contenido en el panel

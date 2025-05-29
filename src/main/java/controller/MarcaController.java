@@ -32,8 +32,6 @@ public class MarcaController implements Initializable {
     @FXML
     private Button btnEliminarMarca;
     @FXML
-    private Button btnEliminarTodos;
-    @FXML
     private Button btnBuscar;
     @FXML
     private TextField txtBuscar;
@@ -105,7 +103,6 @@ public class MarcaController implements Initializable {
         }
     }
 
-    @FXML
     private void btnActionEliminarTodos() {
         int filasEliminadas = marcaDAO.eliminarTodasMarcas();
         LoggerUtils.logInfo("Marcas", "Total de marcas eliminadas: " + filasEliminadas);

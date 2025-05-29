@@ -10,6 +10,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Proveedor;
 import dao.ProveedorDAO;
+import javafx.scene.control.Alert;
+import utils.LoggerUtils;
+import static utils.Utilidades.mostrarAlerta2;
 
 public class ProveedoresMantenimController implements Initializable {
 
@@ -58,11 +61,7 @@ public class ProveedoresMantenimController implements Initializable {
 
     @FXML
     private void btnGuardarAction(ActionEvent event) {
-        if (null == this.proveedor) {
-            insertarProv();
-        } else {
-            actualizarProv();
-        }
+        guardarProveedor();
     }
 
     @FXML
@@ -74,9 +73,16 @@ public class ProveedoresMantenimController implements Initializable {
         Stage stage = (Stage) btnCancelar.getScene().getWindow();
         stage.close();
     }
-    
-    private void actualizarProv() {
-        int codProv = this.proveedor.getCodigo();
+
+    private void guardarProveedor() {
+        int codProv;
+        
+        if (null == this.proveedor) {
+            codProv = 0;
+        } else {
+            codProv = this.proveedor.getCodigo();
+        }
+        
         String nombre = txtNombre.getText();
         String calle = txtCalle.getText();
         String localidad = txtLocalidad.getText();
@@ -85,25 +91,20 @@ public class ProveedoresMantenimController implements Initializable {
         String provincia = txtProvincia.getText();
         String telefono = txtTelefono.getText();
         String email = txtEmail.getText();
+        
+        if (nombre.isEmpty()) {
+            mostrarAlerta2("Campos incompletos", "Por favor, completa todos los campos obligatorios.", Alert.AlertType.WARNING);
+            LoggerUtils.logWarning("PROVEEDORES", "Faltan campos obligatorios en el formulario.");
+            return;
+        }
         
         Proveedor p = new Proveedor(codProv, nombre, calle, localidad, cp, municipio, provincia, telefono, email);
-        provDAO.actualizarProveedor(p);
         
-        cerrarVentana();
-    }
-    
-    private void insertarProv() {
-        String nombre = txtNombre.getText();
-        String calle = txtCalle.getText();
-        String localidad = txtLocalidad.getText();
-        String cp = txtCp.getText();
-        String municipio = txtMunicipio.getText();
-        String provincia = txtProvincia.getText();
-        String telefono = txtTelefono.getText();
-        String email = txtEmail.getText();
-        
-        Proveedor p = new Proveedor(0, nombre, calle, localidad, cp, municipio, provincia, telefono, email);
-        provDAO.insertarProveedor(p);
+        if (null == this.proveedor) {
+            provDAO.insertarProveedor(p);
+        } else {
+            provDAO.actualizarProveedor(p);
+        }
         
         cerrarVentana();
     }

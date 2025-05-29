@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -19,20 +20,28 @@
 
     <!-- Botones -->
     <HBox spacing="10">
-        <Button fx:id="btnNuevaSede" mnemonicParsing="false" onAction="#btnNuevaSedeAction" text="Nueva Sede" />
-        <Button fx:id="btnEliminarSede" mnemonicParsing="false" onAction="#btnEliminarSedeAction" text="Eliminar Sede" />
-        <Button fx:id="btnEliminarTodasSedes" disable="true" mnemonicParsing="false" onAction="#btnEliminarTodasSedesAction" text="Eliminar Todas" />
+        <Button fx:id="btnNuevaSede" mnemonicParsing="false" onAction="#btnNuevaSedeAction" text="Nueva Sede">
+         <graphic>
+            <FontAwesomeIconView glyphName="PLUS" />
+         </graphic></Button>
+        <Button fx:id="btnEliminarSede" mnemonicParsing="false" onAction="#btnEliminarSedeAction" text="Eliminar Sede">
+         <graphic>
+            <FontAwesomeIconView glyphName="TRASH" />
+         </graphic></Button>
     </HBox>
 
     <!-- Barra de búsqueda -->
-    <HBox spacing="10">
+    <HBox alignment="CENTER_LEFT" spacing="10">
         <Label prefHeight="35.0" prefWidth="60.0" text="Buscar:" />
-        <TextField fx:id="txtBuscar" prefHeight="35.0" prefWidth="423.0" promptText="Escribe para buscar..." />
-        <Button fx:id="btnBuscarSede" onAction="#btnBuscarSedeAction" prefHeight="35.0" text="Buscar" />
+        <TextField fx:id="txtBuscar" prefWidth="300.0" promptText="Escribe para buscar..." />
+        <Button fx:id="btnBuscarSede" onAction="#btnBuscarSedeAction" text="Buscar">
+         <graphic>
+            <FontAwesomeIconView glyphName="BINOCULARS" />
+         </graphic></Button>
     </HBox>
 
     <!-- Tabla de sedes -->
-    <TableView fx:id="tablaSedes" onMouseClicked="#capturarClick" prefHeight="500.0" VBox.vgrow="ALWAYS">
+    <TableView fx:id="tablaSedes" onMouseClicked="#capturarClick" prefHeight="500.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="colCodigoSede" prefWidth="100.0" text="Código Sede" />
             <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />

@@ -1,10 +1,13 @@
 package utils;
 
 import java.io.File;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.function.Function;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
 
@@ -30,6 +33,23 @@ public class Utilidades {
             @Override
             public T fromString(String string) {
                 return null; // No se usa en este caso
+            }
+        });
+    }
+    
+    // Para formatear cómo se muestra la fecha en un DatePicker
+    public static void formatearFecha(DatePicker dtp) {
+        DateTimeFormatter formatFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
+        dtp.setConverter(new StringConverter<LocalDate>() {
+            @Override
+            public String toString(LocalDate date) {
+                return (date != null) ? formatFecha.format(date) : "";
+            }
+
+            @Override
+            public LocalDate fromString(String string) {
+                return (string != null && !string.isEmpty()) ? LocalDate.parse(string, formatFecha) : null;
             }
         });
     }

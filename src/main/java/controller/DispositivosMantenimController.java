@@ -33,6 +33,7 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Modality;
 import model.Categoria;
 import model.Espacio;
@@ -42,6 +43,7 @@ import model.ProgramasEdu;
 import model.Sede;
 import utils.LoggerUtils;
 import utils.Utilidades;
+import static utils.Utilidades.mostrarAlerta2;
 
 public class DispositivosMantenimController implements Initializable {
 
@@ -114,7 +116,8 @@ public class DispositivosMantenimController implements Initializable {
     }
 
     public void setDispositivo(Dispositivo disp) {
-        formatearFecha();
+        Utilidades.formatearFecha(dtpFecha);
+        
         cargarCombos();
         
         if (null != disp) {
@@ -132,7 +135,10 @@ public class DispositivosMantenimController implements Initializable {
             txtImei.setText(disp.getImei());
             txtNetiqueta.setText(String.valueOf(disp.getNum_etiqueta()));
             cboxPrograma.setValue(disp.getProgramae());
-            if (null != disp.getAlumno()) txtAlumno.setText(disp.getAlumno().getNombre());
+            if (null != disp.getAlumno()) {
+                txtAlumno.setText(disp.getAlumno().getNombre());
+                cboxSede.setDisable(true);
+            }
             txtComent.setText(disp.getComentario());
         }
     }
@@ -140,7 +146,6 @@ public class DispositivosMantenimController implements Initializable {
     @FXML
     private void btnGuardarAction(ActionEvent event) {
         guardarDispositivo();
-        cerrarVentana();
     }
 
     @FXML
@@ -152,24 +157,7 @@ public class DispositivosMantenimController implements Initializable {
         Stage stage = (Stage) btnCancelar.getScene().getWindow();
         stage.close();
     }
-    
-    private void formatearFecha() {
-        // Formatea cómo se muestra la fecha en el DatePicker
-        DateTimeFormatter formatFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        
-        dtpFecha.setConverter(new StringConverter<LocalDate>() {
-            @Override
-            public String toString(LocalDate date) {
-                return (date != null) ? formatFecha.format(date) : "";
-            }
 
-            @Override
-            public LocalDate fromString(String string) {
-                return (string != null && !string.isEmpty()) ? LocalDate.parse(string, formatFecha) : null;
-            }
-        });
-    }
-    
     private void cargarCombos() {
         try {
             // Categorías 
@@ -222,10 +210,12 @@ public class DispositivosMantenimController implements Initializable {
         String nombre = txtNombre.getText();
         String modelo = txtModelo.getText();
         String nSerie = txtNserie.getText();
-        Date fecha_adq = Date.valueOf(dtpFecha.getValue());
+        Date fecha_adq = null;
+        if (null != dtpFecha.getValue()) fecha_adq = Date.valueOf(dtpFecha.getValue());
         String mac = txtMac.getText();
         String imei = txtImei.getText();
-        int numEtiq = Integer.parseInt(txtNetiqueta.getText());
+        int numEtiq = 0;
+        if (!txtNetiqueta.getText().isEmpty()) numEtiq = Integer.parseInt(txtNetiqueta.getText());
         Proveedor proveedor = cboxProveedor.getValue();
         Alumno alumno = null;
         String comentario = txtComent.getText();
@@ -237,6 +227,12 @@ public class DispositivosMantenimController implements Initializable {
         ProgramasEdu programae = cboxPrograma.getValue();
         Sede sede = cboxSede.getValue();
         
+        if (nombre.isEmpty()) {
+            mostrarAlerta2("Campos incompletos", "Por favor, completa todos los campos obligatorios.", Alert.AlertType.WARNING);
+            LoggerUtils.logWarning("DISPOSITIVOS", "Faltan campos obligatorios en el formulario.");
+            return;
+        }
+        
         Dispositivo disp = new Dispositivo(codDisp, nombre, modelo, nSerie, fecha_adq, mac, imei, numEtiq, proveedor, alumno, comentario, 
             categoria, marca, espacio, programae, sede, prestado, observaciones);
         
@@ -245,6 +241,8 @@ public class DispositivosMantenimController implements Initializable {
         } else {
             dispDAO.actualizarDispositivo(disp);
         }
+        
+        cerrarVentana();
     }
 
     @FXML
@@ -255,7 +253,7 @@ public class DispositivosMantenimController implements Initializable {
  
             if (dispositivo.isPrestado()) {
                 PrestamoDAO prestamoDAO = new PrestamoDAO();
-                prestamo = prestamoDAO.buscarPrestamoActivo(dispositivo, dispositivo.getAlumno());
+                prestamo = prestamoDAO.obtenerPrestamos(dispositivo, dispositivo.getAlumno()).get(0);
             }
             
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/PrestamosMantenim.fxml"));
@@ -270,6 +268,17 @@ public class DispositivosMantenimController implements Initializable {
             modalStage.initModality(Modality.APPLICATION_MODAL);
             modalStage.setResizable(false);
             modalStage.showAndWait();
+            
+            if (null != dispositivo.getAlumno()) {
+                txtAlumno.setText(dispositivo.getAlumno().getNombre());
+                cboxSede.setValue(dispositivo.getSede());
+                cboxSede.setDisable(true);
+            } else {
+                txtAlumno.setText("");
+                cboxSede.setValue(null);
+                cboxSede.setDisable(false);
+            }
+            
         } catch (IOException e) {
             LoggerUtils.logError("DISPOSITIVOS", "Error al abrir ventana PrestamosMantenim: " + e.getMessage(), e);
         }

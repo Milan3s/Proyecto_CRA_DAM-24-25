@@ -14,7 +14,7 @@
 <VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MarcaController">
 
     <!-- Título -->
-    <Label styleClass="txt_alulmnos" text="Marcas">
+    <Label text="Marcas">
       <font>
          <Font size="24.0" />
       </font></Label>
@@ -31,23 +31,21 @@
                 <FontAwesomeIconView glyphName="TRASH" />
             </graphic>
         </Button>
-        <Button fx:id="btnEliminarTodos" disable="true" mnemonicParsing="false" onAction="#btnActionEliminarTodos" text="Eliminar Todos">
-            <graphic>
-                <FontAwesomeIconView glyphName="TRASH" />
-            </graphic>
-        </Button>
     </HBox>
     
     <!-- Barra de búsqueda -->
  
     <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="830.0" spacing="10">
         <Label contentDisplay="RIGHT" prefHeight="35.0" prefWidth="60.0" styleClass="txtbuscar" text="Buscar:" textAlignment="RIGHT" />
-        <TextField fx:id="txtBuscar" prefWidth="350.0" promptText="Escribe para buscar..." styleClass="campo_busqueda" />
-        <Button fx:id="btnBuscar" onAction="#btnBuscarAction" prefHeight="35.0" text="Buscar" />
+        <TextField fx:id="txtBuscar" prefWidth="300.0" promptText="Escribe para buscar..." styleClass="campo_busqueda" />
+        <Button fx:id="btnBuscar" onAction="#btnBuscarAction" prefHeight="35.0" text="Buscar">
+         <graphic>
+            <FontAwesomeIconView glyphName="BINOCULARS" />
+         </graphic></Button>
     </HBox>
 
     <!-- Tabla -->
-    <TableView fx:id="tablaMarcas" styleClass="tabla_Alumnos" VBox.vgrow="ALWAYS">
+    <TableView fx:id="tablaMarcas" styleClass="tabla_Alumnos" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="colCodigo" prefWidth="150.0" styleClass="Columna-Codigo" text="Código Marca" />
             <TableColumn fx:id="colNombre" prefWidth="673.0" styleClass="Columna-nombre" text="Nombre" />

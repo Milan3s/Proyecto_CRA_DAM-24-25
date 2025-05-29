@@ -6,20 +6,29 @@ import utils.LoggerUtils;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import main.Session;
+import model.CentroEducativo;
 import model.Espacio;
 import model.Sede;
 
 public class EspacioDAO {
 
     private Connection conn;
+    private CentroEducativo centro;
 
     public EspacioDAO() {
         conn = DataBaseConection.getConnection();
+        centro = Session.getInstance().getCentroActivo();
     }
 
     public List<Sede> obtenerSedes() {
         List<Sede> listaSedes = new ArrayList<>();
         String query = "SELECT codigo_sede, nombre FROM sedes";
+        
+        if (centro != null) {
+            query += " WHERE codigo_centro = " + centro.getCodigoCentro();
+        }
+        
         try (PreparedStatement stmt = conn.prepareStatement(query); ResultSet rs = stmt.executeQuery()) {
 
             LoggerUtils.logQuery("ESPACIOS", "Cargar sedes para ComboBox", query);
@@ -37,7 +46,11 @@ public class EspacioDAO {
         List<Espacio> listaEspacios = new ArrayList<>();
         String query = "SELECT e.codigo_espacio, e.nombre, e.pabellon, e.planta, e.codigo_sede, s.nombre AS nombre_sede, e.numero_abaco "
                      + "FROM espacios e JOIN sedes s ON e.codigo_sede = s.codigo_sede";
-
+        
+        if (centro != null) {
+            query += " WHERE s.codigo_centro = " + centro.getCodigoCentro();
+        }
+        
         try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
             while (rs.next()) {
                 Espacio espacio = new Espacio(

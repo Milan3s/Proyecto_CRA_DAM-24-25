@@ -4,20 +4,20 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" prefHeight="1080.0" prefWidth="230.0" spacing="10.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SidebarController">
+<VBox fx:id="sidebar" alignment="TOP_CENTER" prefHeight="1080.0" prefWidth="230.0" spacing="10.0" stylesheets="@../styles/estilos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SidebarController">
 
     <!-- Nombre del usuario -->
-    <Label fx:id="labelUsuario" alignment="CENTER" prefHeight="65.0" prefWidth="200.0" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" textFill="WHITE" />
+    <Label fx:id="labelUsuario" alignment="CENTER" prefHeight="65.0" prefWidth="200.0" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" />
+   <Button onAction="#loadCentroEducativo" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Centros Educativos" />
+   <Button fx:id="btnDispositivos" onAction="#loadDispositivos" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Dispositivos" />
 
     <!-- Botón para Alumnos -->
     <Button onAction="#loadUsuarios" prefHeight="52.0" prefWidth="200.0" styleClass="btnAlumnos" text="Alumnos" />
-   <Button onAction="#loadCentroEducativo" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Centro Educativo" />
-   <Button fx:id="btnDispositivos" onAction="#loadDispositivos" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Dispositivos" />
+   <Button fx:id="btnPrestamos" onAction="#loadPrestamos" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Pŕestamos" />
+   <Button fx:id="btnCategorias" onAction="#loadCategorias" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Categorías" />
+   <Button fx:id="btnMarcas" onAction="#loadMarcas" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Marcas" />
    <Button fx:id="btnProveedores" onAction="#loadProveedores" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Proveedores" />
    <Button fx:id="btnSedes" onAction="#loadSedes" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Sedes" />
    <Button fx:id="btnEspacios" onAction="#loadEspacios" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Espacios" />
-   <Button fx:id="btnCategorias" onAction="#loadCategorias" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Categorías" />
-   <Button fx:id="btnMarcas" onAction="#loadMarcas" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Marcas" />
    <Button fx:id="btnProgramas" onAction="#loadProgramas" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Programas educativos" />
-   <Button fx:id="btnPrestamos" onAction="#loadPrestamos" prefHeight="52.0" prefWidth="200.0" styleClass="btnCentroEducativo" text="Pŕestamos" />
 </VBox>

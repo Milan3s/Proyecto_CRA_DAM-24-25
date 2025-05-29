@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootPane" prefHeight="1080.0" prefWidth="1360.0" 
-            xmlns="http://javafx.com/javafx/23.0.1" 
-            xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="controller.DashboardController">
+<BorderPane fx:id="rootPane" prefHeight="1080.0" prefWidth="1360.0" stylesheets="@../styles/estilos.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
 
     <!-- Sidebar reutilizable -->
     <left>
@@ -22,4 +22,23 @@
             </children>
         </StackPane>
     </center>
+   <top>
+      <HBox fx:id="top_bar" prefHeight="25.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="labelUsuario" text="Nombre usuario">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelCentro" text="Centro activo">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets left="10.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
 </BorderPane>

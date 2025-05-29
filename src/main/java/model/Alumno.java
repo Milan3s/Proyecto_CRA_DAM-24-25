@@ -53,9 +53,10 @@ public class Alumno {
      * @param codigo
      * @param nombre 
      */
-    public Alumno(int codigo, String nombre) {
+    public Alumno(int codigo, String nombre, String curso) {
         this.codigo = codigo;
         this.nombre = nombre;
+        this.curso = curso;
     }
 
     // ===================
