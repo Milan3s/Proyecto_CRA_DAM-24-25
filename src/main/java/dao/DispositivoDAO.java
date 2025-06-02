@@ -215,6 +215,22 @@ public class DispositivoDAO {
         }
     }
     
+    public int buscarCodigoXSerie(String numSerie) {
+        int codigoDisp = -1;
+        String sql = "SELECT codigo_dispositivo FROM dispositivos WHERE num_serie = '" + numSerie + "'";
+        
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                codigoDisp = rs.getInt("codigo_dispositivo");
+            }
+            
+        } catch (SQLException e) {
+            LoggerUtils.logError("DISPOSITIVOS", "Error en buscarCodigoXSerie" + e.getMessage(), e);
+        }
+        
+        return codigoDisp;
+    }
+    
     private void setIntOrNull(PreparedStatement stmt, int index, Integer value) throws SQLException {
         // Método para evitar un error al asignar valor a un parámetro del PreparedStatement correspondiente
         // al identificador de un objeto si dicho objeto es null

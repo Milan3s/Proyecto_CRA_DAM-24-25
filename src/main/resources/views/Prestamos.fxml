@@ -27,14 +27,24 @@
       </Label>
       <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="830.0" spacing="20.0">
          <children>
-            <Button fx:id="btnNuevo" disable="true" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo">
+            <Button fx:id="btnNuevo" disable="true" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo préstamo">
                <graphic>
                   <FontAwesomeIconView glyphName="PLUS" />
                </graphic></Button>
-            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar">
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar préstamo">
                <graphic>
                   <FontAwesomeIconView glyphName="TRASH" />
                </graphic></Button>
+            <Button fx:id="btnImportar" mnemonicParsing="false" onAction="#btnImportarAction" text="Impotar">
+               <graphic>
+                  <FontAwesomeIconView glyphName="DOWNLOAD" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnExportar" mnemonicParsing="false" onAction="#btnExportarAction" text="Exportar">
+               <graphic>
+                  <FontAwesomeIconView glyphName="UPLOAD" />
+               </graphic>
+            </Button>
          </children>
       </HBox>
       <GridPane maxWidth="800.0">

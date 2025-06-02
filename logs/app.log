@@ -1575,3 +1575,48 @@
 [2025-05-30 00:35:02] [INFO   ] [ESPACIOS] Cargando lista de espacios...
 [2025-05-30 00:35:11] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
 [2025-05-30 00:35:11] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-02 00:06:40] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-02 00:06:40] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-02 00:06:40] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-02 00:06:40] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-02 00:06:40] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-02 00:06:40] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-02 00:06:48] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-02 00:06:48] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-02 00:06:48] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-02 19:40:24] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-02 19:40:24] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-02 19:40:24] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-02 19:40:24] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-02 19:40:24] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-02 19:40:24] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-03 00:26:25] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-03 00:26:25] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-03 00:26:25] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-03 00:26:25] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-03 00:26:25] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-03 00:26:25] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-03 00:32:37] [INFO   ] [PRESTAMOS] Préstamo eliminado: 4
+[2025-06-03 00:32:41] [INFO   ] [PRESTAMOS] Préstamo eliminado: 2
+[2025-06-03 00:32:46] [INFO   ] [PRESTAMOS] Préstamo eliminado: 1
+[2025-06-03 00:32:50] [INFO   ] [PRESTAMOS] Préstamo eliminado: 1
+[2025-06-03 00:54:42] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-03 00:54:42] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-03 00:54:42] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-03 00:54:42] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-03 00:54:42] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-03 00:54:42] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-03 00:56:06] [INFO   ] [PRESTAMOS] Préstamo eliminado: 4
+[2025-06-03 00:56:11] [INFO   ] [PRESTAMOS] Préstamo eliminado: 2
+[2025-06-03 00:56:15] [INFO   ] [PRESTAMOS] Préstamo eliminado: 1
+[2025-06-03 01:00:54] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-03 01:00:54] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-03 01:00:54] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-03 01:00:54] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-03 01:00:54] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-03 01:00:54] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio

@@ -1,8 +1,10 @@
 package utils;
 
 import java.io.File;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.function.Function;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
@@ -52,6 +54,21 @@ public class Utilidades {
                 return (string != null && !string.isEmpty()) ? LocalDate.parse(string, formatFecha) : null;
             }
         });
+    }
+    
+    // Convierte una cadena de fecha en formato dd/mm/aaaa a un tipo Date de SQL
+    public static Date convertirFecha(String sFecha) {
+        if (sFecha == null || sFecha.isEmpty()) {
+            return null;
+        }
+
+        try {
+            DateTimeFormatter formatFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate fechaLocal = LocalDate.parse(sFecha, formatFecha);
+            return Date.valueOf(fechaLocal);
+        } catch (DateTimeParseException e) {
+            return null;
+        }       
     }
     
     // Para seleccionar un fichero mediante el selector de archivos del sistema

@@ -185,4 +185,20 @@ public class AlumnosDAO {
 
         return listaFiltrada;
     }
+    
+    public int buscarCodigoXnre(String nre) {
+        int codigoAlu = -1;
+        String sql = "SELECT codigo_alumno FROM alumnos WHERE nre = '" + nre + "'";
+        
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                codigoAlu = rs.getInt("codigo_alumno");
+            }
+            
+        } catch (SQLException e) {
+            LoggerUtils.logError("ALUMNOS", "Error en buscarCodigoXnre" + e.getMessage(), e);
+        }
+        
+        return codigoAlu;
+    }
 }

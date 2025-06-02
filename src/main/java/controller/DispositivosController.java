@@ -476,7 +476,7 @@ public class DispositivosController implements Initializable {
             // Hay que guardarlo con codificación ISO-8859-1 para que los acentos se muestren correctamente al abrirlo con Excel
             try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fichero), "ISO-8859-1"))) {
                 // Línea de cabecera
-                bw.write("Nombre;Modelo;Marca;Categoria;NumSerie;Fecha_adquisicion;Mac;Imei;Num_etiqueta;Alumno;Curso;Sede;Espacio;Num_abaco;Proveedor;ProgramaE;Comentario\n");
+                bw.write("Nombre;Modelo;Marca;Categoria;NumSerie;Fecha_adquisicion;Mac;Imei;Num_etiqueta;Prestado;Alumno;Curso;Sede;Espacio;Num_abaco;Proveedor;ProgramaE;Comentario\n");
                 
                 String linea = "";
                 String numEtiq = "";
@@ -492,6 +492,7 @@ public class DispositivosController implements Initializable {
                     linea += disp.getMac() != null ? disp.getMac() + ";" : ";";
                     linea += disp.getImei() != null ? disp.getImei() + ";" : ";";
                     linea += String.valueOf(disp.getNum_etiqueta()) + ";";
+                    linea += disp.isPrestado() ? "Sí;" : ";";
                     linea += disp.getAlumno() != null ? disp.getAlumno().getNombre() + ";" : ";";
                     linea += disp.getAlumno() != null ? disp.getAlumno().getCurso() + ";" : ";";
                     linea += disp.getSede() != null ? disp.getSede().getNombre() + ";" : ";";
@@ -505,7 +506,7 @@ public class DispositivosController implements Initializable {
                 mostrarAlerta2("Éxito", "Exportación realizada.", Alert.AlertType.INFORMATION);
                 
             } catch (IOException e) {
-                LoggerUtils.logError("IMPORTACION", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
+                LoggerUtils.logError("EXPORTACIÓN", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
             }
         }
     }
