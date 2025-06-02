@@ -7,18 +7,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-//import javafx.geometry.Rectangle2D;
-//import javafx.stage.Screen;
 import utils.DataBaseConection;
 
 public class App extends Application {
     private static Stage primaryStage;
 
     @Override
-    public void start(Stage stage) throws IOException {    
+    public void start(Stage stage) throws IOException {
         primaryStage = stage;
-        //loadView("/views/Acceso");
         //loadView("/views/Dashboard");
+        //loadView("/views/Proveedores");
         loadView("/views/Espacio");
         stage.setTitle("Sistema CRA");
         stage.show();
@@ -30,26 +28,24 @@ public class App extends Application {
         }));
     }
 
+    // Cambia este método a public static
     public static void loadView(String fxml) throws IOException {
         FXMLLoader loader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         Parent root = loader.load();
         
+        boolean wasMaximized = primaryStage.isMaximized();
+        double width = primaryStage.getWidth();
+        double height = primaryStage.getHeight();
+        
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         
-        /*
-        // Se obtiene la resolución de pantalla
-        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        
-        // Se pone a pantalla completa
-        primaryStage.setX(screenBounds.getMinX());
-        primaryStage.setY(screenBounds.getMinY());
-        primaryStage.setWidth(screenBounds.getWidth());
-        primaryStage.setHeight(screenBounds.getHeight());
-        
-        // No permitir cambiar tamaño
-        primaryStage.setResizable(false);
-        */
+        if (wasMaximized) {
+            primaryStage.setMaximized(true);
+        } else {
+            primaryStage.setWidth(Math.max(width, 1980));
+            primaryStage.setHeight(Math.max(height, 1080));
+        }
     }
 
     // Añade este método si necesitas cargar FXML directamente
