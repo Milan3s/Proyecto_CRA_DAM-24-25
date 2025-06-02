@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -19,18 +20,27 @@
       </Label>
       <HBox alignment="CENTER_LEFT" prefHeight="45.0" spacing="20.0">
          <children>
-            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo Programa" />
-            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar Programa" />
+            <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo Programa">
+               <graphic>
+                  <FontAwesomeIconView glyphName="PLUS" />
+               </graphic></Button>
+            <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar Programa">
+               <graphic>
+                  <FontAwesomeIconView glyphName="TRASH" />
+               </graphic></Button>
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="45.0" spacing="10.0">
          <children>
             <Label text="Buscar:" />
-            <TextField fx:id="txtBuscar" prefWidth="350.0" promptText="Escribe para buscar..." />
-            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#btnBuscarAction" text="Buscar" />
+            <TextField fx:id="txtBuscar" prefWidth="300.0" promptText="Escribe para buscar..." />
+            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#btnBuscarAction" text="Buscar">
+               <graphic>
+                  <FontAwesomeIconView glyphName="BINOCULARS" />
+               </graphic></Button>
          </children>
       </HBox>
-      <TableView fx:id="tablaProgramas" onMouseClicked="#capturarClick" VBox.vgrow="ALWAYS">
+      <TableView fx:id="tablaProgramas" onMouseClicked="#capturarClick" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn fx:id="colCodigo" prefWidth="150.0" text="Código Programa" />
           <TableColumn fx:id="colNombre" prefWidth="673.0" text="Nombre" />

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -8,31 +10,50 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controller.EspacioController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EspacioController">
     
-    <VBox spacing="10" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+    <VBox spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         
         <!-- Título -->
-        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Gestión de Espacios Educativos" />
+        <Label text="Espacios Educativos">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
 
         <!-- Botones principales -->
         <HBox spacing="10">
-            <Button fx:id="btnNuevoEspacio" onAction="#btnActionNuevoEspacio" text="Nuevo Espacio" />
-            <Button fx:id="btnEliminarEspacio" onAction="#btnActionEliminarEspacio" text="Eliminar Espacio" />
-            <Button fx:id="btnImportar" onAction="#btnActionImportar" text="Importar" />
-            <Button fx:id="btnExportar" onAction="#btnActionExportar" text="Exportar" />
+            <Button fx:id="btnNuevoEspacio" onAction="#btnActionNuevoEspacio" text="Nuevo Espacio">
+            <graphic>
+               <FontAwesomeIconView glyphName="PLUS" />
+            </graphic></Button>
+            <Button fx:id="btnEliminarEspacio" onAction="#btnActionEliminarEspacio" text="Eliminar Espacio">
+            <graphic>
+               <FontAwesomeIconView glyphName="TRASH" />
+            </graphic></Button>
+            <Button fx:id="btnImportar" onAction="#btnActionImportar" text="Importar">
+            <graphic>
+               <FontAwesomeIconView glyphName="DOWNLOAD" />
+            </graphic></Button>
+            <Button fx:id="btnExportar" onAction="#btnActionExportar" text="Exportar">
+            <graphic>
+               <FontAwesomeIconView glyphName="UPLOAD" />
+            </graphic></Button>
         </HBox>
 
         <!-- Búsqueda -->
         <HBox spacing="10">
             <Label text="Buscar:" />
-            <TextField fx:id="txtBuscarEspacio" promptText="Nombre, pabellón, planta..." />
-            <Button fx:id="btnBuscarEspacio" onAction="#btnActionBuscarEspacio" text="Buscar" />
+            <TextField fx:id="txtBuscarEspacio" prefWidth="300.0" promptText="Escribe para buscar..." />
+            <Button fx:id="btnBuscarEspacio" onAction="#btnActionBuscarEspacio" text="Buscar">
+            <graphic>
+               <FontAwesomeIconView glyphName="BINOCULARS" />
+            </graphic></Button>
         </HBox>
 
         <!-- Tabla de espacios -->
-        <TableView fx:id="tablaEspacios" prefHeight="500" VBox.vgrow="ALWAYS">
+        <TableView fx:id="tablaEspacios" prefHeight="500" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
             <columns>
                 <TableColumn fx:id="colCodigoEspacio" prefWidth="100.0" text="Código" />
                 <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
@@ -42,6 +63,9 @@
                 <TableColumn fx:id="colNumAbaco" prefWidth="150.0" text="Nº Ábaco" />
             </columns>
         </TableView>
+      <padding>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </padding>
 
     </VBox>
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -51,6 +52,8 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Label text="Nombre:" />
@@ -82,8 +85,10 @@
                   <TextField fx:id="txtImei" GridPane.columnIndex="4" GridPane.rowIndex="5" />
                   <TextField fx:id="txtNetiqueta" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                   <DatePicker fx:id="dtpFecha" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField fx:id="txtAlumno" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="txtAlumno" disable="true" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                   <Button fx:id="btnPrestar" mnemonicParsing="false" onAction="#btnPrestarAction" text="Préstamo" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+                  <Label text="Observaciones" GridPane.rowIndex="10" />
+                  <TextArea fx:id="txtObservaciones" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.rowIndex="10" GridPane.rowSpan="2" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -96,8 +101,14 @@
          <bottom>
             <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#btnGuardarAction" text="Guardar" />
-                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#btnCancelarAction" text="Cancelar" />
+                  <Button fx:id="btnGuardar" mnemonicParsing="false" onAction="#btnGuardarAction" prefWidth="120.0" text="Guardar">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SAVE" />
+                     </graphic></Button>
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#btnCancelarAction" prefWidth="120.0" text="Cancelar">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="UNDO" />
+                     </graphic></Button>
                </children>
             </HBox>
          </bottom>

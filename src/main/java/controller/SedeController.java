@@ -58,8 +58,6 @@ public class SedeController {
     @FXML
     private Button btnEliminarSede;
     @FXML
-    private Button btnEliminarTodasSedes;
-    @FXML
     private Button btnBuscarSede;
 
     public void initialize() {
@@ -98,7 +96,6 @@ public class SedeController {
         }
     }
 
-    @FXML
     private void btnEliminarTodasSedesAction() {
         int eliminadas = sedeDAO.eliminarTodasSedes();
         if (eliminadas > 0) {

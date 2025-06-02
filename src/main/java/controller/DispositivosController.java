@@ -75,7 +75,7 @@ public class DispositivosController implements Initializable {
     @FXML
     private TableColumn<Dispositivo, String> colAlumno;
     @FXML
-    private TableColumn<Dispositivo, Integer> colCurso;
+    private TableColumn<Dispositivo, String> colCurso;
     @FXML
     private TableColumn<Dispositivo, String> colFechaAdqui;
     @FXML
@@ -120,6 +120,8 @@ public class DispositivosController implements Initializable {
     private ComboBox<ProgramasEdu> cboxPrograma;
     @FXML
     private ComboBox<Proveedor> cboxProveedor;
+    @FXML
+    private ComboBox<String> cboxPrestado;
     
     private DispositivoDAO dispDAO = new DispositivoDAO();
     private ProveedorDAO provDAO = new ProveedorDAO();
@@ -130,8 +132,8 @@ public class DispositivosController implements Initializable {
     
     private ObservableList<Categoria> listaCategorias = FXCollections.observableArrayList();
     private ObservableList<Marca> listaMarcas = FXCollections.observableArrayList();
-    private ObservableList<ProgramasEdu> listaProgramas = FXCollections.observableArrayList();
     private ObservableList<Sede> listaSedes = FXCollections.observableArrayList();
+    private ObservableList<ProgramasEdu> listaProgramas = FXCollections.observableArrayList();
     private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
     
     @Override
@@ -151,7 +153,6 @@ public class DispositivosController implements Initializable {
         colMac.setCellValueFactory(new PropertyValueFactory<>("mac"));
         colImei.setCellValueFactory(new PropertyValueFactory<>("imei"));
         colNumEti.setCellValueFactory(new PropertyValueFactory<>("num_etiqueta"));
-        //colPrestado.setCellValueFactory(new PropertyValueFactory<>("prestado"));
         colFechaAdqui.setCellValueFactory(cellData -> {
             Dispositivo disp = cellData.getValue();
             if (disp.getFecha_adquisicion()!= null) {
@@ -229,7 +230,15 @@ public class DispositivosController implements Initializable {
             if (disp.isPrestado()) {
                 return new SimpleStringProperty("Sí");
             } else {
-                return new SimpleStringProperty("No");
+                return new SimpleStringProperty("");
+            }
+        });
+        colCurso.setCellValueFactory(cellData -> {
+            Dispositivo disp = cellData.getValue();
+            if (disp.getAlumno() != null) {
+                return new SimpleStringProperty(disp.getAlumno().getCurso());
+            } else {
+                return new SimpleStringProperty("");
             }
         });
     }
@@ -247,6 +256,7 @@ public class DispositivosController implements Initializable {
         Sede sedeFilt = cboxSede.getValue();
         ProgramasEdu programaFilt = cboxPrograma.getValue();
         Proveedor provFilt = cboxProveedor.getValue();
+        String prestFilt = cboxPrestado.getValue();
         
         FilteredList<Dispositivo> filteredList = new FilteredList<>(listaDisposit, p -> true);
         
@@ -257,6 +267,7 @@ public class DispositivosController implements Initializable {
             boolean coincSede = true;
             boolean coincProg = true;
             boolean coincProv = true;
+            boolean coincPrest = true;
             
             // Filtro por nombre
             if (nombreFilt != null && !nombreFilt.isEmpty()) {
@@ -288,7 +299,12 @@ public class DispositivosController implements Initializable {
                 coincProv = dispositivo.getProveedor() != null && dispositivo.getProveedor().getCodigo() == provFilt.getCodigo();
             }
             
-            return coincNombre && coincCateg && coincMarca && coincSede && coincProg && coincProv;
+            // Filtro por prestado
+            if (prestFilt != null) {
+                coincPrest = dispositivo.isPrestado() == prestFilt.equals("Sí");
+            }
+            
+            return coincNombre && coincCateg && coincMarca && coincSede && coincProg && coincProv && coincPrest;
         });
         
         tablaDisp.setItems(filteredList);
@@ -378,6 +394,12 @@ public class DispositivosController implements Initializable {
             cboxProveedor.setItems(listaProveedores);
             Utilidades.cargarComboBox(cboxProveedor, listaProveedores, Proveedor::getNombre);
             
+            // Prestado
+            ObservableList<String> opcPrest = FXCollections.observableArrayList();
+            opcPrest.add("Sí");
+            opcPrest.add("No");       
+            cboxPrestado.setItems(opcPrest);
+            
         } catch (Exception e) {
             LoggerUtils.logError("DISPOSITIVOS", "Error al cargar comboBox: " + e.getMessage(), e);
         }
@@ -391,6 +413,7 @@ public class DispositivosController implements Initializable {
         cboxSede.setValue(null);
         cboxPrograma.setValue(null);
         cboxProveedor.setValue(null);
+        cboxPrestado.setValue(null);
         
         tablaDisp.setItems(listaDisposit);
     }
@@ -409,9 +432,9 @@ public class DispositivosController implements Initializable {
             String mac;
             String imei;
             int numEtiq;
-            //proveedor;
-            //alumno
-            String comentario;
+            String comentReg;
+            String observaciones;
+            boolean prestado = false;
             
             try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fichero)))) {
                 String linea = "";
@@ -426,12 +449,12 @@ public class DispositivosController implements Initializable {
                     mac = items[4];
                     imei = items[5];
                     numEtiq = Integer.parseInt(items[6]);
-                    //proveedor = items[7];
-                    //alumno = items[8];
-                    comentario = items[9];
+                    comentReg = items[7];
+                    observaciones = items[8];
                     
-                    //Dispositivo disp = new Dispositivo(0, nombre, modelo, nSerie, fecha_adq, mac, imei, numEtiq, proveedor, alumno, comentario);
-                    //dispDAO.insertarDispositivo(disp);
+                    Dispositivo disp = new Dispositivo(0, nombre, modelo, nSerie, fecha_adq, mac, imei, numEtiq, null, null, comentReg
+                        , null, null, null, null, null, prestado, observaciones);
+                    dispDAO.insertarDispositivo(disp);
                 }
                 cargarDatos();
                 mostrarAlerta2("Éxito", "Importación realizada.", Alert.AlertType.INFORMATION);
@@ -453,23 +476,29 @@ public class DispositivosController implements Initializable {
             // Hay que guardarlo con codificación ISO-8859-1 para que los acentos se muestren correctamente al abrirlo con Excel
             try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fichero), "ISO-8859-1"))) {
                 // Línea de cabecera
-                bw.write("Nombre;Modelo;NumSerie;Fecha_adquisicion;Mac;Imei;Num_etiqueta;Proveedor;Alumno;Comentario\n");
+                bw.write("Nombre;Modelo;Marca;Categoria;NumSerie;Fecha_adquisicion;Mac;Imei;Num_etiqueta;Alumno;Curso;Sede;Espacio;Num_abaco;Proveedor;ProgramaE;Comentario\n");
                 
                 String linea = "";
                 String numEtiq = "";
                 
                 // Se recorren los elementos del ObservableList y se van grabando las líneas en el fichero destino
                 for (Dispositivo disp : listaDisposit) {
-                    //numEtiq = String.valueOf(disp.getNum_etiqueta());
                     linea = disp.getNombre() != null ? disp.getNombre() + ";" : ";";
                     linea += disp.getModelo() != null ? disp.getModelo() + ";" : ";";
+                    linea += disp.getMarca() != null ? disp.getMarca().getNombre() + ";" : ";";
+                    linea += disp.getCategoria() != null ? disp.getCategoria().getNombre() + ";" : ";";
                     linea += disp.getNum_serie() != null ? disp.getNum_serie() + ";" : ";";
                     linea += disp.getFecha_adquisicion() != null ? disp.getFecha_adquisicion() + ";" : ";";
                     linea += disp.getMac() != null ? disp.getMac() + ";" : ";";
                     linea += disp.getImei() != null ? disp.getImei() + ";" : ";";
                     linea += String.valueOf(disp.getNum_etiqueta()) + ";";
-                    linea += disp.getProveedor() != null ? disp.getProveedor().getNombre() + ";" : ";";
                     linea += disp.getAlumno() != null ? disp.getAlumno().getNombre() + ";" : ";";
+                    linea += disp.getAlumno() != null ? disp.getAlumno().getCurso() + ";" : ";";
+                    linea += disp.getSede() != null ? disp.getSede().getNombre() + ";" : ";";
+                    linea += disp.getEspacio() != null ? disp.getEspacio().getNombre() + ";" : ";";
+                    linea += disp.getEspacio() != null ? disp.getEspacio().getNumAbaco() + ";" : ";";
+                    linea += disp.getProveedor() != null ? disp.getProveedor().getNombre() + ";" : ";";
+                    linea += disp.getProgramae() != null ? disp.getProgramae().getNombre() + ";" : ";";
                     linea += disp.getComentario() != null ? disp.getComentario() + ";" : ";";
                     bw.write(linea + "\n");
                 }

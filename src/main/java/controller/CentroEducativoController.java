@@ -154,9 +154,9 @@ public class CentroEducativoController implements Initializable {
         boolean eliminado = centroEducativoDAO.eliminarCentro(seleccionado.getCodigoCentro());
         if (eliminado) {
             LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro eliminado → Código: " + seleccionado.getCodigoCentro());
-            mostrarAlerta("Centro eliminado", "Se ha eliminado correctamente el centro.", Alert.AlertType.INFORMATION);
+            mostrarAlerta2("Centro eliminado", "Se ha eliminado correctamente el centro.", Alert.AlertType.INFORMATION);
         } else {
-            mostrarAlerta("Error", "No se pudo eliminar el centro.", Alert.AlertType.ERROR);
+            mostrarAlerta2("Error", "No se pudo eliminar el centro.", Alert.AlertType.ERROR);
         }
         cargarDatos();
     }
@@ -181,6 +181,7 @@ public class CentroEducativoController implements Initializable {
     }
 
     // Utilidad para mostrar alertas simples
+    /*
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
         Alert alerta = new Alert(tipo);
         alerta.setTitle(titulo);
@@ -188,7 +189,7 @@ public class CentroEducativoController implements Initializable {
         alerta.setContentText(mensaje);
         alerta.showAndWait();
     }
-
+    */
     // Acción: Importar desde CSV usando seleccFichero
     @FXML
     private void btnImportarAction(ActionEvent event) {
@@ -210,11 +211,11 @@ public class CentroEducativoController implements Initializable {
                 }
 
                 cargarDatos();
-                mostrarAlerta("Importación", "Centros importados correctamente.", Alert.AlertType.INFORMATION);
+                mostrarAlerta2("Importación", "Centros importados correctamente.", Alert.AlertType.INFORMATION);
 
             } catch (IOException e) {
                 LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al importar centros: " + fichero, e);
-                mostrarAlerta("Error", "No se pudo importar el archivo.", Alert.AlertType.ERROR);
+                mostrarAlerta2("Error", "No se pudo importar el archivo.", Alert.AlertType.ERROR);
             }
         }
     }
@@ -245,11 +246,11 @@ public class CentroEducativoController implements Initializable {
                     bw.write(linea + "\n");
                 }
 
-                mostrarAlerta("Exportación", "Centros exportados correctamente.", Alert.AlertType.INFORMATION);
+                mostrarAlerta2("Exportación", "Centros exportados correctamente.", Alert.AlertType.INFORMATION);
 
             } catch (IOException e) {
                 LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al exportar centros: " + fichero, e);
-                mostrarAlerta("Error", "No se pudo exportar el archivo.", Alert.AlertType.ERROR);
+                mostrarAlerta2("Error", "No se pudo exportar el archivo.", Alert.AlertType.ERROR);
             }
         }
     }
@@ -260,6 +261,9 @@ public class CentroEducativoController implements Initializable {
         if (seleccionado != null) {
             // Establecer centro activo
             Session.getInstance().setCentroActivo(seleccionado);
+            Session.getInstance().notificarCentro(seleccionado);
+            
+            mostrarAlerta2("", "Centros activo establecido.", Alert.AlertType.INFORMATION);
           
         } else {
             mostrarAlerta2("Sin selección", "Por favor, seleccione un centro.", Alert.AlertType.WARNING);

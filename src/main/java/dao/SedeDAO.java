@@ -6,22 +6,29 @@ import utils.LoggerUtils;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import main.Session;
+import model.CentroEducativo;
 import model.Sede;
 
 public class SedeDAO {
 
     private Connection conn;
+    private CentroEducativo centro;
 
     public SedeDAO() {
         conn = DataBaseConection.getConnection();
+        centro = Session.getInstance().getCentroActivo();
     }
-
     
     public List<Sede> obtenerSede() {
         List<Sede> lista = new ArrayList<>();
         String query = "SELECT codigo_sede, nombre, calle, localidad, cp, municipio, provincia, telefono, codigo_centro FROM sedes";
         Statement stmt = null;
         ResultSet rs = null;
+        
+        if (centro != null) {
+            query += " WHERE codigo_centro = " + centro.getCodigoCentro();
+        }
 
         try {
             stmt = conn.createStatement();

@@ -88,19 +88,54 @@ public class PrestamosMantenimController implements Initializable {
     }    
 
     public void setPrestamo(Prestamo prest, Dispositivo disp) {
-        if (null != prest) {
-            this.prestamo = prest;
-        } else if (null != disp) {
-            this.dispositivo = disp;
-            txtNombreDisp.setText(disp.getNombre());
-            txtNetiqueta.setText(String.valueOf(disp.getNum_etiqueta()));
-            txtMarca.setText(disp.getMarca().getNombre());
-            txtModelo.setText(disp.getModelo());
-            txtNserie.setText(disp.getNum_serie());
-            txtImei.setText(disp.getImei());
-        }
+        Utilidades.formatearFecha(dtpFechaIni);
+        Utilidades.formatearFecha(dtpFechaFin);
         
         cargarCombos();
+        
+        if (null != prest) {
+            this.prestamo = prest;          
+            this.dispositivo = disp;
+ 
+            cargarDatosDispositivo();
+            
+            Alumno alumno = prest.getAlumno();
+            cboxSede.setValue(new Sede(alumno.getCodigo_sede(), alumno.getNombreSede()));
+            cboxAlumno.setValue(alumno);
+            txtCurso.setText(alumno.getCurso());
+            txtNRE.setText(alumno.getNre());
+            dtpFechaIni.setValue(prest.getFecha_inicio().toLocalDate());
+            
+            if (null != prest.getFecha_fin()) {
+                dtpFechaFin.setValue(prest.getFecha_fin().toLocalDate());
+                dtpFechaFin.setDisable(true);
+                btnDevolver.setDisable(true);
+            }
+            
+            // Deshabilitar componentes
+            cboxSede.setDisable(true);
+            cboxAlumno.setDisable(true);
+            txtCurso.setDisable(true);
+            txtNRE.setDisable(true);
+            dtpFechaIni.setDisable(true);
+            btnPrestar.setDisable(true);
+            
+        } else if (null != disp) {
+            // Si el préstamo es nulo pero el dispositivo no es porque se ha llamado desde 
+            // el formulario de mantenimiento de dispositivos.
+            this.dispositivo = disp;
+
+            cargarDatosDispositivo();
+        }
+    }
+    
+    private void cargarDatosDispositivo() {
+        txtNombreDisp.setText(dispositivo.getNombre());
+        txtNetiqueta.setText(String.valueOf(dispositivo.getNum_etiqueta()));
+        txtMarca.setText(dispositivo.getMarca().getNombre());
+        txtModelo.setText(dispositivo.getModelo());
+        txtNserie.setText(dispositivo.getNum_serie());
+        txtImei.setText(dispositivo.getImei());
     }
     
     @FXML
@@ -115,7 +150,9 @@ public class PrestamosMantenimController implements Initializable {
 
     @FXML
     private void btnPrestarAction(ActionEvent event) {
-        if (null == cboxAlumno.getValue()) {
+        Alumno alumno = cboxAlumno.getValue();
+        
+        if (null == alumno) {
             mostrarAlerta2("", "Deber informar un alumno.", Alert.AlertType.WARNING);
             return;
         }
@@ -127,14 +164,54 @@ public class PrestamosMantenimController implements Initializable {
         
         int codigoDisp = dispositivo.getCodigo();
         Date fechaIni = Date.valueOf(dtpFechaIni.getValue());
-        prestamoDAO.insertarPrestamo(codigoDisp, cboxAlumno.getValue().getCodigo(), fechaIni);
+        boolean resul = prestamoDAO.insertarPrestamo(codigoDisp, alumno.getCodigo(), fechaIni);
         
-        // Se actualiza el campo prestado en el dispositivo
-        dispositivoDAO.actualizarPrestado(codigoDisp, true);
+        if (resul) {
+            // Se actualiza el campo prestado en el dispositivo
+            dispositivoDAO.actualizarPrestado(codigoDisp, true);
+            dispositivo.setPrestado(true);
+            
+            // Se asigna el alumno y la sede correspondiente 
+            // para que se muestren en el formulario de mantenimiento de dispositivos
+            dispositivo.setAlumno(alumno);
+            dispositivo.setSede(new Sede(alumno.getCodigo_sede(), alumno.getNombreSede()));
+            
+            mostrarAlerta2("Éxito", "Préstamo realizado.", Alert.AlertType.INFORMATION);
+        }
+        
+        cerrarVentana();
     }
 
     @FXML
     private void btnDevolverAction(ActionEvent event) {
+        if (null == this.prestamo) {
+            mostrarAlerta2("", "No se puede devolver sin haber realizado el préstamo.", Alert.AlertType.WARNING);
+            return;
+        }
+        
+        if (null == dtpFechaFin.getValue()) {
+            mostrarAlerta2("", "Deber informar la fecha de fin.", Alert.AlertType.WARNING);
+            return;
+        }
+        
+        int codigoDisp = dispositivo.getCodigo();
+        Date fechaFin = Date.valueOf(dtpFechaFin.getValue());
+        
+        // Se actualiza en el prestamo la fecha de fin
+        boolean resul = prestamoDAO.actualizarPrestamo(prestamo, fechaFin);
+        
+        if (resul) {
+            // Se actualiza el campo prestado en el dispositivo
+            dispositivoDAO.actualizarPrestado(codigoDisp, false);
+            
+            // Se desasigna el alumno y la sede
+            this.dispositivo.setAlumno(null);
+            //this.dispositivo.setSede(null);
+            
+            mostrarAlerta2("Éxito", "Devolución realizada.", Alert.AlertType.INFORMATION);
+        }
+        
+        cerrarVentana();
     }
     
     private void cargarCombos() {

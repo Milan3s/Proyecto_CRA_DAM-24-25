@@ -18,6 +18,7 @@ public class Dispositivo {
     private Espacio espacio;
     private ProgramasEdu programae;
     private boolean prestado;
+    private String observaciones;
     
     // Alumno actual que tiene el dispositivo prestado (solo para mostrar en el TableView)
     private Alumno alumno;
@@ -26,7 +27,8 @@ public class Dispositivo {
     private Sede sede;
 
     public Dispositivo(int codigo, String nombre, String modelo, String num_serie, Date fecha_adquisicion, String mac, String imei, int num_etiqueta
-        , Proveedor proveedor, Alumno alumno, String comentario, Categoria categoria, Marca marca, Espacio espacio, ProgramasEdu programae, Sede sede, boolean prestado) {
+        , Proveedor proveedor, Alumno alumno, String comentario, Categoria categoria, Marca marca, Espacio espacio, ProgramasEdu programae, Sede sede
+        , boolean prestado, String observaciones) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.modelo = modelo;
@@ -44,6 +46,17 @@ public class Dispositivo {
         this.programae = programae;
         this.sede = sede;
         this.prestado = prestado;
+    }
+    
+    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, String imei, int num_etiqueta, Categoria categoria, Marca marca) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.modelo = modelo;
+        this.num_serie = num_serie;
+        this.imei = imei;
+        this.num_etiqueta = num_etiqueta;
+        this.categoria = categoria;
+        this.marca = marca;
     }
     
     public Dispositivo(int codigo, String nombre) {
@@ -185,5 +198,13 @@ public class Dispositivo {
 
     public void setPrestado(boolean prestado) {
         this.prestado = prestado;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
     }
 }

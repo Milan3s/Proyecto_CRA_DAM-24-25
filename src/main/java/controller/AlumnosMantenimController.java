@@ -87,11 +87,11 @@ public class AlumnosMantenimController implements Initializable {
 
     // Guarda el alumno (nuevo o modificado)
     private void guardarAlumno() {
-        String nombre = txtNombre.getText().trim();
-        String curso = txtCurso.getText().trim();
-        String nre = txtNre.getText().trim();
-        String telTutor1 = txtTelTutor1.getText().trim();
-        String telTutor2 = txtTelTutor2.getText().trim();
+        String nombre = txtNombre.getText();
+        String curso = txtCurso.getText();
+        String nre = txtNre.getText();
+        String telTutor1 = txtTelTutor1.getText();
+        String telTutor2 = txtTelTutor2.getText();
         Sede sedeSeleccionada = cbox_sede.getValue();
 
         // Validación básica

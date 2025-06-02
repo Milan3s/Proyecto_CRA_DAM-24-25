@@ -67,22 +67,21 @@ public class SedeMantenimController implements Initializable {
     }
 
     private void guardarSede() {
-        String nombre = txtNombre.getText().trim();
-        String calle = txtCalle.getText().trim();
-        String localidad = txtLocalidad.getText().trim();
-        String cp = txtCP.getText().trim();
-        String municipio = txtMunicipio.getText().trim();
-        String provincia = txtProvincia.getText().trim();
-        String telefono = txtTelefono.getText().trim();
+        String nombre = txtNombre.getText();
+        String calle = txtCalle.getText();
+        String localidad = txtLocalidad.getText();
+        String cp = txtCP.getText();
+        String municipio = txtMunicipio.getText();
+        String provincia = txtProvincia.getText();
+        String telefono = txtTelefono.getText();
         Integer codigoCentro = comboCodigoCentro.getValue();
 
-        if (nombre.isEmpty() || calle.isEmpty() || localidad.isEmpty() || cp.isEmpty() ||
-                municipio.isEmpty() || provincia.isEmpty() || telefono.isEmpty() || codigoCentro == null) {
-            mostrarAlerta("Campos incompletos", "Por favor, completa todos los campos.", Alert.AlertType.WARNING);
+        if (null == nombre || nombre.isEmpty() || codigoCentro == null) {
+            mostrarAlerta("Campos incompletos", "Por favor, completa los campos obligatorios.", Alert.AlertType.WARNING);
             return;
         }
 
-        if (cp.length() > 5) {
+        if (null != cp && !cp.isEmpty() && cp.length() > 5) {
             mostrarAlerta("Código Postal inválido", "El código postal debe tener máximo 5 caracteres.", Alert.AlertType.WARNING);
             return;
         }

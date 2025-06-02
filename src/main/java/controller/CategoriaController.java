@@ -30,8 +30,6 @@ public class CategoriaController implements Initializable {
     @FXML
     private Button btnEliminarCat;
     @FXML
-    private Button btnEliminarTodos;
-    @FXML
     private TextField txtBuscar;
     @FXML
     private Button btnBuscar;
@@ -103,9 +101,6 @@ public class CategoriaController implements Initializable {
         }
     }
 
-    @FXML
-    private void btnActionEliminarTodos(ActionEvent event) {
-    }
 
     @FXML
     private void btnBuscarAction(ActionEvent event) {

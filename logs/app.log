@@ -225,39 +225,1262 @@
 [2025-05-05 18:20:08] [INFO   ] [REGISTRO] Intentando registrar usuario: david
 [2025-05-05 18:20:08] [INFO   ] [REGISTRO] CONSULTA → Registrar nuevo usuario
 [REGISTRO] SQL: INSERT INTO usuarios (usuario, email, password) VALUES (?, ?, ?)
-[2025-05-05 18:20:09] [INFO   ] [REGISTRO] Usuario registrado correctamente: david, Email: d@gmail.com
-[2025-05-05 18:20:09] [INFO   ] [REGISTRO] Redirección a pantalla de login
-[2025-05-05 18:20:13] [INFO   ] === SECCIÓN: ACCESO ===
-[2025-05-05 18:20:13] [INFO   ] [ACCESO] Intento de login con usuario: david
-[2025-05-05 18:20:13] [SEVERE ] [ACCESO] ERROR → Error al validar login
-[2025-05-05 18:20:13] [INFO   ] [ACCESO] Login fallido para el usuario: david
-[2025-05-05 18:20:39] [INFO   ] === SECCIÓN: ACCESO ===
-[2025-05-05 18:20:39] [INFO   ] [ACCESO] Intento de login con usuario: david
-[2025-05-05 18:20:39] [SEVERE ] [ACCESO] ERROR → Error al validar login
-[2025-05-05 18:20:39] [INFO   ] [ACCESO] Login fallido para el usuario: david
-[2025-05-05 18:20:41] [INFO   ] [ACCESO] Redirección a pantalla de registro
-[2025-05-05 18:20:48] [INFO   ] === SECCIÓN: REGISTRO ===
-[2025-05-05 18:20:48] [INFO   ] [REGISTRO] Intentando registrar usuario: t1
-[2025-05-05 18:20:48] [SEVERE ] [REGISTRO] ERROR → Error al registrar usuario en base de datos
-[2025-05-05 18:20:49] [INFO   ] [REGISTRO] Fallo al registrar usuario: t1
-[2025-05-05 18:20:52] [INFO   ] === SECCIÓN: REGISTRO ===
-[2025-05-05 18:20:52] [INFO   ] [REGISTRO] Intentando registrar usuario: t1
-[2025-05-05 18:20:52] [SEVERE ] [REGISTRO] ERROR → Error al registrar usuario en base de datos
-[2025-05-05 18:20:54] [INFO   ] [REGISTRO] Fallo al registrar usuario: t1
-[2025-05-05 18:20:54] [INFO   ] [REGISTRO] Redirección a pantalla de login
-[2025-05-05 18:20:57] [INFO   ] === SECCIÓN: ACCESO ===
-[2025-05-05 18:20:57] [INFO   ] [ACCESO] Intento de login con usuario: t1
-[2025-05-05 18:20:57] [SEVERE ] [ACCESO] ERROR → Error al validar login
-[2025-05-05 18:20:57] [INFO   ] [ACCESO] Login fallido para el usuario: t1
-[2025-05-07 00:49:57] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
-[2025-05-07 00:49:57] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 0
-[2025-05-07 00:49:59] [SEVERE ] [GENERAL] ERROR → Error al cargar alumnos.
-[2025-05-07 00:50:00] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
-[2025-05-07 00:50:00] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al cargar centros
-[2025-05-07 00:50:00] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 0
-[2025-05-12 10:31:12] [SEVERE ] [ALUMNOS] ERROR → Error al cargar alumnos
-[2025-05-12 10:31:21] [INFO   ] === SECCIÓN: ALUMNOS ===
-[2025-05-12 10:31:21] [SEVERE ] [ALUMNOS] ERROR → Error al cargar sedes
-[2025-05-12 10:31:41] [WARNING] [ALUMNOS] Faltan campos en el formulario.
-[2025-05-12 10:31:43] [SEVERE ] [ALUMNOS] ERROR → Error al cargar alumnos
-[2025-05-12 12:11:52] [SEVERE ] [SEDES] ERROR → Error al obtener sedes
+[2025-05-15 01:10:40] [INFO   ] [REGISTRO] Usuario registrado correctamente: antonio, Email: antonio@gmail.com
+[2025-05-15 01:10:43] [INFO   ] [REGISTRO] Redirección a pantalla de login
+[2025-05-15 01:11:02] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-15 01:11:02] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-15 01:11:02] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-15 01:11:02] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-15 01:11:02] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-15 01:11:02] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-15 01:11:22] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 01:11:22] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 01:11:22] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 19:44:52] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 19:45:19] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 19:45:39] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 19:45:39] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 19:45:39] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 19:45:46] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 19:52:38] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 23:09:05] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 23:09:06] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 23:09:06] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 23:10:35] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 23:10:35] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 23:10:35] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 23:10:44] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:10:44] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-15 23:11:09] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:11:09] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-15 23:14:17] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 23:14:44] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 23:14:44] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 23:14:44] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 23:15:39] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 23:15:47] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-15 23:15:47] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-15 23:15:47] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-15 23:16:13] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 23:16:57] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Not supported yet.
+[2025-05-15 23:23:11] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:23:11] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-15 23:23:17] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:23:17] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-15 23:25:14] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:25:14] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-15 23:25:29] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-15 23:25:29] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-16 00:08:24] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-16 00:08:24] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-16 17:04:22] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-16 17:04:22] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-16 17:05:08] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-16 17:05:08] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-17 08:48:23] [INFO   ] === SECCIÓN: CATEGORIAS ===
+[2025-05-17 08:48:30] [INFO   ] === SECCIÓN: CATEGORIAS ===
+[2025-05-17 08:51:13] [INFO   ] === SECCIÓN: CATEGORIAS ===
+[2025-05-17 08:56:31] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-17 08:56:42] [WARNING] [MARCAS] Campo nombre vacío en el formulario.
+[2025-05-17 08:57:00] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-17 08:57:21] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-17 11:51:04] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:51:36] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:51:47] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:53:05] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:53:12] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:56:26] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoría
+[2025-05-17 11:58:06] [SEVERE ] [CATEGORÍAS] ERROR → Error al abrir el formulario de categoríaError resolving onAction='#btnActionNuevaCategoria', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/Antonio/Documents/NetBeansProjects/proyecto_javafx_23/target/classes/views/CategoriaMantenim.fxml:25
+
+[2025-05-17 12:09:55] [WARNING] [CATEGORIAS] Campo nombre vacío en el formulario.
+[2025-05-17 13:35:57] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-17 13:35:57] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-17 13:36:13] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-17 13:36:13] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-17 13:36:16] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-17 13:36:16] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-17 13:36:16] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-17 16:44:23] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-17 16:44:23] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-17 16:57:24] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-05-17 16:57:34] [WARNING] [PROGRAMAS EDUCATIVOS] Campo nombre vacío en el formulario.
+[2025-05-17 16:57:45] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-05-17 16:59:31] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-17 16:59:31] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-17 16:59:31] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-17 16:59:31] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-17 16:59:31] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-17 16:59:45] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-17 16:59:45] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-17 16:59:50] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-17 16:59:50] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-17 17:00:07] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-17 17:00:19] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-17 17:00:19] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-17 17:00:19] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-17 17:00:19] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-17 17:00:19] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-17 17:00:23] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-17 17:00:23] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-17 17:00:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-17 17:00:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-17 17:00:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-17 17:01:02] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-17 17:01:02] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-17 17:01:02] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-17 17:01:06] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-17 17:01:14] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-17 17:01:14] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-17 17:01:47] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-17 17:01:47] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-18 17:09:21] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-18 17:09:21] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-18 17:09:21] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-18 17:09:21] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-18 17:09:21] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-18 17:09:21] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-18 17:09:29] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-18 17:09:29] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-18 17:09:29] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-18 17:09:38] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-18 17:09:59] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-18 17:09:59] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-18 17:11:41] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-18 17:11:41] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-18 17:11:51] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-18 17:11:51] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-18 17:12:05] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-18 17:12:05] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-18 17:12:05] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-18 17:12:29] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-18 17:12:29] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-18 17:13:23] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-18 17:13:23] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-18 17:13:46] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-18 17:13:46] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-18 17:13:46] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-18 17:14:10] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-18 17:14:10] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-18 17:14:10] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-19 19:31:48] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-19 19:31:48] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-19 19:31:48] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-19 19:31:48] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-19 19:31:48] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-19 19:31:49] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-19 19:31:53] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-19 19:31:53] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-19 19:31:53] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-19 19:35:58] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-19 19:35:58] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-19 19:35:58] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-19 19:35:58] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-19 19:35:58] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-19 19:35:58] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-19 19:36:01] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-19 19:36:01] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-19 19:36:01] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-19 19:36:21] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-19 19:36:21] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-19 19:36:21] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-19 19:36:25] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-19 19:36:27] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-19 19:36:27] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-19 19:37:20] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-19 19:37:20] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-19 19:39:03] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-19 19:39:03] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-19 19:39:03] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-19 19:39:03] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-19 19:39:03] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-19 19:39:03] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-19 19:48:02] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-19 19:48:02] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-19 19:48:02] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-19 19:48:02] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-19 19:48:02] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-19 19:48:02] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-19 19:48:14] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-19 19:48:14] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-19 19:48:14] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-19 19:48:18] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-19 19:48:20] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-19 19:48:20] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-19 19:55:07] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-19 19:55:08] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-19 19:55:08] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-19 19:55:08] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-19 19:55:08] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-19 19:55:08] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-19 23:23:46] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-19 23:23:46] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-19 23:23:46] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-19 23:23:46] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-19 23:23:46] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-19 23:23:47] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-19 23:23:50] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-19 23:23:50] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-19 23:23:50] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-19 23:23:58] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-19 23:24:00] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-19 23:24:00] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-19 23:25:14] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-19 23:25:14] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-19 23:43:23] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-19 23:43:23] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-19 23:43:23] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-19 23:43:23] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-19 23:43:23] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-19 23:43:23] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-19 23:49:46] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-19 23:49:46] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:31:42] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-20 00:31:42] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-20 00:31:42] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-20 00:31:42] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-20 00:31:42] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-20 00:31:42] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-20 00:35:38] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-20 00:35:38] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-20 00:39:36] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-20 00:39:36] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-20 00:39:36] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-20 00:39:36] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-20 00:39:36] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-20 00:39:36] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-20 00:39:40] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-20 00:39:40] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:39:46] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-20 00:39:46] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-20 00:41:19] [INFO   ] [ESPACIOS] CONSULTA → Insertando espacio
+[ESPACIOS] SQL: QUERY: INSERT INTO espacios (nombre, pabellon, planta, codigo_sede) VALUES (?, ?, ?, ?) | VALUES: nombre=INFANTIL, pabellon=1, planta=1, codigo_sede=5
+[2025-05-20 00:41:19] [INFO   ] [ESPACIOS] Espacio insertado correctamente → INFANTIL
+[2025-05-20 00:41:19] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:43:05] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-20 00:43:05] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-20 00:43:40] [INFO   ] [ESPACIOS] CONSULTA → Insertando espacio
+[ESPACIOS] SQL: QUERY: INSERT INTO espacios (nombre, pabellon, planta, codigo_sede) VALUES (?, ?, ?, ?) | VALUES: nombre=1º CICLO, pabellon=1, planta=1, codigo_sede=5
+[2025-05-20 00:43:40] [INFO   ] [ESPACIOS] Espacio insertado correctamente → 1º CICLO
+[2025-05-20 00:43:41] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:43:48] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-20 00:43:48] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-20 00:44:19] [INFO   ] [ESPACIOS] CONSULTA → Insertando espacio
+[ESPACIOS] SQL: QUERY: INSERT INTO espacios (nombre, pabellon, planta, codigo_sede) VALUES (?, ?, ?, ?) | VALUES: nombre=2º CICLO, pabellon=1, planta=1, codigo_sede=5
+[2025-05-20 00:44:19] [INFO   ] [ESPACIOS] Espacio insertado correctamente → 2º CICLO
+[2025-05-20 00:44:19] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:44:31] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-20 00:44:31] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-20 00:44:47] [INFO   ] [ESPACIOS] CONSULTA → Insertando espacio
+[ESPACIOS] SQL: QUERY: INSERT INTO espacios (nombre, pabellon, planta, codigo_sede) VALUES (?, ?, ?, ?) | VALUES: nombre=AULA INFANTIL, pabellon=1, planta=1, codigo_sede=5
+[2025-05-20 00:44:47] [INFO   ] [ESPACIOS] Espacio insertado correctamente → AULA INFANTIL
+[2025-05-20 00:44:47] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:45:01] [INFO   ] [ESPACIOS] Doble clic sobre espacio: AULA INFANTIL
+[2025-05-20 00:45:01] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-20 00:45:10] [INFO   ] [ESPACIOS] Espacio actualizado correctamente → Código: 4
+[2025-05-20 00:45:10] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:46:01] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-20 00:46:01] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-20 00:46:01] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-20 00:46:01] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-20 00:46:01] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-20 00:46:02] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-20 00:47:26] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-20 00:47:26] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-20 00:47:26] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-20 00:47:26] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-20 00:47:26] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-20 00:47:26] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-20 00:47:26] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-20 00:47:34] [INFO   ] [ALUMNOS] Alumno actualizado → Código: 1
+[2025-05-20 00:47:37] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-20 00:47:37] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-20 00:47:37] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-20 00:47:37] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-20 00:47:37] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-20 00:47:37] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-20 00:47:37] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-20 00:47:46] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-20 00:47:46] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-20 00:47:46] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-20 00:48:30] [INFO   ] [PROVEEDORES] Proveedor eliminado: 99
+[2025-05-20 00:49:04] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-20 00:49:04] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-20 00:49:11] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-20 00:49:11] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-20 00:51:33] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-20 00:51:33] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:51:47] [INFO   ] [ESPACIOS] Doble clic sobre espacio: AULA PLUMIER
+[2025-05-20 00:51:47] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-20 00:52:21] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:52:28] [INFO   ] [ESPACIOS] Doble clic sobre espacio: INFANTIL
+[2025-05-20 00:52:28] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-20 00:52:42] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:52:55] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-20 00:52:55] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-20 00:53:25] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:53:32] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-20 00:53:32] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-20 00:53:40] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 00:54:20] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-20 00:54:24] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-20 00:54:40] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-05-20 00:54:55] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-05-20 01:21:42] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-20 01:21:42] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-20 01:21:42] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-20 01:22:00] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-20 01:22:00] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-20 01:22:32] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-20 01:22:32] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-20 01:22:32] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-20 01:23:45] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-20 01:23:45] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-20 01:23:45] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-20 01:23:52] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-20 01:23:53] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-20 01:23:53] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-20 18:57:07] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-20 18:57:07] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-20 18:57:07] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-20 18:57:07] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-20 18:57:07] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-20 18:57:07] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-20 19:43:16] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-20 19:43:16] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-20 19:43:16] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-20 19:43:16] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-20 19:43:16] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-20 19:43:16] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-20 19:47:59] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-20 19:47:59] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-20 19:47:59] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-20 19:47:59] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-20 19:47:59] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-20 19:48:00] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-21 00:45:07] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-21 00:45:07] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-21 00:45:07] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-21 00:45:07] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-21 00:45:07] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-21 00:45:07] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-21 00:50:19] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-21 00:50:19] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-21 00:50:19] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-21 00:50:19] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-21 00:50:19] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-21 00:50:20] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-21 00:55:21] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-21 00:55:21] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-21 00:55:21] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-21 00:55:21] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-21 00:55:21] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-21 00:55:21] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-21 00:55:21] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-21 00:55:34] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-21 00:55:34] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-21 00:55:34] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-21 00:55:46] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-21 00:55:46] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-21 00:56:16] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-21 00:56:32] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-21 00:56:32] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-21 00:56:44] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-21 00:56:44] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-22 12:39:49] [SEVERE ] [ALUMNOS] ERROR → Error al cargar alumnos
+[2025-05-22 12:41:13] [SEVERE ] [ALUMNOS] ERROR → Error al cargar alumnos
+[2025-05-22 12:43:35] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-05-22 12:43:35] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-05-22 12:44:51] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-05-22 12:44:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-05-22 12:45:10] [INFO   ] [ALUMNOS] Alumno actualizado: Código 1
+[2025-05-22 12:45:14] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: Sede Central
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: Sede Norte
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: Sede Sur
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 4, Nombre: Sede Este
+[2025-05-22 12:45:14] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: Sede Oeste
+[2025-05-22 12:45:25] [INFO   ] [ALUMNOS] Alumno insertado: x, NRE: 546545
+[2025-05-22 13:03:40] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 13:03:40] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:03:43] [INFO   ] [ESPACIOS] Doble clic sobre espacio: a
+[2025-05-22 13:03:43] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 13:03:49] [INFO   ] [ESPACIOS] Espacio actualizado correctamente → Código: 1
+[2025-05-22 13:03:49] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:03:54] [INFO   ] [ESPACIOS] Doble clic sobre espacio: a
+[2025-05-22 13:03:54] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 13:04:00] [INFO   ] [ESPACIOS] Espacio actualizado correctamente → Código: 1
+[2025-05-22 13:04:00] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:04:22] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 13:04:22] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:05:17] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 13:05:17] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:05:19] [INFO   ] [ESPACIOS] Doble clic sobre espacio: a
+[2025-05-22 13:05:20] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 13:05:21] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 13:05:22] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-22 13:05:22] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 13:05:35] [INFO   ] [ESPACIOS] CONSULTA → Insertando espacio
+[ESPACIOS] SQL: QUERY: INSERT INTO espacios (nombre, pabellon, planta, codigo_sede, numero_abaco) VALUES (?, ?, ?, ?, ?) | VALUES: nombre=x, pabellon=sur, planta=2, codigo_sede=2, numero_abaco=23425
+[2025-05-22 13:05:35] [INFO   ] [ESPACIOS] Espacio insertado correctamente → x
+[2025-05-22 13:05:35] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:54:25] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 18:54:26] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:54:26] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
+[2025-05-22 18:55:36] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-22 18:55:36] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-22 18:55:36] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-22 18:55:36] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-22 18:55:36] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-22 18:55:37] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-22 18:55:41] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 18:55:41] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:55:41] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
+[2025-05-22 18:55:51] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-22 18:55:51] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 18:56:01] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:56:01] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
+[2025-05-22 18:56:42] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-22 18:56:55] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-22 18:57:10] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 18:57:10] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:57:10] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
+[2025-05-22 18:57:45] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 18:57:45] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 18:57:45] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
+[2025-05-22 19:00:37] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-22 19:00:37] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-22 19:00:37] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-22 19:00:37] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-22 19:00:37] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-22 19:00:37] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-22 19:00:41] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 19:00:41] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 19:00:41] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios: Unknown column 'e.numero_abaco' in 'field list'
+[2025-05-22 19:40:01] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-22 19:40:01] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-22 19:40:01] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-22 19:40:01] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-22 19:40:01] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-22 19:40:01] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-22 19:40:04] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-22 19:40:04] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-22 19:40:09] [INFO   ] [ESPACIOS] Doble clic sobre espacio: INFANTIL
+[2025-05-22 19:40:09] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-22 19:40:22] [SEVERE ] [ESPACIOS] ERROR → Error al actualizar espacio: Data truncation: Incorrect integer value: 'asdfa' for column `cra_dispositivos`.`espacios`.`numero_abaco` at row 1
+[2025-05-22 19:40:31] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-23 00:14:14] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 00:14:14] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 00:14:14] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 00:14:14] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 00:14:14] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 00:14:14] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 00:14:37] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:14:49] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:15:00] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:15:32] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:20:43] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 00:20:43] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 00:20:43] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 00:20:43] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 00:20:43] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 00:20:43] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 00:20:54] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:21:50] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
+[2025-05-23 00:25:47] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 00:25:47] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 00:25:47] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 00:25:47] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 00:25:47] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 00:25:48] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 00:26:10] [SEVERE ] [DISPOSITIVOS] ERROR → Error al abrir ventana PrestamosMantenim
+[2025-05-23 00:26:36] [SEVERE ] [DISPOSITIVOS] ERROR → Error al abrir ventana PrestamosMantenim
+[2025-05-23 00:28:58] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 00:28:58] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 00:28:58] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 00:28:58] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 00:28:58] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 00:28:58] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 00:29:07] [SEVERE ] [DISPOSITIVOS] ERROR → Error al abrir ventana PrestamosMantenim: 
+/C:/Users/Antonio/Documents/NetBeansProjects/proyecto_javafx_23/target/classes/views/PrestamosMantenim.fxml
+
+[2025-05-23 19:36:06] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 19:36:06] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 19:36:06] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 19:36:06] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 19:36:06] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 19:36:06] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 20:34:20] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-23 20:34:20] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-23 20:34:20] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-23 20:34:20] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-23 20:34:20] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-23 20:34:21] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-23 20:36:25] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-23 20:36:25] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 11:52:37] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 11:52:37] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 11:52:37] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 11:52:37] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 11:52:37] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 11:52:38] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 11:53:57] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-24 11:53:57] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 11:58:26] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 11:58:26] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 11:58:26] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 11:58:26] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 11:58:26] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 11:58:26] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 11:58:30] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-24 11:58:30] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 11:58:49] [INFO   ] [ALUMNOS] Alumno actualizado: Código 1
+[2025-05-24 11:58:53] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-24 11:58:53] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 11:59:24] [INFO   ] [ALUMNOS] Alumno actualizado: Código 2
+[2025-05-24 11:59:51] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-24 11:59:51] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 12:00:16] [INFO   ] [ALUMNOS] Alumno insertado: PEDRO ORTIZ MARMOL, NRE: 54321
+[2025-05-24 12:00:32] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-24 12:00:32] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-24 12:01:08] [INFO   ] [ALUMNOS] Alumno insertado: ANA MENDEZ BERBEN, NRE: 232575
+[2025-05-24 13:47:19] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 13:47:19] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 13:47:19] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 13:47:19] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 13:47:19] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 13:47:20] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 13:50:11] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 13:50:11] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 13:50:11] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 13:50:11] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 13:50:11] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 13:50:11] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 16:06:35] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 16:06:35] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 16:06:35] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 16:06:35] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 16:06:35] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 16:06:35] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 16:31:16] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 16:31:16] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 16:31:16] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 16:31:16] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 16:31:16] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 16:31:16] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 17:10:47] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 17:10:47] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 17:10:48] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 17:10:48] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 17:10:48] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 17:10:48] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 17:56:37] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 17:56:37] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 17:56:37] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 17:56:37] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 17:56:37] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 17:56:37] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 18:19:44] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 18:19:44] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 18:19:44] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 18:19:44] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 18:19:44] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 18:19:44] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 18:35:10] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 18:35:10] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 18:35:10] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 18:35:10] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 18:35:10] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 18:35:10] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 18:36:52] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 18:36:52] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 18:36:52] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 18:36:52] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 18:36:52] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 18:36:53] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 18:38:49] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 18:38:49] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 18:38:49] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 18:38:49] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 18:38:49] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 18:38:49] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 20:12:56] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 20:12:56] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 20:12:56] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 20:12:56] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 20:12:56] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 20:12:57] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 20:31:58] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 20:31:58] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 20:31:58] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 20:31:58] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 20:31:58] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 20:31:58] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 20:38:15] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 20:38:15] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 20:38:15] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 20:38:15] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 20:38:15] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 20:38:15] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 20:40:57] [INFO   ] [PRESTAMOS] Préstamo eliminado: 4
+[2025-05-24 20:41:02] [INFO   ] [PRESTAMOS] Préstamo eliminado: 1
+[2025-05-24 21:31:24] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 21:31:24] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 21:31:24] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 21:31:24] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 21:31:24] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 21:31:24] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 21:45:11] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-24 21:45:11] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-24 21:45:11] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-24 21:45:11] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-24 21:45:11] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-24 21:45:11] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-24 21:45:24] [INFO   ] [PRESTAMOS] Préstamo eliminado: 4
+[2025-05-25 11:27:10] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-25 11:27:10] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-25 11:27:10] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-25 11:27:11] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-25 11:27:11] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-25 11:27:11] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-25 11:27:30] [INFO   ] [PRESTAMOS] Préstamo eliminado: 1
+[2025-05-25 11:57:13] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-25 11:57:13] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-25 11:57:13] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-25 11:57:13] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-25 11:57:13] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-25 11:57:13] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-25 12:09:18] [SEVERE ] [PRESTAMOS] ERROR → Error al ejecutar alta de préstamo: Duplicate entry '4-2-2025-05-24' for key 'PRIMARY'
+[2025-05-25 12:10:43] [SEVERE ] [DISPOSITIVOS] ERROR → Error al ejecutar la actalización del dispositivo
+[2025-05-25 12:11:49] [SEVERE ] [DISPOSITIVOS] ERROR → Error al ejecutar la actalización del dispositivo
+[2025-05-25 12:13:48] [SEVERE ] [DISPOSITIVOS] ERROR → Error al ejecutar la actalización del dispositivo
+[2025-05-25 12:23:25] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-25 12:23:25] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-25 12:23:25] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-25 12:23:25] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-25 12:23:25] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-25 12:23:25] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-25 12:23:49] [INFO   ] [PRESTAMOS] Préstamo eliminado: 4
+[2025-05-25 12:23:56] [INFO   ] [PRESTAMOS] Préstamo eliminado: 4
+[2025-05-25 13:05:19] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-25 13:05:19] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-25 13:05:19] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-25 13:05:19] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: denegado
+[2025-05-25 13:05:19] [INFO   ] [ACCESO] Login fallido para el usuario: antonio
+[2025-05-25 13:05:26] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-25 13:05:26] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-25 13:05:26] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-25 13:05:26] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-25 13:05:26] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-25 13:05:27] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-25 13:07:36] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-25 13:07:36] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-25 13:07:36] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-25 13:07:36] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-25 13:07:36] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-25 13:07:36] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-25 13:07:57] [INFO   ] [PRESTAMOS] Préstamo eliminado: 4
+[2025-05-25 13:46:27] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-25 13:46:27] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-25 13:46:27] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-25 13:46:27] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-25 13:46:27] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-25 13:46:27] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-25 15:39:51] [SEVERE ] [DISPOSITIVOS] ERROR → Error al ejecutar la actalización del dispositivo
+[2025-05-25 15:40:14] [SEVERE ] [DISPOSITIVOS] ERROR → Error al ejecutar la actalización del dispositivo
+[2025-05-25 15:47:02] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-25 15:47:02] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-25 15:47:02] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-25 15:47:02] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-25 15:47:02] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-25 15:47:02] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-25 15:50:27] [SEVERE ] [DISPOSITIVOS] ERROR → Error al ejecutar la actalización del dispositivo
+[2025-05-25 15:52:12] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-25 15:52:12] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-25 15:52:12] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-25 15:52:12] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-25 15:52:12] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-25 15:52:13] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-25 16:15:09] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-25 16:15:09] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-25 16:15:09] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-25 16:15:09] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-25 16:15:09] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-25 16:15:09] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-25 16:58:00] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-25 16:58:01] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-25 16:58:01] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-25 16:58:01] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-25 16:58:01] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-25 16:58:01] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-26 19:17:51] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-26 19:17:51] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-26 19:17:51] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-26 19:17:51] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-26 19:17:51] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-26 19:17:51] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-26 19:30:18] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-26 19:30:18] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-26 19:30:18] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-26 19:30:18] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-26 19:30:19] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-26 19:30:19] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-26 19:32:10] [INFO   ] [PRESTAMOS] Préstamo eliminado: 4
+[2025-05-26 19:41:41] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-26 19:41:41] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-26 19:41:41] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-26 19:41:41] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-26 19:41:41] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-26 19:41:41] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-26 20:05:43] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-26 20:05:44] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-26 20:05:44] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-26 20:05:44] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-26 20:05:44] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-26 20:05:44] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-26 20:09:48] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-26 20:09:48] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-26 20:09:48] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-26 20:09:48] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-26 20:09:48] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-26 20:09:49] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-26 20:11:26] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-26 20:11:26] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-26 20:11:26] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 00:19:49] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-27 00:19:49] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-27 00:19:49] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-27 00:19:49] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-27 00:19:49] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-27 00:19:49] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-27 00:20:24] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 00:20:24] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 00:20:24] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 00:26:47] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-27 00:26:47] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-27 00:26:48] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-27 00:26:48] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-27 00:26:48] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-27 00:26:48] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-27 00:27:28] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 00:27:28] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 00:27:28] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 00:28:32] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 00:28:32] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 00:28:32] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 00:28:47] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-27 00:28:47] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-27 00:28:52] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-27 00:28:52] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-27 00:29:04] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-27 00:29:04] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-27 00:29:36] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-27 00:29:36] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-27 00:29:42] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-27 00:29:42] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-27 00:29:49] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 00:29:49] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 00:29:49] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 01:16:11] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-27 01:16:11] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-27 01:16:11] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-27 01:16:11] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-27 01:16:11] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-27 01:16:11] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-27 01:17:28] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 01:17:28] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 01:17:28] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 01:17:43] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 01:17:43] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 01:17:43] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 01:33:27] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-27 01:33:27] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-27 01:33:27] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-27 01:33:27] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-27 01:33:27] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-27 01:33:27] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-27 01:36:49] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-27 01:36:49] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-27 01:36:49] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-27 01:36:49] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-27 01:36:49] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-27 01:36:50] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-27 19:04:24] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-27 19:04:24] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-27 19:04:24] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-27 19:04:24] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-27 19:04:24] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-27 19:04:24] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-27 19:04:40] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 19:04:40] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 19:04:40] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 19:05:15] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-27 19:05:15] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-27 19:05:23] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-27 19:05:23] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-27 19:05:50] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-27 19:05:50] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-27 19:51:38] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-27 19:51:38] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-27 19:51:38] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-27 19:51:38] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-27 19:51:38] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-27 19:51:38] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-27 19:51:44] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 19:51:44] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 19:51:44] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 19:51:51] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 19:51:51] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 19:51:51] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 19:51:58] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 19:51:58] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 19:51:58] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 19:52:05] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-27 19:52:05] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-27 19:52:29] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 19:52:29] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 19:52:29] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 19:52:34] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 19:52:34] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 19:52:34] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-27 19:52:50] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-27 19:52:50] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-27 19:53:03] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-27 19:53:03] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-27 19:53:03] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 19:04:10] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-28 19:04:10] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-28 19:04:10] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-28 19:04:10] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-28 19:04:10] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-28 19:04:10] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-28 19:04:32] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 19:04:32] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 19:04:32] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 19:05:11] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 19:05:11] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 19:05:11] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 19:05:26] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-28 19:05:26] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-28 19:05:32] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-28 19:05:32] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-28 19:05:38] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-28 19:05:38] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-28 19:06:06] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-28 19:06:06] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-28 19:06:15] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 19:06:15] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 19:06:15] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 19:06:22] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 19:06:22] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 19:06:22] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 19:06:34] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 19:06:34] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 19:06:34] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 19:06:37] [INFO   ] [CENTROS EDUCATIVOS] Filtro aplicado: j → Resultados: 0
+[2025-05-28 19:06:38] [INFO   ] [CENTROS EDUCATIVOS] Filtro aplicado: jj → Resultados: 0
+[2025-05-28 19:06:38] [INFO   ] [CENTROS EDUCATIVOS] Filtro aplicado: jjh → Resultados: 0
+[2025-05-28 19:06:39] [INFO   ] [CENTROS EDUCATIVOS] Filtro aplicado: jj → Resultados: 0
+[2025-05-28 19:06:39] [INFO   ] [CENTROS EDUCATIVOS] Filtro aplicado: j → Resultados: 0
+[2025-05-28 19:06:47] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 19:06:47] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 19:06:59] [INFO   ] [CENTROS EDUCATIVOS] Centro filtrado → Código: 30011995
+[2025-05-28 19:06:59] [INFO   ] [CENTROS EDUCATIVOS] Filtro aplicado: c → Resultados: 1
+[2025-05-28 19:07:00] [INFO   ] [CENTROS EDUCATIVOS] Centro filtrado → Código: 30011995
+[2025-05-28 19:07:00] [INFO   ] [CENTROS EDUCATIVOS] Filtro aplicado: cr → Resultados: 1
+[2025-05-28 19:07:03] [INFO   ] [CENTROS EDUCATIVOS] Filtro aplicado: cr1 → Resultados: 0
+[2025-05-28 19:07:05] [INFO   ] [CENTROS EDUCATIVOS] Centro filtrado → Código: 30011995
+[2025-05-28 19:07:05] [INFO   ] [CENTROS EDUCATIVOS] Filtro aplicado: cr → Resultados: 1
+[2025-05-28 19:07:05] [INFO   ] [CENTROS EDUCATIVOS] Centro filtrado → Código: 30011995
+[2025-05-28 19:07:05] [INFO   ] [CENTROS EDUCATIVOS] Filtro aplicado: c → Resultados: 1
+[2025-05-28 19:07:22] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 19:07:22] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 19:07:22] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 19:07:32] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 19:07:32] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 19:07:32] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 19:08:17] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-28 19:08:17] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-28 19:08:57] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-28 19:08:57] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-28 23:29:50] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-28 23:29:51] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-28 23:29:52] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-28 23:29:53] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-28 23:29:53] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-28 23:29:54] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-28 23:30:28] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 23:30:28] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 23:30:28] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 23:31:00] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 23:31:00] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 23:31:00] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 23:31:10] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 23:31:10] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 23:31:10] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 23:32:58] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-28 23:32:58] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-28 23:43:37] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-28 23:43:37] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-28 23:43:37] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-28 23:43:37] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-28 23:43:37] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-28 23:43:37] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-28 23:43:45] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 23:43:45] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 23:43:45] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 23:45:12] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-28 23:45:12] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-28 23:45:12] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-28 23:45:12] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-28 23:45:12] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-28 23:45:12] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-28 23:45:12] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-28 23:46:25] [WARNING] [ALUMNOS] Faltan campos obligatorios en el formulario.
+[2025-05-28 23:46:40] [INFO   ] [ALUMNOS] Alumno insertado: MANUEL MARTINEZ MARTINEZ, NRE: 
+[2025-05-28 23:46:54] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-28 23:46:54] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-28 23:46:54] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-28 23:46:54] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-28 23:46:54] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-28 23:46:54] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-28 23:46:54] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-28 23:47:05] [INFO   ] [ALUMNOS] Alumno actualizado: Código 5
+[2025-05-28 23:47:23] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-28 23:47:23] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-28 23:47:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-28 23:47:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-28 23:47:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-28 23:47:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-28 23:47:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-28 23:47:33] [INFO   ] [ALUMNOS] Alumno actualizado: Código 5
+[2025-05-28 23:48:58] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 23:48:58] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 23:48:58] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 23:49:13] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 23:50:29] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 23:50:29] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 23:50:32] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-28 23:52:13] [INFO   ] [CENTROS EDUCATIVOS] Centro insertado correctamente → Código: 12345678
+[2025-05-28 23:52:15] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 12345678
+[2025-05-28 23:52:15] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 23:52:15] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 2
+[2025-05-28 23:52:25] [INFO   ] [CENTROS EDUCATIVOS] Centro eliminado → Código: 12345678
+[2025-05-28 23:52:25] [INFO   ] [CENTROS EDUCATIVOS] Centro eliminado → Código: 12345678
+[2025-05-28 23:52:26] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 23:52:26] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-28 23:53:25] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-28 23:53:25] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 23:54:00] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-28 23:54:00] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-28 23:55:01] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-28 23:55:01] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-28 23:57:25] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-28 23:57:25] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-28 23:57:25] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-28 23:57:25] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-28 23:57:25] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-28 23:57:25] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-28 23:57:37] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-28 23:57:37] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-29 00:18:06] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-29 00:18:07] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-29 00:18:07] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-29 00:18:07] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-29 00:18:07] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-29 00:18:07] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-29 00:18:16] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-29 00:18:16] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-29 00:29:56] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-29 00:29:56] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-29 00:29:56] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-29 00:29:56] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-29 00:29:56] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-29 00:29:56] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-29 00:30:02] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-29 00:30:02] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-29 00:30:14] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-29 00:30:14] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-29 00:30:29] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-29 00:30:29] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-29 00:30:59] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-29 00:30:59] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-29 00:33:16] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-29 00:33:17] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-29 00:33:17] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-29 00:33:17] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-29 00:33:17] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-29 00:33:17] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-29 00:33:23] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-29 00:33:23] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-29 00:33:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-29 00:33:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-29 00:33:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-29 00:33:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-29 00:33:23] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-29 00:33:52] [WARNING] [ALUMNOS] Faltan campos obligatorios en el formulario.
+[2025-05-29 00:35:26] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-29 00:35:26] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-29 00:35:26] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-29 00:35:40] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-29 00:35:40] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-29 00:35:46] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-29 00:35:46] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-29 00:36:00] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-29 00:36:09] [WARNING] [CATEGORIAS] Campo nombre vacío en el formulario.
+[2025-05-29 00:36:31] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-29 00:36:53] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-29 00:36:56] [WARNING] [MARCAS] Campo nombre vacío en el formulario.
+[2025-05-29 00:37:01] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-05-29 00:37:03] [WARNING] [PROGRAMAS EDUCATIVOS] Campo nombre vacío en el formulario.
+[2025-05-29 00:37:29] [INFO   ] [PROVEEDORES] Proveedor eliminado: 100
+[2025-05-29 00:46:57] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-29 00:46:57] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-29 00:46:57] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-29 00:46:57] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-29 00:46:57] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-29 00:46:57] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-29 00:47:07] [WARNING] [PROVEEDORES] Faltan campos obligatorios en el formulario.
+[2025-05-29 00:47:43] [WARNING] [PROVEEDORES] Faltan campos obligatorios en el formulario.
+[2025-05-29 19:07:49] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-29 19:07:49] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-29 19:07:49] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-29 19:07:49] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-29 19:07:49] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-29 19:07:49] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-29 19:08:01] [WARNING] [PROVEEDORES] Faltan campos obligatorios en el formulario.
+[2025-05-29 19:08:24] [WARNING] [DISPOSITIVOS] Faltan campos obligatorios en el formulario.
+[2025-05-29 19:08:45] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-29 19:08:45] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-05-29 19:08:45] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-29 19:08:45] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-29 19:08:45] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-29 19:08:45] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-29 19:08:45] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-29 19:08:48] [WARNING] [ALUMNOS] Faltan campos obligatorios en el formulario.
+[2025-05-29 19:11:05] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-29 19:11:05] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-29 19:11:05] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-29 19:11:05] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-29 19:11:05] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-29 19:11:05] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-29 19:11:13] [WARNING] [PROVEEDORES] Faltan campos obligatorios en el formulario.
+[2025-05-29 19:11:33] [INFO   ] [PROVEEDORES] Proveedor eliminado: 101
+[2025-05-29 19:11:37] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-29 19:11:37] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-29 19:11:37] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-29 19:11:49] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-29 19:11:49] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-29 19:12:08] [WARNING] [DISPOSITIVOS] Faltan campos obligatorios en el formulario.
+[2025-05-29 19:12:43] [SEVERE ] [DISPOSITIVOS] ERROR → Error al ejecutar alta de dispositivo
+[2025-05-29 19:19:34] [INFO   ] [DISPOSITIVOS] dispositivo eliminado: 6
+[2025-05-29 23:44:40] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-29 23:44:40] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-29 23:44:40] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-29 23:44:40] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-29 23:44:40] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-29 23:44:40] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-29 23:44:55] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-29 23:44:55] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-29 23:44:55] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-29 23:49:04] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-05-29 23:49:04] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-29 23:49:12] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-05-29 23:49:12] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes WHERE codigo_centro = 30011995
+[2025-05-29 23:49:12] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-05-29 23:49:12] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-05-29 23:49:12] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-05-29 23:49:12] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-05-29 23:49:12] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-05-29 23:49:16] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-29 23:49:16] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-29 23:49:17] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
+[2025-05-29 23:49:17] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
+[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes WHERE codigo_centro = 30011995
+[2025-05-29 23:49:25] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-29 23:49:33] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-05-29 23:49:39] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-05-30 00:33:19] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-05-30 00:33:19] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-05-30 00:33:19] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-05-30 00:33:19] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-05-30 00:33:19] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-05-30 00:33:19] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-05-30 00:33:24] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-05-30 00:33:24] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-05-30 00:33:24] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-05-30 00:35:02] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-30 00:35:02] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-05-30 00:35:11] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-05-30 00:35:11] [INFO   ] [ESPACIOS] Cargando lista de espacios...

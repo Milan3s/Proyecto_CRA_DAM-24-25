@@ -6,20 +6,28 @@ import utils.LoggerUtils;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import main.Session;
 import model.Alumno;
+import model.CentroEducativo;
 import model.Sede;
 
 public class AlumnosDAO {
 
     private Connection conn;
+    private CentroEducativo centro;
 
     public AlumnosDAO() {
         conn = DataBaseConection.getConnection();
+        centro = Session.getInstance().getCentroActivo();
     }
 
     public List<Sede> obtenerSedes() {
         List<Sede> listaSedes = new ArrayList<>();
         String query = "SELECT codigo_sede, nombre FROM sedes";
+        
+        if (centro != null) {
+            query += " WHERE codigo_centro = " + centro.getCodigoCentro();
+        }
 
         try (PreparedStatement stmt = conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
@@ -43,6 +51,10 @@ public class AlumnosDAO {
         List<Alumno> listaAlumnos = new ArrayList<>();
         String query = "SELECT a.codigo_alumno, a.nombre, a.curso, a.nre, a.telefono_tutor1, a.telefono_tutor2, a.codigo_sede, s.nombre AS nombre_sede "
                      + "FROM alumnos a JOIN sedes s ON a.codigo_sede = s.codigo_sede";
+        
+        if (centro != null) {
+            query += " WHERE s.codigo_centro = " + centro.getCodigoCentro();
+        }
 
         try (Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
