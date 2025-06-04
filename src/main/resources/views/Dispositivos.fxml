@@ -101,6 +101,7 @@
             <TableColumn fx:id="colEspacio" prefWidth="75.0" text="Espacio" />
             <TableColumn fx:id="colAbaco" prefWidth="75.0" text="Id_ábaco" />
             <TableColumn fx:id="colPrograma" prefWidth="75.0" text="ProgramaE" />
+            <TableColumn fx:id="colObservaciones" prefWidth="75.0" text="Observaciones" />
         </columns>
       </TableView>
    </children>

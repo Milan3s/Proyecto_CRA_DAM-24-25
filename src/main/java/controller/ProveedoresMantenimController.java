@@ -12,6 +12,7 @@ import model.Proveedor;
 import dao.ProveedorDAO;
 import javafx.scene.control.Alert;
 import utils.LoggerUtils;
+import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
 
 public class ProveedoresMantenimController implements Initializable {
@@ -95,6 +96,21 @@ public class ProveedoresMantenimController implements Initializable {
         if (nombre.isEmpty()) {
             mostrarAlerta2("Campos incompletos", "Por favor, completa todos los campos obligatorios.", Alert.AlertType.WARNING);
             LoggerUtils.logWarning("PROVEEDORES", "Faltan campos obligatorios en el formulario.");
+            return;
+        }
+        
+        if (!cp.isEmpty() && !Utilidades.validarCP(cp)) {
+            mostrarAlerta2("Código postal no válido", "Por favor, introduzca un código postal válido.", Alert.AlertType.WARNING);
+            return;
+        }
+        
+        if (!telefono.isEmpty() && !Utilidades.validarTelefono(telefono)) {
+            mostrarAlerta2("Teléfono no válido", "Por favor, introduzca un teléfono válido.", Alert.AlertType.WARNING);
+            return;
+        }
+        
+        if (!email.isEmpty() && !Utilidades.validarEmail(email)) {
+            mostrarAlerta2("Email no válido", "Por favor, introduzca un email válido.", Alert.AlertType.WARNING);
             return;
         }
         

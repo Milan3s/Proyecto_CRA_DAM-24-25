@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.function.Function;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
@@ -84,5 +86,35 @@ public class Utilidades {
             fichero = f.showOpenDialog(null);
         }
         return fichero;
+    }
+    
+    // Para validar una cadena de tipo email
+    public static boolean validarEmail(String email) {
+        String regex = "^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$";
+               
+        return validarDato(email, regex);
+    }
+    
+    // Para validar una cadena de tipo telefono
+    public static boolean validarTelefono(String telefono) {
+        // 9 dígitos con espacios opcionales entre bloques de 3
+        String regex = "^\\d{3}\\s?\\d{3}\\s?\\d{3}$";
+        
+        return validarDato(telefono, regex);
+    }
+    
+    // Para validar una cadena de tipo código postal
+    public static boolean validarCP(String cp) {
+        // 5 dígitos
+        String regex = "^\\d{5}$";
+        
+        return validarDato(cp, regex);
+    }
+    
+    // Para validar un dato a partir de una expresión regular
+    public static boolean validarDato(String dato, String regex) {               
+        Pattern pat = Pattern.compile(regex);
+        Matcher mat = pat.matcher(dato);
+        return mat.matches();
     }
 }

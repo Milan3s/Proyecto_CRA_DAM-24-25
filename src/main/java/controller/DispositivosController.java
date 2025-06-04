@@ -94,6 +94,8 @@ public class DispositivosController implements Initializable {
     private TableColumn<Dispositivo, String> colPrograma;
     @FXML
     private TableColumn<Dispositivo, String> colPrestado;
+    @FXML
+    private TableColumn<Dispositivo, String> colObservaciones;
     
     @FXML
     private Button btnNuevo;
@@ -136,6 +138,7 @@ public class DispositivosController implements Initializable {
     private ObservableList<ProgramasEdu> listaProgramas = FXCollections.observableArrayList();
     private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
     
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         configurarColumnas();
@@ -153,6 +156,7 @@ public class DispositivosController implements Initializable {
         colMac.setCellValueFactory(new PropertyValueFactory<>("mac"));
         colImei.setCellValueFactory(new PropertyValueFactory<>("imei"));
         colNumEti.setCellValueFactory(new PropertyValueFactory<>("num_etiqueta"));
+        colObservaciones.setCellValueFactory(new PropertyValueFactory<>("observaciones"));
         colFechaAdqui.setCellValueFactory(cellData -> {
             Dispositivo disp = cellData.getValue();
             if (disp.getFecha_adquisicion()!= null) {
@@ -476,7 +480,7 @@ public class DispositivosController implements Initializable {
             // Hay que guardarlo con codificación ISO-8859-1 para que los acentos se muestren correctamente al abrirlo con Excel
             try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fichero), "ISO-8859-1"))) {
                 // Línea de cabecera
-                bw.write("Nombre;Modelo;Marca;Categoria;NumSerie;Fecha_adquisicion;Mac;Imei;Num_etiqueta;Prestado;Alumno;Curso;Sede;Espacio;Num_abaco;Proveedor;ProgramaE;Comentario\n");
+                bw.write("Nombre;Modelo;Marca;Categoria;NumSerie;Fecha_adquisicion;Mac;Imei;Num_etiqueta;Prestado;Alumno;Curso;Sede;Espacio;Num_abaco;Proveedor;ProgramaE;Comentario;Observaciones\n");
                 
                 String linea = "";
                 String numEtiq = "";
@@ -501,6 +505,7 @@ public class DispositivosController implements Initializable {
                     linea += disp.getProveedor() != null ? disp.getProveedor().getNombre() + ";" : ";";
                     linea += disp.getProgramae() != null ? disp.getProgramae().getNombre() + ";" : ";";
                     linea += disp.getComentario() != null ? disp.getComentario() + ";" : ";";
+                    linea += disp.getObservaciones() != null ? disp.getObservaciones() + ";" : ";";
                     bw.write(linea + "\n");
                 }
                 mostrarAlerta2("Éxito", "Exportación realizada.", Alert.AlertType.INFORMATION);

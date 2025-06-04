@@ -56,7 +56,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Nombre:" />
+                  <Label text="*Nombre:" />
                   <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.columnSpan="4" />
                   <TextField fx:id="txtModelo" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                   <Label text="Marca:" GridPane.rowIndex="1" />

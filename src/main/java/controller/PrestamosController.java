@@ -395,10 +395,8 @@ public class PrestamosController implements Initializable {
                 while ((linea = br.readLine()) != null) {
                     // Vamos leyendo cada línea del fichero
                     items = linea.split(";");
-                    //codigoDisp = Integer.parseInt(items[0]);
                     numSerie = items[0];
                     codigoDisp = dispositivoDAO.buscarCodigoXSerie(numSerie);
-                    //codigoAlu = Integer.parseInt(items[1]);
                     nre = items[1];
                     codigoAlu = alumnoDAO.buscarCodigoXnre(nre);
                     fechaIni = Utilidades.convertirFecha(items[2]);

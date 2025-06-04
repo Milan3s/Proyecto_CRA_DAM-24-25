@@ -140,6 +140,7 @@ public class DispositivosMantenimController implements Initializable {
                 cboxSede.setDisable(true);
             }
             txtComent.setText(disp.getComentario());
+            txtObservaciones.setText(disp.getObservaciones());
         }
     }
 

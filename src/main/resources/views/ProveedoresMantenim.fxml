@@ -33,7 +33,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Nombre:" />
+                  <Label text="*Nombre:" />
                   <Label text="Calle:" GridPane.rowIndex="1" />
                   <Label text="Localidad:" GridPane.rowIndex="2" />
                   <Label text="Código postal:" GridPane.rowIndex="3" />
