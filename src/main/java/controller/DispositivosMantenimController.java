@@ -30,6 +30,7 @@ import model.Proveedor;
 import dao.ProveedorDAO;
 import dao.SedeDAO;
 import java.io.IOException;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -110,9 +111,12 @@ public class DispositivosMantenimController implements Initializable {
     private ObservableList<Alumno> listaAlumnos = FXCollections.observableArrayList();
     private AlumnosDAO alumnoDAO = new AlumnosDAO();
     
+    private FilteredList<Espacio> listaEspFilt;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        // Listener para filtrar los alumnos en función de la sede
+        cboxSede.valueProperty().addListener((obs, oldVal, newVal) -> filtrarEspacios());
     }
 
     public void setDispositivo(Dispositivo disp) {
@@ -183,8 +187,9 @@ public class DispositivosMantenimController implements Initializable {
             
             // Espacios
             listaEspacios = FXCollections.observableArrayList(espacioDAO.obtenerEspacios());
-            cboxEspacio.setItems(listaEspacios);
-            Utilidades.cargarComboBox(cboxEspacio, listaEspacios, Espacio::getNombre);
+            listaEspFilt = new FilteredList<>(listaEspacios, p -> true); 
+            cboxEspacio.setItems(listaEspFilt);
+            Utilidades.cargarComboBox(cboxEspacio, listaEspFilt, Espacio::getNombre);
             
             // Proveedores
             listaProveedores = provDAO.obtenerProveedores();
@@ -283,5 +288,14 @@ public class DispositivosMantenimController implements Initializable {
         } catch (IOException e) {
             LoggerUtils.logError("DISPOSITIVOS", "Error al abrir ventana PrestamosMantenim: " + e.getMessage(), e);
         }
+    }
+    
+    private void filtrarEspacios() {
+        Sede sedeSel = cboxSede.getValue();
+        
+        listaEspFilt.setPredicate(espacio -> {
+            boolean coincSede = sedeSel == null || espacio.getCodigoSede() == sedeSel.getCodigoSede();
+            return coincSede;
+        });
     }
 }

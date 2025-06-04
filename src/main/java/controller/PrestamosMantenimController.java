@@ -70,14 +70,16 @@ public class PrestamosMantenimController implements Initializable {
     private SedeDAO sedeDAO = new SedeDAO();
     
     private ObservableList<Alumno> listaAlumnos = FXCollections.observableArrayList();
-    FilteredList<Alumno> listaAluFilt;
+    private FilteredList<Alumno> listaAluFilt;
     private AlumnosDAO alumnoDAO = new AlumnosDAO();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Listeners para filtrar
+        // Listeners para filtrar los alumnos en función de la sede y el curso
         cboxSede.valueProperty().addListener((obs, oldVal, newVal) -> filtrarAlumnos());
         txtCurso.textProperty().addListener((obs, oldVal, newVal) -> filtrarAlumnos());
+        
+        // Listener para mostrar el nre del alumno seleccionado
         cboxAlumno.valueProperty().addListener((obs, oldVal, newVal) -> {
             if (null != newVal) {
                 txtNRE.setText(newVal.getNre());
