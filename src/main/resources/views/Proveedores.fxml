@@ -65,7 +65,7 @@
       </HBox>
       <TableView fx:id="tablaProv" onMouseClicked="#capturarClick" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn fx:id="colCodigo" prefWidth="60.0" text="Código" />
+          <TableColumn fx:id="colCodigo" prefWidth="60.0" text="Código" visible="false" />
           <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
             <TableColumn fx:id="colCalle" prefWidth="150.0" text="Calle" />
             <TableColumn fx:id="colLocalidad" prefWidth="75.0" text="Localidad" />

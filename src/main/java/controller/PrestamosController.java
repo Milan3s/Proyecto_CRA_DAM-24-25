@@ -351,6 +351,8 @@ public class PrestamosController implements Initializable {
         cboxCategoria.setValue(null);
         cboxMarca.setValue(null);
         cboxSede.setValue(null);
+        
+        tablaPrest.setItems(listaPrest);
     }
     
     private void abrirMantenimiento(Prestamo prestamo, Dispositivo dispositivo) {

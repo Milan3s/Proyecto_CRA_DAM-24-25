@@ -1747,3 +1747,56 @@
 [2025-06-04 01:30:42] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
 [2025-06-04 01:30:42] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
 [2025-06-04 01:30:42] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-04 18:52:42] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-04 18:52:42] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-04 18:52:42] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-04 18:52:42] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-04 18:52:42] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-04 18:52:42] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-04 18:52:48] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-04 18:52:48] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-04 18:52:48] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-04 18:59:46] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-04 18:59:46] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-04 18:59:46] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-04 18:59:46] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-04 18:59:46] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-04 18:59:46] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-04 18:59:57] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-04 18:59:57] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-04 18:59:57] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-04 19:07:35] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-04 19:07:35] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-04 19:07:35] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-04 19:07:35] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-04 19:07:35] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-04 19:07:35] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-04 19:07:38] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-04 19:07:38] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-04 19:07:38] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-04 19:07:42] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-04 19:07:42] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-04 19:07:42] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-04 19:12:18] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-04 19:12:18] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-04 19:12:18] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-04 19:12:18] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-04 19:12:18] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-04 19:12:18] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-04 19:12:21] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-04 19:12:21] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-04 19:12:21] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-04 19:15:02] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-04 19:15:02] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-04 19:15:02] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-04 19:15:02] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-04 19:15:02] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-04 19:15:02] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-04 19:15:24] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-04 19:15:24] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-04 19:15:24] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1

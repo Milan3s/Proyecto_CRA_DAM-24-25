@@ -290,7 +290,9 @@ public class DispositivosController implements Initializable {
             
             // Filtro por sede
             if (sedeFilt != null) {
-                coincSede = dispositivo.getEspacio() != null && dispositivo.getEspacio().getCodigoSede() == sedeFilt.getCodigoSede();
+                //coincSede = dispositivo.getEspacio() != null && dispositivo.getEspacio().getCodigoSede() == sedeFilt.getCodigoSede();
+                //coincSede = dispositivo.getAlumno() != null && dispositivo.getAlumno().getCodigo_sede() == sedeFilt.getCodigoSede();
+                coincSede = dispositivo.getSede() != null && dispositivo.getSede().getCodigoSede() == sedeFilt.getCodigoSede();
             }
             
             // Filtro por Programa
