@@ -22,6 +22,11 @@ import utils.DataBaseConection;
 import utils.LoggerUtils;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase encargada de realizar los accesos a la base de datos relacionados con la tabla de dispositivos.
+ * Contiene los llamados métodos CRUD (Create, Read, Update, Delete) para tal finalidad.
+ * 
+ */
 public class DispositivoDAO {
     private Connection conn;
     private CentroEducativo centro;
@@ -31,6 +36,11 @@ public class DispositivoDAO {
         centro = Session.getInstance().getCentroActivo();
     }
     
+    /**
+     * Devuelve un ObservableList con todos los dispositivos de la tabla.
+     * 
+     * @return ObservableList<Dispositivo>
+     */
     public ObservableList<Dispositivo> obtenerDispositivos() {
         ObservableList<Dispositivo> listaDispositivos = FXCollections.observableArrayList();
         
@@ -106,6 +116,11 @@ public class DispositivoDAO {
         return listaDispositivos;
     }
     
+    /**
+     * Inserta en la tabla dispositivos de la base de datos el dispositivo que se pasa como parámetro.
+     * 
+     * @param disp Dispositivo
+     */
     public void insertarDispositivo(Dispositivo disp) {
         String sql = "INSERT INTO dispositivos (nombre, codigo_categoria, codigo_marca, modelo, num_serie, fecha_adquisicion, mac, imei, num_etiqueta"
             + ", coment_reg, codigo_proveedor, codigo_programa, codigo_espacio, prestado, observaciones) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -137,6 +152,11 @@ public class DispositivoDAO {
         }
     }
     
+    /**
+     * Actualiza en la tabla dispositivos los datos del dispositivo que se pasa como parámetro.
+     * 
+     * @param disp Dispositivo
+     */
     public void actualizarDispositivo(Dispositivo disp) {
         String sql = "UPDATE dispositivos SET nombre = ?, codigo_categoria = ?, codigo_marca = ?, modelo = ?, num_serie = ?, fecha_adquisicion = ?" 
                 + ", mac = ?, imei = ?, num_etiqueta= ?, coment_reg = ?, codigo_proveedor = ?, codigo_programa = ?, codigo_espacio = ?, prestado = ?"
@@ -174,6 +194,13 @@ public class DispositivoDAO {
         }
     }
     
+    /**
+     * Elimina de la tabla dispositivos de la base de datos el dispositivo
+     * con el identificador que se pasa como parámetro.
+     * 
+     * @param codDisp int
+     * @return int
+     */
     public int eliminarDispositivo(int codDisp) {
         int filas = 0;
         String sql = "DELETE FROM dispositivos WHERE codigo_dispositivo = ?";
@@ -198,6 +225,12 @@ public class DispositivoDAO {
         }
     }
     
+    /**
+     * Actualiza el campo prestado en el dispositivo con el identificador que se pasa como parámetro.
+     * 
+     * @param codigoDisp int
+     * @param prestado boolean
+     */
     public void actualizarPrestado(int codigoDisp, boolean prestado) {
         String sql = "UPDATE dispositivos SET prestado = ? WHERE codigo_dispositivo = ?";
         
@@ -215,6 +248,13 @@ public class DispositivoDAO {
         }
     }
     
+    /**
+     * Devuelve el código del dispostivo que tenga el número de serie que se pasa como parámetro.
+     * Si no se encuentra ninguno devuelve -1
+     * 
+     * @param numSerie String
+     * @return int
+     */
     public int buscarCodigoXSerie(String numSerie) {
         int codigoDisp = -1;
         String sql = "SELECT codigo_dispositivo FROM dispositivos WHERE num_serie = '" + numSerie + "'";
@@ -231,9 +271,16 @@ public class DispositivoDAO {
         return codigoDisp;
     }
     
+    /**
+     * Método para evitar un error al asignar valor a un parámetro del PreparedStatement correspondiente
+     * al identificador de un objeto si dicho objeto es null.
+     * 
+     * @param stmt
+     * @param index
+     * @param value
+     * @throws SQLException 
+     */
     private void setIntOrNull(PreparedStatement stmt, int index, Integer value) throws SQLException {
-        // Método para evitar un error al asignar valor a un parámetro del PreparedStatement correspondiente
-        // al identificador de un objeto si dicho objeto es null
         if (value != null) {
             stmt.setInt(index, value);
         } else {

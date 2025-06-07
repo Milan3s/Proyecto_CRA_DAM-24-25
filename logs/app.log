@@ -1855,3 +1855,17 @@
 [2025-06-05 00:47:47] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
 [2025-06-05 00:48:05] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
 [2025-06-05 00:48:05] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-08 00:34:56] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-08 00:34:56] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-08 00:34:56] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-08 00:34:57] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-08 00:34:57] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-08 00:34:57] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-08 00:48:28] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-08 00:48:28] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-08 00:48:28] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-08 00:48:28] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-08 00:48:28] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-08 00:48:28] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio

@@ -15,6 +15,11 @@ import utils.LoggerUtils;
 import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase controller asociada a la vista ProveedoresMantenim.fxml
+ * Contiene la lógica correspondiente a dicha vista.
+ * 
+ */
 public class ProveedoresMantenimController implements Initializable {
 
     @FXML
@@ -46,6 +51,12 @@ public class ProveedoresMantenimController implements Initializable {
         
     }    
     
+    /**
+     * Informa los componentes gráficos con los datos del proveedor pasado como parámetro,
+     * si éste no es nulo.
+     * 
+     * @param proveedor Proveedor
+     */
     public void setProveedor(Proveedor proveedor) {
         if (null != proveedor) {
             this.proveedor = proveedor;
@@ -75,6 +86,11 @@ public class ProveedoresMantenimController implements Initializable {
         stage.close();
     }
 
+    /**
+     * Lee los datos de los componentes gráficos.
+     * En caso de que ya exista el proveedor actualiza la información en la base de datos.
+     * En caso de que no exista se crea nuevo.
+     */
     private void guardarProveedor() {
         int codProv;
         

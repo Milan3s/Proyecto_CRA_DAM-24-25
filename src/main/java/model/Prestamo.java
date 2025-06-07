@@ -2,12 +2,28 @@ package model;
 
 import java.sql.Date;
 
+/**
+ * Clase que representa el préstamo de un dispositivo a un alumno.
+ * Contiene la información de un objeto Dispositivo, un objeto Alumno 
+ * y las fechas de inicio y fin del préstamo.
+ * 
+ */
 public class Prestamo {
     private Dispositivo dispositivo;
     private Alumno alumno;
     private Date fecha_inicio;
     private Date fecha_fin;
 
+    /**
+     * Constructor para crear un préstamo.
+     * Lo habitual será que la fecha de fin sea inicialmente null y 
+     * se asigne cuando se produzca la devolución del dispositivo.
+     * 
+     * @param dispositivo
+     * @param alumno
+     * @param fecha_inicio
+     * @param fecha_fin 
+     */
     public Prestamo(Dispositivo dispositivo, Alumno alumno, Date fecha_inicio, Date fecha_fin) {
         this.dispositivo = dispositivo;
         this.alumno = alumno;

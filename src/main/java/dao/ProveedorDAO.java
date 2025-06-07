@@ -13,6 +13,11 @@ import utils.DataBaseConection;
 import utils.LoggerUtils;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase encargada de realizar los accesos a la base de datos relacionados con la tabla de proveedores.
+ * Contiene los llamados métodos CRUD (Create, Read, Update, Delete) para tal finalidad.
+ * 
+ */
 public class ProveedorDAO {
     
     private Connection conn;
@@ -21,6 +26,11 @@ public class ProveedorDAO {
         conn = DataBaseConection.getConnection();
     }
     
+    /**
+     * Devuelve un ObservableList con todos los proveedores de la tabla.
+     * 
+     * @return ObservableList<Proveedor>
+     */
     public ObservableList<Proveedor> obtenerProveedores() {
         ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
         String sql = "SELECT * FROM proveedores";
@@ -51,6 +61,11 @@ public class ProveedorDAO {
         return listaProveedores;
     }
     
+    /**
+     * Inserta en la tabla proveedores de la base de datos el proveedor que se pasa como parámetro.
+     * 
+     * @param p Proveedor
+     */
     public void insertarProveedor(Proveedor p) {
         String sql = "INSERT INTO proveedores (nombre, calle, localidad, cp, municipio, provincia, telefono, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
@@ -73,6 +88,11 @@ public class ProveedorDAO {
         }    
     }
     
+    /**
+     * Actualiza en la tabla proveedores los datos del proveedor que se pasa como parámetro.
+     * 
+     * @param p Proveedor
+     */
     public void actualizarProveedor(Proveedor p) {
         String sql = "UPDATE proveedores SET nombre = ?, calle = ?, localidad = ?, cp = ?, municipio = ?, provincia = ?, telefono = ?, email = ? WHERE codigo_proveedor = ?";
         
@@ -96,6 +116,13 @@ public class ProveedorDAO {
         }
     }
     
+    /**
+     * Elimina de la tabla proveedores de la base de datos el proveedor 
+     * con el identificador que se pasa como parámetro.
+     * 
+     * @param codProv int
+     * @return int 
+     */
     public int eliminarProveedor(int codProv) {
         int filas = 0;
         String sql = "DELETE FROM proveedores WHERE codigo_proveedor = ?";
