@@ -27,6 +27,11 @@ import utils.LoggerUtils;
 import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase controller asociada a la vista PrestamosMantenim.fxml
+ * Contiene la lógica correspondiente a dicha vista.
+ * 
+ */
 public class PrestamosMantenimController implements Initializable {
 
     @FXML
@@ -89,6 +94,13 @@ public class PrestamosMantenimController implements Initializable {
         });
     }    
 
+    /**
+     * Informa los componentes gráficos con los datos del dispositivo pasado como parámetro,
+     * si éste no es nulo.
+     * 
+     * @param prest Prestamo
+     * @param disp Dispositivo
+     */
     public void setPrestamo(Prestamo prest, Dispositivo disp) {
         Utilidades.formatearFecha(dtpFechaIni);
         Utilidades.formatearFecha(dtpFechaFin);
@@ -131,6 +143,9 @@ public class PrestamosMantenimController implements Initializable {
         }
     }
     
+    /**
+     * Informa los datos del dispositivo en los controles correspondientes.
+     */
     private void cargarDatosDispositivo() {
         txtNombreDisp.setText(dispositivo.getNombre());
         txtNetiqueta.setText(String.valueOf(dispositivo.getNum_etiqueta()));
@@ -150,6 +165,11 @@ public class PrestamosMantenimController implements Initializable {
         stage.close();
     }
 
+    /**
+     * Crea un nuevo préstamo en la base de datos con los datos correspondientes.
+     * 
+     * @param event 
+     */
     @FXML
     private void btnPrestarAction(ActionEvent event) {
         Alumno alumno = cboxAlumno.getValue();
@@ -184,6 +204,12 @@ public class PrestamosMantenimController implements Initializable {
         cerrarVentana();
     }
 
+    /**
+     * Actualiza en la base de datos el préstamo correspondiente informando la fecha de fin
+     * de dicho préstamo.
+     * 
+     * @param event 
+     */
     @FXML
     private void btnDevolverAction(ActionEvent event) {
         if (null == this.prestamo) {
@@ -216,6 +242,9 @@ public class PrestamosMantenimController implements Initializable {
         cerrarVentana();
     }
     
+    /**
+     * Carga los registros correspondientes en los distintos ComboBox del formulario
+     */
     private void cargarCombos() {
         try {
         // Sedes
@@ -234,6 +263,10 @@ public class PrestamosMantenimController implements Initializable {
         } 
     }
     
+    /**
+     * Filtra los registros que se muestran en el ComboBox de alumnos en función de si
+     * se ha seleccionado alguna sede en el ComboBox de sedes o algún curso.
+     */
     private void filtrarAlumnos() {
         Sede sedeSel = cboxSede.getValue();
         String curso = txtCurso.getText().trim().toLowerCase();

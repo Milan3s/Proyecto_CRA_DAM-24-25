@@ -36,7 +36,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -50,6 +49,11 @@ import utils.LoggerUtils;
 import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase controller asociada a la vista Prestamos.fxml
+ * Contiene la lógica correspondiente a dicha vista.
+ * 
+ */
 public class PrestamosController implements Initializable {
 
     @FXML
@@ -119,6 +123,10 @@ public class PrestamosController implements Initializable {
         cargarCombos();
     }
 
+    /**
+     * Se establece para cada columna del TableView qué atributo del objeto debe mostrar.
+     * 
+     */
     private void configurarColumnas() {
         SimpleDateFormat formatFecha = new SimpleDateFormat("dd/MM/yyyy");
         
@@ -240,11 +248,17 @@ public class PrestamosController implements Initializable {
         });
     }
     
+    /**
+     * Carga los préstamos de la base de datos en el TableView
+     */
     private void cargarDatos() {
         listaPrest = prestDAO.obtenerPrestamos(null, null);
         tablaPrest.setItems(listaPrest);
     }
     
+    /**
+     * Carga los registros correspondientes en los distintos ComboBox del formulario
+     */
     private void cargarCombos() {
         try {
             // Categorías
@@ -271,6 +285,11 @@ public class PrestamosController implements Initializable {
     private void btnNuevoAction(ActionEvent event) {
     }
 
+    /**
+     * Elimina de la base de datos el préstamo de la fila seleccionada en el TableView
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnEliminarAction(ActionEvent event) {
         Prestamo prestamoSelec = tablaPrest.getSelectionModel().getSelectedItem();
@@ -304,6 +323,12 @@ public class PrestamosController implements Initializable {
         }
     }
 
+    /**
+     * Filtra los registros que se muestran en el TableView en función de los
+     * datos utilizados como filtros.
+     * 
+     * @param event 
+     */
     @FXML
     private void btnBuscarAction(ActionEvent event) {
         String cursoFilt = txtCurso.getText();
@@ -345,6 +370,11 @@ public class PrestamosController implements Initializable {
         tablaPrest.setItems(filteredList);
     }
 
+    /**
+     * Limpia la información de los controles.
+     * 
+     * @param event 
+     */
     @FXML
     private void btnLimpiarAction(ActionEvent event) {
         txtCurso.setText("");
@@ -355,6 +385,12 @@ public class PrestamosController implements Initializable {
         tablaPrest.setItems(listaPrest);
     }
     
+    /**
+     * Abre el formulario de mantenimiento de préstamos.
+     * 
+     * @param prestamo Prestamo
+     * @param dispositivo Dispositivo
+     */
     private void abrirMantenimiento(Prestamo prestamo, Dispositivo dispositivo) {
         try {
             
@@ -377,6 +413,17 @@ public class PrestamosController implements Initializable {
         }
     }
 
+    /**
+     * Importa los datos de préstamos de un fichero .csv en la tabla prestamos.
+     * El fichero no debe tener fila de cabecera.
+     * 
+     * La estructura de cada fila del fichero debe ser:
+     * num_serie_dispositivo;nre_alumno;fecha_inicio_prestamo
+     * 
+     * Si el fichero se obtiene a partir de un archivo Excel, debe guardarse como CSV UTF-8
+     * 
+     * @param event 
+     */
     @FXML
     private void btnImportarAction(ActionEvent event) {
         // Para seleccionar un fichero .csv
@@ -421,6 +468,11 @@ public class PrestamosController implements Initializable {
         }
     }
 
+    /**
+     * Exporta los datos de los préstamos mostrados en el TableView a un archivo csv.
+     * 
+     * @param event
+     */
     @FXML
     private void btnExportarAction(ActionEvent event) {
         // Seleccionar fichero destino
@@ -435,7 +487,7 @@ public class PrestamosController implements Initializable {
                 String linea = "";
                 
                 // Se recorren los elementos del ObservableList y se van grabando las líneas en el fichero destino
-                for (Prestamo prest : listaPrest) {
+                for (Prestamo prest : tablaPrest.getItems()) {
                     Dispositivo disp = prest.getDispositivo();
                     Alumno alu = prest.getAlumno();
                     

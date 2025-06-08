@@ -35,8 +35,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
-import model.Alumno;
 import model.Dispositivo;
 import model.Proveedor;
 import model.Categoria;
@@ -52,6 +50,11 @@ import utils.LoggerUtils;
 import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase controller asociada a la vista Dispositivos.fxml
+ * Contiene la lógica correspondiente a dicha vista.
+ * 
+ */
 public class DispositivosController implements Initializable {
 
     private ObservableList<Dispositivo> listaDisposit = FXCollections.observableArrayList();
@@ -146,6 +149,10 @@ public class DispositivosController implements Initializable {
         cargarCombos();
     }
 
+    /**
+     * Se establece para cada columna del TableView qué atributo del objeto debe mostrar.
+     * 
+     */
     private void configurarColumnas() {
         SimpleDateFormat formatFecha = new SimpleDateFormat("dd/MM/yyyy");
         
@@ -247,11 +254,20 @@ public class DispositivosController implements Initializable {
         });
     }
     
+    /**
+     * Carga los dispositivos de la base de datos en el TableView
+     */
     private void cargarDatos() {
         listaDisposit = dispDAO.obtenerDispositivos();
         tablaDisp.setItems(listaDisposit);
     }
 
+    /**
+     * Filtra los registros que se muestran en el TableView en función de los
+     * datos utilizados como filtros.
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnBuscarAction(ActionEvent event) {
         String nombreFilt = txtNombre.getText();
@@ -329,6 +345,11 @@ public class DispositivosController implements Initializable {
         }
     }
     
+    /**
+     * Abre el formulario de mantenimiento de dispositivos.
+     * 
+     * @param disp Dispositivo
+     */
     private void abrirMantenimiento(Dispositivo disp) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/DispositivosMantenim.fxml"));
@@ -351,6 +372,11 @@ public class DispositivosController implements Initializable {
         }
     }
     
+    /**
+     * Elimina de la base de datos el dispositivo de la fila seleccionada en el TableView
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnEliminarAction(ActionEvent event) {
         Dispositivo dispSelec = tablaDisp.getSelectionModel().getSelectedItem();
@@ -373,6 +399,9 @@ public class DispositivosController implements Initializable {
         });
     }
     
+    /**
+     * Carga los registros correspondientes en los distintos ComboBox del formulario
+     */
     private void cargarCombos() {
         try {
             // Categorías
@@ -411,6 +440,11 @@ public class DispositivosController implements Initializable {
         }
     }
     
+    /**
+     * Limpia la información de los controles.
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnLimpiarAction(ActionEvent event) {
         txtNombre.setText("");
@@ -424,6 +458,17 @@ public class DispositivosController implements Initializable {
         tablaDisp.setItems(listaDisposit);
     }
 
+    /**
+     * Importa los datos de dispositivos de un fichero .csv en la tabla dispostivos.
+     * El fichero no debe tener fila de cabecera.
+     * 
+     * La estructura de cada fila del fichero debe ser:
+     * nombre_dispositivo;modelo;num_serie;fecha_adquisición;mac;imei;num_etiqueta;comentario_registro;observaciones;
+     * 
+     * Si el fichero se obtiene a partir de un archivo Excel, debe guardarse como CSV UTF-8
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnImportarAction(ActionEvent event) {
         // Para seleccionar un fichero .csv
@@ -473,6 +518,11 @@ public class DispositivosController implements Initializable {
         }
     }
 
+    /**
+     * Exporta los datos de los dispositivos mostrados en el TableView a un archivo csv.
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnExportarAction(ActionEvent event) {
         // Seleccionar fichero destino
@@ -487,8 +537,8 @@ public class DispositivosController implements Initializable {
                 String linea = "";
                 String numEtiq = "";
                 
-                // Se recorren los elementos del ObservableList y se van grabando las líneas en el fichero destino
-                for (Dispositivo disp : listaDisposit) {
+                // Se recorren los elementos del TableView y se van grabando las líneas en el fichero destino
+                for (Dispositivo disp : tablaDisp.getItems()) {
                     linea = disp.getNombre() != null ? disp.getNombre() + ";" : ";";
                     linea += disp.getModelo() != null ? disp.getModelo() + ";" : ";";
                     linea += disp.getMarca() != null ? disp.getMarca().getNombre() + ";" : ";";

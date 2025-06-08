@@ -4,8 +4,6 @@ import dao.AlumnosDAO;
 import dao.CategoriaDAO;
 import java.net.URL;
 import java.sql.Date;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,7 +16,6 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
 import model.Alumno;
 import model.Dispositivo;
 import dao.DispositivoDAO;
@@ -46,6 +43,11 @@ import utils.LoggerUtils;
 import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase controller asociada a la vista DispositivosMantenim.fxml
+ * Contiene la lógica correspondiente a dicha vista.
+ * 
+ */
 public class DispositivosMantenimController implements Initializable {
 
     @FXML
@@ -119,6 +121,12 @@ public class DispositivosMantenimController implements Initializable {
         cboxSede.valueProperty().addListener((obs, oldVal, newVal) -> filtrarEspacios());
     }
 
+    /**
+     * Informa los componentes gráficos con los datos del dispositivo pasado como parámetro,
+     * si éste no es nulo.
+     * 
+     * @param disp Dispositivo
+     */
     public void setDispositivo(Dispositivo disp) {
         Utilidades.formatearFecha(dtpFecha);
         
@@ -163,6 +171,9 @@ public class DispositivosMantenimController implements Initializable {
         stage.close();
     }
 
+    /**
+     * Carga los registros correspondientes en los distintos ComboBox del formulario
+     */
     private void cargarCombos() {
         try {
             // Categorías 
@@ -201,6 +212,11 @@ public class DispositivosMantenimController implements Initializable {
         }
     }
     
+    /**
+     * Lee los datos de los componentes gráficos.
+     * En caso de que ya exista el dispositivo actualiza la información en la base de datos.
+     * En caso de que no exista se crea nuevo.
+     */
     private void guardarDispositivo() {
         int codDisp;
         boolean prestado;
@@ -251,6 +267,11 @@ public class DispositivosMantenimController implements Initializable {
         cerrarVentana();
     }
 
+    /**
+     * Abre el formulario de mantenimiento de préstamos.
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnPrestarAction(ActionEvent event) {
         try {
@@ -290,6 +311,10 @@ public class DispositivosMantenimController implements Initializable {
         }
     }
     
+    /**
+     * Filtra los registros que se muestran en el ComboBox de espacios en función de si
+     * se ha seleccionado alguna sede en el ComboBox de sedes.
+     */
     private void filtrarEspacios() {
         Sede sedeSel = cboxSede.getValue();
         
