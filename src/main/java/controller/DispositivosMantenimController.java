@@ -278,7 +278,7 @@ public class DispositivosMantenimController implements Initializable {
             // Comprobar si el dispositivo está prestado y en ese caso obtener el objeto Prestamo correspondiente
             Prestamo prestamo = null;
  
-            if (dispositivo.isPrestado()) {
+            if (null != dispositivo && dispositivo.isPrestado()) {
                 PrestamoDAO prestamoDAO = new PrestamoDAO();
                 prestamo = prestamoDAO.obtenerPrestamos(dispositivo, dispositivo.getAlumno()).get(0);
             }
