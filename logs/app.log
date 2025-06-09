@@ -1879,3 +1879,89 @@
 [2025-06-09 00:51:59] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
 [2025-06-09 00:51:59] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
 [2025-06-09 00:51:59] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 13:44:31] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-09 13:44:31] [INFO   ] [ACCESO] Intento de login con usuario: d
+[2025-06-09 13:44:31] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: d
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-09 13:44:31] [INFO   ] [ACCESO] Resultado de login → Usuario: d, Acceso: concedido
+[2025-06-09 13:44:31] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: d
+[2025-06-09 13:44:31] [INFO   ] [ACCESO] Usuario redirigido al panel principal: d
+[2025-06-09 13:44:33] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-09 13:44:33] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 1
+[2025-06-09 13:44:33] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 13:44:37] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-06-09 13:44:37] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-06-09 13:44:37] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: este mu
+[2025-06-09 13:44:42] [INFO   ] [ALUMNOS] Alumno eliminado correctamente: 7
+[2025-06-09 13:44:52] [SEVERE ] [IMPORTACION] ERROR → Error al importar alumnos: C:\Users\Milanes\Desktop\x.csv
+[2025-06-09 13:44:58] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-06-09 13:44:58] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-06-09 13:44:58] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: este mu
+[2025-06-09 13:45:05] [INFO   ] [ALUMNOS] Alumno insertado: asd, NRE: 123123
+[2025-06-09 13:45:14] [INFO   ] [ALUMNOS] Alumno eliminado correctamente: 8
+[2025-06-09 13:48:40] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-09 13:48:40] [INFO   ] [ACCESO] Intento de login con usuario: d
+[2025-06-09 13:48:40] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: d
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-09 13:48:40] [INFO   ] [ACCESO] Resultado de login → Usuario: d, Acceso: concedido
+[2025-06-09 13:48:40] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: d
+[2025-06-09 13:48:40] [INFO   ] [ACCESO] Usuario redirigido al panel principal: d
+[2025-06-09 13:48:46] [SEVERE ] [IMPORTACION] ERROR → Error al importar alumnos: C:\Users\Milanes\Desktop\a.csv
+[2025-06-09 13:52:41] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-09 13:52:41] [INFO   ] [ACCESO] Intento de login con usuario: d
+[2025-06-09 13:52:41] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: d
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-09 13:52:41] [INFO   ] [ACCESO] Resultado de login → Usuario: d, Acceso: concedido
+[2025-06-09 13:52:41] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: d
+[2025-06-09 13:52:41] [INFO   ] [ACCESO] Usuario redirigido al panel principal: d
+[2025-06-09 13:52:46] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-06-09 13:52:46] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-06-09 13:52:46] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: este mu
+[2025-06-09 13:52:51] [INFO   ] [ALUMNOS] Alumno insertado: dsa, NRE: 123
+[2025-06-09 13:53:02] [INFO   ] [ALUMNOS] Alumno eliminado correctamente: 9
+[2025-06-09 13:53:08] [INFO   ] [ALUMNOS] Iniciando importación desde: C:\Users\Milanes\Desktop\a.csv
+[2025-06-09 13:53:08] [INFO   ] [ALUMNOS] Alumno insertado: dsa, NRE: 123
+[2025-06-09 13:53:08] [INFO   ] [ALUMNOS] Alumno importado (línea 2): dsa
+[2025-06-09 13:53:08] [INFO   ] [ALUMNOS] Importación finalizada. Éxitos: 1 | Errores: 0
+[2025-06-09 13:53:31] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-09 13:53:31] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 1
+[2025-06-09 13:53:31] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 13:53:34] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-09 13:53:35] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 1
+[2025-06-09 13:53:35] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 13:53:43] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al eliminar centro
+[2025-06-09 13:53:44] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 1
+[2025-06-09 13:53:44] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 13:56:05] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-09 13:56:05] [INFO   ] [ACCESO] Intento de login con usuario: d
+[2025-06-09 13:56:05] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: d
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-09 13:56:05] [INFO   ] [ACCESO] Resultado de login → Usuario: d, Acceso: concedido
+[2025-06-09 13:56:05] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: d
+[2025-06-09 13:56:06] [INFO   ] [ACCESO] Usuario redirigido al panel principal: d
+[2025-06-09 13:56:07] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-09 13:56:07] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 1
+[2025-06-09 13:56:07] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 13:56:32] [SEVERE ] [CENTROS EDUCATIVOS] ERROR → Error al eliminar centro
+[2025-06-09 13:56:34] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 1
+[2025-06-09 13:56:34] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 13:58:01] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-09 13:58:01] [INFO   ] [ACCESO] Intento de login con usuario: d
+[2025-06-09 13:58:01] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: d
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-09 13:58:01] [INFO   ] [ACCESO] Resultado de login → Usuario: d, Acceso: concedido
+[2025-06-09 13:58:01] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: d
+[2025-06-09 13:58:01] [INFO   ] [ACCESO] Usuario redirigido al panel principal: d
+[2025-06-09 13:58:03] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-09 13:58:03] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 1
+[2025-06-09 13:58:03] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 13:58:07] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-09 13:58:07] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 1
+[2025-06-09 13:58:07] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 13:58:10] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-09 13:58:10] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 1
+[2025-06-09 13:58:10] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 13:58:15] [INFO   ] [CENTROS EDUCATIVOS] Centro 1 tiene 1 sede(s) asociada(s).

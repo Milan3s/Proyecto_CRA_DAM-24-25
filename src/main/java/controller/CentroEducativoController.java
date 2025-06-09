@@ -147,18 +147,40 @@ public class CentroEducativoController implements Initializable {
     @FXML
     private void btnActionEliminarCentro() {
         CentroEducativo seleccionado = tablaCentroEducativos.getSelectionModel().getSelectedItem();
+
         if (seleccionado == null) {
+            mostrarAlerta2("Sin selección", "Por favor, selecciona un centro educativo para eliminar.", Alert.AlertType.WARNING);
             return;
         }
 
-        boolean eliminado = centroEducativoDAO.eliminarCentro(seleccionado.getCodigoCentro());
-        if (eliminado) {
-            LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro eliminado → Código: " + seleccionado.getCodigoCentro());
-            mostrarAlerta2("Centro eliminado", "Se ha eliminado correctamente el centro.", Alert.AlertType.INFORMATION);
-        } else {
-            mostrarAlerta2("Error", "No se pudo eliminar el centro.", Alert.AlertType.ERROR);
+        // Validar si tiene sedes asociadas
+        if (centroEducativoDAO.tieneSedesAsociadas(seleccionado.getCodigoCentro())) {
+            mostrarAlerta2(
+                    "No se puede eliminar",
+                    "Este centro tiene sedes asociadas. Elimínalas primero para poder eliminar el centro.",
+                    Alert.AlertType.ERROR
+            );
+            return;
         }
-        cargarDatos();
+
+        Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmacion.setTitle("Confirmar eliminación");
+        confirmacion.setHeaderText("¿Estás seguro de que deseas eliminar este centro?");
+        confirmacion.setContentText("Nombre: " + seleccionado.getNombre() + "\nCódigo: " + seleccionado.getCodigoCentro());
+
+        confirmacion.showAndWait().ifPresent(respuesta -> {
+            if (respuesta == ButtonType.OK) {
+                boolean eliminado = centroEducativoDAO.eliminarCentro(seleccionado.getCodigoCentro());
+
+                if (eliminado) {
+                    LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro eliminado → Código: " + seleccionado.getCodigoCentro());
+                    mostrarAlerta2("Centro eliminado", "Se ha eliminado correctamente el centro.", Alert.AlertType.INFORMATION);
+                    cargarDatos();
+                } else {
+                    mostrarAlerta2("Error", "No se pudo eliminar el centro.", Alert.AlertType.ERROR);
+                }
+            }
+        });
     }
 
     // Acción: Buscar centros
@@ -189,33 +211,69 @@ public class CentroEducativoController implements Initializable {
         alerta.setContentText(mensaje);
         alerta.showAndWait();
     }
-    */
+     */
     // Acción: Importar desde CSV usando seleccFichero
     @FXML
     private void btnImportarAction(ActionEvent event) {
         File fichero = Utilidades.seleccFichero("Archivos CSV", "*.csv", "r");
 
         if (fichero != null) {
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fichero)))) {
+            int exitos = 0;
+            int errores = 0;
+
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fichero), "UTF-8"))) {
                 String linea;
+                int numLinea = 0;
+
+                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Iniciando importación desde: " + fichero.getAbsolutePath());
 
                 while ((linea = br.readLine()) != null) {
+                    numLinea++;
+
+                    // Omitir cabecera si detectada
+                    if (numLinea == 1 && linea.toLowerCase().contains("codigo") && linea.toLowerCase().contains("nombre")) {
+                        continue;
+                    }
+
                     String[] items = linea.split(";");
-                    if (items.length == 9) {
+                    if (items.length != 9) {
+                        LoggerUtils.logWarning("CENTROS EDUCATIVOS", "Línea ignorada (campos inválidos) → Línea " + numLinea + ": " + linea);
+                        errores++;
+                        continue;
+                    }
+
+                    try {
                         CentroEducativo centro = new CentroEducativo(
-                                items[0], items[1], items[2], items[3], items[4],
-                                items[5], items[6], items[7], items[8]
+                                items[0].trim(), items[1].trim(), items[2].trim(), items[3].trim(),
+                                items[4].trim(), items[5].trim(), items[6].trim(),
+                                items[7].trim(), items[8].trim()
                         );
-                        centroEducativoDAO.insertarCentro(centro);
+
+                        boolean insertado = centroEducativoDAO.insertarCentro(centro);
+                        if (insertado) {
+                            LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro importado: " + centro.getCodigoCentro());
+                            exitos++;
+                        } else {
+                            LoggerUtils.logWarning("CENTROS EDUCATIVOS", "No se pudo insertar centro (ya existe o error SQL) → Línea " + numLinea);
+                            errores++;
+                        }
+
+                    } catch (Exception e) {
+                        LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al procesar línea " + numLinea + ": " + linea, e);
+                        errores++;
                     }
                 }
 
                 cargarDatos();
-                mostrarAlerta2("Importación", "Centros importados correctamente.", Alert.AlertType.INFORMATION);
+                mostrarAlerta2("Importación finalizada",
+                        "Centros importados: " + exitos + "\nErrores: " + errores,
+                        Alert.AlertType.INFORMATION);
+
+                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Importación finalizada. Éxitos: " + exitos + " | Errores: " + errores);
 
             } catch (IOException e) {
-                LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al importar centros: " + fichero, e);
-                mostrarAlerta2("Error", "No se pudo importar el archivo.", Alert.AlertType.ERROR);
+                LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al leer el archivo: " + fichero.getAbsolutePath(), e);
+                mostrarAlerta2("Error", "No se pudo leer el archivo de importación.", Alert.AlertType.ERROR);
             }
         }
     }
@@ -262,9 +320,9 @@ public class CentroEducativoController implements Initializable {
             // Establecer centro activo
             Session.getInstance().setCentroActivo(seleccionado);
             Session.getInstance().notificarCentro(seleccionado);
-            
+
             mostrarAlerta2("", "Centros activo establecido.", Alert.AlertType.INFORMATION);
-          
+
         } else {
             mostrarAlerta2("Sin selección", "Por favor, seleccione un centro.", Alert.AlertType.WARNING);
         }

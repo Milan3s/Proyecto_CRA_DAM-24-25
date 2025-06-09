@@ -134,19 +134,44 @@ public class AlumnosController implements Initializable {
     @FXML
     private void btnActionEliminarAlumno() {
         Alumno alumno = tablaUsuarios.getSelectionModel().getSelectedItem();
-        if (alumno != null && alumnosDAO.eliminarAlumno(alumno.getCodigo())) {
-            cargarDatos();
-            Utilidades.mostrarAlerta2("Eliminado", "Alumno eliminado correctamente.", Alert.AlertType.INFORMATION);
-        } else {
-            Utilidades.mostrarAlerta2("Error", "No se pudo eliminar el alumno.", Alert.AlertType.ERROR);
-        }
-    }
 
-    // (Opcional) Eliminar todos los alumnos — si se usa
-    private void btnActionEliminarTodos() {
-        int filasEliminadas = alumnosDAO.eliminarTodosAlumnos();
-        LoggerUtils.logInfo("ALUMNOS", "Total de alumnos eliminados: " + filasEliminadas);
-        cargarDatos();
+        if (alumno == null) {
+            Utilidades.mostrarAlerta2("Sin selección", "Por favor, selecciona un alumno para eliminar.", Alert.AlertType.WARNING);
+            return;
+        }
+
+        Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmacion.setTitle("Confirmar eliminación");
+        confirmacion.setHeaderText("¿Estás seguro de que deseas eliminar este alumno?");
+        confirmacion.setContentText("Nombre: " + alumno.getNombre() + "\nCódigo: " + alumno.getCodigo());
+
+        confirmacion.showAndWait().ifPresent(respuesta -> {
+            if (respuesta == ButtonType.OK) {
+                try {
+                    boolean eliminado = alumnosDAO.eliminarAlumno(alumno.getCodigo());
+
+                    if (eliminado) {
+                        cargarDatos();
+                        Utilidades.mostrarAlerta2("Eliminado", "Alumno eliminado correctamente.", Alert.AlertType.INFORMATION);
+                    } else {
+                        Utilidades.mostrarAlerta2("Error", "No se pudo eliminar el alumno.", Alert.AlertType.ERROR);
+                    }
+
+                } catch (Exception e) {
+                    String msg = e.getMessage().toLowerCase();
+                    if (msg.contains("foreign key") || msg.contains("constraint")) {
+                        Utilidades.mostrarAlerta2(
+                                "Eliminación bloqueada",
+                                "No se puede eliminar el alumno porque tiene sedes u otros elementos asociados.\nElimina primero las relaciones dependientes.",
+                                Alert.AlertType.ERROR
+                        );
+                    } else {
+                        Utilidades.mostrarAlerta2("Error inesperado", "Error al eliminar el alumno: " + e.getMessage(), Alert.AlertType.ERROR);
+                    }
+                    LoggerUtils.logError("ALUMNOS", "Error al intentar eliminar alumno con ID: " + alumno.getCodigo(), e);
+                }
+            }
+        });
     }
 
     // Acción del botón "Buscar"
@@ -168,36 +193,71 @@ public class AlumnosController implements Initializable {
         File fichero = Utilidades.seleccFichero("Archivos CSV", "*.csv", "r");
 
         if (fichero != null) {
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fichero)))) {
+            int exitos = 0;
+            int errores = 0;
+
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fichero), "UTF-8"))) {
                 String linea;
+                int lineaActual = 0;
+
+                LoggerUtils.logInfo("ALUMNOS", "Iniciando importación desde: " + fichero.getAbsolutePath());
 
                 while ((linea = br.readLine()) != null) {
+                    lineaActual++;
+
+                    // Omitir cabecera si se detecta
+                    if (lineaActual == 1 && linea.toLowerCase().contains("nombre;curso")) {
+                        continue;
+                    }
+
                     String[] items = linea.split(";");
 
-                    if (items.length >= 7) {
-                        String nombre = items[0];
-                        String curso = items[1];
-                        String nombreSede = items[2];
-                        int codigoSede = Integer.parseInt(items[3]);
-                        String nre = items[4];
-                        String telTutor1 = items[5];
-                        String telTutor2 = items[6];
+                    if (items.length < 7) {
+                        LoggerUtils.logWarning("ALUMNOS", "Línea incompleta ignorada (línea " + lineaActual + "): " + linea);
+                        errores++;
+                        continue;
+                    }
 
-                        Alumno nuevoAlumno = new Alumno(0, nombre, curso, nombreSede, codigoSede);
-                        nuevoAlumno.setNre(nre);
-                        nuevoAlumno.setTelTutor1(telTutor1);
-                        nuevoAlumno.setTelTutor2(telTutor2);
+                    try {
+                        String nombre = items[0].trim();
+                        String curso = items[1].trim();
+                        String nombreSede = items[2].trim(); // Aunque no se usa en inserción
+                        String codigoSedeStr = items[3].trim();
+                        String nre = items[4].trim();
+                        String telTutor1 = items[5].trim();
+                        String telTutor2 = items[6].trim();
 
-                        alumnosDAO.insertarAlumno(nombre, curso, codigoSede, nre, telTutor1, telTutor2);
+                        int codigoSede = Integer.parseInt(codigoSedeStr);
+
+                        boolean insertado = alumnosDAO.insertarAlumno(nombre, curso, codigoSede, nre, telTutor1, telTutor2);
+
+                        if (insertado) {
+                            LoggerUtils.logInfo("ALUMNOS", "Alumno importado (línea " + lineaActual + "): " + nombre);
+                            exitos++;
+                        } else {
+                            LoggerUtils.logWarning("ALUMNOS", "No se pudo insertar el alumno (línea " + lineaActual + "): " + nombre);
+                            errores++;
+                        }
+
+                    } catch (NumberFormatException e) {
+                        LoggerUtils.logWarning("ALUMNOS", "Código de sede inválido (línea " + lineaActual + "): " + items[3]);
+                        errores++;
+                    } catch (Exception e) {
+                        LoggerUtils.logError("ALUMNOS", "Error al procesar línea " + lineaActual + ": " + linea, e);
+                        errores++;
                     }
                 }
 
                 cargarDatos();
-                Utilidades.mostrarAlerta2("Éxito", "Importación realizada correctamente.", Alert.AlertType.INFORMATION);
 
-            } catch (IOException | NumberFormatException e) {
-                LoggerUtils.logError("IMPORTACION", "Error al importar alumnos: " + fichero, e);
-                Utilidades.mostrarAlerta2("Error", "No se pudo importar el archivo.", Alert.AlertType.ERROR);
+                LoggerUtils.logInfo("ALUMNOS", "Importación finalizada. Éxitos: " + exitos + " | Errores: " + errores);
+                Utilidades.mostrarAlerta2("Importación finalizada",
+                        "Alumnos importados correctamente: " + exitos + "\nErrores: " + errores,
+                        Alert.AlertType.INFORMATION);
+
+            } catch (IOException e) {
+                LoggerUtils.logError("ALUMNOS", "Error al leer el archivo de importación: " + fichero.getAbsolutePath(), e);
+                Utilidades.mostrarAlerta2("Error", "No se pudo leer el archivo seleccionado.", Alert.AlertType.ERROR);
             }
         }
     }
