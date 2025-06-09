@@ -2115,3 +2115,52 @@
 [2025-06-09 14:20:02] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
 [2025-06-09 14:20:02] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
 [2025-06-09 14:20:02] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 15:18:30] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-09 15:18:31] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-09 15:18:31] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-09 15:18:31] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-09 15:18:31] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-09 15:18:31] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-09 15:18:36] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-09 15:18:36] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-09 15:18:36] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 15:19:02] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-06-09 15:19:02] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes WHERE codigo_centro = 30011995
+[2025-06-09 15:19:02] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
+[2025-06-09 15:19:02] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
+[2025-06-09 15:19:02] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
+[2025-06-09 15:19:02] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
+[2025-06-09 15:19:02] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
+[2025-06-09 15:30:26] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-09 15:30:26] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-09 15:30:26] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-09 15:30:27] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-09 15:30:27] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-09 15:30:27] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-09 15:30:30] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-09 15:30:30] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-09 15:30:30] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 15:53:48] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-09 15:53:48] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-09 15:53:48] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-09 15:53:48] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-09 15:53:48] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-09 15:53:48] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-09 15:54:13] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-09 15:54:13] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-09 15:54:13] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 15:55:52] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-09 15:55:52] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-09 15:55:53] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-09 15:55:53] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-09 15:55:53] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-09 15:55:53] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-09 15:55:55] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-09 15:55:55] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-09 15:55:55] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-09 16:51:31] [INFO   ] [PROVEEDORES] Intento de eliminar sin seleccionar proveedor.
