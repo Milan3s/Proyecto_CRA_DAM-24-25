@@ -9,54 +9,54 @@ import model.Marca;
 
 public class MarcaDAO {
 
-    private Connection conn;
+    private Connection conn; // variable que guarda la conexión con la bd
 
-    public MarcaDAO() {
-        conn = DataBaseConection.getConnection();
+    public MarcaDAO() { //constructor
+        conn = DataBaseConection.getConnection();// obtenemos con la conexion con la bd
     }
 
-    public List<Marca> obtenerMarcas() {
-        List<Marca> lista = new ArrayList<>();
-        String query = "SELECT codigo_marca, nombre FROM marcas";
+    public List<Marca> obtenerMarcas() { // metodo para obtener todas las marcas guardadas en la tabla
+        List<Marca> lista = new ArrayList<>();// creamos una lista  
+        String query = "SELECT codigo_marca, nombre FROM marcas";// consulta sql que selecciona todos los registros
         Statement stmt = null;
         ResultSet rs = null;
 
         try {
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(query);
+            stmt = conn.createStatement();// creamos un objeto para ejecutar la consulta
+            rs = stmt.executeQuery(query);// la ejecutamos y guardamos el resultado
 
-            while (rs.next()) {
-                Marca m = new Marca(rs.getInt("codigo_marca"), rs.getString("nombre"));
-                lista.add(m);
+            while (rs.next()) { // recorremos los resultados obtenidos
+                Marca m = new Marca(rs.getInt("codigo_marca"), rs.getString("nombre")); //creamos un nuevo objeto con los datos de la bd
+                lista.add(m); // agregamos a la lista
             }
         } catch (SQLException e) {
-            LoggerUtils.logError("MARCAS", "Error al obtener marcas", e);
+            LoggerUtils.logError("MARCAS", "Error al obtener marcas", e); // si ocurre un error lo registramos
         } finally {
             try { if (rs != null) rs.close(); if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
-        }
+        }// cerramos los objetos para liberar memoria
 
-        return lista;
+        return lista; // devolvemos la lista
     }
-
+ // metodo para insertar una marca nueva en la bd
     public boolean insertarMarca(String nombre) {
-        String query = "INSERT INTO marcas (nombre) VALUES (?)";
+        String query = "INSERT INTO marcas (nombre) VALUES (?)"; // consulta con un parametro(?)
 
         PreparedStatement stmt = null;
 
         try {
-            stmt = conn.prepareStatement(query);
-            stmt.setString(1, nombre);
+            stmt = conn.prepareStatement(query); // preparamos la consulta  
+            stmt.setString(1, nombre); // reemplazamos el ? con el valor que recibimos
 
-            int filas = stmt.executeUpdate();
+            int filas = stmt.executeUpdate(); // ejecutamos la consulta y cuantas filas afectadas
 
-            return filas > 0;
+            return filas > 0; // si se añadio al menos una fila devuelve TRue
         } catch (SQLException e) {
-            LoggerUtils.logError("MARCAS", "Error al insertar marca", e);
-        } finally {
+            LoggerUtils.logError("MARCAS", "Error al insertar marca", e);// si hay error lo registramos
+        } finally { // cerramos el PreparedStatement ( objetos) para liberar espacio
             try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
         }
 
-        return false;
+        return false; // si llegamos aqui hubo un problema y no se insertó
     }
 
     public boolean actualizarMarca(int codigo, String nombre) {

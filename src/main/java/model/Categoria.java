@@ -1,17 +1,17 @@
 package model;
 
 public class Categoria {
-
-    private int codigo;
+// atributos privados
+    private int codigo; 
     private String nombre;
 
-    public Categoria(int codigo, String nombre) {
+    public Categoria(int codigo, String nombre) {// constructor
         this.codigo = codigo;
         this.nombre = nombre;
     }
 
     public int getCodigo() {
-        return codigo;
+        return codigo; // devuelve el valor del codigo
     }
 
     public String getNombre() {
@@ -22,7 +22,7 @@ public class Categoria {
         this.nombre = nombre;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(int codigo) { // cambia el valor del codigo
         this.codigo = codigo;
     }
 }

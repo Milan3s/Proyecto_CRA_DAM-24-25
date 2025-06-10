@@ -16,26 +16,26 @@ public class SedeDAO {
     private CentroEducativo centro;
 
     public SedeDAO() {
-        conn = DataBaseConection.getConnection();
-        centro = Session.getInstance().getCentroActivo();
+        conn = DataBaseConection.getConnection(); // var. que guarda la bd
+        centro = Session.getInstance().getCentroActivo(); // coge el cod. centro
     }
     
-    public List<Sede> obtenerSede() {
-        List<Sede> lista = new ArrayList<>();
+    public List<Sede> obtenerSede() { // metodo para obtener las sedes guardadas
+        List<Sede> lista = new ArrayList<>(); // creamos una lista
         String query = "SELECT codigo_sede, nombre, calle, localidad, cp, municipio, provincia, telefono, codigo_centro FROM sedes";
         Statement stmt = null;
         ResultSet rs = null;
         
         if (centro != null) {
             query += " WHERE codigo_centro = " + centro.getCodigoCentro();
-        }
+        } // tiene que haber un centro para poder seleccionarlo
 
         try {
-            stmt = conn.createStatement();
-            rs = stmt.executeQuery(query);
+            stmt = conn.createStatement();//creamos para ejecutar la consulta   
+            rs = stmt.executeQuery(query);// ejecutamos y guardamos resultado
 
             while (rs.next()) {
-                Sede sede = new Sede(
+                Sede sede = new Sede( // creamos con los datos de la bd
                         rs.getInt("codigo_sede"),
                         rs.getString("nombre"),
                         rs.getString("calle"),
@@ -46,26 +46,26 @@ public class SedeDAO {
                         rs.getString("telefono"),
                         rs.getInt("codigo_centro")
                 );
-                lista.add(sede);
+                lista.add(sede); // agregamos a la lista
             }
         } catch (SQLException e) {
-            LoggerUtils.logError("SEDES", "Error al obtener sedes", e);
+            LoggerUtils.logError("SEDES", "Error al obtener sedes", e); // si ocurre un error lo registramos
         } finally {
             try { if (rs != null) rs.close(); if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
-        }
+        } // ceramos para liberar memoria
 
-        return lista;
+        return lista; // devolvemos la lista
     }
-
+// metodo para insetar una sede
     public boolean insertarSede(String nombre, String calle, String localidad, String cp,
                                 String municipio, String provincia, String telefono, int codigoCentro) {
         String sql = "INSERT INTO sedes (nombre, calle, localidad, cp, municipio, provincia, telefono, codigo_centro) " +
-                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)"; // consulta con parametros ?
         PreparedStatement stmt = null;
 
         try {
-            stmt = conn.prepareStatement(sql);
-            stmt.setString(1, nombre);
+            stmt = conn.prepareStatement(sql); // preparamos la consulta
+            stmt.setString(1, nombre); // reemplamos ? por el valor recibido
             stmt.setString(2, calle);
             stmt.setString(3, localidad);
             stmt.setString(4, cp);
@@ -74,11 +74,11 @@ public class SedeDAO {
             stmt.setString(7, telefono);
             stmt.setInt(8, codigoCentro);
 
-            int filas = stmt.executeUpdate();
-            return filas > 0;
+            int filas = stmt.executeUpdate(); // ejecutamos la consulta y cuantas filas están afe tadas
+            return filas > 0; // si se añadio al menos una fila devuelve el true
         } catch (SQLException e) {
-            LoggerUtils.logError("SEDES", "Error al insertar sede", e);
-        } finally {
+            LoggerUtils.logError("SEDES", "Error al insertar sede", e); // si hay error se resgistra
+        } finally { // cerramos para liberar espacio
             try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
         }
 

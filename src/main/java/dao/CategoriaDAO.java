@@ -55,14 +55,14 @@ public class CategoriaDAO {
 
         try {
             stmt = conn.prepareStatement(query); // Preparamos la consulta
-            stmt.setString(1, nombre);           // Reemplazamos el (?) con el valor que recibimos
+            stmt.setString(1, nombre);           // Reempazamos el ? con el valor que recibimos
 
             int filas = stmt.executeUpdate();    // Ejecutamos la consulta y guardamos cuántas filas fueron afectadas
 
             return filas > 0; // Si se insertó al menos una fila, devolvemos true
         } catch (SQLException e) {
             // Si hay un error al insertar, lo registramos
-            LoggerUtils.logError("CATEGORIAS", "Error al insertar categoria", e);
+            LoggerUtils.logError("CATEGORIAS", "Error al insertar categoria" +e.getMessage(), e);
         } finally {
             // Cerramos el PreparedStatement
             try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
@@ -75,7 +75,7 @@ public class CategoriaDAO {
     public boolean actualizarCategoria(int codigo, String nombre) {
         String query = "UPDATE categorias SET nombre = ? WHERE codigo_categoria = ?"; // Consulta para actualizar
 
-        PreparedStatement stmt = null;
+        PreparedStatement stmt = null; // variable para hacer una consulta a la BD
 
         try {
             stmt = conn.prepareStatement(query); // Preparamos la consulta
@@ -84,33 +84,33 @@ public class CategoriaDAO {
 
             int filas = stmt.executeUpdate();    // Ejecutamos la actualización
 
-            return filas > 0; 
+            return filas > 0; // dice si ha habido alguna fila afectada 
         } catch (SQLException e) {
             LoggerUtils.logError("CATEGORIAS", "Error al actualizar categoria", e);
         } finally {
-            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
+            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {} // intenta cerrarlo y si da error sigue adelante
         }
 
         return false; 
     }
 
-   
+   //// Método para eliminar una categoría existente en la base de datos
     public boolean eliminarCategoria(int codigo) {
         String query = "DELETE FROM categorias WHERE codigo_categoria = ?"; 
 
         PreparedStatement stmt = null;
 
         try {
-            stmt = conn.prepareStatement(query); 
-            stmt.setInt(1, codigo);              
+            stmt = conn.prepareStatement(query);  // Preparamos la consulta
+            stmt.setInt(1, codigo);// pone un numero en la primera posicion de la consulta              
 
-            int filas = stmt.executeUpdate();    
+            int filas = stmt.executeUpdate();  // ejecuta la acción y te dice cuantas filas se actualizaron  
 
-            return filas > 0; 
-        } catch (SQLException e) {
+            return filas > 0; // tiene que ser mayor que 0 
+        } catch (SQLException e) { // lo agarra para que no se caiga el programa
             LoggerUtils.logError("CATEGORIAS", "Error al eliminar categoria", e);
-        } finally {
-            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {}
+        } finally { // se ejecuta esto de error o no
+            try { if (stmt != null) stmt.close(); } catch (SQLException ignored) {} // intenta cerrar el recurso y si da error se ignora
         }
 
         return false;

@@ -21,7 +21,8 @@
 
     <!-- Botones en línea -->
     <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="830.0" spacing="20.0">
-        <Button fx:id="btnNuevoMarca" mnemonicParsing="false" onAction="#btnActionNuevoMarca" styleClass="btnNuevoMarca" text="Nueva Marca">
+        <Button fx:id="btnNuevoMarca" mnemonicParsing="false" onAction="#btnActionNuevoMarca" 
+                styleClass="btnNuevoMarca" text="Nueva Marca">
             <graphic>
                 <FontAwesomeIconView glyphName="PLUS" selectionFill="BLACK" />
             </graphic>
@@ -45,7 +46,7 @@
     </HBox>
 
     <!-- Tabla -->
-    <TableView fx:id="tablaMarcas" styleClass="tabla_Alumnos" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+    <TableView fx:id="tablaMarcas" styleClass="tabla_Marca" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
         <columns>
             <TableColumn fx:id="colCodigo" prefWidth="150.0" styleClass="Columna-Codigo" text="Código Marca" />
             <TableColumn fx:id="colNombre" prefWidth="673.0" styleClass="Columna-nombre" text="Nombre" />
