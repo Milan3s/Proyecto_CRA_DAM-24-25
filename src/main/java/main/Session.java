@@ -3,6 +3,12 @@ package main;
 import controller.DashboardController;
 import model.CentroEducativo;
 
+/**
+ * Clase singleton que actúa como contenedor de variables globales de la aplicación.
+ * Se utiliza para la gestión del centro activo y para mostrarlo en la
+ * barra superior de la pantalla principal de la aplicación.
+ * 
+ */
 public class Session {
     private static Session instance;
     private CentroEducativo centroActivo;

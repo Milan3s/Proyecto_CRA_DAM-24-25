@@ -1,2 +1,42 @@
+#top_bar {
+    -fx-background-color: linear-gradient(to bottom, #F5F5F5, #D8D8D8);
+    -fx-padding: 10;
+    -fx-alignment: center-left;
+}
 
+#top_bar Label {
+    -fx-text-fill: black;
+    -fx-font-size: 15px;
+    /*-fx-font-weight: bold;*/
+}
 
+#sidebar {
+    -fx-background-color: #C6CAD3;
+    -fx-padding: 15;
+    -fx-spacing: 10;
+}
+
+.sidebar_button {
+    -fx-font-size: 15px;
+    -fx-background-radius: 20px;         /* Bordes redondeados */
+}
+
+.sidebar_button:hover {
+    -fx-background-color: #0096C9;
+    -fx-text-fill: white;
+}
+
+/* Estilo cuando un botón del sidebar está activo (igual al hover) */
+.sidebar-button-active {
+    -fx-background-color: #0096C9;
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-radius: 20px;         /* Bordes redondeados */
+}
+
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom, white, #C6CAD3);
+    -fx-border-color: #b0c4de;
+}

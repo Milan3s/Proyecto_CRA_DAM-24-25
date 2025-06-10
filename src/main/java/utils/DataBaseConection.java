@@ -4,6 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * Clase para gestionar la conexión a la base de datos mediante el patrón singleton,
+ * es decir, que solo exista una instancia de la conexión a la base de datos durante
+ * la ejecución de la aplicación.
+ * 
+ */
 public class DataBaseConection {
 
     // Datos de conexión a la base de datos
@@ -12,10 +18,14 @@ public class DataBaseConection {
     private static final String PASSWORD = ""; // Contraseña de la base de datos
     private static Connection connection = null;
     
-    // Método para obtener la conexión
+    /**
+     * Obtiene la conexión a la base de datos.
+     * 
+     * @return Connection
+     */
     public static Connection getConnection() {
         try {
-            // Establecer la conexión
+            // Se establece la conexión solo si no se ha establecido ya.
             if (connection == null) {
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
                 System.out.println("Conexión exitosa a la base de datos.");
@@ -27,7 +37,9 @@ public class DataBaseConection {
         return connection;
     }
 
-    // Método para cerrar la conexión
+    /**
+     * Cierra la conexión con la base de datos
+     */
     public static void closeConnection() {
         try {
             if (connection != null) {

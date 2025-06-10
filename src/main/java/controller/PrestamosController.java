@@ -1,12 +1,22 @@
 package controller;
 
+import dao.AlumnosDAO;
 import dao.CategoriaDAO;
 import dao.DispositivoDAO;
 import dao.MarcaDAO;
 import dao.PrestamoDAO;
 import dao.SedeDAO;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.net.URL;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
@@ -26,10 +36,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import model.Alumno;
 import model.Categoria;
 import model.Dispositivo;
 import model.Marca;
@@ -39,6 +49,11 @@ import utils.LoggerUtils;
 import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase controller asociada a la vista Prestamos.fxml
+ * Contiene la lógica correspondiente a dicha vista.
+ * 
+ */
 public class PrestamosController implements Initializable {
 
     @FXML
@@ -49,6 +64,10 @@ public class PrestamosController implements Initializable {
     private Button btnBuscar;
     @FXML
     private Button btnLimpiar;
+    @FXML
+    private Button btnImportar;
+    @FXML
+    private Button btnExportar;
     @FXML
     private TableView<Prestamo> tablaPrest;
     @FXML
@@ -86,7 +105,6 @@ public class PrestamosController implements Initializable {
     @FXML
     private ComboBox<Categoria> cboxCategoria;
     
-    
     private PrestamoDAO prestDAO = new PrestamoDAO();
     private SedeDAO sedeDAO = new SedeDAO();
     private CategoriaDAO catDAO = new CategoriaDAO();
@@ -98,7 +116,6 @@ public class PrestamosController implements Initializable {
     private ObservableList<Marca> listaMarcas = FXCollections.observableArrayList();
     private ObservableList<Sede> listaSedes = FXCollections.observableArrayList();
 
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         configurarColumnas();
@@ -106,6 +123,10 @@ public class PrestamosController implements Initializable {
         cargarCombos();
     }
 
+    /**
+     * Se establece para cada columna del TableView qué atributo del objeto debe mostrar.
+     * 
+     */
     private void configurarColumnas() {
         SimpleDateFormat formatFecha = new SimpleDateFormat("dd/MM/yyyy");
         
@@ -227,11 +248,17 @@ public class PrestamosController implements Initializable {
         });
     }
     
+    /**
+     * Carga los préstamos de la base de datos en el TableView
+     */
     private void cargarDatos() {
         listaPrest = prestDAO.obtenerPrestamos(null, null);
         tablaPrest.setItems(listaPrest);
     }
     
+    /**
+     * Carga los registros correspondientes en los distintos ComboBox del formulario
+     */
     private void cargarCombos() {
         try {
             // Categorías
@@ -258,6 +285,11 @@ public class PrestamosController implements Initializable {
     private void btnNuevoAction(ActionEvent event) {
     }
 
+    /**
+     * Elimina de la base de datos el préstamo de la fila seleccionada en el TableView
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnEliminarAction(ActionEvent event) {
         Prestamo prestamoSelec = tablaPrest.getSelectionModel().getSelectedItem();
@@ -291,6 +323,12 @@ public class PrestamosController implements Initializable {
         }
     }
 
+    /**
+     * Filtra los registros que se muestran en el TableView en función de los
+     * datos utilizados como filtros.
+     * 
+     * @param event 
+     */
     @FXML
     private void btnBuscarAction(ActionEvent event) {
         String cursoFilt = txtCurso.getText();
@@ -332,14 +370,27 @@ public class PrestamosController implements Initializable {
         tablaPrest.setItems(filteredList);
     }
 
+    /**
+     * Limpia la información de los controles.
+     * 
+     * @param event 
+     */
     @FXML
     private void btnLimpiarAction(ActionEvent event) {
         txtCurso.setText("");
         cboxCategoria.setValue(null);
         cboxMarca.setValue(null);
         cboxSede.setValue(null);
+        
+        tablaPrest.setItems(listaPrest);
     }
     
+    /**
+     * Abre el formulario de mantenimiento de préstamos.
+     * 
+     * @param prestamo Prestamo
+     * @param dispositivo Dispositivo
+     */
     private void abrirMantenimiento(Prestamo prestamo, Dispositivo dispositivo) {
         try {
             
@@ -359,6 +410,108 @@ public class PrestamosController implements Initializable {
             cargarDatos();
         } catch (IOException e) {
             LoggerUtils.logError("PRESTAMOS", "Error al abrir ventana PrestamosMantenim: " + e.getMessage(), e);
+        }
+    }
+
+    /**
+     * Importa los datos de préstamos de un fichero .csv en la tabla prestamos.
+     * El fichero no debe tener fila de cabecera.
+     * 
+     * La estructura de cada fila del fichero debe ser:
+     * num_serie_dispositivo;nre_alumno;fecha_inicio_prestamo
+     * 
+     * Si el fichero se obtiene a partir de un archivo Excel, debe guardarse como CSV UTF-8
+     * 
+     * @param event 
+     */
+    @FXML
+    private void btnImportarAction(ActionEvent event) {
+        // Para seleccionar un fichero .csv
+        File fichero = Utilidades.seleccFichero("Archivos CSV", "*.csv", "r");
+        
+        if (fichero != null) {
+            String[] items;
+            String numSerie;
+            String nre;
+            int codigoDisp;
+            int codigoAlu;
+            Date fechaIni;
+            AlumnosDAO alumnoDAO = new AlumnosDAO();
+            
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fichero)))) {
+                String linea = "";
+
+                while ((linea = br.readLine()) != null) {
+                    // Vamos leyendo cada línea del fichero
+                    items = linea.split(";");
+                    numSerie = items[0];
+                    codigoDisp = dispositivoDAO.buscarCodigoXSerie(numSerie);
+                    nre = items[1];
+                    codigoAlu = alumnoDAO.buscarCodigoXnre(nre);
+                    fechaIni = Utilidades.convertirFecha(items[2]);
+                    if (codigoDisp > 0 && codigoAlu > 0 && fechaIni != null) {
+                        boolean resul = prestDAO.insertarPrestamo(codigoDisp, codigoAlu, fechaIni);
+                        if (resul) {
+                            // Se actualiza el campo prestado en el dispositivo
+                            dispositivoDAO.actualizarPrestado(codigoDisp, true);
+                        }
+                    }
+                }
+                cargarDatos();
+                mostrarAlerta2("Éxito", "Importación realizada.", Alert.AlertType.INFORMATION);
+                
+            } catch (FileNotFoundException e) {
+                LoggerUtils.logError("IMPORTACION", "Error al acceder al fichero : " + "\n" + fichero + e.getMessage(), e);
+            } catch (IOException e) {
+                LoggerUtils.logError("IMPORTACION", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
+            }
+        }
+    }
+
+    /**
+     * Exporta los datos de los préstamos mostrados en el TableView a un archivo csv.
+     * 
+     * @param event
+     */
+    @FXML
+    private void btnExportarAction(ActionEvent event) {
+        // Seleccionar fichero destino
+        File fichero = Utilidades.seleccFichero("Archivos CSV", "*.csv", "w");
+        
+        if (fichero != null) {
+            // Hay que guardarlo con codificación ISO-8859-1 para que los acentos se muestren correctamente al abrirlo con Excel
+            try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fichero), "ISO-8859-1"))) {
+                // Línea de cabecera
+                bw.write("Dispositivo;Modelo;Marca;Categoria;NumSerie;Imei;Num_etiqueta;Alumno;Curso;Sede;NRE;Fecha_inicio;Fecha_fin\n");
+                
+                String linea = "";
+                
+                // Se recorren los elementos del ObservableList y se van grabando las líneas en el fichero destino
+                for (Prestamo prest : tablaPrest.getItems()) {
+                    Dispositivo disp = prest.getDispositivo();
+                    Alumno alu = prest.getAlumno();
+                    
+                    linea = disp.getNombre() != null ? disp.getNombre() + ";" : ";";
+                    linea += disp.getModelo() != null ? disp.getModelo() + ";" : ";";
+                    linea += disp.getMarca() != null ? disp.getMarca().getNombre() + ";" : ";";
+                    linea += disp.getCategoria() != null ? disp.getCategoria().getNombre() + ";" : ";";
+                    linea += disp.getNum_serie() != null ? disp.getNum_serie() + ";" : ";";
+                    linea += disp.getImei() != null ? disp.getImei() + ";" : ";";
+                    linea += String.valueOf(disp.getNum_etiqueta()) + ";";
+                    linea += alu.getNombre() != null ? alu.getNombre() + ";" : ";";
+                    linea += alu.getCurso() != null ? alu.getCurso() + ";" : ";";
+                    linea += alu.getNombreSede() != null ? alu.getNombreSede() + ";" : ";";
+                    linea += alu.getNre() != null ? alu.getNre() + ";" : ";";
+                    linea += prest.getFecha_inicio() != null ? prest.getFecha_inicio() + ";" : ";";
+                    linea += prest.getFecha_fin() != null ? prest.getFecha_fin() + ";" : ";";
+                    bw.write(linea + "\n");
+                }
+                
+                mostrarAlerta2("Éxito", "Exportación realizada.", Alert.AlertType.INFORMATION);
+                
+            } catch (IOException e) {
+                LoggerUtils.logError("EXPORTACIÓN", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
+            }
         }
     }
 }

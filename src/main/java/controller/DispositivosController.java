@@ -35,8 +35,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
-import model.Alumno;
 import model.Dispositivo;
 import model.Proveedor;
 import model.Categoria;
@@ -52,6 +50,11 @@ import utils.LoggerUtils;
 import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase controller asociada a la vista Dispositivos.fxml
+ * Contiene la lógica correspondiente a dicha vista.
+ * 
+ */
 public class DispositivosController implements Initializable {
 
     private ObservableList<Dispositivo> listaDisposit = FXCollections.observableArrayList();
@@ -94,6 +97,8 @@ public class DispositivosController implements Initializable {
     private TableColumn<Dispositivo, String> colPrograma;
     @FXML
     private TableColumn<Dispositivo, String> colPrestado;
+    @FXML
+    private TableColumn<Dispositivo, String> colObservaciones;
     
     @FXML
     private Button btnNuevo;
@@ -136,6 +141,7 @@ public class DispositivosController implements Initializable {
     private ObservableList<ProgramasEdu> listaProgramas = FXCollections.observableArrayList();
     private ObservableList<Proveedor> listaProveedores = FXCollections.observableArrayList();
     
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         configurarColumnas();
@@ -143,6 +149,10 @@ public class DispositivosController implements Initializable {
         cargarCombos();
     }
 
+    /**
+     * Se establece para cada columna del TableView qué atributo del objeto debe mostrar.
+     * 
+     */
     private void configurarColumnas() {
         SimpleDateFormat formatFecha = new SimpleDateFormat("dd/MM/yyyy");
         
@@ -153,6 +163,7 @@ public class DispositivosController implements Initializable {
         colMac.setCellValueFactory(new PropertyValueFactory<>("mac"));
         colImei.setCellValueFactory(new PropertyValueFactory<>("imei"));
         colNumEti.setCellValueFactory(new PropertyValueFactory<>("num_etiqueta"));
+        colObservaciones.setCellValueFactory(new PropertyValueFactory<>("observaciones"));
         colFechaAdqui.setCellValueFactory(cellData -> {
             Dispositivo disp = cellData.getValue();
             if (disp.getFecha_adquisicion()!= null) {
@@ -243,11 +254,20 @@ public class DispositivosController implements Initializable {
         });
     }
     
+    /**
+     * Carga los dispositivos de la base de datos en el TableView
+     */
     private void cargarDatos() {
         listaDisposit = dispDAO.obtenerDispositivos();
         tablaDisp.setItems(listaDisposit);
     }
 
+    /**
+     * Filtra los registros que se muestran en el TableView en función de los
+     * datos utilizados como filtros.
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnBuscarAction(ActionEvent event) {
         String nombreFilt = txtNombre.getText();
@@ -286,7 +306,9 @@ public class DispositivosController implements Initializable {
             
             // Filtro por sede
             if (sedeFilt != null) {
-                coincSede = dispositivo.getEspacio() != null && dispositivo.getEspacio().getCodigoSede() == sedeFilt.getCodigoSede();
+                //coincSede = dispositivo.getEspacio() != null && dispositivo.getEspacio().getCodigoSede() == sedeFilt.getCodigoSede();
+                //coincSede = dispositivo.getAlumno() != null && dispositivo.getAlumno().getCodigo_sede() == sedeFilt.getCodigoSede();
+                coincSede = dispositivo.getSede() != null && dispositivo.getSede().getCodigoSede() == sedeFilt.getCodigoSede();
             }
             
             // Filtro por Programa
@@ -323,6 +345,11 @@ public class DispositivosController implements Initializable {
         }
     }
     
+    /**
+     * Abre el formulario de mantenimiento de dispositivos.
+     * 
+     * @param disp Dispositivo
+     */
     private void abrirMantenimiento(Dispositivo disp) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/DispositivosMantenim.fxml"));
@@ -345,6 +372,11 @@ public class DispositivosController implements Initializable {
         }
     }
     
+    /**
+     * Elimina de la base de datos el dispositivo de la fila seleccionada en el TableView
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnEliminarAction(ActionEvent event) {
         Dispositivo dispSelec = tablaDisp.getSelectionModel().getSelectedItem();
@@ -367,6 +399,9 @@ public class DispositivosController implements Initializable {
         });
     }
     
+    /**
+     * Carga los registros correspondientes en los distintos ComboBox del formulario
+     */
     private void cargarCombos() {
         try {
             // Categorías
@@ -405,6 +440,11 @@ public class DispositivosController implements Initializable {
         }
     }
     
+    /**
+     * Limpia la información de los controles.
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnLimpiarAction(ActionEvent event) {
         txtNombre.setText("");
@@ -418,6 +458,17 @@ public class DispositivosController implements Initializable {
         tablaDisp.setItems(listaDisposit);
     }
 
+    /**
+     * Importa los datos de dispositivos de un fichero .csv en la tabla dispostivos.
+     * El fichero no debe tener fila de cabecera.
+     * 
+     * La estructura de cada fila del fichero debe ser:
+     * nombre_dispositivo;modelo;num_serie;fecha_adquisición;mac;imei;num_etiqueta;comentario_registro;observaciones;
+     * 
+     * Si el fichero se obtiene a partir de un archivo Excel, debe guardarse como CSV UTF-8
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnImportarAction(ActionEvent event) {
         // Para seleccionar un fichero .csv
@@ -467,6 +518,11 @@ public class DispositivosController implements Initializable {
         }
     }
 
+    /**
+     * Exporta los datos de los dispositivos mostrados en el TableView a un archivo csv.
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnExportarAction(ActionEvent event) {
         // Seleccionar fichero destino
@@ -476,13 +532,13 @@ public class DispositivosController implements Initializable {
             // Hay que guardarlo con codificación ISO-8859-1 para que los acentos se muestren correctamente al abrirlo con Excel
             try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(fichero), "ISO-8859-1"))) {
                 // Línea de cabecera
-                bw.write("Nombre;Modelo;Marca;Categoria;NumSerie;Fecha_adquisicion;Mac;Imei;Num_etiqueta;Alumno;Curso;Sede;Espacio;Num_abaco;Proveedor;ProgramaE;Comentario\n");
+                bw.write("Nombre;Modelo;Marca;Categoria;NumSerie;Fecha_adquisicion;Mac;Imei;Num_etiqueta;Prestado;Alumno;Curso;Sede;Espacio;Num_abaco;Proveedor;ProgramaE;Comentario;Observaciones\n");
                 
                 String linea = "";
                 String numEtiq = "";
                 
-                // Se recorren los elementos del ObservableList y se van grabando las líneas en el fichero destino
-                for (Dispositivo disp : listaDisposit) {
+                // Se recorren los elementos del TableView y se van grabando las líneas en el fichero destino
+                for (Dispositivo disp : tablaDisp.getItems()) {
                     linea = disp.getNombre() != null ? disp.getNombre() + ";" : ";";
                     linea += disp.getModelo() != null ? disp.getModelo() + ";" : ";";
                     linea += disp.getMarca() != null ? disp.getMarca().getNombre() + ";" : ";";
@@ -492,6 +548,7 @@ public class DispositivosController implements Initializable {
                     linea += disp.getMac() != null ? disp.getMac() + ";" : ";";
                     linea += disp.getImei() != null ? disp.getImei() + ";" : ";";
                     linea += String.valueOf(disp.getNum_etiqueta()) + ";";
+                    linea += disp.isPrestado() ? "Sí;" : ";";
                     linea += disp.getAlumno() != null ? disp.getAlumno().getNombre() + ";" : ";";
                     linea += disp.getAlumno() != null ? disp.getAlumno().getCurso() + ";" : ";";
                     linea += disp.getSede() != null ? disp.getSede().getNombre() + ";" : ";";
@@ -500,12 +557,13 @@ public class DispositivosController implements Initializable {
                     linea += disp.getProveedor() != null ? disp.getProveedor().getNombre() + ";" : ";";
                     linea += disp.getProgramae() != null ? disp.getProgramae().getNombre() + ";" : ";";
                     linea += disp.getComentario() != null ? disp.getComentario() + ";" : ";";
+                    linea += disp.getObservaciones() != null ? disp.getObservaciones() + ";" : ";";
                     bw.write(linea + "\n");
                 }
                 mostrarAlerta2("Éxito", "Exportación realizada.", Alert.AlertType.INFORMATION);
                 
             } catch (IOException e) {
-                LoggerUtils.logError("IMPORTACION", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
+                LoggerUtils.logError("EXPORTACIÓN", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
             }
         }
     }

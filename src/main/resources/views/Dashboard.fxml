@@ -37,7 +37,7 @@
             </Label>
          </children>
          <BorderPane.margin>
-            <Insets left="10.0" />
+            <Insets />
          </BorderPane.margin>
       </HBox>
    </top>

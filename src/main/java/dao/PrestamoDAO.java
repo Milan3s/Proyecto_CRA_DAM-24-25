@@ -18,6 +18,11 @@ import utils.DataBaseConection;
 import utils.LoggerUtils;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase encargada de realizar los accesos a la base de datos relacionados con la tabla de préstamos.
+ * Contiene los llamados métodos CRUD (Create, Read, Update, Delete) para tal finalidad.
+ * 
+ */
 public class PrestamoDAO {
     private Connection conn;
     
@@ -25,6 +30,13 @@ public class PrestamoDAO {
         conn = DataBaseConection.getConnection();
     }
     
+    /**
+     * Devuelve un ObservableList con los prestamos de la tabla.
+     * 
+     * @param dispositivo Dispositivo
+     * @param alumno Alumno
+     * @return ObservableList<Prestamo>
+     */
     public ObservableList<Prestamo> obtenerPrestamos(Dispositivo dispositivo, Alumno alumno) {
         ObservableList<Prestamo> listaPrestamos = FXCollections.observableArrayList();
         
@@ -84,6 +96,15 @@ public class PrestamoDAO {
         return listaPrestamos;
     }
 
+    /**
+     * Inserta en la tabla prestamos un registro con el código de dispositivo, código de alumno
+     * y fecha indicados en los parámetros.
+     * 
+     * @param codigoDisp int
+     * @param codigoAlu  int   
+     * @param fechaini   Date
+     * @return boolean
+     */
     public boolean insertarPrestamo(int codigoDisp, int codigoAlu, Date fechaini) {
         boolean resul = false;
         
@@ -106,6 +127,13 @@ public class PrestamoDAO {
         return resul;
     }
     
+    /**
+     * Actualiza la fecha de fin al préstamo que se pasa como parámetro.
+     * 
+     * @param prestamo Prestamo
+     * @param fechaFin Date
+     * @return boolean
+     */
     public boolean actualizarPrestamo(Prestamo prestamo, Date fechaFin) {
         boolean resul = false;
         
@@ -129,6 +157,12 @@ public class PrestamoDAO {
         return resul;
     }
     
+    /**
+     * Elimina de la tabla prestamos aquél que se pasa como parámetro.
+     * 
+     * @param prestamo Prestamo
+     * @return int
+     */
     public int eliminarPrestamo(Prestamo prestamo) {
         int filas = 0;
         String sql = "DELETE FROM prestamos WHERE codigo_dispositivo = ? AND codigo_alumno = ? AND fecha_inicio = ?";

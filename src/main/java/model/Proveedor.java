@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * Clase que representa un proveedor de dipositivos.
+ * Contiene datos básicos como su código identificativo, su nombre y datos de dirección y contacto.
+ * 
+ */
 public class Proveedor {
     private int codigo;
     private String nombre;
@@ -11,6 +16,19 @@ public class Proveedor {
     private String telefono;
     private String email;
 
+    /**
+     * Constructor para crear un proveedor con todos sus atributos
+     * 
+     * @param codigo    Identificador único
+     * @param nombre    
+     * @param calle
+     * @param localidad
+     * @param cp
+     * @param municipio
+     * @param provincia
+     * @param telefono
+     * @param email 
+     */
     public Proveedor(int codigo, String nombre, String calle, String localidad, String cp, String municipio, String provincia, String telefono, String email) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -23,6 +41,12 @@ public class Proveedor {
         this.email = email;
     }
 
+    /**
+     * Constructor para crear un proveedor solo con su nombre
+     * 
+     * @param codigo
+     * @param nombre 
+     */
     public Proveedor(int codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -99,11 +123,4 @@ public class Proveedor {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    /*
-    @Override
-    public String toString() {
-        return nombre;
-    }
-    */
 }

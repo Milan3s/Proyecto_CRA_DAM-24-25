@@ -270,4 +270,43 @@ public class CentroEducativoDAO {
 
         return listaCentros;
     }
+
+    /**
+     * Verifica si un centro tiene sedes asociadas.
+     *
+     * @param codigoCentro Código del centro a verificar
+     * @return true si tiene al menos una sede asociada
+     */
+    public boolean tieneSedesAsociadas(String codigoCentro) {
+        String sql = "SELECT COUNT(*) FROM sedes WHERE codigo_centro = ?";
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1, codigoCentro);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                int count = rs.getInt(1);
+                LoggerUtils.logInfo("CENTROS EDUCATIVOS", "Centro " + codigoCentro + " tiene " + count + " sede(s) asociada(s).");
+                return count > 0;
+            }
+        } catch (SQLException e) {
+            LoggerUtils.logError("CENTROS EDUCATIVOS", "Error al verificar sedes asociadas para el centro: " + codigoCentro, e);
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (stmt != null) {
+                    stmt.close();
+                }
+            } catch (SQLException ignored) {
+            }
+        }
+
+        return false;
+    }
+
 }

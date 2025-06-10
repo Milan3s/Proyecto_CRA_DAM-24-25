@@ -36,13 +36,6 @@ public class App extends Application {
         
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        
-        if (wasMaximized) {
-            primaryStage.setMaximized(true);
-        } else {
-            primaryStage.setWidth(Math.max(width, 1980));
-            primaryStage.setHeight(Math.max(height, 1080));
-        }
     }
 
     // Añade este método si necesitas cargar FXML directamente

@@ -2,6 +2,10 @@ package model;
 
 import java.sql.Date;
 
+/**
+ * Clase que representa un dispositivo.
+ * 
+ */
 public class Dispositivo {
     private int codigo;
     private String nombre;
@@ -26,6 +30,28 @@ public class Dispositivo {
     // Sede, solo para mostrar en el tableView
     private Sede sede;
 
+    /**
+     * Constructor para crear un dispositivo con todos sus atributos.
+     * 
+     * @param codigo                Identificador único
+     * @param nombre
+     * @param modelo
+     * @param num_serie
+     * @param fecha_adquisicion
+     * @param mac
+     * @param imei
+     * @param num_etiqueta          Etiqueta identificativa física que el usuario coloca en ciertos dispositivos
+     * @param proveedor
+     * @param alumno
+     * @param comentario            Asociado habitualmente al proceso de recepción física del dispositivo
+     * @param categoria
+     * @param marca
+     * @param espacio               Aula o sala donde puede estar ubicado el dispositivo
+     * @param programae             Programa educativo en el que puede estar enmarcado, como p. ej. Escuela 4.0, Aula Edit, etc.
+     * @param sede
+     * @param prestado              Indica si el dispositivo está prestado o no.
+     * @param observaciones         Observaciones varias
+     */
     public Dispositivo(int codigo, String nombre, String modelo, String num_serie, Date fecha_adquisicion, String mac, String imei, int num_etiqueta
         , Proveedor proveedor, Alumno alumno, String comentario, Categoria categoria, Marca marca, Espacio espacio, ProgramasEdu programae, Sede sede
         , boolean prestado, String observaciones) {
@@ -46,8 +72,21 @@ public class Dispositivo {
         this.programae = programae;
         this.sede = sede;
         this.prestado = prestado;
+        this.observaciones = observaciones;
     }
     
+    /**
+     * Constructor para crear un dispositivo con sus atributos básicos.
+     * 
+     * @param codigo
+     * @param nombre
+     * @param modelo
+     * @param num_serie
+     * @param imei
+     * @param num_etiqueta
+     * @param categoria
+     * @param marca 
+     */
     public Dispositivo(int codigo, String nombre, String modelo, String num_serie, String imei, int num_etiqueta, Categoria categoria, Marca marca) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -59,6 +98,12 @@ public class Dispositivo {
         this.marca = marca;
     }
     
+    /**
+     * Constructor para crear un dispositivo solo con su nombre.
+     * 
+     * @param codigo
+     * @param nombre 
+     */
     public Dispositivo(int codigo, String nombre) {
         this.codigo = codigo;
         this.nombre = nombre;

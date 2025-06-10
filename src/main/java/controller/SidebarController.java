@@ -33,20 +33,15 @@ public class SidebarController {
     @FXML
     private VBox sidebar;
 
+    private Button botonActivo = null;
+    
     // Método para establecer el nombre de usuario en la interfaz
     public void setNombreUsuario(String nombre) {
-        /*
-        if (labelUsuario != null) {
-            labelUsuario.setText("Usuario: " + nombre);
-        } else {
-            System.out.println("labelUsuario es null");
-        }
-        */
         labelUsuario.setText("");
     }
 
     // Método genérico para cargar contenido en el panel
-    private void cambiarContenido(String rutaFXML) throws IOException {
+    private void cambiarContenido(String rutaFXML, ActionEvent event) throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/" + rutaFXML));
             Node nodo = loader.load();
@@ -56,6 +51,18 @@ public class SidebarController {
             StackPane panelContenido = dashboardController.getPanelContenido();
 
             panelContenido.getChildren().setAll(nodo);
+            
+            // Se obtiene el botón pulsado desde el evento para establecer
+            // su apariencia mediante la clase css
+            Button botonPulsado = (Button) event.getSource();
+
+            if (botonActivo != null) {
+                botonActivo.getStyleClass().remove("sidebar-button-active");
+            }
+            
+            botonPulsado.getStyleClass().add("sidebar-button-active");
+            botonActivo = botonPulsado;
+            
         } catch (IOException e) {
             // Si ocurre un error al cargar el contenido, registrarlo
             System.err.println("Error al cargar el archivo FXML: " + rutaFXML);
@@ -65,55 +72,55 @@ public class SidebarController {
 
     // Método para cargar la vista de "Usuarios"
     @FXML
-    private void loadUsuarios() throws IOException {
-        cambiarContenido("Alumnos.fxml");
+    private void loadUsuarios(ActionEvent event) throws IOException {
+        cambiarContenido("Alumnos.fxml", event);
     }
 
     // Método para cargar la vista de "Centro Educativo"
     @FXML
     private void loadCentroEducativo(ActionEvent event) throws IOException {
-        cambiarContenido("CentroEducativo.fxml");
+        cambiarContenido("CentroEducativo.fxml", event);
     }
 
     // Método para cargar la vista de "Dispositivos"
     @FXML
     private void loadDispositivos(ActionEvent event) throws IOException {
-        cambiarContenido("Dispositivos.fxml");
+        cambiarContenido("Dispositivos.fxml", event);
     }
 
     // Método para cargar la vista de "Proveedores"
     @FXML
     private void loadProveedores(ActionEvent event) throws IOException {
-        cambiarContenido("Proveedores.fxml");
+        cambiarContenido("Proveedores.fxml", event);
     }
 
     @FXML
     private void loadSedes(ActionEvent event) throws IOException {
-        cambiarContenido("Sede.fxml");
+        cambiarContenido("Sede.fxml", event);
     }
 
     @FXML
     private void loadEspacios(ActionEvent event) throws IOException {
-        cambiarContenido("Espacio.fxml");
+        cambiarContenido("Espacio.fxml", event);
     }
 
     @FXML
     private void loadCategorias(ActionEvent event) throws IOException {
-        cambiarContenido("Categoria.fxml");
+        cambiarContenido("Categoria.fxml", event);
     }
 
     @FXML
     private void loadMarcas(ActionEvent event) throws IOException {
-        cambiarContenido("Marca.fxml");
+        cambiarContenido("Marca.fxml", event);
     }
 
     @FXML
     private void loadProgramas(ActionEvent event) throws IOException {
-        cambiarContenido("ProgramasE.fxml");
+        cambiarContenido("ProgramasE.fxml", event);
     }
 
     @FXML
     private void loadPrestamos(ActionEvent event) throws IOException {
-        cambiarContenido("Prestamos.fxml");
+        cambiarContenido("Prestamos.fxml", event);
     }
 }

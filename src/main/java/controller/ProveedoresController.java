@@ -35,6 +35,11 @@ import utils.LoggerUtils;
 import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase controller asociada a la vista Proveedores.fxml
+ * Contiene la lógica correspondiente a dicha vista.
+ * 
+ */
 public class ProveedoresController implements Initializable {
 
     @FXML
@@ -82,6 +87,10 @@ public class ProveedoresController implements Initializable {
         cargarDatos();
     }    
     
+    /**
+     * Se establece para cada columna del TableView qué atributo del objeto debe mostrar.
+     * 
+     */
     private void configurarColumnas() {
         colCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
@@ -94,6 +103,9 @@ public class ProveedoresController implements Initializable {
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
     }
     
+    /**
+     * Carga los proveedores de la base de datos en el TableView
+     */
     private void cargarDatos() {
         listaProveedores = provDAO.obtenerProveedores();
         tablaProv.setItems(listaProveedores);
@@ -112,6 +124,11 @@ public class ProveedoresController implements Initializable {
         }
     }
     
+    /**
+     * Abre el formulario de mantenimiento de proveedores.
+     * 
+     * @param proveedor Proveedor
+     */
     private void abrirMantenimiento(Proveedor proveedor) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ProveedoresMantenim.fxml"));
@@ -134,6 +151,11 @@ public class ProveedoresController implements Initializable {
         }
     }
 
+    /**
+     * Elimina de la base de datos el proveedor de la fila seleccionada en el TableView
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnEliminarAction(ActionEvent event) {
         Proveedor provSelec = tablaProv.getSelectionModel().getSelectedItem();
@@ -156,6 +178,12 @@ public class ProveedoresController implements Initializable {
         });
     }
     
+    /**
+     * Filtra los registros que se muestran en el TableView en función de los campos
+     * nombre, localidad, municipio y provincia.
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnBuscarAction(ActionEvent event) {
         String filtro = txtBuscar.getText().toLowerCase();
@@ -181,6 +209,17 @@ public class ProveedoresController implements Initializable {
         }
     }
 
+    /**
+     * Importa los datos de proveedores de un fichero .csv en la tabla proveedores.
+     * El fichero no debe tener fila de cabecera.
+     * 
+     * La estructura de cada fila del fichero debe ser:
+     * nombre_proveedor;calle;localidad;codigo_postal;municipio;provincia;telefono;email
+     * 
+     * Si el fichero se obtiene a partir de un archivo Excel, debe guardarse como CSV UTF-8
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnImportarAction(ActionEvent event) {
         // Para seleccionar un fichero .csv
@@ -227,6 +266,11 @@ public class ProveedoresController implements Initializable {
         }
     }
 
+    /**
+     * Exporta los datos de los proveedores mostrados en el TableView a un archivo csv.
+     * 
+     * @param event ActionEvent
+     */
     @FXML
     private void btnExportarAction(ActionEvent event) {
         // Seleccionar fichero destino
@@ -240,8 +284,8 @@ public class ProveedoresController implements Initializable {
                 
                 String linea = "";
                 
-                // Se recorren los elementos del ObservableList y se van grabando las líneas en el fichero destino
-                for (Proveedor p : listaProveedores) {
+                // Se recorren los elementos del TableView y se van grabando las líneas en el fichero destino
+                for (Proveedor p : tablaProv.getItems()) {
                     linea = p.getNombre() != null ? p.getNombre() + ";" : ";";
                     linea += p.getCalle() != null ? p.getCalle() + ";" : ";";
                     linea += p.getLocalidad() != null ? p.getLocalidad() + ";" : ";";

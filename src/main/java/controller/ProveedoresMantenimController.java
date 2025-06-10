@@ -12,8 +12,14 @@ import model.Proveedor;
 import dao.ProveedorDAO;
 import javafx.scene.control.Alert;
 import utils.LoggerUtils;
+import utils.Utilidades;
 import static utils.Utilidades.mostrarAlerta2;
 
+/**
+ * Clase controller asociada a la vista ProveedoresMantenim.fxml
+ * Contiene la lógica correspondiente a dicha vista.
+ * 
+ */
 public class ProveedoresMantenimController implements Initializable {
 
     @FXML
@@ -45,6 +51,12 @@ public class ProveedoresMantenimController implements Initializable {
         
     }    
     
+    /**
+     * Informa los componentes gráficos con los datos del proveedor pasado como parámetro,
+     * si éste no es nulo.
+     * 
+     * @param proveedor Proveedor
+     */
     public void setProveedor(Proveedor proveedor) {
         if (null != proveedor) {
             this.proveedor = proveedor;
@@ -74,6 +86,11 @@ public class ProveedoresMantenimController implements Initializable {
         stage.close();
     }
 
+    /**
+     * Lee los datos de los componentes gráficos.
+     * En caso de que ya exista el proveedor actualiza la información en la base de datos.
+     * En caso de que no exista se crea nuevo.
+     */
     private void guardarProveedor() {
         int codProv;
         
@@ -95,6 +112,21 @@ public class ProveedoresMantenimController implements Initializable {
         if (nombre.isEmpty()) {
             mostrarAlerta2("Campos incompletos", "Por favor, completa todos los campos obligatorios.", Alert.AlertType.WARNING);
             LoggerUtils.logWarning("PROVEEDORES", "Faltan campos obligatorios en el formulario.");
+            return;
+        }
+        
+        if (!cp.isEmpty() && !Utilidades.validarCP(cp)) {
+            mostrarAlerta2("Código postal no válido", "Por favor, introduzca un código postal válido.", Alert.AlertType.WARNING);
+            return;
+        }
+        
+        if (!telefono.isEmpty() && !Utilidades.validarTelefono(telefono)) {
+            mostrarAlerta2("Teléfono no válido", "Por favor, introduzca un teléfono válido.", Alert.AlertType.WARNING);
+            return;
+        }
+        
+        if (!email.isEmpty() && !Utilidades.validarEmail(email)) {
+            mostrarAlerta2("Email no válido", "Por favor, introduzca un email válido.", Alert.AlertType.WARNING);
             return;
         }
         

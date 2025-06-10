@@ -65,16 +65,19 @@
       </HBox>
       <TableView fx:id="tablaProv" onMouseClicked="#capturarClick" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn fx:id="colCodigo" prefWidth="60.0" text="Código" />
-          <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
-            <TableColumn fx:id="colCalle" prefWidth="150.0" text="Calle" />
-            <TableColumn fx:id="colLocalidad" prefWidth="75.0" text="Localidad" />
+          <TableColumn fx:id="colCodigo" prefWidth="50.0" text="Código" visible="false" />
+          <TableColumn fx:id="colNombre" prefWidth="200.0" text="Nombre" />
+            <TableColumn fx:id="colCalle" prefWidth="200.0" text="Calle" />
+            <TableColumn fx:id="colLocalidad" prefWidth="200.0" text="Localidad" />
             <TableColumn fx:id="colCp" prefWidth="50.0" text="CP" />
             <TableColumn fx:id="colMunicipio" prefWidth="75.0" text="Municipio" />
             <TableColumn fx:id="colProvincia" prefWidth="75.0" text="Provincia" />
             <TableColumn fx:id="colTelefono" prefWidth="75.0" text="Teléfono" />
             <TableColumn fx:id="colEmail" prefWidth="95.0" text="Email" />
         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
       </TableView>
    </children>
    <padding>
