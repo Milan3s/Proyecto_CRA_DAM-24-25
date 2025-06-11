@@ -2488,3 +2488,70 @@
 [2025-06-11 23:03:32] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
 [2025-06-11 23:03:32] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
 [2025-06-11 23:03:32] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 23:08:00] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:08:00] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:08:00] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 23:08:00] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 23:08:00] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 23:08:00] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 23:18:20] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:18:20] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:18:20] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 23:18:20] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 23:18:20] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 23:18:21] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 23:19:25] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:19:25] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:19:25] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 23:19:25] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 23:19:25] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 23:19:25] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 23:20:31] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-11 23:20:33] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 23:21:58] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:21:58] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:21:58] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 23:21:58] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 23:21:58] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 23:21:58] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 23:22:00] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 23:22:00] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 23:22:45] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-11 23:23:04] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 23:23:04] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 23:23:46] [INFO   ] [PROGRAMASEDUCATIVOS] Iniciando importación desde: C:\Users\34601\Desktop\kkkk.csv
+[2025-06-11 23:23:46] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-11 23:23:46] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 2): aassa
+[2025-06-11 23:23:46] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-11 23:23:46] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 3): jbasusa
+[2025-06-11 23:23:46] [INFO   ] [PROGRAMASEDUCATIVOS] Importación finalizada. Éxitos: 0 | Errores: 2
+[2025-06-11 23:24:07] [INFO   ] [PROGRAMASEDUCATIVOS] Iniciando importación desde: C:\Users\34601\Desktop\kkkk.csv
+[2025-06-11 23:24:07] [INFO   ] [PROGRAMASEDUCATIVOS] Programa importado (línea 2): aassa
+[2025-06-11 23:24:07] [INFO   ] [PROGRAMASEDUCATIVOS] Programa importado (línea 3): jbasusa
+[2025-06-11 23:24:07] [INFO   ] [PROGRAMASEDUCATIVOS] Importación finalizada. Éxitos: 2 | Errores: 0
+[2025-06-11 23:27:59] [INFO   ] [PROGRAMASEDUCATIVOS] Iniciando importación desde: C:\Users\34601\Desktop\kkkk.csv
+[2025-06-11 23:27:59] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-11 23:27:59] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 2): aassa
+[2025-06-11 23:27:59] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-11 23:27:59] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 3): jbasusa
+[2025-06-11 23:27:59] [INFO   ] [PROGRAMASEDUCATIVOS] Importación finalizada. Éxitos: 0 | Errores: 2
+[2025-06-11 23:30:03] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:30:03] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:30:03] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 23:30:03] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 23:30:03] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 23:30:03] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 23:30:08] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 23:30:08] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 23:32:58] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:32:58] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:32:58] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 23:32:58] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 23:32:58] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 23:32:58] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
