@@ -2465,3 +2465,26 @@
 [2025-06-11 17:00:42] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
 [2025-06-11 17:00:46] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
 [2025-06-11 17:00:48] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 23:02:54] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:02:54] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:02:57] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:02:57] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:02:59] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:02:59] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:03:09] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:03:09] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:03:10] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:03:10] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:03:13] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:03:13] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:03:13] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:03:13] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:03:14] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:03:14] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:03:32] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 23:03:32] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 23:03:32] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 23:03:32] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 23:03:32] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 23:03:32] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
