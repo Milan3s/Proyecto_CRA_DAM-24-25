@@ -23,11 +23,23 @@
             <Button fx:id="btnNuevo" mnemonicParsing="false" onAction="#btnNuevoAction" text="Nuevo Programa">
                <graphic>
                   <FontAwesomeIconView glyphName="PLUS" />
-               </graphic></Button>
+               </graphic>
+            </Button>
             <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar Programa">
                <graphic>
                   <FontAwesomeIconView glyphName="TRASH" />
-               </graphic></Button>
+               </graphic>
+            </Button>
+            <Button fx:id="btnImportar" mnemonicParsing="false" onAction="#btnImportarAction" text="Importar">
+               <graphic>
+                  <FontAwesomeIconView glyphName="UPLOAD" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnExportar" mnemonicParsing="false" onAction="#btnExportarAction" text="Exportar">
+               <graphic>
+                  <FontAwesomeIconView glyphName="DOWNLOAD" />
+               </graphic>
+            </Button>
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" prefHeight="45.0" spacing="10.0">
@@ -37,7 +49,8 @@
             <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#btnBuscarAction" text="Buscar">
                <graphic>
                   <FontAwesomeIconView glyphName="BINOCULARS" />
-               </graphic></Button>
+               </graphic>
+            </Button>
          </children>
       </HBox>
       <TableView fx:id="tablaProgramas" onMouseClicked="#capturarClick" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">

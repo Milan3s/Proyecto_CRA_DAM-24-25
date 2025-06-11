@@ -2148,3 +2148,320 @@
 [2025-06-09 15:55:55] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
 [2025-06-09 15:55:55] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
 [2025-06-09 16:51:31] [INFO   ] [PROVEEDORES] Intento de eliminar sin seleccionar proveedor.
+[2025-06-10 23:38:41] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-10 23:38:41] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-10 23:38:41] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-10 23:38:41] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-10 23:38:41] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-10 23:38:41] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-10 23:38:58] [SEVERE ] [SEDES] ERROR → Error al eliminar sede
+[2025-06-10 23:39:01] [SEVERE ] [SEDES] ERROR → Error al eliminar sede
+[2025-06-10 23:39:02] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-10 23:39:02] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-10 23:39:20] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-10 23:39:20] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-10 23:39:36] [SEVERE ] [SEDES] ERROR → Error al eliminar sede
+[2025-06-10 23:39:38] [SEVERE ] [SEDES] ERROR → Error al eliminar sede
+[2025-06-10 23:43:21] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-10 23:43:21] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-10 23:43:21] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-10 23:43:21] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-10 23:43:21] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-10 23:43:22] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-10 23:43:26] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 09:52:20] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 09:52:20] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 09:52:20] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 09:52:20] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 09:52:20] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 09:52:20] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 09:52:22] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-11 09:52:22] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 09:52:22] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-11 09:52:24] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-11 09:52:54] [INFO   ] [CENTROS EDUCATIVOS] Centro insertado correctamente → Código: 2228
+[2025-06-11 09:52:56] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 2228
+[2025-06-11 09:52:56] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 09:52:56] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 2
+[2025-06-11 09:53:01] [INFO   ] [CENTROS EDUCATIVOS] Centro 222111 tiene 2 sede(s) asociada(s).
+[2025-06-11 09:53:09] [INFO   ] [CENTROS EDUCATIVOS] Centro 2228 tiene 0 sede(s) asociada(s).
+[2025-06-11 09:54:59] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 09:54:59] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 09:54:59] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 09:54:59] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 09:54:59] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 09:54:59] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 09:55:01] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-11 09:55:01] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 2228
+[2025-06-11 09:55:01] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 09:55:01] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 2
+[2025-06-11 09:55:25] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-11 09:56:25] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 09:56:25] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 09:56:25] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 09:56:25] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 09:56:25] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 09:56:25] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 10:09:09] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-11 10:09:09] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 2228
+[2025-06-11 10:09:09] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 10:09:09] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 2
+[2025-06-11 10:18:11] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 10:18:11] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 10:18:11] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 10:18:11] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 10:18:11] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 10:18:11] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 10:18:18] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 10:18:18] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 10:18:25] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 10:18:25] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 10:18:29] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 10:18:29] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 10:24:52] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 10:24:52] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 10:24:52] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 10:24:52] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 10:24:52] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 10:24:52] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 10:24:56] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 10:24:56] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 10:26:01] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 10:26:01] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 10:26:01] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 10:26:01] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 10:26:01] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 10:26:01] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 10:26:12] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-11 10:26:12] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 2228
+[2025-06-11 10:26:12] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 10:30:30] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 10:30:30] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 10:30:30] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 10:30:30] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 10:30:30] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 10:30:30] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 10:30:36] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 10:30:36] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 10:55:20] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 10:55:20] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 10:55:20] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 10:55:20] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 10:55:20] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 10:55:20] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 10:55:26] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-11 10:55:46] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-06-11 10:55:46] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
+[2025-06-11 10:55:46] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: polo
+[2025-06-11 10:55:46] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: aa
+[2025-06-11 10:56:01] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-11 10:56:07] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-11 11:00:42] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 11:00:43] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 11:00:43] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 11:00:43] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 11:00:43] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 11:00:43] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 11:05:45] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 11:05:45] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 11:05:45] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 11:05:45] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 11:05:45] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 11:05:45] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 11:05:52] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 11:05:52] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 12:00:28] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 12:00:28] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 12:00:28] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 12:00:28] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 12:00:28] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 12:00:28] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 12:26:50] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 12:26:50] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 12:26:50] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 12:26:50] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 12:26:50] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 12:26:50] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 12:28:54] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 12:28:54] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 12:28:54] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 12:28:54] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 12:28:54] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 12:28:54] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 12:29:03] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-11 12:53:25] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 12:53:25] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 12:53:25] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 12:53:25] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 12:53:25] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 12:53:26] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 12:53:43] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 12:53:43] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 13:05:14] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 13:05:14] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 13:05:14] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 13:05:14] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 13:05:14] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 13:05:15] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 13:07:00] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 13:07:00] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 13:07:00] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 13:07:00] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 13:07:00] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 13:07:00] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 13:09:23] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 13:09:23] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 13:09:23] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 13:09:23] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 13:09:23] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 13:09:23] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 13:09:25] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 13:09:25] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 13:09:28] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 13:09:28] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 13:13:29] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 13:13:29] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 13:13:29] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 13:13:29] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 13:13:29] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 13:13:29] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 13:13:39] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-11 13:13:39] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 2228
+[2025-06-11 13:13:39] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 13:23:26] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 13:23:26] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 13:23:27] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 13:23:27] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 13:23:27] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 13:23:27] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 13:23:35] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-11 13:23:35] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 2228
+[2025-06-11 13:23:35] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 16:12:09] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 16:12:09] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 16:12:09] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 16:12:09] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 16:12:09] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 16:12:09] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 16:12:17] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 16:12:17] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 16:20:20] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 16:20:20] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 16:20:20] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 16:20:20] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 16:20:20] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 16:20:20] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 16:30:59] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 16:30:59] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 16:30:59] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 16:30:59] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 16:30:59] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 16:30:59] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 16:32:13] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 16:32:13] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 16:32:13] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 16:32:13] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 16:32:13] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 16:32:13] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 16:32:21] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-11 16:32:21] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 2228
+[2025-06-11 16:32:21] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 16:32:21] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 2
+[2025-06-11 16:32:26] [INFO   ] [CENTROS EDUCATIVOS] Centro 2228 tiene 2 sede(s) asociada(s).
+[2025-06-11 16:32:53] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 16:32:53] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 16:32:53] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 16:32:53] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 16:32:53] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 16:32:53] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 16:33:22] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 16:33:28] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 16:34:10] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 16:34:10] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 16:34:30] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-11 16:34:30] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 2228
+[2025-06-11 16:34:30] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 16:34:30] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 2
+[2025-06-11 16:34:33] [INFO   ] [CENTROS EDUCATIVOS] Centro 2228 tiene 0 sede(s) asociada(s).
+[2025-06-11 16:34:50] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-11 16:34:50] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-11 16:35:16] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-11 16:35:16] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 2228
+[2025-06-11 16:35:16] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 16:35:16] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 2
+[2025-06-11 16:35:17] [INFO   ] [CENTROS EDUCATIVOS] Centro 2228 tiene 0 sede(s) asociada(s).
+[2025-06-11 16:35:19] [INFO   ] [CENTROS EDUCATIVOS] Centro eliminado → Código: 2228
+[2025-06-11 16:35:19] [INFO   ] [CENTROS EDUCATIVOS] Centro eliminado → Código: 2228
+[2025-06-11 16:35:21] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 16:35:21] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-11 16:35:23] [INFO   ] [CENTROS EDUCATIVOS] Centro 222111 tiene 1 sede(s) asociada(s).
+[2025-06-11 16:47:29] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 16:47:29] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 16:47:29] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 16:47:29] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 16:47:29] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 16:47:29] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 16:47:34] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-11 16:47:36] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 16:47:41] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-11 16:47:42] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 16:47:49] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-11 16:47:49] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 16:47:49] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-11 16:47:51] [INFO   ] [CENTROS EDUCATIVOS] Centro 222111 tiene 1 sede(s) asociada(s).
+[2025-06-11 16:49:21] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-11 16:49:22] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 16:49:39] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-11 16:49:41] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 16:51:47] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 16:51:47] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 16:51:47] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 16:51:47] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 16:51:47] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 16:51:47] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 16:51:53] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-11 16:51:54] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 16:51:57] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-11 16:51:58] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 16:52:22] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-11 16:52:24] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))
+[2025-06-11 17:00:35] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 17:00:35] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 17:00:35] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 17:00:35] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 17:00:35] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 17:00:35] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 17:00:42] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-11 17:00:42] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-11 17:00:46] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-11 17:00:48] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))

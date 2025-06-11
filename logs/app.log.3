@@ -1,0 +1,9 @@
+[2025-06-11 16:59:43] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-11 16:59:43] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-11 16:59:43] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-11 16:59:43] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-11 16:59:43] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-11 16:59:43] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-11 16:59:47] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-11 16:59:48] [SEVERE ] [SEDES] ERROR → Error al eliminar sedeCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`alumnos`, CONSTRAINT `alumnos_ibfk_1` FOREIGN KEY (`codigo_sede`) REFERENCES `sedes` (`codigo_sede`))

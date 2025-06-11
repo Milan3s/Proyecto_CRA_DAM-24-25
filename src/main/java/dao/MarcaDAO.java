@@ -37,7 +37,8 @@ public class MarcaDAO {
 
         return lista; // devolvemos la lista
     }
- // metodo para insertar una marca nueva en la bd
+    
+    // metodo para insertar una marca nueva en la bd
     public boolean insertarMarca(String nombre) {
         String query = "INSERT INTO marcas (nombre) VALUES (?)"; // consulta con un parametro(?)
 
@@ -143,5 +144,16 @@ public class MarcaDAO {
         }
 
         return lista;
+    }
+    
+    // Método para insertar una lista de marcas
+    public int insertarListaMarcas(List<Marca> lista) {
+        int count = 0;
+        for (Marca m : lista) {
+            if (insertarMarca(m.getNombre())) {
+                count++;
+            }
+        }
+        return count;
     }
 }

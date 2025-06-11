@@ -1,12 +1,6 @@
-
 package controller;
 
-
 import dao.CategoriaDAO;
-import java.io.IOException;
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,114 +9,186 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Categoria;
 import utils.LoggerUtils;
 
-// Esta clase controla la pantalla de categorías; Initializable-> para decir que haga eso al empezar
+import java.io.*;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+
 public class CategoriaController implements Initializable {
 
-    // Conecta los botones y campos de texto del archivo FXML con el código
     @FXML private Button btnNuevaCat;
     @FXML private Button btnEliminarCat;
+    @FXML private Button btnImportar;
+    @FXML private Button btnExportar;
     @FXML private TextField txtBuscar;
     @FXML private Button btnBuscar;
     @FXML private TableView<Categoria> tablaCat;
     @FXML private TableColumn<Categoria, Integer> colCodigo;
     @FXML private TableColumn<Categoria, String> colNombre;
-    
-    // lista de categorías que se mostrará en la tabla;  Sirve para mostrar las listas en la pantalla
+
     private ObservableList<Categoria> listaCategorias = FXCollections.observableArrayList();
+    private final CategoriaDAO catDAO = new CategoriaDAO();
 
-    //  se encarga de hablar con la base de datos
-    private CategoriaDAO catDAO = new CategoriaDAO();
-
-    //  se ejecuta automáticamente al abrir la ventana; initialize-> para iniciar las columnas y datos
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        configurarColumnas(); // configura qué va en cada columna
-        cargarDatos(); // carga las categorías desde la base de datos
+        configurarColumnas();
+        cargarDatos();
 
-        // al hacer doble clic sobre una categoría, se abre la ventana para editarla
         tablaCat.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2 && !tablaCat.getSelectionModel().isEmpty()) { // al hacer doble click selecciona una linea en la tabla
-                Categoria catSeleccionada = tablaCat.getSelectionModel().getSelectedItem();// guarda en una variable el objeto seleccionado 
-                abrirFormularioCategoria(catSeleccionada); // Abre el formulario de esa categoría
+            if (event.getClickCount() == 2 && !tablaCat.getSelectionModel().isEmpty()) {
+                Categoria seleccionada = tablaCat.getSelectionModel().getSelectedItem();
+                abrirFormularioCategoria(seleccionada);
             }
         });
     }
 
-    // dice que  datos van en cada columna de la tabla
     private void configurarColumnas() {
-        colCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo")); // Muestra el código
-        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre")); // Muestra el nombre
-    }
-    
-    // carga las categorías desde la base de datos y las muestra en la tabla
-    private void cargarDatos() {
-        List<Categoria> categorias = catDAO.obtenerCategorias(); // Trae las categorías
-        listaCategorias.setAll(categorias); // Llena la lista
-        tablaCat.setItems(listaCategorias); // Muestra la lista en la tabla
+        colCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
     }
 
-    // acción al presionar el botón "Nueva Categoría"
+    private void cargarDatos() {
+        List<Categoria> categorias = catDAO.obtenerCategorias();
+        listaCategorias.setAll(categorias);
+        tablaCat.setItems(listaCategorias);
+    }
+
     @FXML
     private void btnActionNuevaCat(ActionEvent event) {
-        abrirFormularioCategoria(null); // abre el formulario  para agregar una nueva categoría
+        abrirFormularioCategoria(null);
     }
-    
-    // abre el formulario para agregar o editar una categoría
+
+    @FXML
+    private void btnActionEliminarCat(ActionEvent event) {
+        Categoria seleccionada = tablaCat.getSelectionModel().getSelectedItem();
+
+        if (seleccionada == null) {
+            mostrarAlerta(Alert.AlertType.WARNING, "Ninguna selección", "Por favor, selecciona una categoría para eliminar.");
+            return;
+        }
+
+        Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmacion.setTitle("Confirmar eliminación");
+        confirmacion.setHeaderText("¿Estás seguro de que deseas eliminar esta categoría?");
+        confirmacion.setContentText("Categoría: " + seleccionada.getNombre());
+
+        ButtonType botonSi = new ButtonType("Sí", ButtonBar.ButtonData.YES);
+        ButtonType botonNo = new ButtonType("No", ButtonBar.ButtonData.CANCEL_CLOSE);
+        confirmacion.getButtonTypes().setAll(botonSi, botonNo);
+
+        confirmacion.showAndWait().ifPresent(respuesta -> {
+            if (respuesta == botonSi) {
+                boolean eliminada = catDAO.eliminarCategoria(seleccionada.getCodigo());
+                if (eliminada) {
+                    cargarDatos();
+                } else {
+                    mostrarError("No se pudo eliminar la categoría.");
+                }
+            }
+        });
+    }
+
+    private void mostrarError(String mensaje) {
+        mostrarAlerta(Alert.AlertType.ERROR, "Error", mensaje);
+    }
+
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
+        Alert alerta = new Alert(tipo);
+        alerta.setTitle(titulo);
+        alerta.setHeaderText(null);
+        alerta.setContentText(mensaje);
+        alerta.showAndWait();
+    }
+
     private void abrirFormularioCategoria(Categoria categoria) {
         try {
-            // carga la interfaz del formulario
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/CategoriaMantenim.fxml"));
             Parent root = loader.load();
 
-            // pasa la categoría al controlador del formulario
             CategoriaMantenimController controller = loader.getController();
-            controller.setCategoria(categoria); // si es null, es nueva; si no, se edita
+            controller.setCategoria(categoria);
 
-           
-            Stage modal = new Stage();//abre una nueva ventana
-            modal.setScene(new Scene(root)); //le pone el contenido de la ventana 
-            modal.setTitle(categoria == null ? "Nueva Categoria" : "Editar Categoria"); // le pone un titulo a la ventana
-            modal.initModality(Modality.APPLICATION_MODAL); // hace que la ventana bloque a la anterior
-            modal.setResizable(false); // no se puede cambiar el tamaño
-            modal.showAndWait(); // espera a que se cierre
+            Stage modal = new Stage();
+            modal.setScene(new Scene(root));
+            modal.setTitle(categoria == null ? "Nueva Categoría" : "Editar Categoría");
+            modal.initModality(Modality.APPLICATION_MODAL);
+            modal.setResizable(false);
+            modal.showAndWait();
 
-            cargarDatos(); // all cerrarla, recarga la tabla con los nuevos datos
-        } catch (IOException e) { // atrapa errores
-            // si algo sale mal, muestra el error 
-            LoggerUtils.logError("Categorías", "Error al abrir el formulario de categoría" + e.getMessage(), e);
+            cargarDatos();
+        } catch (IOException e) {
+            LoggerUtils.logError("Categorías", "Error al abrir el formulario de categoría: " + e.getMessage(), e);
         }
     }
 
-    // Acción al presionar el botón "Eliminar Categoría"
-    @FXML
-    private void btnActionEliminarCat(ActionEvent event) {
-        Categoria categoria = tablaCat.getSelectionModel().getSelectedItem(); // Toma la categoría seleccionada
-        if (categoria != null && catDAO.eliminarCategoria(categoria.getCodigo())) {
-            cargarDatos(); // Si se eliminó, recarga la tabla
-        }
-    }
-
-    // acción al presionar el botón "Buscar"
     @FXML
     private void btnBuscarAction(ActionEvent event) {
-        String filtro = txtBuscar.getText().trim().toLowerCase(); // toma el texto escrito
+        String filtro = txtBuscar.getText().trim().toLowerCase();
         if (filtro.isEmpty()) {
-            cargarDatos(); // si no escribió nada, carga todo
+            cargarDatos();
         } else {
-            // si escribió en algunas, busca solo esas categorías
             List<Categoria> filtradas = catDAO.buscarCategorias(filtro);
-            listaCategorias.setAll(filtradas); // muestra las que coinciden
+            listaCategorias.setAll(filtradas);
             tablaCat.setItems(listaCategorias);
         }
-    }   
+    }
+
+    @FXML
+    private void btnImportarAction(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Importar Categorías");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos CSV", "*.csv"));
+        File archivo = fileChooser.showOpenDialog(null);
+
+        if (archivo != null) {
+            try (BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
+                String linea;
+                int contador = 0;
+                while ((linea = reader.readLine()) != null) {
+                    String[] campos = linea.split(";");
+                    if (campos.length == 2) {
+                        try {
+                            int codigo = Integer.parseInt(campos[0]);
+                            String nombre = campos[1];
+                            Categoria categoria = new Categoria(codigo, nombre);
+                            catDAO.insertarCategoria(categoria);
+                            contador++;
+                        } catch (NumberFormatException ignored) {}
+                    }
+                }
+                mostrarAlerta(Alert.AlertType.INFORMATION, "Importación completada", contador + " categorías importadas correctamente.");
+                cargarDatos();
+            } catch (IOException e) {
+                mostrarError("Error al leer el archivo: " + e.getMessage());
+            }
+        }
+    }
+
+    @FXML
+    private void btnExportarAction(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Exportar Categorías");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Archivos CSV", "*.csv"));
+        File archivo = fileChooser.showSaveDialog(null);
+
+        if (archivo != null) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(archivo))) {
+                for (Categoria categoria : listaCategorias) {
+                    writer.write(categoria.getCodigo() + ";" + categoria.getNombre());
+                    writer.newLine();
+                }
+                mostrarAlerta(Alert.AlertType.INFORMATION, "Exportación completada", "Categorías exportadas correctamente.");
+            } catch (IOException e) {
+                mostrarError("Error al guardar el archivo: " + e.getMessage());
+            }
+        }
+    }
 }
