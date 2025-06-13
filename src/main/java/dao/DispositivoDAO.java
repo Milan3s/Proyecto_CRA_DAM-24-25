@@ -80,6 +80,7 @@ public class DispositivoDAO {
                 Espacio espacio = null;
                 ProgramasEdu programae = null;
                 Sede sede = null;
+                Integer numEti = null;
                 
                 // Si el código en la base de datos es NULL, entonces rs.getInt() devuelve 0 (cero)
                 // Se comprueba esto para no crear objetos con código 0 que realmente no existen en la base de datos
@@ -90,6 +91,7 @@ public class DispositivoDAO {
                 if (rs.getInt("codigo_espacio") != 0) espacio = new Espacio(rs.getInt("codigo_espacio"), rs.getString("nombre_esp"));
                 if (rs.getInt("codigo_programa") != 0) programae = new ProgramasEdu(rs.getInt("codigo_programa"), rs.getString("nombre_prog"));
                 if (rs.getInt("codigo_sede") != 0) sede = new Sede(rs.getInt("codigo_sede"), rs.getString("nombre_sede"));
+                if (rs.getInt("num_etiqueta") != 0) numEti = rs.getInt("num_etiqueta");
                 
                 Dispositivo disp = new Dispositivo(
                     rs.getInt("codigo_dispositivo"),
@@ -99,7 +101,8 @@ public class DispositivoDAO {
                     rs.getDate("fecha_adquisicion"),
                     rs.getString("mac"),
                     rs.getString("imei"),
-                    rs.getInt("num_etiqueta"),
+                    //rs.getInt("num_etiqueta"),
+                    numEti,
                     prov, alu,
                     rs.getString("coment_reg"),
                     categoria, marca, espacio, programae, sede,
@@ -136,8 +139,9 @@ public class DispositivoDAO {
             stmt.setDate(6, disp.getFecha_adquisicion());
             stmt.setString(7, disp.getMac());
             stmt.setString(8, disp.getImei());
-            stmt.setInt(9, disp.getNum_etiqueta());
+            setIntOrNull(stmt, 9, (disp.getNum_etiqueta() != null) ? disp.getNum_etiqueta() : null);
             stmt.setString(10, disp.getComentario());
+            
             setIntOrNull(stmt, 11, (disp.getProveedor() != null) ? disp.getProveedor().getCodigo() : null);
             setIntOrNull(stmt, 12, (disp.getProgramae() != null) ? disp.getProgramae().getCodigo() : null);
             setIntOrNull(stmt, 13, (disp.getEspacio() != null) ? disp.getEspacio().getCodigoEspacio() : null);
@@ -174,7 +178,8 @@ public class DispositivoDAO {
             stmt.setDate(6, disp.getFecha_adquisicion());
             stmt.setString(7, disp.getMac());
             stmt.setString(8, disp.getImei());
-            stmt.setInt(9, disp.getNum_etiqueta());
+            setIntOrNull(stmt, 9, (disp.getNum_etiqueta() != null) ? disp.getNum_etiqueta() : null);
+            
             stmt.setString(10, disp.getComentario());
             setIntOrNull(stmt, 11, (disp.getProveedor() != null) ? disp.getProveedor().getCodigo() : null);
             setIntOrNull(stmt, 12, (disp.getProgramae() != null) ? disp.getProgramae().getCodigo() : null);

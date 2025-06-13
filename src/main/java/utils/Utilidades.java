@@ -163,6 +163,19 @@ public class Utilidades {
     }
     
     /**
+     * Valida una cadena de tipo código postal
+     * 
+     * @param cp String
+     * @return boolean
+     */
+    public static boolean validarNumero(String numero) {
+        // 5 dígitos
+        String regex = "^\\d$";
+        
+        return validarDato(numero, regex);
+    }
+    
+    /**
      * Valida un dato a partir de una expresión regular
      * 
      * @param dato String

@@ -15,7 +15,7 @@ public class Dispositivo {
     private String mac;
     private String imei;
     private String comentario;
-    private int num_etiqueta;
+    private Integer num_etiqueta;
     private Proveedor proveedor;
     private Categoria categoria;
     private Marca marca;
@@ -52,7 +52,7 @@ public class Dispositivo {
      * @param prestado              Indica si el dispositivo está prestado o no.
      * @param observaciones         Observaciones varias
      */
-    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, Date fecha_adquisicion, String mac, String imei, int num_etiqueta
+    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, Date fecha_adquisicion, String mac, String imei, Integer num_etiqueta
         , Proveedor proveedor, Alumno alumno, String comentario, Categoria categoria, Marca marca, Espacio espacio, ProgramasEdu programae, Sede sede
         , boolean prestado, String observaciones) {
         this.codigo = codigo;
@@ -87,7 +87,7 @@ public class Dispositivo {
      * @param categoria
      * @param marca 
      */
-    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, String imei, int num_etiqueta, Categoria categoria, Marca marca) {
+    public Dispositivo(int codigo, String nombre, String modelo, String num_serie, String imei, Integer num_etiqueta, Categoria categoria, Marca marca) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.modelo = modelo;
@@ -165,7 +165,7 @@ public class Dispositivo {
         this.imei = imei;
     }
 
-    public int getNum_etiqueta() {
+    public Integer getNum_etiqueta() {
         return num_etiqueta;
     }
 

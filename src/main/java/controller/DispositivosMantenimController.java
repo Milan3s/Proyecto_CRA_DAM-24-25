@@ -145,7 +145,7 @@ public class DispositivosMantenimController implements Initializable {
             cboxEspacio.setValue(disp.getEspacio());
             txtMac.setText(disp.getMac());
             txtImei.setText(disp.getImei());
-            txtNetiqueta.setText(String.valueOf(disp.getNum_etiqueta()));
+            if (null != disp.getNum_etiqueta()) txtNetiqueta.setText(String.valueOf(disp.getNum_etiqueta()));
             cboxPrograma.setValue(disp.getProgramae());
             if (null != disp.getAlumno()) {
                 txtAlumno.setText(disp.getAlumno().getNombre());
@@ -236,8 +236,18 @@ public class DispositivosMantenimController implements Initializable {
         if (null != dtpFecha.getValue()) fecha_adq = Date.valueOf(dtpFecha.getValue());
         String mac = txtMac.getText();
         String imei = txtImei.getText();
-        int numEtiq = 0;
-        if (!txtNetiqueta.getText().isEmpty()) numEtiq = Integer.parseInt(txtNetiqueta.getText());
+        
+        Integer numEtiq = null;
+        String sNumEtiqueta = txtNetiqueta.getText();
+        if (!sNumEtiqueta.isBlank()) {
+            if (!Utilidades.validarNumero(sNumEtiqueta)) {
+                mostrarAlerta2("Número etiqueta no válido", "Por favor, introduzca un dato numérico.", Alert.AlertType.WARNING);
+                return;    
+            } else {
+                numEtiq = Integer.parseInt(sNumEtiqueta);
+            }
+        }
+        
         Proveedor proveedor = cboxProveedor.getValue();
         Alumno alumno = null;
         String comentario = txtComent.getText();

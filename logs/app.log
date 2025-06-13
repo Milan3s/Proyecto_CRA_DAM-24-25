@@ -2266,3 +2266,99 @@ C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvFor input
 [2025-06-13 01:45:25] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
 [2025-06-13 01:45:41] [SEVERE ] [IMPORTACION] ERROR → Error al procesar el fichero : 
 C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvCannot invoke "java.lang.Integer.intValue()" because "numEtiq" is null
+[2025-06-13 17:08:48] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 17:08:48] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 17:08:48] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 17:08:48] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 17:08:48] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 17:08:48] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 17:09:14] [SEVERE ] [IMPORTACION] ERROR → Error al procesar el fichero : 
+C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvCannot invoke "java.lang.Integer.intValue()" because "this.num_etiqueta" is null
+[2025-06-13 17:09:51] [SEVERE ] [IMPORTACION] ERROR → Error al procesar el fichero : 
+C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import2.csvCannot invoke "java.lang.Integer.intValue()" because "this.num_etiqueta" is null
+[2025-06-13 17:11:55] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 17:11:55] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 17:11:55] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 17:11:55] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 17:11:55] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 17:11:55] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 17:13:33] [SEVERE ] [IMPORTACION] ERROR → Error al procesar el fichero : 
+C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvCannot invoke "java.lang.Integer.intValue()" because "this.num_etiqueta" is null
+[2025-06-13 17:18:13] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 17:18:13] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 17:18:13] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 17:18:13] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 17:18:13] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 17:18:13] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 17:18:29] [SEVERE ] [IMPORTACION] ERROR → Error al procesar el fichero : 
+C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvCannot invoke "java.lang.Integer.intValue()" because the return value of "model.Dispositivo.getNum_etiqueta()" is null
+[2025-06-13 17:19:24] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 17:19:24] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 17:19:24] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 17:19:24] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 17:19:24] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 17:19:24] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 17:19:53] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 17:19:53] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 17:19:53] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 17:19:53] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 17:19:53] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 17:19:53] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 17:21:16] [INFO   ] [DISPOSITIVOS] dispositivo eliminado: 24
+[2025-06-13 17:29:23] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 17:29:23] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 17:29:23] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 17:29:23] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 17:29:23] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 17:29:23] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 17:32:48] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 17:32:48] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 17:32:48] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 17:32:48] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 17:32:48] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 17:32:48] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 18:02:40] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 18:02:40] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 18:02:40] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 18:02:40] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 18:02:40] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 18:02:41] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 18:03:26] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 18:03:26] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 18:03:26] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 18:13:38] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 18:13:38] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 18:13:38] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 18:13:38] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 18:13:38] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 18:13:38] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 18:22:07] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 18:22:07] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 18:22:07] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 18:22:07] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 18:22:07] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 18:22:07] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 18:24:03] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 18:24:03] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 18:24:03] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 18:24:03] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 18:24:04] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 18:24:04] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 18:32:16] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 18:32:16] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 18:32:16] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 18:32:16] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 18:32:16] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 18:32:17] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio

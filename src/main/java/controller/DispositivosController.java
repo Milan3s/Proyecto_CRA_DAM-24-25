@@ -163,7 +163,17 @@ public class DispositivosController implements Initializable {
         colMac.setCellValueFactory(new PropertyValueFactory<>("mac"));
         colImei.setCellValueFactory(new PropertyValueFactory<>("imei"));
         colNumEti.setCellValueFactory(new PropertyValueFactory<>("num_etiqueta"));
-        colObservaciones.setCellValueFactory(new PropertyValueFactory<>("observaciones"));
+        //colObservaciones.setCellValueFactory(new PropertyValueFactory<>("observaciones"));
+        
+        colObservaciones.setCellValueFactory(cellData -> {
+            Dispositivo disp = cellData.getValue();
+            if (disp.getObservaciones() != null) {
+                return new SimpleStringProperty(disp.getObservaciones());
+            } else {
+                return new SimpleStringProperty("");
+            }
+        });
+        
         colFechaAdqui.setCellValueFactory(cellData -> {
             Dispositivo disp = cellData.getValue();
             if (disp.getFecha_adquisicion()!= null) {
@@ -500,7 +510,7 @@ public class DispositivosController implements Initializable {
                     mac = items[4];
                     imei = items[5];
                     
-                    if (items[6] != null && !items[6].trim().isEmpty()) {
+                    if (items[6] != null && !items[6].isEmpty()) {
                         numEtiq = Integer.parseInt(items[6]);
                     } else {
                         numEtiq = null;
