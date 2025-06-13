@@ -1,101 +1,106 @@
-
 package controller;
 
-
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.stage.Stage;
-import model.Marca;
-import dao.MarcaDAO;
-import utils.LoggerUtils;
+// Importamos las clases necesarias para la interfaz y manejo de datos
+import javafx.fxml.FXML; // Para vincular el código con los elementos de la interfaz
+import javafx.fxml.Initializable; // Para que esta clase se inicialice al abrirse la ventana
+import javafx.scene.control.*; // Para usar botones, cuadros de texto, alertas, etc.
+import javafx.stage.Stage; // Para manejar la ventana
+import model.Marca; // Clase Marca que representa una marca
+import dao.MarcaDAO; // Para acceder a los datos de marcas en la base de datos
+import utils.LoggerUtils; // Para registrar información o errores
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-// controlador de la vista 
+// Esta clase controla la ventana de mantenimiento (crear/editar) de marcas
 public class MarcaMantenimController implements Initializable {
 
-    // elementos de la interfaz 
+    // Elementos de la interfaz: un cuadro de texto y dos botones
     @FXML
-    private TextField txtNombre;    // campo de texto para ingresar el nombre de la marca
+    private TextField txtNombre; // Donde el usuario escribe el nombre de la marca
     @FXML
-    private Button btnGuardar;      // botón para guardar la marca
+    private Button btnGuardar;   // Botón para guardar la marca
     @FXML
-    private Button btnCancelar;     // botón para cancelar 
+    private Button btnCancelar;  // Botón para cerrar sin guardar
 
-    // se está editando 
-    private Marca marca;
+    private Marca marca;  // Marca actual: null si es nueva, o con datos si es edición
 
-    // DAO para acceder a la base de datos de marcas
-    private final MarcaDAO marcaDAO = new MarcaDAO();
+    private final MarcaDAO marcaDAO = new MarcaDAO(); // Objeto que permite acceder a la base de datos
 
-    //  método que se ejecuta automáticamente al abrir la vista
+    // Este método se ejecuta automáticamente al abrir la ventana
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Se registra en el log 
-        LoggerUtils.logSection("MARCAS");
+        LoggerUtils.logSection("MARCAS"); // Registra en el log que se abrió la sección de marcas
 
-        // acción del botón guardar
-        btnGuardar.setOnAction(e -> guardarMarca());
+        // Asigna acciones a los botones
+        btnGuardar.setOnAction(e -> guardarMarca()); // Cuando se hace clic en "Guardar"
+        btnCancelar.setOnAction(e -> cerrarVentana()); // Cuando se hace clic en "Cancelar"
     }
 
-    //  establece la marca actual 
+    // Este método se llama desde fuera para indicar si es una nueva marca o una existente
     public void setMarca(Marca marca) {
         this.marca = marca;
-
-        // si hay una marca existente, se muestra su nombre en el campo de texto
         if (marca != null) {
+            // Si es una marca existente, muestra su nombre en el cuadro de texto
             txtNombre.setText(marca.getNombre());
         }
     }
 
-    // sirve para guardar o actualizar la marca en la base de datos
+    // Lógica para guardar o actualizar la marca
     private void guardarMarca() {
-        // Se obtiene el texto del campo de nombre y se limpia de espacios
-        String nombre = txtNombre.getText().trim();
+        String nombre = txtNombre.getText().trim(); // Obtiene el texto escrito, sin espacios al inicio/fin
 
-        // si el campo está vacío, se muestra una alerta y se registra en el log
         if (nombre.isEmpty()) {
+            // Si no escribió nada, muestra una advertencia
             mostrarAlerta("Campo vacío", "Por favor, ingresa un nombre para la marca.", Alert.AlertType.WARNING);
             LoggerUtils.logWarning("MARCAS", "Campo nombre vacío en el formulario.");
             return;
         }
 
-        // Si la marca es nueva , se inserta en la base de datos
-        if (marca == null) {
-            boolean insertado = marcaDAO.insertarMarca(nombre);
-            if (insertado) {
-                mostrarAlerta("Éxito", "Marca agregada con éxito.", Alert.AlertType.INFORMATION);
-                cerrarVentana(); // cierra la vntana después de guardar
+        try {
+            if (marca == null) {
+                // Si marca es null, es una nueva marca
+                Marca nuevaMarca = new Marca(0, nombre); // Código 0, el DAO le asigna uno real
+                boolean insertado = marcaDAO.insertarMarca(nuevaMarca);
+
+                if (insertado) {
+                    mostrarAlerta("Éxito", "Marca agregada con éxito.", Alert.AlertType.INFORMATION);
+                    cerrarVentana();
+                } else {
+                    mostrarAlerta("Error", "No se pudo agregar la marca. Puede que ya exista el nombre.", Alert.AlertType.ERROR);
+                }
+
+            } else {
+                // Si marca no es null, es una actualización
+                boolean actualizado = marcaDAO.actualizarMarca(marca.getCodigo(), nombre);
+
+                if (actualizado) {
+                    mostrarAlerta("Éxito", "Marca actualizada correctamente.", Alert.AlertType.INFORMATION);
+                    cerrarVentana();
+                } else {
+                    mostrarAlerta("Error", "No se pudo actualizar la marca.", Alert.AlertType.ERROR);
+                }
             }
-        } else {
-            // si ya existe, se actualiza en la base de datos
-            boolean actualizado = marcaDAO.actualizarMarca(marca.getCodigo(), nombre);
-            if (actualizado) {
-                mostrarAlerta("Éxito", "Marca actualizada correctamente.", Alert.AlertType.INFORMATION);
-                cerrarVentana(); // Cierra la ventana después de actualizar
-            }
+
+        } catch (Exception e) {
+            // Si ocurre un error inesperado
+            LoggerUtils.logError("MARCAS", "Error al guardar marca", e);
+            mostrarAlerta("Error", "Ocurrió un error inesperado: " + e.getMessage(), Alert.AlertType.ERROR);
         }
     }
 
-    //  botón cancelar
-    @FXML
-    private void btnActionCancelar() {
-        cerrarVentana();
-    }
-
-    //  cierra la ventana actual
+    // Cierra la ventana actual
     private void cerrarVentana() {
         Stage stage = (Stage) btnCancelar.getScene().getWindow();
         stage.close();
     }
 
-    //  muestra una alerta con el título, mensaje y tipo especificados
+    // Muestra una alerta al usuario
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
         Alert alerta = new Alert(tipo);
         alerta.setTitle(titulo);
-        alerta.setHeaderText(null);
+        alerta.setHeaderText(null); // No usamos un encabezado adicional
         alerta.setContentText(mensaje);
         alerta.showAndWait();
     }

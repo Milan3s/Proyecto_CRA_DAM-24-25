@@ -189,39 +189,7 @@ public class Utilidades {
      * @return List<Marca>
      * @throws IOException
      */
-    public static List<Marca> importarMarcasDesdeArchivo(File archivo) throws IOException {
-        List<Marca> lista = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                String[] datos = linea.split(",");
-                if (datos.length >= 2) {
-                    try {
-                        int codigo = Integer.parseInt(datos[0].trim());
-                        String nombre = datos[1].trim();
-                        lista.add(new Marca(codigo, nombre));
-                    } catch (NumberFormatException ignored) {
-                        // Ignorar líneas con formato incorrecto
-                    }
-                }
-            }
+  
         }
-        return lista;
-    }
+    
 
-    /**
-     * Exporta una lista de marcas a un archivo CSV
-     * 
-     * @param marcas List<Marca>
-     * @param archivo File
-     * @throws IOException
-     */
-    public static void exportarMarcasAArchivo(List<Marca> marcas, File archivo) throws IOException {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivo))) {
-            for (Marca m : marcas) {
-                bw.write(m.getCodigo() + "," + m.getNombre());
-                bw.newLine();
-            }
-        }
-    }
-}

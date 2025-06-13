@@ -1,7 +1,8 @@
 package controller;
 
-import dao.ProgramasEduDAO;
-import java.io.*;
+// Importamos clases necesarias para manejo de datos, interfaz y utilidades
+import dao.ProgramasEduDAO; // Acceso a datos de Programas Educativos
+import java.io.*; // Para leer y escribir archivos
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -23,12 +24,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import model.ProgramasEdu;
-import utils.LoggerUtils;
-import utils.Utilidades;
+import model.ProgramasEdu; // Modelo de datos
+import utils.LoggerUtils; // Para registrar logs
+import utils.Utilidades; // Funciones de apoyo (alertas, seleccionar ficheros)
 
 public class ProgramasEController implements Initializable {
 
+    // Botones y campos de la interfaz
     @FXML
     private Button btnNuevo;
     @FXML
@@ -42,6 +44,7 @@ public class ProgramasEController implements Initializable {
     @FXML
     private TextField txtBuscar;
 
+    // Tabla y columnas para mostrar programas
     @FXML
     private TableView<ProgramasEdu> tablaProgramas;
     @FXML
@@ -54,9 +57,11 @@ public class ProgramasEController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // Configura las columnas y carga los datos
         configurarColumnas();
         cargarDatos();
 
+        // Doble clic en la tabla abre el formulario de edición
         tablaProgramas.setOnMouseClicked(event -> {
             if (event.getClickCount() == 2 && !tablaProgramas.getSelectionModel().isEmpty()) {
                 ProgramasEdu programaSeleccionado = tablaProgramas.getSelectionModel().getSelectedItem();
@@ -64,6 +69,7 @@ public class ProgramasEController implements Initializable {
             }
         });
 
+        // Si se borra el texto del buscador, recarga la lista completa
         txtBuscar.textProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal.trim().isEmpty()) {
                 tablaProgramas.setItems(listaProgramas);
@@ -71,22 +77,26 @@ public class ProgramasEController implements Initializable {
         });
     }
 
+    // Asocia las columnas de la tabla con las propiedades del modelo
     private void configurarColumnas() {
         colCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
     }
 
+    // Carga los datos desde la base de datos
     private void cargarDatos() {
         List<ProgramasEdu> programas = programaDAO.obtenerProgramas();
         listaProgramas.setAll(programas);
         tablaProgramas.setItems(listaProgramas);
     }
 
+    // Acción al presionar el botón "Nuevo"
     @FXML
     private void btnNuevoAction(ActionEvent event) {
         abrirFormularioPrograma(null);
     }
 
+    // Abre el formulario para crear o editar un programa
     private void abrirFormularioPrograma(ProgramasEdu programa) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ProgramasEduMantenim.fxml"));
@@ -102,12 +112,14 @@ public class ProgramasEController implements Initializable {
             modal.setResizable(false);
             modal.showAndWait();
 
-            cargarDatos();
+            cargarDatos(); // Recarga los datos al cerrar el formulario
+
         } catch (IOException e) {
             LoggerUtils.logError("Programas Educativos", "Error al abrir el formulario de programas " + e.getMessage(), e);
         }
     }
 
+    // Acción al presionar el botón "Eliminar"
     @FXML
     private void btnEliminarAction(ActionEvent event) {
         ProgramasEdu programa = tablaProgramas.getSelectionModel().getSelectedItem();
@@ -116,6 +128,7 @@ public class ProgramasEController implements Initializable {
             return;
         }
 
+        // Muestra confirmación antes de eliminar
         Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
         confirmacion.setTitle("Confirmar eliminación");
         confirmacion.setHeaderText("¿Seguro que quieres eliminar este programa?");
@@ -134,6 +147,7 @@ public class ProgramasEController implements Initializable {
         });
     }
 
+    // Acción al presionar el botón "Buscar"
     @FXML
     private void btnBuscarAction(ActionEvent event) {
         String filtro = txtBuscar.getText().trim().toLowerCase();
@@ -146,7 +160,7 @@ public class ProgramasEController implements Initializable {
         }
     }
 
-    // --- Importar desde CSV ---
+    // Importa programas desde un archivo CSV
     @FXML
     private void btnImportarAction(ActionEvent event) {
         File fichero = Utilidades.seleccFichero("Archivos CSV", "*.csv", "r");
@@ -164,7 +178,7 @@ public class ProgramasEController implements Initializable {
                 while ((linea = br.readLine()) != null) {
                     lineaActual++;
 
-                    // Saltar cabecera si hay
+                    // Salta cabecera si la hay
                     if (lineaActual == 1 && linea.toLowerCase().contains("nombre")) {
                         continue;
                     }
@@ -210,7 +224,7 @@ public class ProgramasEController implements Initializable {
         }
     }
 
-    // --- Exportar a CSV ---
+    // Exporta los programas a un archivo CSV
     @FXML
     private void btnExportarAction(ActionEvent event) {
         File fichero = Utilidades.seleccFichero("Archivos CSV", "*.csv", "w");
@@ -234,8 +248,4 @@ public class ProgramasEController implements Initializable {
         }
     }
 
-    @FXML
-    private void capturarClick(MouseEvent event) {
-        // Si necesitas hacer algo al clicar la tabla, ponlo aquí
-    }
 }

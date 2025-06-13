@@ -2555,3 +2555,234 @@
 [2025-06-11 23:32:58] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
 [2025-06-11 23:32:58] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
 [2025-06-11 23:32:58] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-12 11:04:16] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-12 11:04:16] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-12 11:04:16] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-12 11:04:16] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-12 11:04:16] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-12 11:04:16] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-12 11:13:31] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-12 11:13:31] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-12 11:14:37] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-12 11:14:37] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-12 11:18:37] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-12 11:18:37] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-12 11:20:50] [INFO   ] [MARCAS] Marca eliminada: sa
+[2025-06-12 11:20:55] [INFO   ] [MARCAS] Marca eliminada: ap,
+[2025-06-12 11:21:06] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-12 11:21:06] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-12 11:21:10] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-12 11:21:10] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-12 11:21:13] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-12 11:21:20] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-12 11:21:32] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-12 11:21:41] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-12 11:22:14] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-12 11:22:19] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-12 11:22:32] [INFO   ] [MARCAS] Marca eliminada: Apple
+[2025-06-12 11:24:04] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-12 11:24:17] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-12 11:24:28] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-12 11:25:15] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-12 11:25:32] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-12 11:25:37] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-13 12:31:09] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 12:31:09] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-13 12:31:09] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 12:31:09] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-13 12:31:09] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-13 12:31:09] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-13 12:33:09] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 12:33:09] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-13 12:33:09] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 12:33:09] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-13 12:33:09] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-13 12:33:09] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-13 12:33:19] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 12:33:19] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-13 12:33:19] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 12:33:29] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-13 12:33:29] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-13 12:33:32] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-13 12:33:32] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-13 12:34:30] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-13 12:34:30] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-13 13:09:44] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-13 13:09:44] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-13 13:10:02] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-13 13:24:34] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 13:24:34] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-13 13:24:34] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 13:24:34] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-13 13:24:34] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-13 13:24:34] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-13 13:24:40] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-13 13:24:40] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-13 13:25:01] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-13 13:25:04] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-13 13:25:04] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-13 13:25:19] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-13 13:30:52] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-13 13:31:01] [INFO   ] [MARCAS] Marca eliminada: aaaa
+[2025-06-13 13:35:51] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 13:35:51] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-13 13:35:51] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 13:35:52] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: denegado
+[2025-06-13 13:35:52] [INFO   ] [ACCESO] Login fallido para el usuario: aa
+[2025-06-13 13:35:54] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 13:35:54] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-13 13:35:54] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 13:35:54] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: denegado
+[2025-06-13 13:35:54] [INFO   ] [ACCESO] Login fallido para el usuario: aa
+[2025-06-13 13:36:01] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 13:36:01] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-13 13:36:01] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 13:36:01] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-13 13:36:01] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-13 13:36:01] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-13 13:36:05] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-13 13:40:04] [INFO   ] [MARCAS] Exportación exitosa a C:\Users\34601\Desktop\q.csv
+[2025-06-13 13:40:11] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 13:40:11] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 13:40:11] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 13:40:11] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 13:40:13] [INFO   ] [MARCAS] Importación exitosa de marcas: 0
+[2025-06-13 13:41:02] [INFO   ] [MARCAS] Marca eliminada: Xiaomi
+[2025-06-13 13:41:06] [INFO   ] [MARCAS] Marca eliminada: Samsung
+[2025-06-13 13:41:10] [INFO   ] [MARCAS] Marca eliminada: Huawei
+[2025-06-13 13:41:21] [INFO   ] [MARCAS] Exportación exitosa a C:\Users\34601\Desktop\qqs.csv
+[2025-06-13 13:41:25] [INFO   ] [MARCAS] Marca eliminada: aaa
+[2025-06-13 13:41:35] [INFO   ] [MARCAS] Importación exitosa de marcas: 1
+[2025-06-13 13:41:37] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-13 13:41:56] [INFO   ] [MARCAS] Exportación exitosa a C:\Users\34601\Desktop\aa.csv
+[2025-06-13 13:42:01] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 13:42:01] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 13:42:06] [INFO   ] [MARCAS] Importación exitosa de marcas: 0
+[2025-06-13 17:22:12] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-13 17:24:42] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 17:24:42] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-13 17:24:42] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 17:24:42] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-13 17:24:42] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-13 17:24:43] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-13 17:25:00] [INFO   ] [MARCAS] Exportación exitosa a C:\Users\34601\Desktop\qwqwq.csv
+[2025-06-13 17:25:12] [INFO   ] [MARCAS] Código 18 ya existe. Se usará código alternativo: 23
+[2025-06-13 17:25:12] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 17:25:12] [INFO   ] [MARCAS] Código 19 ya existe. Se usará código alternativo: 23
+[2025-06-13 17:25:12] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 17:25:12] [INFO   ] [MARCAS] Código 22 ya existe. Se usará código alternativo: 23
+[2025-06-13 17:25:12] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 17:25:14] [INFO   ] [MARCAS] Importación exitosa de marcas: 3
+[2025-06-13 17:29:46] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 17:29:46] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-13 17:29:46] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 17:29:46] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-13 17:29:46] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-13 17:29:46] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-13 17:30:05] [INFO   ] [MARCAS] Exportación exitosa a C:\Users\34601\Desktop\tttttt.csv
+[2025-06-13 17:30:15] [INFO   ] [MARCAS] Código 18 ya existe. Se usará código alternativo: 23
+[2025-06-13 17:30:15] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 17:30:15] [INFO   ] [MARCAS] Código 19 ya existe. Se usará código alternativo: 23
+[2025-06-13 17:30:15] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 17:30:15] [INFO   ] [MARCAS] Código 22 ya existe. Se usará código alternativo: 23
+[2025-06-13 17:30:15] [SEVERE ] [MARCAS] ERROR → Error al insertar marca
+[2025-06-13 17:30:17] [INFO   ] [MARCAS] Importación exitosa de marcas: 3
+[2025-06-13 17:34:33] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 17:34:33] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-13 17:34:33] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 17:34:33] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-13 17:34:33] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-13 17:34:33] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-13 17:34:47] [WARNING] [MARCAS] Marca duplicada exacta encontrada: código=18, nombre=aaa
+[2025-06-13 17:34:50] [WARNING] [MARCAS] Intento de importación con datos duplicados exactos.
+[2025-06-13 17:34:55] [INFO   ] [MARCAS] Marca eliminada: aa
+[2025-06-13 17:35:02] [WARNING] [MARCAS] Marca duplicada exacta encontrada: código=18, nombre=aaa
+[2025-06-13 17:35:03] [WARNING] [MARCAS] Intento de importación con datos duplicados exactos.
+[2025-06-13 18:10:19] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 18:10:19] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-13 18:10:19] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 18:10:19] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-13 18:10:19] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-13 18:10:19] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-13 18:10:36] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Tablets' for key 'nombre'
+[2025-06-13 18:10:36] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Ordenadores Portatiles' for key 'nombre'
+[2025-06-13 18:10:36] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Moviles' for key 'nombre'
+[2025-06-13 18:10:36] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Smartwatch' for key 'nombre'
+[2025-06-13 18:10:52] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Tablets' for key 'nombre'
+[2025-06-13 18:10:52] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Ordenadores Portatiles' for key 'nombre'
+[2025-06-13 18:10:52] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Moviles' for key 'nombre'
+[2025-06-13 18:12:03] [INFO   ] [PROGRAMASEDUCATIVOS] Iniciando importación desde: C:\Users\34601\Desktop\pruebatfg\qqqqqqq.csv
+[2025-06-13 18:12:03] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-13 18:12:03] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 2): Esenred
+[2025-06-13 18:12:03] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-13 18:12:03] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 3): Alenta
+[2025-06-13 18:12:03] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-13 18:12:03] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 4): asdaa
+[2025-06-13 18:12:03] [INFO   ] [PROGRAMASEDUCATIVOS] Importación finalizada. Éxitos: 0 | Errores: 3
+[2025-06-13 18:12:21] [INFO   ] [PROGRAMASEDUCATIVOS] Iniciando importación desde: C:\Users\34601\Desktop\pruebatfg\qqqqqqq.csv
+[2025-06-13 18:12:21] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-13 18:12:21] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 2): Esenred
+[2025-06-13 18:12:21] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-13 18:12:21] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 3): Alenta
+[2025-06-13 18:12:21] [INFO   ] [PROGRAMASEDUCATIVOS] Programa importado (línea 4): asdaa
+[2025-06-13 18:12:21] [INFO   ] [PROGRAMASEDUCATIVOS] Importación finalizada. Éxitos: 1 | Errores: 2
+[2025-06-13 18:12:44] [INFO   ] [MARCAS] Exportación exitosa de marcas.
+[2025-06-13 18:12:50] [WARNING] [MARCAS] Intento de importar datos duplicados: no se insertó ninguna marca.
+[2025-06-13 18:12:55] [INFO   ] [MARCAS] Marca eliminada: X
+[2025-06-13 18:13:00] [INFO   ] [MARCAS] Importación completada. Marcas insertadas: 1
+[2025-06-13 18:13:02] [INFO   ] [MARCAS] Importación exitosa de marcas.
+[2025-06-13 18:13:15] [INFO   ] [PROGRAMASEDUCATIVOS] Iniciando importación desde: C:\Users\34601\Desktop\pruebatfg\aasa.csv
+[2025-06-13 18:13:15] [INFO   ] [PROGRAMASEDUCATIVOS] Programa importado (línea 1): 11
+[2025-06-13 18:13:15] [INFO   ] [PROGRAMASEDUCATIVOS] Programa importado (línea 2): 12
+[2025-06-13 18:13:15] [INFO   ] [PROGRAMASEDUCATIVOS] Programa importado (línea 3): 13
+[2025-06-13 18:13:15] [INFO   ] [PROGRAMASEDUCATIVOS] Programa importado (línea 4): 14
+[2025-06-13 18:13:15] [INFO   ] [PROGRAMASEDUCATIVOS] Importación finalizada. Éxitos: 4 | Errores: 0
+[2025-06-13 18:14:46] [INFO   ] [PROGRAMASEDUCATIVOS] Iniciando importación desde: C:\Users\34601\Desktop\pruebatfg\000.csv
+[2025-06-13 18:14:46] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-13 18:14:46] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 2): Esenred
+[2025-06-13 18:14:46] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-13 18:14:46] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 3): Alenta
+[2025-06-13 18:14:46] [SEVERE ] [PROGRAMAS_EDU] ERROR → Error al insertar programa
+[2025-06-13 18:14:46] [WARNING] [PROGRAMASEDUCATIVOS] No se pudo insertar el programa (línea 4): asdaa
+[2025-06-13 18:14:46] [INFO   ] [PROGRAMASEDUCATIVOS] Importación finalizada. Éxitos: 0 | Errores: 3
+[2025-06-13 18:21:07] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 18:21:07] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-13 18:21:07] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 18:21:07] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-13 18:21:07] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-13 18:21:07] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-13 18:21:47] [INFO   ] [CATEGORÍAS] Iniciando importación desde: C:\Users\34601\Desktop\pruebatfg\bvyuguijk.csv
+[2025-06-13 18:21:47] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Tablets' for key 'nombre'
+[2025-06-13 18:21:47] [WARNING] [CATEGORÍAS] No se pudo insertar la categoría (línea 2): Tablets
+[2025-06-13 18:21:47] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Ordenadores Portatiles' for key 'nombre'
+[2025-06-13 18:21:47] [WARNING] [CATEGORÍAS] No se pudo insertar la categoría (línea 3): Ordenadores Portatiles
+[2025-06-13 18:21:47] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Moviles' for key 'nombre'
+[2025-06-13 18:21:47] [WARNING] [CATEGORÍAS] No se pudo insertar la categoría (línea 4): Moviles
+[2025-06-13 18:21:47] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Smartwatch' for key 'nombre'
+[2025-06-13 18:21:47] [WARNING] [CATEGORÍAS] No se pudo insertar la categoría (línea 5): Smartwatch
+[2025-06-13 18:21:47] [INFO   ] [CATEGORÍAS] Importación finalizada. Éxitos: 0 | Errores: 4
+[2025-06-13 18:21:59] [INFO   ] [CATEGORÍAS] Iniciando importación desde: C:\Users\34601\Desktop\pruebatfg\bvyuguijk.csv
+[2025-06-13 18:21:59] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Tablets' for key 'nombre'
+[2025-06-13 18:21:59] [WARNING] [CATEGORÍAS] No se pudo insertar la categoría (línea 2): Tablets
+[2025-06-13 18:21:59] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Ordenadores Portatiles' for key 'nombre'
+[2025-06-13 18:21:59] [WARNING] [CATEGORÍAS] No se pudo insertar la categoría (línea 3): Ordenadores Portatiles
+[2025-06-13 18:21:59] [SEVERE ] [CATEGORIAS] ERROR → Error al insertar categoría: Duplicate entry 'Moviles' for key 'nombre'
+[2025-06-13 18:21:59] [WARNING] [CATEGORÍAS] No se pudo insertar la categoría (línea 4): Moviles
+[2025-06-13 18:21:59] [INFO   ] [CATEGORÍAS] Categoría importada (línea 5): Smartwatch
+[2025-06-13 18:21:59] [INFO   ] [CATEGORÍAS] Importación finalizada. Éxitos: 1 | Errores: 3
+[2025-06-13 18:22:46] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-13 18:22:49] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-13 18:22:51] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-13 18:22:54] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
