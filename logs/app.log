@@ -2164,3 +2164,105 @@
 [2025-06-09 15:55:55] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
 [2025-06-09 15:55:55] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
 [2025-06-09 16:51:31] [INFO   ] [PROVEEDORES] Intento de eliminar sin seleccionar proveedor.
+[2025-06-12 23:32:14] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-12 23:32:14] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-12 23:32:14] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-12 23:32:15] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-12 23:32:15] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-12 23:32:15] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-12 23:32:51] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-12 23:32:51] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-12 23:32:51] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-12 23:51:20] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-12 23:51:20] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-12 23:51:20] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 00:05:25] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 00:05:25] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 00:05:25] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 00:05:26] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 00:05:26] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 00:05:26] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 00:05:59] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 00:05:59] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 00:05:59] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 00:07:26] [INFO   ] [PROVEEDORES] Proveedor eliminado: 132
+[2025-06-13 00:07:32] [INFO   ] [PROVEEDORES] Proveedor eliminado: 131
+[2025-06-13 00:10:17] [WARNING] [PROVEEDORES] Faltan campos obligatorios en el formulario.
+[2025-06-13 00:51:13] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 00:51:13] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 00:51:13] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 00:51:13] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 00:51:13] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 00:51:13] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 00:53:37] [SEVERE ] [PROVEEDORES] ERROR → Error al eliminar proveedor
+[2025-06-13 00:53:59] [INFO   ] [DISPOSITIVOS] dispositivo eliminado: 8
+[2025-06-13 00:54:07] [INFO   ] [PROVEEDORES] Proveedor eliminado: 1
+[2025-06-13 00:56:42] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 00:56:42] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 00:56:42] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 00:56:42] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 00:56:42] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 00:56:42] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 00:56:47] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 00:56:47] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 00:56:47] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 01:17:41] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 01:17:41] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 01:17:41] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 01:17:41] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 01:17:41] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 01:17:41] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 01:17:44] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 01:17:44] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 01:17:44] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 01:18:05] [SEVERE ] [IMPORTACION] ERROR → Error al procesar el fichero : 
+C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvIndex 6 out of bounds for length 6
+[2025-06-13 01:18:59] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 01:18:59] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 01:18:59] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 01:22:17] [SEVERE ] [IMPORTACION] ERROR → Error al procesar el fichero : 
+C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvIndex 6 out of bounds for length 6
+[2025-06-13 01:24:57] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 01:24:57] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 01:24:57] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 01:24:57] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 01:24:57] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 01:24:57] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 01:25:00] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 01:25:00] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 01:25:00] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 01:28:50] [SEVERE ] [IMPORTACION] ERROR → Error al procesar el fichero : 
+C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvIndex 6 out of bounds for length 6
+[2025-06-13 01:31:32] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 01:31:32] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 01:31:32] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 01:31:32] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 01:31:32] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 01:31:32] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 01:31:36] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 01:31:36] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 01:31:36] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 01:31:54] [SEVERE ] [IMPORTACION] ERROR → Error al procesar el fichero : 
+C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvFor input string: ""
+[2025-06-13 01:32:04] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 01:32:04] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 01:32:04] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 01:45:22] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 01:45:22] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 01:45:22] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 01:45:22] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 01:45:22] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 01:45:22] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 01:45:25] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 01:45:25] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 01:45:25] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 01:45:41] [SEVERE ] [IMPORTACION] ERROR → Error al procesar el fichero : 
+C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvCannot invoke "java.lang.Integer.intValue()" because "numEtiq" is null

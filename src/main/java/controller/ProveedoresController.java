@@ -239,7 +239,7 @@ public class ProveedoresController implements Initializable {
             try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fichero)))) {
                 String linea = "";
 
-                while ((linea = br.readLine()) != null) {
+                while ((linea = br.readLine()) != null && !linea.isBlank()) {
                     // Vamos leyendo cada línea del fichero
                     items = linea.split(";");
                     nombre = items[0];
@@ -262,6 +262,9 @@ public class ProveedoresController implements Initializable {
                 LoggerUtils.logError("IMPORTACION", "Error al acceder al fichero : " + "\n" + fichero + e.getMessage(), e);
             } catch (IOException e) {
                 LoggerUtils.logError("IMPORTACION", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
+            } catch (Exception e) {
+                LoggerUtils.logError("IMPORTACION", "Error al procesar el fichero : " + "\n" + fichero + e.getMessage(), e);
+                mostrarAlerta2("", "Se ha producido un error al procesar el fichero: " + e.getMessage(), Alert.AlertType.ERROR);
             }
         }
     }

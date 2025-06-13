@@ -482,7 +482,7 @@ public class DispositivosController implements Initializable {
             Date fecha_adq;
             String mac;
             String imei;
-            int numEtiq;
+            Integer numEtiq;
             String comentReg;
             String observaciones;
             boolean prestado = false;
@@ -490,7 +490,7 @@ public class DispositivosController implements Initializable {
             try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fichero)))) {
                 String linea = "";
 
-                while ((linea = br.readLine()) != null) {
+                while ((linea = br.readLine()) != null && !linea.isBlank()) {
                     // Vamos leyendo cada línea del fichero
                     items = linea.split(";");
                     nombre = items[0];
@@ -499,7 +499,13 @@ public class DispositivosController implements Initializable {
                     fecha_adq = Date.valueOf(items[3]);
                     mac = items[4];
                     imei = items[5];
-                    numEtiq = Integer.parseInt(items[6]);
+                    
+                    if (items[6] != null && !items[6].trim().isEmpty()) {
+                        numEtiq = Integer.parseInt(items[6]);
+                    } else {
+                        numEtiq = null;
+                    }
+                    
                     comentReg = items[7];
                     observaciones = items[8];
                     
@@ -514,6 +520,9 @@ public class DispositivosController implements Initializable {
                 LoggerUtils.logError("IMPORTACION", "Error al acceder al fichero : " + "\n" + fichero + e.getMessage(), e);
             } catch (IOException e) {
                 LoggerUtils.logError("IMPORTACION", "Error al leer el fichero : " + "\n" + fichero + e.getMessage(), e);
+            } catch (Exception e) {
+                LoggerUtils.logError("IMPORTACION", "Error al procesar el fichero : " + "\n" + fichero + e.getMessage(), e);
+                mostrarAlerta2("", "Se ha producido un error al procesar el fichero: " + e.getMessage(), Alert.AlertType.ERROR);
             }
         }
     }
