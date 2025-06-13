@@ -107,7 +107,7 @@ public class Utilidades {
      * 
      * @param descriFiltro String
      * @param filtro String
-     * @param tipo String 
+     * @param tipo String ("r" para abrir, "w" para guardar)
      * @return File
      */
     public static File seleccFichero(String descriFiltro, String filtro, String tipo) {
