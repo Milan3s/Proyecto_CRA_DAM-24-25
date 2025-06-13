@@ -766,112 +766,96 @@
 [ESPACIOS] SQL: QUERY: INSERT INTO espacios (nombre, pabellon, planta, codigo_sede, numero_abaco) VALUES (?, ?, ?, ?, ?) | VALUES: nombre=x, pabellon=sur, planta=2, codigo_sede=2, numero_abaco=23425
 [2025-05-22 13:05:35] [INFO   ] [ESPACIOS] Espacio insertado correctamente → x
 [2025-05-22 13:05:35] [INFO   ] [ESPACIOS] Cargando lista de espacios...
-[2025-05-22 18:54:25] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
-[2025-05-22 18:54:26] [INFO   ] [ESPACIOS] Cargando lista de espacios...
-[2025-05-22 18:54:26] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
-[2025-05-22 18:55:36] [INFO   ] === SECCIÓN: ACCESO ===
-[2025-05-22 18:55:36] [INFO   ] [ACCESO] Intento de login con usuario: antonio
-[2025-05-22 18:55:36] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[2025-06-04 17:45:43] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-04 17:45:43] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-04 17:45:43] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
 [ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
-[2025-05-22 18:55:36] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
-[2025-05-22 18:55:36] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
-[2025-05-22 18:55:37] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
-[2025-05-22 18:55:41] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
-[2025-05-22 18:55:41] [INFO   ] [ESPACIOS] Cargando lista de espacios...
-[2025-05-22 18:55:41] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
-[2025-05-22 18:55:51] [INFO   ] [ESPACIOS] Abriendo formulario para nuevo espacio
-[2025-05-22 18:55:51] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
-[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
-[2025-05-22 18:56:01] [INFO   ] [ESPACIOS] Cargando lista de espacios...
-[2025-05-22 18:56:01] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
-[2025-05-22 18:56:42] [INFO   ] === SECCIÓN: ALUMNOS ===
-[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
+[2025-06-04 17:45:43] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-04 17:45:43] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-04 17:45:43] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-04 17:45:47] [INFO   ] === SECCIÓN: ALUMNOS ===
+[2025-06-04 17:45:47] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
 [ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
-[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
-[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
-[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
-[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
-[2025-05-22 18:56:42] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
-[2025-05-22 18:56:55] [INFO   ] === SECCIÓN: ALUMNOS ===
-[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] CONSULTA → Cargar sedes para el ComboBox
-[ALUMNOS] SQL: SELECT codigo_sede, nombre FROM sedes
-[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: CUEVAS DE REYLLO
-[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 2, Nombre: EL ESTRECHO
-[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 3, Nombre: LA PINILLA
-[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 5, Nombre: LOS ALMAGROS
-[2025-05-22 18:56:55] [INFO   ] [ALUMNOS] Sede cargada → Código: 6, Nombre: LOS CÁNOVAS
-[2025-05-22 18:57:10] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
-[2025-05-22 18:57:10] [INFO   ] [ESPACIOS] Cargando lista de espacios...
-[2025-05-22 18:57:10] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
-[2025-05-22 18:57:45] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
-[2025-05-22 18:57:45] [INFO   ] [ESPACIOS] Cargando lista de espacios...
-[2025-05-22 18:57:45] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios
-[2025-05-22 19:00:37] [INFO   ] === SECCIÓN: ACCESO ===
-[2025-05-22 19:00:37] [INFO   ] [ACCESO] Intento de login con usuario: antonio
-[2025-05-22 19:00:37] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[2025-06-04 17:45:47] [INFO   ] [ALUMNOS] Sede cargada → Código: 1, Nombre: polo
+[2025-06-04 17:55:19] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-04 17:55:19] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-04 17:55:19] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
 [ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
-[2025-05-22 19:00:37] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
-[2025-05-22 19:00:37] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
-[2025-05-22 19:00:37] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
-[2025-05-22 19:00:41] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
-[2025-05-22 19:00:41] [INFO   ] [ESPACIOS] Cargando lista de espacios...
-[2025-05-22 19:00:41] [SEVERE ] [ESPACIOS] ERROR → Error al obtener espacios: Unknown column 'e.numero_abaco' in 'field list'
-[2025-05-22 19:40:01] [INFO   ] === SECCIÓN: ACCESO ===
-[2025-05-22 19:40:01] [INFO   ] [ACCESO] Intento de login con usuario: antonio
-[2025-05-22 19:40:01] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[2025-06-04 17:55:19] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-04 17:55:19] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-04 17:55:19] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-04 17:55:23] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-04 17:55:35] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-04 18:55:51] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-04 18:55:51] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-04 18:55:51] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
 [ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
-[2025-05-22 19:40:01] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
-[2025-05-22 19:40:01] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
-[2025-05-22 19:40:01] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
-[2025-05-22 19:40:04] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
-[2025-05-22 19:40:04] [INFO   ] [ESPACIOS] Cargando lista de espacios...
-[2025-05-22 19:40:09] [INFO   ] [ESPACIOS] Doble clic sobre espacio: INFANTIL
-[2025-05-22 19:40:09] [INFO   ] [ESPACIOS] CONSULTA → Cargar sedes para ComboBox
-[ESPACIOS] SQL: SELECT codigo_sede, nombre FROM sedes
-[2025-05-22 19:40:22] [SEVERE ] [ESPACIOS] ERROR → Error al actualizar espacio: Data truncation: Incorrect integer value: 'asdfa' for column `cra_dispositivos`.`espacios`.`numero_abaco` at row 1
-[2025-05-22 19:40:31] [INFO   ] [ESPACIOS] Cargando lista de espacios...
-[2025-05-23 00:14:14] [INFO   ] === SECCIÓN: ACCESO ===
-[2025-05-23 00:14:14] [INFO   ] [ACCESO] Intento de login con usuario: antonio
-[2025-05-23 00:14:14] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[2025-06-04 18:55:51] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-04 18:55:51] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-04 18:55:51] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-04 19:55:16] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-04 19:55:16] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-04 19:55:16] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
 [ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
-[2025-05-23 00:14:14] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
-[2025-05-23 00:14:14] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
-[2025-05-23 00:14:14] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
-[2025-05-23 00:14:37] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
-[2025-05-23 00:14:49] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
-[2025-05-23 00:15:00] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
-[2025-05-23 00:15:32] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
-[2025-05-23 00:20:43] [INFO   ] === SECCIÓN: ACCESO ===
-[2025-05-23 00:20:43] [INFO   ] [ACCESO] Intento de login con usuario: antonio
-[2025-05-23 00:20:43] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[2025-06-04 19:55:16] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-04 19:55:16] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-04 19:55:16] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-04 19:57:09] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-04 19:57:25] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-04 19:57:30] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-04 19:57:52] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-04 19:57:52] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-04 19:58:43] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-04 19:58:43] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-04 19:58:56] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-04 19:59:19] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-04 20:00:02] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-04 20:00:02] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-04 20:00:02] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-04 20:00:03] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-04 20:00:15] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-04 20:00:15] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-10 17:04:15] [INFO   ] [ACCESO] Redirección a pantalla de registro
+[2025-06-10 17:04:31] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-10 17:04:31] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-10 17:04:31] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
 [ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
-[2025-05-23 00:20:43] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
-[2025-05-23 00:20:43] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
-[2025-05-23 00:20:43] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
-[2025-05-23 00:20:54] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
-[2025-05-23 00:21:50] [SEVERE ] [DISPOSITIVOS] ERROR → Error al cargar comboBox: Cannot invoke "javafx.scene.control.ComboBox.setItems(javafx.collections.ObservableList)" because "this.cboxEspacio" is null
-[2025-05-23 00:25:47] [INFO   ] === SECCIÓN: ACCESO ===
-[2025-05-23 00:25:47] [INFO   ] [ACCESO] Intento de login con usuario: antonio
-[2025-05-23 00:25:47] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[2025-06-10 17:04:31] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-10 17:04:31] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-10 17:04:32] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-10 17:30:26] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-10 17:30:26] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-10 17:32:18] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-10 17:32:18] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 222111
+[2025-06-10 18:19:05] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-10 18:19:05] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-10 18:19:05] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
 [ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
-[2025-05-23 00:25:47] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
-[2025-05-23 00:25:47] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
-[2025-05-23 00:25:48] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
-[2025-05-23 00:26:10] [SEVERE ] [DISPOSITIVOS] ERROR → Error al abrir ventana PrestamosMantenim
-[2025-05-23 00:26:36] [SEVERE ] [DISPOSITIVOS] ERROR → Error al abrir ventana PrestamosMantenim
-[2025-05-23 00:28:58] [INFO   ] === SECCIÓN: ACCESO ===
-[2025-05-23 00:28:58] [INFO   ] [ACCESO] Intento de login con usuario: antonio
-[2025-05-23 00:28:58] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[2025-06-10 18:19:05] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-10 18:19:05] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-10 18:19:05] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-10 22:03:47] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-10 22:03:47] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-10 22:12:18] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-10 22:12:18] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-10 22:12:18] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
 [ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
-[2025-05-23 00:28:58] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
-[2025-05-23 00:28:58] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
-[2025-05-23 00:28:58] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
-[2025-05-23 00:29:07] [SEVERE ] [DISPOSITIVOS] ERROR → Error al abrir ventana PrestamosMantenim: 
-/C:/Users/Antonio/Documents/NetBeansProjects/proyecto_javafx_23/target/classes/views/PrestamosMantenim.fxml
-
-[2025-05-23 19:36:06] [INFO   ] === SECCIÓN: ACCESO ===
-[2025-05-23 19:36:06] [INFO   ] [ACCESO] Intento de login con usuario: antonio
-[2025-05-23 19:36:06] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[2025-06-10 22:12:18] [INFO   ] [ACCESO] Resultado de login → Usuario: aa, Acceso: concedido
+[2025-06-10 22:12:18] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: aa
+[2025-06-10 22:12:18] [INFO   ] [ACCESO] Usuario redirigido al panel principal: aa
+[2025-06-10 23:33:30] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-10 23:33:30] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-10 23:33:34] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-10 23:33:34] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-10 23:33:44] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-10 23:33:44] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-10 23:33:45] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-10 23:33:45] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-10 23:33:46] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-10 23:33:46] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-10 23:34:03] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-10 23:34:03] [INFO   ] [ACCESO] Intento de login con usuario: aa
+[2025-06-10 23:34:03] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: aa
 [ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
 [2025-05-23 19:36:06] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
 [2025-05-23 19:36:06] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
@@ -2445,3 +2429,56 @@ C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvCannot in
 [2025-06-13 19:37:25] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
 [2025-06-13 19:37:25] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
 [2025-06-13 19:37:25] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 20:33:38] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 20:33:39] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 20:33:39] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 20:33:39] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 20:33:39] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 20:33:39] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 20:36:10] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-13 20:36:10] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-13 20:39:25] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 20:39:25] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 20:39:25] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 20:47:07] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 20:47:07] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 20:47:07] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 20:47:07] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 20:47:07] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 20:47:07] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 20:49:30] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-13 20:49:30] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 20:49:39] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-13 20:49:39] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 20:50:00] [INFO   ] === SECCIÓN: MANTENIMIENTO SEDE ===
+[2025-06-13 20:50:00] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 20:50:16] [SEVERE ] [SEDES] ERROR → Error al verificar dependencias de sede
+[2025-06-13 20:51:01] [SEVERE ] [MARCAS] ERROR → Error al abrir el formulario de marca
+[2025-06-13 20:51:06] [SEVERE ] [MARCAS] ERROR → Error al abrir el formulario de marca
+[2025-06-13 20:52:01] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-13 20:52:03] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-13 20:53:12] [INFO   ] [MARCAS] Exportación exitosa de marcas.
+[2025-06-13 20:58:15] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 20:58:15] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 20:58:15] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 20:58:15] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 20:58:15] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 20:58:15] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 20:58:20] [SEVERE ] [MARCAS] ERROR → Error al abrir el formulario de marcaError resolving onAction='#btnActionCancelar', either the event handler is not in the Namespace or there is an error in the script.
+/C:/Users/Antonio/Documents/NetBeansProjects/proyecto_javafx_23/target/classes/views/MarcaMantenim.fxml:53
+
+[2025-06-13 21:01:36] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 21:01:36] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 21:01:36] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 21:01:36] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 21:01:36] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 21:01:36] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 21:01:41] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-13 21:01:50] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-13 21:01:56] [INFO   ] [MARCAS] Marca eliminada: Pruebas
+[2025-06-13 21:01:58] [INFO   ] === SECCIÓN: MARCAS ===
+[2025-06-13 21:02:20] [INFO   ] === SECCIÓN: MARCAS ===

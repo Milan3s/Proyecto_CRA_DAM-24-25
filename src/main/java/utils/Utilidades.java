@@ -1,10 +1,17 @@
 package utils;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -14,13 +21,13 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
+import model.Marca;
 
 /**
  * Clase que contiene varios métodos o utilidades que se utilizan en distintos puntos de la aplicación.
- * 
  */
 public class Utilidades {
-    
+
     /**
      * Muestra avisos por pantalla al usuario.
      * 
@@ -35,7 +42,7 @@ public class Utilidades {
         alerta.setContentText(contenido);
         alerta.showAndWait();
     }
-    
+
     /**
      * Método genérico para cargar objetos en comboBox mostrando, normalmente,
      * el nombre del objeto.
@@ -60,7 +67,7 @@ public class Utilidades {
             }
         });
     }
-    
+
     /**
      * Muestra la fecha en un DatePicker en formato dd/MM/yyyy
      * 
@@ -68,7 +75,7 @@ public class Utilidades {
      */
     public static void formatearFecha(DatePicker dtp) {
         DateTimeFormatter formatFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        
+
         dtp.setConverter(new StringConverter<LocalDate>() {
             @Override
             public String toString(LocalDate date) {
@@ -81,9 +88,9 @@ public class Utilidades {
             }
         });
     }
-    
+
     /**
-     * Convierte una cadena de fecha en formato dd/mm/aaaa a un tipo Date de SQL
+     * Convierte una cadena de fecha en formato dd/MM/yyyy a un tipo Date de SQL
      * 
      * @param sFecha String
      * @return Date
@@ -99,9 +106,9 @@ public class Utilidades {
             return Date.valueOf(fechaLocal);
         } catch (DateTimeParseException e) {
             return null;
-        }       
+        }
     }
-    
+
     /**
      * Selecciona un fichero mediante el selector de archivos del sistema
      * 
@@ -113,17 +120,17 @@ public class Utilidades {
     public static File seleccFichero(String descriFiltro, String filtro, String tipo) {
         FileChooser f = new FileChooser();
         FileChooser.ExtensionFilter filtcsv = new FileChooser.ExtensionFilter(descriFiltro, filtro);
-        f.getExtensionFilters().add(filtcsv);        
+        f.getExtensionFilters().add(filtcsv);
         File fichero = null;
-        
-        if (tipo.equals("w")) {
+
+        if ("w".equals(tipo)) {
             fichero = f.showSaveDialog(null);
         } else {
             fichero = f.showOpenDialog(null);
         }
         return fichero;
     }
-    
+
     /**
      * Valida una cadena de tipo email
      * 
@@ -132,23 +139,23 @@ public class Utilidades {
      */
     public static boolean validarEmail(String email) {
         String regex = "^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$";
-               
+
         return validarDato(email, regex);
     }
-    
+
     /**
-     * Valida una cadena de tipo telefono
+     * Valida una cadena de tipo teléfono
      * 
-     * @param telefono
-     * @return 
+     * @param telefono String
+     * @return boolean
      */
     public static boolean validarTelefono(String telefono) {
         // 9 dígitos con espacios opcionales entre bloques de 3
         String regex = "^\\d{3}\\s?\\d{3}\\s?\\d{3}$";
-        
+
         return validarDato(telefono, regex);
     }
-    
+
     /**
      * Valida una cadena de tipo código postal
      * 
@@ -158,14 +165,14 @@ public class Utilidades {
     public static boolean validarCP(String cp) {
         // 5 dígitos
         String regex = "^\\d{5}$";
-        
+
         return validarDato(cp, regex);
     }
-    
+
     /**
-     * Valida una cadena de tipo código postal
+     * Valida una cadena de tipo numérico
      * 
-     * @param cp String
+     * @param numero String
      * @return boolean
      */
     public static boolean validarNumero(String numero) {
@@ -182,9 +189,11 @@ public class Utilidades {
      * @param regex String
      * @return boolean
      */
-    public static boolean validarDato(String dato, String regex) {               
+    public static boolean validarDato(String dato, String regex) {
         Pattern pat = Pattern.compile(regex);
         Matcher mat = pat.matcher(dato);
         return mat.matches();
     }
 }
+    
+

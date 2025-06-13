@@ -12,45 +12,58 @@
 <?import javafx.scene.text.Font?>
 
 <VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MarcaController">
-
-    <!-- Título -->
-    <Label text="Marcas">
-      <font>
-         <Font size="24.0" />
-      </font></Label>
-
-    <!-- Botones en línea -->
-    <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="830.0" spacing="20.0">
-        <Button fx:id="btnNuevoMarca" mnemonicParsing="false" onAction="#btnActionNuevoMarca" styleClass="btnNuevoMarca" text="Nueva Marca">
-            <graphic>
-                <FontAwesomeIconView glyphName="PLUS" selectionFill="BLACK" />
-            </graphic>
-        </Button>
-        <Button fx:id="btnEliminarMarca" mnemonicParsing="false" onAction="#btnActionEliminarMarca" styleClass="btnEliminarMarcaSeleccionado" text="Eliminar Marca">
-            <graphic>
-                <FontAwesomeIconView glyphName="TRASH" />
-            </graphic>
-        </Button>
-    </HBox>
-    
-    <!-- Barra de búsqueda -->
- 
-    <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="830.0" spacing="10">
-        <Label contentDisplay="RIGHT" prefHeight="35.0" prefWidth="60.0" styleClass="txtbuscar" text="Buscar:" textAlignment="RIGHT" />
-        <TextField fx:id="txtBuscar" prefWidth="300.0" promptText="Escribe para buscar..." styleClass="campo_busqueda" />
-        <Button fx:id="btnBuscar" onAction="#btnBuscarAction" prefHeight="35.0" text="Buscar">
-         <graphic>
-            <FontAwesomeIconView glyphName="BINOCULARS" />
-         </graphic></Button>
-    </HBox>
-
-    <!-- Tabla -->
-    <TableView fx:id="tablaMarcas" styleClass="tabla_Alumnos" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
-        <columns>
-            <TableColumn fx:id="colCodigo" prefWidth="150.0" styleClass="Columna-Codigo" text="Código Marca" />
-            <TableColumn fx:id="colNombre" prefWidth="673.0" styleClass="Columna-nombre" text="Nombre" />
-        </columns>
-    </TableView>
+   <children>
+      <Label text="Marcas">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      
+      <!-- Un solo HBox para todos los botones -->
+      <HBox alignment="CENTER_LEFT" prefHeight="45.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnNuevoMarca" mnemonicParsing="false" onAction="#btnNuevoMarcaAction" text="Nueva Marca">
+               <graphic>
+                  <FontAwesomeIconView glyphName="PLUS" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnEliminarMarca" mnemonicParsing="false" onAction="#btnEliminarMarcaAction" text="Eliminar Marca">
+               <graphic>
+                  <FontAwesomeIconView glyphName="TRASH" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnImportarMarca" mnemonicParsing="false" onAction="#btnImportarMarcaAction" text="Importar Marca">
+               <graphic>
+                  <FontAwesomeIconView glyphName="UPLOAD" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnExportarMarca" mnemonicParsing="false" onAction="#btnExportarMarcaAction" text="Exportar Marca">
+               <graphic>
+                  <FontAwesomeIconView glyphName="DOWNLOAD" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      
+      <HBox alignment="CENTER_LEFT" prefHeight="45.0" spacing="10.0">
+         <children>
+            <Label text="Buscar:" />
+            <TextField fx:id="txtBuscar" prefWidth="300.0" promptText="Escribe para buscar..." />
+            <Button fx:id="btnBuscar" mnemonicParsing="false" onAction="#btnBuscarAction" text="Buscar">
+               <graphic>
+                  <FontAwesomeIconView glyphName="BINOCULARS" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      
+      <TableView fx:id="tablaMarcas" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="colCodigo" prefWidth="150.0" text="Código Marca" />
+            <TableColumn fx:id="colNombre" prefWidth="673.0" text="Nombre" />
+         </columns>
+      </TableView>
+   </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>

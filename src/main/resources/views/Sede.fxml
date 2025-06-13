@@ -10,7 +10,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SedeController">
+<VBox spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SedeController">
 
     <!-- Título -->
     <Label text="Sedes">
@@ -18,16 +19,28 @@
          <Font size="24.0" />
       </font></Label>
 
-    <!-- Botones -->
-    <HBox spacing="10">
+    <!-- Botones en una sola fila -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
         <Button fx:id="btnNuevaSede" mnemonicParsing="false" onAction="#btnNuevaSedeAction" text="Nueva Sede">
-         <graphic>
-            <FontAwesomeIconView glyphName="PLUS" />
-         </graphic></Button>
+            <graphic>
+                <FontAwesomeIconView glyphName="PLUS" />
+            </graphic>
+        </Button>
         <Button fx:id="btnEliminarSede" mnemonicParsing="false" onAction="#btnEliminarSedeAction" text="Eliminar Sede">
-         <graphic>
-            <FontAwesomeIconView glyphName="TRASH" />
-         </graphic></Button>
+            <graphic>
+                <FontAwesomeIconView glyphName="TRASH" />
+            </graphic>
+        </Button>
+        <Button fx:id="btnImportarSede" mnemonicParsing="false" onAction="#btnImportarSedeAction" text="Importar Sede">
+            <graphic>
+                <FontAwesomeIconView glyphName="UPLOAD" />
+            </graphic>
+        </Button>
+        <Button fx:id="btnExportarSede" mnemonicParsing="false" onAction="#btnExportarSedeAction" text="Exportar Sede">
+            <graphic>
+                <FontAwesomeIconView glyphName="DOWNLOAD" />
+            </graphic>
+        </Button>
     </HBox>
 
     <!-- Barra de búsqueda -->
@@ -35,9 +48,10 @@
         <Label prefHeight="35.0" prefWidth="60.0" text="Buscar:" />
         <TextField fx:id="txtBuscar" prefWidth="300.0" promptText="Escribe para buscar..." />
         <Button fx:id="btnBuscarSede" onAction="#btnBuscarSedeAction" text="Buscar">
-         <graphic>
-            <FontAwesomeIconView glyphName="BINOCULARS" />
-         </graphic></Button>
+            <graphic>
+                <FontAwesomeIconView glyphName="BINOCULARS" />
+            </graphic>
+        </Button>
     </HBox>
 
     <!-- Tabla de sedes -->

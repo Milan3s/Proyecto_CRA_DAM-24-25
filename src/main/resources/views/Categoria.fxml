@@ -2,56 +2,68 @@
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
 <VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CategoriaController">
+   <children>
+      <!-- Título -->
+      <Label text="Categorías">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
 
-    <!-- Título -->
-    <Label text="Categorías">
-      <font>
-         <Font size="24.0" />
-      </font></Label>
+      <!-- Botones principales -->
+      <HBox alignment="CENTER_LEFT" spacing="20.0" prefHeight="45.0">
+         <children>
+            <Button fx:id="btnNuevaCat" text="Nueva Categoría" onAction="#btnActionNuevaCat">
+               <graphic>
+                  <FontAwesomeIconView glyphName="PLUS" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnEliminarCat" text="Eliminar Categoría" onAction="#btnActionEliminarCat">
+               <graphic>
+                  <FontAwesomeIconView glyphName="TRASH" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnImportar" text="Importar Categoría" onAction="#btnImportarAction">
+               <graphic>
+                  <FontAwesomeIconView glyphName="UPLOAD" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnExportar" text="Exportar Categoría" onAction="#btnExportarAction">
+               <graphic>
+                  <FontAwesomeIconView glyphName="DOWNLOAD" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
 
-    <!-- Botones en línea -->
-    <HBox alignment="CENTER_LEFT" prefHeight="46.0" spacing="20.0">
-        <Button fx:id="btnNuevaCat" mnemonicParsing="false" onAction="#btnActionNuevaCat" styleClass="btnNuevoAlumno" text="Nueva Categoria">
-            <graphic>
-                <FontAwesomeIconView glyphName="PLUS" />
-            </graphic>
-        </Button>
-        <Button fx:id="btnEliminarCat" mnemonicParsing="false" onAction="#btnActionEliminarCat" styleClass="btnEliminarAlumnoSeleccionado" text="Eliminar Categoria">
-            <graphic>
-                <FontAwesomeIconView glyphName="TRASH" />
-            </graphic>
-        </Button>
-    </HBox>
-    
-    <!-- Barra de búsqueda -->
- 
-    <HBox alignment="CENTER_LEFT" prefHeight="45.0" spacing="10">
-        <Label contentDisplay="RIGHT" styleClass="txtbuscar" text="Buscar:" textAlignment="RIGHT" />
-        <TextField fx:id="txtBuscar" prefWidth="300.0" promptText="Escribe para buscar..." styleClass="campo_busqueda" />
-        <Button fx:id="btnBuscar" onAction="#btnBuscarAction" text="Buscar">
-         <graphic>
-            <FontAwesomeIconView glyphName="BINOCULARS" />
-         </graphic></Button>
-    </HBox>
+      <!-- Búsqueda -->
+      <HBox alignment="CENTER_LEFT" spacing="10.0" prefHeight="45.0">
+         <children>
+            <Label text="Buscar:" />
+            <TextField fx:id="txtBuscar" promptText="Escribe para buscar..." prefWidth="300.0" />
+            <Button fx:id="btnBuscar" text="Buscar" onAction="#btnBuscarAction">
+               <graphic>
+                  <FontAwesomeIconView glyphName="BINOCULARS" />
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
 
-    <!-- Tabla -->
-    <TableView fx:id="tablaCat" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
-        <columns>
-            <TableColumn fx:id="colCodigo" prefWidth="150.0" styleClass="Columna-Codigo" text="Código Categoria" />
-            <TableColumn fx:id="colNombre" prefWidth="673.0" styleClass="Columna-nombre" text="Nombre" />
-        </columns>
-    </TableView>
+      <!-- Tabla -->
+      <TableView fx:id="tablaCat" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+         <columns>
+            <TableColumn fx:id="colCodigo" text="Código Categoría" prefWidth="150.0" />
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="673.0" />
+         </columns>
+      </TableView>
+   </children>
+
    <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      <Insets top="20.0" bottom="20.0" left="20.0" right="20.0" />
    </padding>
 </VBox>

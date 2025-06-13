@@ -1,5 +1,4 @@
 package main;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +12,7 @@ public class App extends Application {
     private static Stage primaryStage;
 
     @Override
-    public void start(Stage stage) throws IOException {    
+    public void start(Stage stage) throws IOException {
         primaryStage = stage;
         loadView("/views/Acceso");
         stage.setTitle("Sistema CRA");
@@ -26,9 +25,14 @@ public class App extends Application {
         }));
     }
 
+    // Cambia este método a public static
     public static void loadView(String fxml) throws IOException {
         FXMLLoader loader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         Parent root = loader.load();
+        
+        boolean wasMaximized = primaryStage.isMaximized();
+        double width = primaryStage.getWidth();
+        double height = primaryStage.getHeight();
         
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);

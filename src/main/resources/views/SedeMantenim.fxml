@@ -13,7 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_LEFT" prefHeight="500.0" prefWidth="500.0" spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SedeMantenimController">
+<VBox alignment="TOP_LEFT" prefHeight="500.0" prefWidth="500.0" spacing="10" 
+      style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/23.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SedeMantenimController">
 
     <Label text="Mantenimiento de Sedes">
       <font>

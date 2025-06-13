@@ -70,4 +70,8 @@ public class Sede {
     public String toString() {
         return nombre;
     }
+
+    public int getCodigo() {
+        return codigoSede;
+    }
 }
