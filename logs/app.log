@@ -2362,3 +2362,86 @@ C:\FP_DAM_24_25\Proyecto\pruebas import export\dispositivos_import1.csvCannot in
 [2025-06-13 18:32:16] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
 [2025-06-13 18:32:16] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
 [2025-06-13 18:32:17] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 18:35:22] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 18:35:22] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 18:35:22] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 18:35:22] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 18:35:22] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 18:35:22] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 18:37:39] [INFO   ] === SECCIÓN: PROGRAMAS EDUCATIVOS ===
+[2025-06-13 18:38:36] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 18:38:36] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 18:38:36] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 18:39:51] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-13 18:39:51] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-13 18:40:37] [INFO   ] === SECCIÓN: ESPACIOS - INICIALIZACIÓN ===
+[2025-06-13 18:40:37] [INFO   ] [ESPACIOS] Cargando lista de espacios...
+[2025-06-13 18:46:46] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 18:46:46] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 18:46:46] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 18:46:46] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 18:46:46] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 18:46:46] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 18:48:03] [SEVERE ] [PROVEEDORES] ERROR → Error al eliminar proveedor
+[2025-06-13 18:52:30] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 18:52:30] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 18:52:30] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 18:52:30] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 18:52:30] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 18:52:30] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 18:52:50] [SEVERE ] [PROVEEDORES] ERROR → Error al eliminar proveedor por clave ajena
+[2025-06-13 18:54:00] [INFO   ] [PROVEEDORES] Proveedor eliminado: 8
+[2025-06-13 19:12:45] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 19:12:45] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 19:12:45] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 19:12:45] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 19:12:45] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 19:12:45] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 19:19:59] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 19:19:59] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 19:19:59] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 19:19:59] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 19:19:59] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 19:19:59] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 19:20:03] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 19:20:03] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 19:20:03] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 19:20:40] [INFO   ] [ALUMNOS] Alumno eliminado correctamente: 2
+[2025-06-13 19:20:45] [INFO   ] [ALUMNOS] Alumno eliminado correctamente: 4
+[2025-06-13 19:20:53] [INFO   ] [ALUMNOS] Alumno eliminado correctamente: 1
+[2025-06-13 19:20:57] [INFO   ] [ALUMNOS] Alumno eliminado correctamente: 3
+[2025-06-13 19:21:02] [INFO   ] [ALUMNOS] Alumno eliminado correctamente: 5
+[2025-06-13 19:28:47] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 19:28:47] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 19:28:47] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 19:28:47] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 19:28:47] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 19:28:47] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 19:28:50] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 19:28:50] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 19:28:50] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1
+[2025-06-13 19:30:41] [SEVERE ] [DISPOSITIVOS] ERROR → Error al eliminar dispositivoCannot delete or update a parent row: a foreign key constraint fails (`cra_dispositivos`.`prestamos`, CONSTRAINT `prestamos_ibfk_1` FOREIGN KEY (`codigo_dispositivo`) REFERENCES `dispositivos` (`codigo_dispositivo`))
+[2025-06-13 19:34:23] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 19:34:23] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 19:34:23] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 19:34:23] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 19:34:23] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 19:34:24] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 19:34:38] [SEVERE ] [DISPOSITIVOS] ERROR → Error al eliminar proveedor por clave ajena
+[2025-06-13 19:37:18] [INFO   ] === SECCIÓN: ACCESO ===
+[2025-06-13 19:37:18] [INFO   ] [ACCESO] Intento de login con usuario: antonio
+[2025-06-13 19:37:18] [INFO   ] [ACCESO] CONSULTA → Validación de login para usuario: antonio
+[ACCESO] SQL: SELECT * FROM usuarios WHERE usuario = ? AND password = ?
+[2025-06-13 19:37:18] [INFO   ] [ACCESO] Resultado de login → Usuario: antonio, Acceso: concedido
+[2025-06-13 19:37:18] [INFO   ] [ACCESO] Inicio de sesión exitoso para el usuario: antonio
+[2025-06-13 19:37:18] [INFO   ] [ACCESO] Usuario redirigido al panel principal: antonio
+[2025-06-13 19:37:25] [INFO   ] === SECCIÓN: CENTROS EDUCATIVOS ===
+[2025-06-13 19:37:25] [INFO   ] [CENTROS EDUCATIVOS] Centro cargado → Código: 30011995
+[2025-06-13 19:37:25] [INFO   ] [CENTROS EDUCATIVOS] Total centros cargados: 1

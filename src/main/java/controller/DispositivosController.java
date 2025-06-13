@@ -566,7 +566,7 @@ public class DispositivosController implements Initializable {
                     linea += disp.getFecha_adquisicion() != null ? disp.getFecha_adquisicion() + ";" : ";";
                     linea += disp.getMac() != null ? disp.getMac() + ";" : ";";
                     linea += disp.getImei() != null ? disp.getImei() + ";" : ";";
-                    linea += String.valueOf(disp.getNum_etiqueta()) + ";";
+                    linea += disp.getNum_etiqueta() != null ? String.valueOf(disp.getNum_etiqueta()) + ";" : ";";
                     linea += disp.isPrestado() ? "Sí;" : ";";
                     linea += disp.getAlumno() != null ? disp.getAlumno().getNombre() + ";" : ";";
                     linea += disp.getAlumno() != null ? disp.getAlumno().getCurso() + ";" : ";";

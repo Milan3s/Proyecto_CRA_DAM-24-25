@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -222,7 +223,11 @@ public class DispositivoDAO {
                 LoggerUtils.logInfo("DISPOSITIVOS", "No se eliminó ningún dispositivo (código: " + codDisp + ")");
             }
             return filas;
-            
+        } catch (SQLIntegrityConstraintViolationException e) {
+            mostrarAlerta2("", "No se puede eliminar debido a una restricción de clave ajena.", Alert.AlertType.ERROR);
+            LoggerUtils.logError("DISPOSITIVOS", "Error al eliminar dispositivo por clave ajena", e);
+            return filas;
+           
         } catch (SQLException e) {
             mostrarAlerta2("Error de BD", "No se pudo eliminar debido a un error de base de datos.", Alert.AlertType.ERROR);
             LoggerUtils.logError("DISPOSITIVOS", "Error al eliminar dispositivo" + e.getMessage(), e);

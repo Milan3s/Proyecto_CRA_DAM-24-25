@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -182,7 +183,10 @@ public class PrestamoDAO {
                 LoggerUtils.logInfo("PRESTAMOS", "No se eliminó ningún préstamo (dispositivo: " + prestamo.getDispositivo().getCodigo() + ")");
             }
             return filas;
-            
+        } catch (SQLIntegrityConstraintViolationException e) {
+            mostrarAlerta2("", "No se puede eliminar debido a una restricción de clave ajena.", Alert.AlertType.ERROR);
+            LoggerUtils.logError("PRESTAMOS", "Error al eliminar préstamo por clave ajena", e);
+            return filas;    
         } catch (SQLException e) {
             mostrarAlerta2("Error de BD", "No se pudo eliminar debido a un error de base de datos.", Alert.AlertType.ERROR);
             LoggerUtils.logError("PRESTAMOS", "Error al eliminar préstamo: " + e.getMessage(), e);

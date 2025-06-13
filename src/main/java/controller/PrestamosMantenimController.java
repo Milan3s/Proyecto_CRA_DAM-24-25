@@ -149,7 +149,7 @@ public class PrestamosMantenimController implements Initializable {
     private void cargarDatosDispositivo() {
         txtNombreDisp.setText(dispositivo.getNombre());
         txtNetiqueta.setText(String.valueOf(dispositivo.getNum_etiqueta()));
-        txtMarca.setText(dispositivo.getMarca().getNombre());
+        if (null != dispositivo.getMarca()) txtMarca.setText(dispositivo.getMarca().getNombre());
         txtModelo.setText(dispositivo.getModelo());
         txtNserie.setText(dispositivo.getNum_serie());
         txtImei.setText(dispositivo.getImei());

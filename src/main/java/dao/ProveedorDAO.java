@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -141,7 +142,11 @@ public class ProveedorDAO {
                 LoggerUtils.logInfo("PROVEEDORES", "No se eliminó ningún proveedor (código: " + codProv + ")");
             }
             return filas;
-            
+        } catch (SQLIntegrityConstraintViolationException e) {
+            mostrarAlerta2("", "No se puede eliminar debido a una restricción de clave ajena.", Alert.AlertType.ERROR);
+            LoggerUtils.logError("PROVEEDORES", "Error al eliminar proveedor por clave ajena", e);
+            return filas;
+        
         } catch (SQLException e) {
             mostrarAlerta2("Error de BD", "No se pudo eliminar debido a un error de base de datos.", Alert.AlertType.ERROR);
             LoggerUtils.logError("PROVEEDORES", "Error al eliminar proveedor", e);
